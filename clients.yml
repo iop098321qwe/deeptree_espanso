@@ -1,1 +1,163 @@
-clients.yml
+# espanso match file
+
+# clients
+matches:
+  - trigger: ";akcf"
+    word: true
+    replace: "AK Child & Family"
+
+  - trigger: ";acbhc"
+    word: true
+    replace: "Alaska Commission for Behavioral Health Certification"
+
+  - trigger: ";acoa"
+    word: true
+    replace: "Alaska Correctional Officers Assocation"
+
+  - trigger: ";afs"
+    word: true
+    replace: "Alaska Family Services"
+
+  - trigger: ";ahf"
+    word: true
+    replace: "Alaska Humanities Forum"
+
+  - trigger: ";arg"
+    word: true
+    replace: "Alaska Rock Gym"
+
+  - trigger: ";anai"
+    word: true
+    replace: "Anchorage Neurosurgical Assocatiates, Inc."
+
+  - trigger: ";ao"
+    word: true
+    replace: "Anchorage Opera"
+
+  - trigger: ";aos"
+    word: true
+    replace: "Arctic Oral Surgery"
+
+  - trigger: ";bc"
+    word: true
+    replace: "Bauer Construction"
+
+  - trigger: ";boa"
+    word: true
+    replace: "Bayshore Owners Assocation"
+
+  - trigger: ";bmm"
+    word: true
+    replace: "Beacon Media + Marketing"
+
+  - trigger: ";cfa"
+    word: true
+    replace: "Camp Fire Alaska"
+
+  - trigger: ";cg"
+    word: true
+    replace: "Cashion Gilmore"
+
+  - trigger: ";ccs"
+    word: true
+    replace: "CCS Early Learning"
+
+  - trigger: ";crmc"
+    word: true
+    replace: "Cross Roads Medical Center"
+
+  - trigger: ";dpt"
+    word: true
+    replace: "Deeptree"
+
+  - trigger: ";dda"
+    word: true
+    replace: "Denali Daniels + Associates"
+
+  - trigger: ";dc"
+    word: true
+    replace: "Dimond Center"
+
+  - trigger: ";ee"
+    word: true
+    replace: "Eagle Enterprises, Inc."
+
+  - trigger: ";flcc"
+    word: true
+    replace: "Farm Loop Christian Center"
+
+  - trigger: ";fb"
+    word: true
+    replace: "Fireside Books"
+
+  - trigger: ";gsak"
+    word: true
+    replace: "Girl Scouts of Alaska"
+
+  - trigger: ";gptlhb"
+    word: true
+    replace: "Great Plains Tribal Leaders Health Board"
+
+  - trigger: ";ifhc"
+    word: true
+    replace: "Indian Family Health Clinic"
+
+  - trigger: ";knom"
+    word: true
+    replace: "Knom Radio Mission, Inc."
+
+  - trigger: ";lc"
+    word: true
+    replace: "Larson Chiropractic"
+
+  - trigger: ";nwf"
+    word: true
+    replace: "North Wend Foods, Inc."
+
+  - trigger: ";orers"
+    word: true
+    replace: "O'Banion Real Estate & Relocation Services"
+
+  - trigger: ";opc"
+    word: true
+    replace: "Optimum Performance Chiropractic"
+
+  - trigger: ";pt"
+    word: true
+    replace: "Pango Technology"
+
+  - trigger: ";ppos"
+    word: true
+    replace: "Pioneer Peak Orthopedic Surgery"
+
+  - trigger: ";ssmh"
+    word: true
+    replace: "Samuel Simmonds Memorial Hospital"
+
+  - trigger: ";sfa"
+    word: true
+    replace: "Steve Fishback Architecture"
+
+  - trigger: ";al"
+    word: true
+    replace: "The American Legion"
+
+  - trigger: ";tes"
+    word: true
+    replace: "The Eureka Space"
+
+  - trigger: ";ttcd"
+    word: true
+    replace: "Tyonek Tribal Conservation District"
+
+  - trigger: ";uwm"
+    word: true
+    replace: "United Way of Mat-Su"
+
+  - trigger: ";vfj"
+    word: true
+    replace: "Victims for Justice"
+
+  - trigger: ";ywca"
+    word: true
+    replace: "YWCA Alaska"
