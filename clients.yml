@@ -2,162 +2,282 @@
 
 # clients
 matches:
-  - trigger: ";akcf"
+  - name: "AK Child & Family"
+    label: "AK Child & Family"
+    replace_preview: true
     word: true
+    trigger: ";akcf"
     replace: "AK Child & Family"
 
-  - trigger: ";acbhc"
+  - name: "Alaska Commission for Behavioral Health Certification"
+    label: "Alaska Commission for Behavioral Health Certification"
+    replace_preview: true
     word: true
+    trigger: ";acbhc"
     replace: "Alaska Commission for Behavioral Health Certification"
 
-  - trigger: ";acoa"
+  - name: "Alaska Correctional Officers Assocation"
+    label: "Alaska Correctional Officers Assocation"
+    replace_preview: true
     word: true
+    trigger: ";acoa"
     replace: "Alaska Correctional Officers Assocation"
 
-  - trigger: ";afs"
+  - name: "Alaska Family Services"
+    label: "Alaska Family Services"
+    replace_preview: true
     word: true
+    trigger: ";afs"
     replace: "Alaska Family Services"
 
-  - trigger: ";ahf"
+  - name: "Alaska Humanities Forum"
+    label: "Alaska Humanities Forum"
+    replace_preview: true
     word: true
+    trigger: ";ahf"
     replace: "Alaska Humanities Forum"
 
-  - trigger: ";arg"
+  - name: "Alaska Rock Gym"
+    label: "Alaska Rock Gym"
+    replace_preview: true
     word: true
+    trigger: ";arg"
     replace: "Alaska Rock Gym"
 
-  - trigger: ";anai"
+  - name: "Anchorage Neurosurgical Associates, Inc."
+    label: "Anchorage Neurosurgical Associates, Inc."
+    replace_preview: true
     word: true
-    replace: "Anchorage Neurosurgical Assocatiates, Inc."
+    trigger: ";anai"
+    replace: "Anchorage Neurosurgical Associates, Inc."
 
-  - trigger: ";ao"
+  - name: "Anchorage Opera"
+    label: "Anchorage Opera"
+    replace_preview: true
     word: true
+    trigger: ";ao"
     replace: "Anchorage Opera"
 
-  - trigger: ";aos"
+  - name: "Arctic Oral Surgery"
+    label: "Arctic Oral Surgery"
+    replace_preview: true
     word: true
+    trigger: ";aos"
     replace: "Arctic Oral Surgery"
 
-  - trigger: ";bc"
+  - name: "Bauer Construction"
+    label: "Bauer Construction"
+    replace_preview: true
     word: true
+    trigger: ";bc"
     replace: "Bauer Construction"
 
-  - trigger: ";boa"
+  - name: "Bayshore Owners Association"
+    label: "Bayshore Owners Association"
+    replace_preview: true
     word: true
-    replace: "Bayshore Owners Assocation"
+    trigger: ";boa"
+    replace: "Bayshore Owners Association"
 
-  - trigger: ";bmm"
+  - name: "Beacon Media + Marketing"
+    label: "Beacon Media + Marketing"
+    replace_preview: true
     word: true
+    trigger: ";bmm"
     replace: "Beacon Media + Marketing"
 
-  - trigger: ";cfa"
+  - name: "Camp Fire Alaska"
+    label: "Camp Fire Alaska"
+    replace_preview: true
     word: true
+    trigger: ";cfa"
     replace: "Camp Fire Alaska"
 
-  - trigger: ";cg"
+  - name: "Cashion Gilmore"
+    label: "Cashion Gilmore"
+    replace_preview: true
     word: true
+    trigger: ";cg"
     replace: "Cashion Gilmore"
 
-  - trigger: ";ccs"
+  - name: "CCS Early Learning"
+    label: "CCS Early Learning"
+    replace_preview: true
     word: true
+    trigger: ";ccs"
     replace: "CCS Early Learning"
 
-  - trigger: ";crmc"
+  - name: "Cross Roads Medical Center"
+    label: "Cross Roads Medical Center"
+    replace_preview: true
     word: true
+    trigger: ";crmc"
     replace: "Cross Roads Medical Center"
 
-  - trigger: ";dpt"
+  - name: "Deeptree"
+    label: "Deeptree"
+    replace_preview: true
     word: true
+    trigger: ";dpt"
     replace: "Deeptree"
 
-  - trigger: ";dda"
+  - name: "Denali Daniels + Associates"
+    label: "Denali Daniels + Associates"
+    replace_preview: true
     word: true
+    trigger: ";dda"
     replace: "Denali Daniels + Associates"
 
-  - trigger: ";dc"
+  - name: "Dimond Center"
+    label: "Dimond Center"
+    replace_preview: true
     word: true
+    trigger: ";dc"
     replace: "Dimond Center"
 
-  - trigger: ";ee"
+  - name: "Eagle Enterprises, Inc."
+    label: "Eagle Enterprises, Inc."
+    replace_preview: true
     word: true
+    trigger: ";ee"
     replace: "Eagle Enterprises, Inc."
 
-  - trigger: ";flcc"
+  - name: "Farm Loop Christian Center"
+    label: "Farm Loop Christian Center"
+    replace_preview: true
     word: true
+    trigger: ";flcc"
     replace: "Farm Loop Christian Center"
 
-  - trigger: ";fb"
+  - name: "Fireside Books"
+    label: "Fireside Books"
+    replace_preview: true
     word: true
+    trigger: ";fb"
     replace: "Fireside Books"
 
-  - trigger: ";gsak"
+  - name: "Girl Scouts of Alaska"
+    label: "Girl Scouts of Alaska"
+    replace_preview: true
     word: true
+    trigger: ";gsak"
     replace: "Girl Scouts of Alaska"
 
-  - trigger: ";gptlhb"
+  - name: "Great Plains Tribal Leaders Health Board"
+    label: "Great Plains Tribal Leaders Health Board"
+    replace_preview: true
     word: true
+    trigger: ";gptlhb"
     replace: "Great Plains Tribal Leaders Health Board"
 
-  - trigger: ";ifhc"
+  - name: "Indian Family Health Clinic"
+    label: "Indian Family Health Clinic"
+    replace_preview: true
     word: true
+    trigger: ";ifhc"
     replace: "Indian Family Health Clinic"
 
-  - trigger: ";knom"
+  - name: "Knom Radio Mission, Inc."
+    label: "Knom Radio Mission, Inc."
+    replace_preview: true
     word: true
+    trigger: ";knom"
     replace: "Knom Radio Mission, Inc."
 
-  - trigger: ";lc"
+  - name: "Larson Chiropractic"
+    label: "Larson Chiropractic"
+    replace_preview: true
     word: true
+    trigger: ";lc"
     replace: "Larson Chiropractic"
 
-  - trigger: ";nwf"
+  - name: "North Wend Foods, Inc."
+    label: "North Wend Foods, Inc."
+    replace_preview: true
     word: true
+    trigger: ";nwf"
     replace: "North Wend Foods, Inc."
 
-  - trigger: ";orers"
+  - name: "O'Banion Real Estate & Relocation Services"
+    label: "O'Banion Real Estate & Relocation Services"
+    replace_preview: true
     word: true
+    trigger: ";orers"
     replace: "O'Banion Real Estate & Relocation Services"
 
-  - trigger: ";opc"
+  - name: "Optimum Performance Chiropractic"
+    label: "Optimum Performance Chiropractic"
+    replace_preview: true
     word: true
+    trigger: ";opc"
     replace: "Optimum Performance Chiropractic"
 
-  - trigger: ";pt"
+  - name: "Pango Technology"
+    label: "Pango Technology"
+    replace_preview: true
     word: true
+    trigger: ";pt"
     replace: "Pango Technology"
 
-  - trigger: ";ppos"
+  - name: "Pioneer Peak Orthopedic Surgery"
+    label: "Pioneer Peak Orthopedic Surgery"
+    replace_preview: true
     word: true
+    trigger: ";ppos"
     replace: "Pioneer Peak Orthopedic Surgery"
 
-  - trigger: ";ssmh"
+  - name: "Samuel Simmonds Memorial Hospital"
+    label: "Samuel Simmonds Memorial Hospital"
+    replace_preview: true
     word: true
+    trigger: ";ssmh"
     replace: "Samuel Simmonds Memorial Hospital"
 
-  - trigger: ";sfa"
+  - name: "Steve Fishback Architecture"
+    label: "Steve Fishback Architecture"
+    replace_preview: true
     word: true
+    trigger: ";sfa"
     replace: "Steve Fishback Architecture"
 
-  - trigger: ";al"
+  - name: "The American Legion"
+    label: "The American Legion"
+    replace_preview: true
     word: true
+    trigger: ";al"
     replace: "The American Legion"
 
-  - trigger: ";tes"
+  - name: "The Eureka Space"
+    label: "The Eureka Space"
+    replace_preview: true
     word: true
+    trigger: ";tes"
     replace: "The Eureka Space"
 
-  - trigger: ";ttcd"
+  - name: "Tyonek Tribal Conservation District"
+    label: "Tyonek Tribal Conservation District"
+    replace_preview: true
     word: true
+    trigger: ";ttcd"
     replace: "Tyonek Tribal Conservation District"
 
-  - trigger: ";uwm"
+  - name: "United Way of Mat-Su"
+    label: "United Way of Mat-Su"
+    replace_preview: true
     word: true
+    trigger: ";uwm"
     replace: "United Way of Mat-Su"
 
-  - trigger: ";vfj"
+  - name: "Victims for Justice"
+    label: "Victims for Justice"
+    replace_preview: true
     word: true
+    trigger: ";vfj"
     replace: "Victims for Justice"
 
-  - trigger: ";ywca"
+  - name: "YWCA Alaska"
+    label: "YWCA Alaska"
+    replace_preview: true
     word: true
+    trigger: ";ywca"
     replace: "YWCA Alaska"
