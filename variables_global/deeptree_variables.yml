@@ -1,0 +1,32 @@
+# Espanso Match File
+
+# Setting Static Global Variables
+global_vars:
+  # Full name
+  - label: Full Name
+    name: myname
+    comment: "This is generated from the editable variables to create the full name."
+    type: echo
+    params:
+      echo: "{{myfirst}} {{mylast}}"
+
+  - label: Today's Date
+    name: today
+    comment: "This is used for creating today's date that will be used in other expansions."
+    type: date
+    params:
+      format: "%Y-%m-%d"
+
+  - label: Help Desk Email
+    name: helpdesk_email
+    comment: "This is used for the helpdesk email in other expansions."
+    type: echo
+    params:
+      echo: helpdesk@deeptree.tech
+
+  - label: Deeptree Help Desk Phone Number
+    name: "dthelp"
+    comment: "This is used for the helpdesk phone number in other expansions."
+    type: echo
+    params:
+      echo: "907.206.2373"

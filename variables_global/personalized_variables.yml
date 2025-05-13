@@ -1,0 +1,31 @@
+# Espanso Match File
+
+# Setting Editable Global Variables
+global_vars:
+  - label: First Name
+    name: myfirst
+    comment: "Input your first name in the 'echo' field."
+    type: echo
+    params:
+      echo: Peter
+
+  - label: Last Name
+    name: mylast
+    comment: "Input your last name in the 'echo' field."
+    type: echo
+    params:
+      echo: House
+
+  - label: Personal Email
+    name: myemail
+    comment: "Input your personal email in the 'echo' field."
+    type: echo
+    params:
+      echo: example@gmail.com
+
+  - label: Work Email
+    name: workemail
+    comment: "Input your work email in the 'echo' field."
+    type: echo
+    params:
+      echo: peter.house@deeptree.tech
