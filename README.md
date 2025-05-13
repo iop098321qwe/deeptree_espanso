@@ -23,7 +23,8 @@ In the Espanso configuration folder, navigate to the `variables_global` director
 To adjust the configurations, open the `personalized_variables.yml` file in a
 text editor. Replace the placeholder values with your own.
 
-For example, there is an entry for your First Name, which you would then replace with your first name.
+For example, there is an entry for your First Name, which you would then
+replace with your first name.
 
 In the repository, you will see:
 
@@ -33,7 +34,7 @@ In the repository, you will see:
   comment: "Input your first name in the 'echo' field."
   type: echo
   params:
-    echo: Peter
+    echo: firstname
 ```
 
 To personalize it for `Dallas`, you would need to change it to:
@@ -54,4 +55,18 @@ Continue to do this for each of the variables in the
 to help you understand what it is for, what to fill in, and where to fill it
 in.
 
+## Give it a Try
+
+Open up a text editor or enter into a text field in the browser.
+
+Type `;first` and you should see your first name appear in place of the trigger.
+
 ## Expansion Descriptions
+
+There are a few different expansions that are available to you.
+
+The first one is an expansion for client names. This allows the user to type in
+an acronym and have it expand to the full name of the client.
+
+For example, for `Indian Family Health Clinic`, you would type `;ifhc` and it
+would expand to the full client name.

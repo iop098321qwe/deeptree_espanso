@@ -7,14 +7,14 @@ global_vars:
     comment: "Input your first name in the 'echo' field."
     type: echo
     params:
-      echo: Peter
+      echo: firstname
 
   - label: Last Name
     name: mylast
     comment: "Input your last name in the 'echo' field."
     type: echo
     params:
-      echo: House
+      echo: lastname
 
   - label: Personal Email
     name: myemail
@@ -28,11 +28,4 @@ global_vars:
     comment: "Input your work email in the 'echo' field."
     type: echo
     params:
-      echo: peter.house@deeptree.tech
-
-  - label: Work Title
-    name: title
-    comment: "Input your work title in the 'echo' field."
-    type: echo
-    params:
-      echo: "Rapid Response Helpdesk Technician"
+      echo: example.email@example.test
