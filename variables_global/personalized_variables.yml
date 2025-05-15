@@ -29,3 +29,10 @@ global_vars:
     type: echo
     params:
       echo: peter.house@deeptree.tech
+
+  - label: Work Title
+    name: title
+    comment: "Input your work title in the 'echo' field."
+    type: echo
+    params:
+      echo: "Rapid Response Helpdesk Technician"
