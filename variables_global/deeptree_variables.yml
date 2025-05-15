@@ -30,3 +30,10 @@ global_vars:
     type: echo
     params:
       echo: "907.206.2373"
+
+  - label: Deeptree Help Desk Phone Number
+    name: dthelp
+    comment: "This is used for the helpdesk phone number in other expansions."
+    type: echo
+    params:
+      echo: "907.206.2373"
