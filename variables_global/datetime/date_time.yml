@@ -1,0 +1,84 @@
+# Espanso Match File
+
+# Print the current date
+matches:
+  - trigger: ;now
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
+
+  - triggers: [;fullnow, ;ddt]
+    word: true
+    vars:
+      - name: time
+        type: match
+        params:
+          trigger: ";now"
+      - name: day
+        type: match
+        params:
+          trigger: ";day"
+      - name: date
+        type: match
+        params:
+          trigger: ";date"
+    replace: "{{time}} {{day}} {{date}}"
+
+  # Print the current date in ISO 8861 format
+  - trigger: ";date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Print the disabled date in ISO 8861 format
+  - trigger: ";disdate"
+    replace: "Disableed {{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Write a full timestamp with date and time
+  - trigger: ";datime"
+    replace: "{{timestamp}}"
+    vars:
+      - name: timestamp
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
+
+  # Create a match for daily notes
+  - trigger: ";daily"
+    replace: "{{daily}}"
+    vars:
+      - name: daily
+        type: date
+        params:
+          format: "%Y-%m-%d-dallas.md"
+
+  # Print the current day of the week
+  - trigger: ";day"
+    replace: "{{current_day}}"
+    propagate_case: true
+    vars:
+      - name: current_day
+        type: date
+        params:
+          format: "%A"
+
+  # Print the current day of the week
+  - triggers: [";daydate", ";today"]
+    replace: "{{current_day}}"
+    propagate_case: true
+    vars:
+      - name: current_day
+        type: date
+        params:
+          format: "%A %Y-%m-%d"

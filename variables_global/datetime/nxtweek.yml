@@ -1,0 +1,76 @@
+# Espanso Match File
+
+# nxtweek Matches
+
+matches:
+  # Get the same weekday from next week in ISO 8601 format
+  - trigger: ";nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'next week' +'%Y-%m-%d'"
+
+  # Get the same weekday from 2 weeks ahead in ISO 8601 format
+  - trigger: ";2nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '2 weeks' +'%Y-%m-%d'"
+
+  # Get the same weekday from 3 weeks ahead in ISO 8601 format
+  - trigger: ";3nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '3 weeks' +'%Y-%m-%d'"
+
+  # Get the same weekday from 4 weeks ahead in ISO 8601 format
+  - trigger: ";4nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '4 weeks' +'%Y-%m-%d'"
+
+  # Get the same weekday from 5 weeks ahead in ISO 8601 format
+  - trigger: ";5nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '5 weeks' +'%Y-%m-%d'"
+
+  # Get the same weekday from 6 weeks ahead in ISO 8601 format
+  - trigger: ";6nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '6 weeks' +'%Y-%m-%d'"
+
+  # Get the same weekday from 7 weeks ahead in ISO 8601 format
+  - trigger: ";7nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '7 weeks' +'%Y-%m-%d'"
+
+  # Get the same weekday from 8 weeks ahead in ISO 8601 format
+  - trigger: ";8nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '8 weeks' +'%Y-%m-%d'"

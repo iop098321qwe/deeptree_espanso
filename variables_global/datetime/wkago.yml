@@ -1,0 +1,76 @@
+# Espanso Match File
+
+# wkago Matches
+
+matches:
+  # Get the same weekday from last week in ISO 8601 format
+  - trigger: ";wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'last week' +'%Y-%m-%d'"
+
+  # Get the same weekday from 2 weeks ago in ISO 8601 format
+  - trigger: ";2wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '2 weeks ago' +'%Y-%m-%d'"
+
+  # Get the same weekday from 3 weeks ago in ISO 8601 format
+  - trigger: ";3wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '3 weeks ago' +'%Y-%m-%d'"
+
+  # Get the same weekday from 4 weeks ago in ISO 8601 format
+  - trigger: ";4wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '4 weeks ago' +'%Y-%m-%d'"
+
+  # Get the same weekday from 5 weeks ago in ISO 8601 format
+  - trigger: ";5wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '5 weeks ago' +'%Y-%m-%d'"
+
+  # Get the same weekday from 6 weeks ago in ISO 8601 format
+  - trigger: ";6wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '6 weeks ago' +'%Y-%m-%d'"
+
+  # Get the same weekday from 7 weeks ago in ISO 8601 format
+  - trigger: ";7wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '7 weeks ago' +'%Y-%m-%d'"
+
+  # Get the same weekday from 8 weeks ago in ISO 8601 format
+  - trigger: ";8wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '8 weeks ago' +'%Y-%m-%d'"

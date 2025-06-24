@@ -1,0 +1,10 @@
+# Espanso Match File
+
+# Deeptree Phone Numbers
+global_vars:
+  - name: "dthelp"
+    label: Deeptree Help Desk Phone Number
+    comment: "This is the Deeptree Main Help Desk phone number"
+    type: echo
+    params:
+      echo: "907.206.2373"

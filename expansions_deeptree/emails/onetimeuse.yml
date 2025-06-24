@@ -1,0 +1,9 @@
+# Espanso Match File
+
+# One Time Use Link Explanation
+matches:
+  - trigger: ";otu"
+    label: One Time Use Link
+    comment: "This is an expansion to explain how onetimesecret.com's one-time links work in an email."
+    replace: |-
+      Please note that this is a one-time use only link. You will not be able to view the content after navigating away from the page. Please note the information at the time of opening.

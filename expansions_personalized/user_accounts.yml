@@ -1,0 +1,115 @@
+# espanso match file
+
+##############################################################################
+# General User
+##############################################################################
+
+# General new user, disabled user, and employee changes
+matches:
+  # General new user
+  - trigger: ";newuser"
+    replace: |-
+      Completed:
+      Created the users domain account(s)
+      Created the users Email account(s)
+      Added the user(s) to groups
+      Sent credentials securely via encrypted Email
+
+      Next Steps:
+      Complete
+
+  # General disable user
+  - trigger: ";disuser"
+    replace: |-
+      Completed:
+      Disabled the users domain account(s)
+      Disabled the users Email account(s)
+      Documented the users groups
+
+      Next Steps:
+      Complete
+
+  # General change user
+  - trigger: ";chuser"
+    replace: |-
+      Completed:
+      Changed the users domain account(s)
+      Changed the users Email account(s)
+
+      Next Steps:
+      Complete
+
+  # General new user
+  - trigger: ";pass"
+    replace: |-
+      Completed:
+      Changed the password for the user(s).
+      Assisted with signing back in.
+      $|$
+
+      Next Steps:
+      Complete
+
+  ##############################################################################
+  # Camp Fire Alaska
+  ##############################################################################
+
+  # Set up list for CFA disabled account(s)
+  - trigger: ";newcfa"
+    replace: |-
+      Completed:
+      Created the users domain account(s)
+      Created the users Email account(s)
+      Added the user(s) to groups
+      Sent credentials securely via encrypted Email
+      Created user(s) contact in AutoTask
+      Completed the task in BambooHR
+
+      Next Steps:
+      Complete
+
+  # Disable list for CFA disabled account(s)
+  - trigger: ";discfa"
+    replace: |-
+      Completed:
+      Disabled the users domain account(s)
+      Disabled the users Email account(s)
+      Documented the users groups
+      Completed the task in BambooHR
+
+      Next Steps:
+      Complete
+
+  ##############################################################################
+  # Indian Family Health Clinic
+  ##############################################################################
+
+  # Set up list for IFHC disabled account(s)
+  - trigger: ";newifhc"
+    replace: |-
+      Completed:
+      Created the users domain account(s)
+      Created the users Email account(s)
+      Created the users Profile folder
+      Added the user(s) to groups
+      Ran the Sophos AD Sync utility
+      Created the IFHC Welcome Guide for the new user(s)
+      Added the Welcome Guide to James Winters' Profile Folder
+      Added the Welcome Guide to the new users Profile Folder
+      Sent James Winters a confirmation email
+
+      Next Steps:
+      Complete
+
+  # Disable list for IFHC disabled account(s)
+  - trigger: ";disifhc"
+    replace: |-
+      Completed:
+      Disabled the users domain account(s)
+      Disabled the users Email account(s)
+      Removed access to the users Profile folder
+      Removed the user(s) from groups
+      Sent James Winters a confirmation email
+
+      Next Steps:
+      Complete

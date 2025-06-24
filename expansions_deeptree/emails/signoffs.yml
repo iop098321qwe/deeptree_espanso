@@ -1,0 +1,24 @@
+# espanso match file
+
+# Dynamically Created Signoffs for Emails
+matches:
+  - trigger: ";signoff"
+    label: Random Signoff
+    comment: "This will output a randomly selected signoff from a pre-selected list."
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - "Thank you,"
+            - "Yours truly,"
+            - "Best regards,"
+            - "Respectfully,"
+            - "Best wishes,"
+            - "Many thanks,"
+            - "With gratitude,"
+            - "Cordially,"
+            - "With best regards,"
+            - "Thank you for your time,"
+            - "With respect,"

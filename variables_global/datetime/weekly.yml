@@ -1,0 +1,108 @@
+# Espanso Match File
+
+# Print the current date
+matches:
+  # Espanso expansion to display the week range from Monday to Sunday
+  - trigger: ";wkly"
+    replace: "{{week_start}}_-_{{week_end}}"
+    vars:
+      # Compute the correct Monday for the current week.
+      # If today is Monday (date +%u returns 1), use today's date;
+      # otherwise, use the previous Monday.
+      - name: week_start
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              # Today is Monday; output today's date.
+              date '+%Y-%m-%d'
+            else
+              # Today is not Monday; output last Monday's date.
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+
+      # Compute the Sunday of the current week by adding 6 days to week_start.
+      - name: week_end
+        type: shell
+        params:
+          cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'" # Monday +6 days = Sunday
+          trim: true
+
+  # Print the week range from Monday to Sunday for the NEXT week
+  - trigger: ";nxtwkly"
+    replace: "{{week_start}}_-_{{week_end}}"
+    vars:
+      # Get the Monday of the next week.
+      - name: week_start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday' '+%Y-%m-%d'"
+          trim: true
+
+      # Compute the corresponding Sunday by adding 6 days.
+      - name: week_end
+        type: shell
+        params:
+          cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  # Output the date range for the last week in the format "YYYY-MM-DD_-_YYYY-MM-DD"
+  - trigger: ";lstwkly"
+    replace: "{{week_start}}_-_{{week_end}}"
+    vars:
+      # Compute the current week’s Monday as before.
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+
+      # Get last week's Monday by subtracting 7 days from the current week’s Monday.
+      - name: week_start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -7 days' '+%Y-%m-%d'"
+          trim: true
+
+      # Compute last week's Sunday by adding 6 days.
+      - name: week_end
+        type: shell
+        params:
+          cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  # Output the date range for the last week in the format "YYYY-MM-DD_-_YYYY-MM-DD"
+  - trigger: ";2lstwkly"
+    replace: "{{week_start}}_-_{{week_end}}"
+    vars:
+      # Compute the current week’s Monday as before.
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+
+      # Get last week's Monday by subtracting 7 days from the current week’s Monday.
+      - name: week_start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -14 days' '+%Y-%m-%d'"
+          trim: true
+
+      # Compute last week's Sunday by adding 6 days.
+      - name: week_end
+        type: shell
+        params:
+          cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
+          trim: true

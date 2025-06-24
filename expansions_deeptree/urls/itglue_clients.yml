@@ -1,0 +1,73 @@
+# Espanso Match File
+
+# URL's
+matches:
+  - trigger: ";itgdeeptree"
+    label: Deeptree ITGlue Site URL
+    comment: "Expansion to output the Deeptree ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/1571834 "
+
+  - trigger: ";itgakcf"
+    label: AK Child & Family ITGlue Site URL
+    comment: "Expansion to output the AK Child & Family ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/7995058 "
+
+  - trigger: ";itgacoa"
+    label: Alaska Correctional Officers Association ITGlue Site URL
+    comment: "Expansion to output the Alaska Correctional Officers Association ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/1836892 "
+
+  - trigger: ";itgafs"
+    label: Alaska Family Services ITGlue Site URL
+    comment: "Expansion to output the Alaska Family Services ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/4290158 "
+
+  - trigger: ";itgcfa"
+    label: Camp Fire Alaska ITGlue Site URL
+    comment: "Expansion to output the Camp Fire Alaska ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/5945616 "
+
+  - trigger: ";itgccs"
+    label: CCS Early Learning ITGlue Site URL
+    comment: "Expansion to output the CCS Early Learning ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/5945921 "
+
+  - trigger: ";itgbmm"
+    label: Beacon Media + Marketing ITGlue Site URL
+    comment: "Expansion to output the Beacon Media + Marketing ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/5673199 "
+
+  - trigger: ";itgifhc"
+    label: Indian Family Health Clinic ITGlue Site URL
+    comment: "Expansion to output the Indian Family Health Clinic ITGlue Site URL."
+    replace: "https://deeptree.itglue.com/3087544 "
+
+  # - trigger: ";itgdeeptree"
+  #   label: Deeptree ITGlue Site URL
+  #   comment: "Expansion to output the Deeptree ITGlue Site URL."
+  #   replace: "https://deeptree.itglue.com/1571834 "
+
+  # - trigger: ";itgdeeptree"
+  #   label: Deeptree ITGlue Site URL
+  #   comment: "Expansion to output the Deeptree ITGlue Site URL."
+  #   replace: "https://deeptree.itglue.com/1571834 "
+
+  # - trigger: ";itgdeeptree"
+  #   label: Deeptree ITGlue Site URL
+  #   comment: "Expansion to output the Deeptree ITGlue Site URL."
+  #   replace: "https://deeptree.itglue.com/1571834 "
+
+  # - trigger: ";itgdeeptree"
+  #   label: Deeptree ITGlue Site URL
+  #   comment: "Expansion to output the Deeptree ITGlue Site URL."
+  #   replace: "https://deeptree.itglue.com/1571834 "
+
+  # - trigger: ";itgdeeptree"
+  #   label: Deeptree ITGlue Site URL
+  #   comment: "Expansion to output the Deeptree ITGlue Site URL."
+  #   replace: "https://deeptree.itglue.com/1571834 "
+
+  # - trigger: ";itgdeeptree"
+  #   label: Deeptree ITGlue Site URL
+  #   comment: "Expansion to output the Deeptree ITGlue Site URL."
+  #   replace: "https://deeptree.itglue.com/1571834 "

@@ -1,0 +1,33 @@
+# Espanso Match File
+
+# Matches for Triage Ticket Notes.
+matches:
+  # Create a match for Triage - Needs Scheduled
+  - trigger: ";trins"
+    replace: |-
+      Completed:
+      Reviewing the ticket information.
+      Formatting the ticket to match ticket templates.
+      Assigning the ticket to a technician.
+      Sending the first response (if required) to the client.
+      Setting the status to 'Needs Scheduled'.
+      Sending notification (if required) to the assigned technician.
+
+      Next Steps:
+      'Needs Scheduled'
+      $|$
+
+  # Create a match for Triage - Waiting Customer
+  - trigger: ";triwc"
+    replace: |-
+      Completed:
+      Reviewing the ticket information.
+      Formatting the ticket to match ticket templates.
+      Assigning the ticket to a technician.
+      Sending the first response (if required) to the client.
+      Setting the status to 'Needs Scheduled'.
+      Sending notification (if required) to the assigned technician.
+
+      Next Steps:
+      'Waiting Customer'
+      $|$

@@ -1,0 +1,38 @@
+# Espanso Match File
+
+# URL's
+matches:
+  - trigger: ";exchifhc"
+    label: Indian Family Health Clinic Exchange Site URL
+    comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+    replace: "https://mail.ifhcgf.org/ecp "
+
+  # - trigger: ";exchifhc"
+  #   label: Indian Family Health Clinic Exchange Site URL
+  #   comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+  #   replace: "https://mail.ifhcgf.org/ecp "
+
+  # - trigger: ";exchifhc"
+  #   label: Indian Family Health Clinic Exchange Site URL
+  #   comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+  #   replace: "https://mail.ifhcgf.org/ecp "
+
+  # - trigger: ";exchifhc"
+  #   label: Indian Family Health Clinic Exchange Site URL
+  #   comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+  #   replace: "https://mail.ifhcgf.org/ecp "
+
+  # - trigger: ";exchifhc"
+  #   label: Indian Family Health Clinic Exchange Site URL
+  #   comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+  #   replace: "https://mail.ifhcgf.org/ecp "
+
+  # - trigger: ";exchifhc"
+  #   label: Indian Family Health Clinic Exchange Site URL
+  #   comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+  #   replace: "https://mail.ifhcgf.org/ecp "
+
+  # - trigger: ";exchifhc"
+  #   label: Indian Family Health Clinic Exchange Site URL
+  #   comment: "Expansion to output the Indian Family Health Clinic Exchange Site URL."
+  #   replace: "https://mail.ifhcgf.org/ecp "
