@@ -34,7 +34,7 @@ The subject should be concise (preferably under 50 characters). Provide addition
 
 ## Pull Request Guidelines
 
-Pull request titles must use the same `type(scope?): subject` format as commits. Keep the description brief and mention any test results in the body.
+Pull request titles must use the same `type(scope?): subject` format as commits. The body should start with a short summary in the same style and include any test results.
 
 ## Testing and Validation
 
