@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.1](https://github.com/iop098321qwe/deeptree_espanso/compare/v1.1.0...v1.1.1) (2025-06-25)
+
+
+### Bug Fixes
+
+* **names:** remove replace_preview lines ([243355b](https://github.com/iop098321qwe/deeptree_espanso/commit/243355b9bb9d365b24df7194f4ae75fa820d07b4))
+
 ## 1.1.0 (2025-06-25)
 
 
