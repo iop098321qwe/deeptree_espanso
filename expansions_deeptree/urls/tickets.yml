@@ -1,0 +1,13 @@
+# Espanso Match File
+
+# URL's
+matches:
+  - trigger: ;inctick
+    label: New Incident Ticket
+    comment: "Expansion to output the new incident Datto RMM ticket URL."
+    replace: "https://ww15.autotask.net/Mvc/ServiceDesk/TicketNew.mvc/Create?categoryId=108"
+
+  - trigger: ;reqtick
+    label: New Incident Ticket
+    comment: "Expansion to output the new request Datto RMM ticket URL."
+    replace: "https://ww15.autotask.net/Mvc/ServiceDesk/TicketNew.mvc/Create?categoryId=109"

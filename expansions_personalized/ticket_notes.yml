@@ -1,0 +1,111 @@
+# Espanso Match File
+
+# Matches for Ticket Notes.
+matches:
+  # Create a match for pasting the temporary password.
+  - trigger: ";tp"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+    replace: |-
+      Temporary Password: {{clipb}}
+      $|$
+
+  # Create a match for client verbally approving closure of ticket.
+  - regex: ";va(?P<person>.*)\\."
+    vars:
+      - name: complete
+        type: match
+        params:
+          trigger: ";nscom"
+    replace: |-
+      {{person}} expressed satisfactory completion and verbally approved the closure of the ticket.
+
+      {{complete}}
+
+    # Create a match for "Completed:".
+  - trigger: ";cmp"
+    replace: |-
+      Completed:
+      $|$
+
+    # Create a match for "Acknowledged".
+  - trigger: ";ack"
+    replace: |-
+      This ticket was reviewed and acknowledged and may be closed as complete at this time.
+      No further action is necessary.
+
+  # Create a match for Disk Space Remediation
+  - trigger: ";disk"
+    form: |-
+      Completed:
+      Connected to the workstation to perform disk space recovery and maintenance tasks.
+      Installed/verified installation of WizTree.
+      Installed/verified installation PatchCleaner.
+      Installed/verified installation BCUninstaller.
+      Ran DISM to perform system cleanup and repair.
+      Executed the built-in Disk Cleanup utility to remove temporary and cached files.
+      Used WizTree to identify and delete large or unnecessary files occupying excessive space.
+      Running PatchCleaner to remove orphaned installation files.
+      Utilized BCUninstaller to remove outdated or unused applications.
+      Reclaimed approximately [[percentage]]% of total disk space.
+
+      Next Steps:
+      'Complete'
+      $|$
+
+  # Create a match for SSL certificates
+  - trigger: ";cert"
+    replace: |-
+      Completed:
+      Verified certificate should auto-renew.
+
+      Next Steps:
+      'Complete'
+
+  # Create a match for Domain Renewal
+  - trigger: ";dom"
+    replace: |-
+      Completed:
+      Verified that the credit card is valid.
+      Verified that the domain is scheduled to renew.
+      Verified that the domain renewal is scheduled within the expiration date of the card.
+      There should be no known issues with the domain renewal.
+
+      Next Steps:
+      'Complete'
+      $|$
+
+  # Create a match for travel completion
+  - trigger: ";trav"
+    form: |-
+      Travel to/from [[place]] > Mileage = [[distance]] Miles
+      $|$
+
+  - regex: ";call(?P<person>.*)\\."
+    replace: |-
+      Successfully connected and spoke with {{person}} via a phone call.
+      $|$
+
+  - regex: ";vm(?P<person>.*)\\."
+    replace: |-
+      Called the phone number in the ticket and attempted to connect with {{person}}.
+      Unable to make contact via phone and left {{person}} a voicemail or note.
+      $|$
+
+  - regex: ";novm(?P<person>.*)\\."
+    replace: |-
+      Called the phone number in the ticket and attempted to connect with {{person}}.
+      Unable to make contact via phone and was unable to leave {{person}} a voicemail or note.
+      $|$
+
+  - regex: ";fue(?P<person>.*)\\."
+    vars:
+      - name: wc
+        type: match
+        params:
+          trigger: ";nswc"
+    replace: |-
+      Sending {{person}} a follow up email
+
+      {{wc}}

@@ -1,0 +1,70 @@
+# Espanso Match File
+
+# Matches for time differential ticket notes.
+matches:
+  # Create a match for Help.
+  # - trigger: ";helptd"
+  #   name: "Time Differential Ticket Notes Help"
+  #   replace: |-
+  #     Clearing Rocket.Chat and Email Notifications.
+  #     $|$
+
+  # Create a match for "Daily Standup Call".
+  - trigger: ";dst"
+    replace: |-
+      Daily Standup Meeting Call.
+      $|$
+
+    # Create a match for "Backup Auditing".
+  - trigger: ";bur"
+    replace: |-
+      Backup Auditing & Remediation.
+      $|$
+
+    # Create a match for "Ticket Follow Up".
+  - trigger: ";tfu"
+    replace: |-
+      Ticket Follow Up.
+      $|$
+
+    # Create a match for "Dispatch Coverage".
+  - trigger: ";dsp"
+    replace: |-
+      Coverage of Dispatch, Phones, and Triage Queue.
+      $|$
+
+    # Create a match for "Time Entry Catch Up".
+  - trigger: ";cute"
+    replace: |-
+      Time Entry Catch Up from Previous Tickets.
+      $|$
+
+    # Create a match for "Time Entry".
+  - trigger: ";tt"
+    replace: |-
+      Time Entry.
+      $|$
+
+    # Create a match for "Checking Emails".
+  - trigger: ";che"
+    replace: |-
+      Checking Emails.
+      $|$
+
+    # Create a match for "Daily Report".
+  - trigger: ";dr"
+    replace: |-
+      Daily Report.
+      $|$
+
+    # Create a match for "Updating Laptop".
+  - trigger: ";upd"
+    replace: |-
+      Updating Laptop.
+      $|$
+
+    # Create a match for "Clearing Notifications".
+  - trigger: ";clnoti"
+    replace: |-
+      Clearing Rocket.Chat and Email Notifications.
+      $|$

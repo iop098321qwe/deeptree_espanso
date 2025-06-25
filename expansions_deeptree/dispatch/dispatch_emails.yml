@@ -1,0 +1,148 @@
+# Espanso Match File
+
+# Dispatch Email Template Matches
+matches:
+  - regex: ";resreqapp(?P<person>.*)\\."
+    label: Request with Appointment Email Response Template
+    comment: "This is an email response template for a request with an appointment."
+    vars:
+      - name: quote
+        type: match
+        params:
+          trigger: ";quote"
+      - name: greeting
+        type: match
+        params:
+          trigger: ";greet"
+      - name: addongreeting
+        type: match
+        params:
+          trigger: ";addongreet"
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      Thank you for reaching out about this!
+      $|$
+      I have dispatched your ticket to a technician. They will review this and reach out with any comments, questions, or concerns when they can.
+
+      To better facilitate this request, it would be best if we could set an appointment to work with them on this. Do you have a time that we could schedule to connect with the technician? If you could let me know when you are available, I will do my best to set an appointment around your schedule!
+
+      If you do not want to work directly with the technician, do you have any deadlines for this request? If so, please let me know! That way, I can add this to the technician's worklist appropriately.
+
+      Thank you for your time!
+
+      {{myname}}
+      {{title}}
+      {{company}}
+      {{dthelp}}
+
+      ---
+      {{quote}}
+
+  # Set up replacement for first response request without appointment
+  - regex: ";resreqnoapp(?P<person>.*)\\."
+    label: Request without Appointment Email Response Template
+    comment: "This is an email response template for a request without an appointment."
+    vars:
+      - name: quote
+        type: match
+        params:
+          trigger: ";quote"
+      - name: greeting
+        type: match
+        params:
+          trigger: ";greet"
+      - name: addongreeting
+        type: match
+        params:
+          trigger: ";addongreet"
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      Thank you for reaching out about this!
+      $|$
+      I have dispatched your ticket to a technician. They will review this and reach out with any comments, questions, or concerns when they can.
+
+      Do you have any deadlines for this request? If so, please let me know! That way, I can add this to the technician's worklist appropriately.
+
+      Thank you for your time!
+
+      {{myname}}
+      {{title}}
+      {{company}}
+      {{dthelp}}
+
+      ---
+      {{quote}}
+
+  # Set up replacement for first response incident
+  - regex: ";resinc(?P<person>.*)\\."
+    label: Incidient Email Response Template
+    comment: "This is an email response template for an incident."
+    vars:
+      - name: quote
+        type: match
+        params:
+          trigger: ";quote"
+      - name: greeting
+        type: match
+        params:
+          trigger: ";greet"
+      - name: addongreeting
+        type: match
+        params:
+          trigger: ";addongreet"
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      Thank you for reaching out about this!
+      $|$
+      I have dispatched your ticket to a technician. They will review this and reach out with any comments, questions, or concerns when they can.
+
+      To better facilitate troubleshooting, it would be best if we could set an appointment to work with them on this. Do you have a time that we could schedule to connect with the technician? If you could let me know when you are available, I will do my best to set an appointment around your schedule!
+
+      Thank you for your time!
+
+      {{myname}}
+      {{title}}
+      {{company}}
+      {{dthelp}}
+
+      ---
+      {{quote}}
+
+  # Set up replacement for first response spam
+  - regex: ";resspam(?P<person>.*)\\."
+    label: Spam Email Response Template
+    comment: "This is an email response template for spam."
+    vars:
+      - name: quote
+        type: match
+        params:
+          trigger: ";quote"
+      - name: greeting
+        type: match
+        params:
+          trigger: ";greet"
+      - name: addongreeting
+        type: match
+        params:
+          trigger: ";addongreet"
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      Thank you for reaching out about this!
+
+      I have dispatched your ticket to a technician. They will review this and reach out with any comments, questions, or concerns when they can.
+
+      They will notify you if this is indeed spam and block the sender. If it is safe, they will reach out to confirm it is all right to access the email and its contents. Please let me know if you have any questions or concerns, and I will do my best to address them!
+
+      Thank you for your time!
+
+      {{myname}}
+      {{title}}
+      {{company}}
+      {{dthelp}}
+
+      ---
+      {{quote}}

@@ -1,0 +1,30 @@
+# espanso match file
+
+# Print the current date
+matches:
+  - trigger: ;quote
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - '"The only thing more expensive than hiring a professional is hiring an amateur." - Red Adair'
+            - '"If you define the problem correctly, you almost have the solution." - Steve Jobs'
+            - '"Every problem has a solution. You just have to be creative enough to find it." - Travis Kalanick'
+            - '"A problem well stated is a problem half solved." - Charles Kettering'
+            - '"Efficiency is doing things right; effectiveness is doing the right things." - Peter Drucker'
+            - '"Knowledge is of no value unless you put it into practice." - Anton Chekhov'
+            - '"To err is human, but to really foul things up you need a computer." - Paul R. Ehrlich'
+            - '"Cybersecurity is much more than a matter of IT." - Stephane Nappo'
+            - '"It’s not about having the right opportunities. It’s about handling the opportunities right." - Mark Cuban'
+            - '"An ounce of prevention is worth a pound of cure." - Benjamin Franklin'
+            - '"Quality means doing it right when no one is looking." - Henry Ford'
+            - '"Security is a process, not a product." - Bruce Schneier'
+            - '"Never trust a computer you can’t throw out a window." - Steve Wozniak'
+            - '"The most dangerous phrase in the language is, ‘We’ve always done it this way.’" - Grace Hopper'
+            - '"Computers are good at following instructions, but not at reading your mind." - Donald Knuth'
+            - '"Technology is best when it brings people together." - Matt Mullenweg'
+            - '"There are no problems, only solutions." - John Lennon'
+            - '"Progress is impossible without change, and those who cannot change their minds cannot change anything." - George Bernard Shaw'
+            - '"In IT, change is the only constant." - Common Industry Aphorism'

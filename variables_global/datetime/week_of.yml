@@ -1,0 +1,230 @@
+# espanso match file
+
+# Print the current date
+matches:
+  # Print the week range from Monday to Sunday for the current week
+  - trigger: ";wkof"
+    label: Current Week Of
+    comment: "CHANGEME"
+    replace: "week of {{week_start}} to {{week_end}}"
+    propagate_case: true
+    vars:
+      # Calculate week_start: Use today's date if it's Monday, otherwise use last Monday
+      - name: week_start
+        type: shell
+        params:
+          # The command uses the %u format: 1 = Monday, ... , 7 = Sunday.
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              # If today is Monday, output today's date.
+              date '+%Y-%m-%d'
+            else
+              # If today is not Monday, output the date of last Monday.
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+
+      # Calculate week_end: Use today's date if it's Sunday, otherwise use next Sunday
+      - name: week_end
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 7 ]; then
+              # If today is Sunday, output today's date.
+              date '+%Y-%m-%d'
+            else
+              # If today is not Sunday, output the date of next Sunday.
+              date -d 'next Sunday' '+%Y-%m-%d'
+            fi
+          trim: true
+
+  # Print the week range from Monday to Sunday for the last week
+  - trigger: ";lstwkof"
+    label: Last Week Of
+    comment: "CHANGEME"
+    replace: "week of {{previous_week_start}} to {{previous_week_end}}"
+    propagate_case: true
+    vars:
+      # First, compute the current week’s Monday using the same conditional logic.
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+
+      # Then, obtain the Monday of last week by subtracting 7 days.
+      - name: previous_week_start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -7 days' '+%Y-%m-%d'"
+          trim: true
+
+      # Calculate the Sunday of last week by adding 6 days to the Monday of last week.
+      - name: previous_week_end
+        type: shell
+        params:
+          cmd: "date -d '{{previous_week_start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";nxtwkof"
+    label: Next Week Of
+    comment: "CHANGEME"
+    replace: "week of {{next_week_start}} to {{next_week_end}}"
+    propagate_case: true
+    vars:
+      # Get the Monday of the next week using GNU date's unambiguous relative term.
+      - name: next_week_start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday' '+%Y-%m-%d'"
+          trim: true
+
+      # Compute the Sunday of next week by adding 6 days to next_week_start.
+      - name: next_week_end
+        type: shell
+        params:
+          cmd: "date -d '{{next_week_start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";2lstwkof"
+    label: Second Order Last Week Of
+    comment: "CHANGEME"
+    name: "Two Weeks Ago - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -14 days' '+%Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";2nxtwkof"
+    label: Second Order Next Week Of
+    comment: "CHANGEME"
+    name: "Two Weeks Ahead - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday +7 days' '+%Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";3lstwkof"
+    label: Third Order Last Week Of
+    comment: "CHANGEME"
+    name: "Three Weeks Ago - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -21 days' '+%Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";3nxtwkof"
+    label: Third Order Next Week Of
+    comment: "CHANGEME"
+    name: "Three Weeks Ahead - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday +14 days' '+%Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";4lstwkof"
+    label: Fourth Order Last Week Of
+    comment: "CHANGEME"
+    name: "Four Weeks Ago - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -28 days' '+%Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ";4nxtwkof"
+    label: Fourth Order Next Week Of
+    comment: "CHANGEME"
+    name: "Four Weeks Ahead - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday +21 days' '+%Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%Y-%m-%d'"
+          trim: true

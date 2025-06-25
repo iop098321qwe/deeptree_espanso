@@ -1,0 +1,301 @@
+# espanso match file
+
+# Replacement for "at the moment"
+matches:
+  - trigger: "atm"
+    propagate_case: true
+    word: true
+    replace: "at the moment"
+
+  - trigger: "afaik"
+    propagate_case: true
+    replace: "as far as I know"
+
+  - trigger: "icymi"
+    propagate_case: true
+    replace: "in case you missed it"
+
+  - trigger: "asap"
+    propagate_case: true
+    replace: "as soon as possible"
+
+  - trigger: "eta"
+    propagate_case: true
+    word: true
+    replace: "estimated time of arrival"
+
+  - trigger: "iirc"
+    propagate_case: true
+    replace: "if I recall correctly"
+
+  - trigger: "idk"
+    propagate_case: true
+    replace: "I don't know"
+
+  - trigger: "eod"
+    word: true
+    replace: "End of Day"
+
+  - trigger: "eom"
+    propagate_case: true
+    replace: "end of message"
+
+  - trigger: "mfa"
+    propagate_case: true
+    replace: "multi-factor authentication"
+
+  - trigger: "2fa"
+    propagate_case: true
+    replace: "two-factor authentication"
+
+  - trigger: "saas"
+    propagate_case: true
+    replace: "software as a service"
+
+  - trigger: "AD"
+    case_sensitive: true
+    word: true
+    replace: "Active Directory"
+
+  - trigger: "eol"
+    word: true
+    replace: "End of Life"
+
+  - trigger: "ui"
+    propagate_case: true
+    word: true
+    replace: "user interface"
+
+  - trigger: "ux"
+    propagate_case: true
+    word: true
+    replace: "User Experience"
+
+  - trigger: "oem"
+    word: true
+    replace: "Original Equipment Manufacturer"
+
+  - trigger: "vm"
+    propagate_case: true
+    word: true
+    replace: "virtual machine"
+
+  - trigger: "vms"
+    propagate_case: true
+    word: true
+    replace: "virtual machines"
+
+  - trigger: "ooo"
+    propagate_case: true
+    word: true
+    replace: "out of office"
+
+  - trigger: "wfh"
+    propagate_case: true
+    word: true
+    replace: "working from home"
+
+  - trigger: "ytd"
+    propagate_case: true
+    word: true
+    replace: "year to date"
+
+  - trigger: "tdb"
+    propagate_case: true
+    word: true
+    replace: "to be discussed/determined"
+
+  - trigger: "tba"
+    propagate_case: true
+    word: true
+    replace: "to be announced"
+
+  - trigger: "rfc"
+    propagate_case: true
+    word: true
+    replace: "request for change"
+
+  - trigger: "ftr"
+    propagate_case: true
+    word: true
+    replace: "for the record"
+
+  - trigger: "nda"
+    word: true
+    replace: "Non-Disclosure Agreement"
+
+  - trigger: "poc"
+    propagate_case: true
+    word: true
+    replace: "Point of Contact"
+
+  - trigger: "cob"
+    word: true
+    replace: "Close of Business"
+
+  - trigger: "lmk"
+    propagate_case: true
+    word: true
+    replace: "let me know"
+
+  - trigger: "tos"
+    word: true
+    replace: "Terms of Service"
+
+  - trigger: "m365"
+    word: true
+    replace: "Microsoft 365"
+
+  - trigger: "o365"
+    word: true
+    replace: "Office 365"
+
+  - trigger: "aad"
+    word: true
+    replace: "Azure Active Directory"
+
+  - trigger: "perms"
+    propagate_case: true
+    word: true
+    replace: "permissions"
+
+  - trigger: "creds"
+    propagate_case: true
+    word: true
+    replace: "credentials"
+
+  - trigger: "fyi"
+    propagate_case: true
+    word: true
+    replace: "for your information"
+
+  - trigger: "fysa"
+    propagate_case: true
+    word: true
+    replace: "for your situational awareness"
+
+  - trigger: "dc"
+    propagate_case: true
+    word: true
+    replace: "Domain Controller"
+
+  - trigger: "rq"
+    propagate_case: true
+    word: true
+    replace: "real quick"
+
+  - trigger: "afk"
+    propagate_case: true
+    word: true
+    replace: "away from keyboard"
+
+  - trigger: "appt"
+    propagate_case: true
+    word: true
+    replace: "appointment"
+
+  - trigger: "OU"
+    case_sensitive: true
+    word: true
+    replace: "Organizational Unit"
+
+  - trigger: "OUs"
+    case_sensitive: true
+    word: true
+    replace: "Organizational Units"
+
+  - trigger: "gpo"
+    propagate_case: true
+    word: true
+    replace: "Group Policy Object"
+
+  - trigger: "rn"
+    propagate_case: true
+    word: true
+    replace: "right now"
+
+  - trigger: "otw"
+    propagate_case: true
+    word: true
+    replace: "on the way"
+
+  - trigger: "tbh"
+    propagate_case: true
+    word: true
+    replace: "to be honest"
+
+  - trigger: "asf"
+    propagate_case: true
+    word: true
+    replace: "as fuck"
+
+  - trigger: "tysm"
+    propagate_case: true
+    word: true
+    replace: "thank you so much"
+
+  - trigger: "ty"
+    propagate_case: true
+    word: true
+    replace: "thank you"
+
+  - trigger: "ig"
+    propagate_case: true
+    word: true
+    replace: "I guess"
+
+  - trigger: "brt"
+    propagate_case: true
+    word: true
+    replace: "be right there"
+
+  - trigger: "qb"
+    propagate_case: true
+    word: true
+    replace: "QuickBooks"
+
+  - trigger: "os"
+    propagate_case: true
+    word: true
+    replace: "Operating System"
+
+  - trigger: "ofc"
+    propagate_case: true
+    word: true
+    replace: "of course"
+
+  # - trigger: ""
+  #   case_sensitive: true
+  #   propagate_case: true
+  #   word: true
+  #   replace: ""
+  #
+  # - trigger: ""
+  #   case_sensitive: true
+  #   propagate_case: true
+  #   word: true
+  #   replace: ""
+  #
+  # - trigger: ""
+  #   case_sensitive: true
+  #   propagate_case: true
+  #   word: true
+  #   replace: ""
+  #
+  # - trigger: ""
+  #   case_sensitive: true
+  #   propagate_case: true
+  #   word: true
+  #   replace: ""
+  #
+  # - trigger: ""
+  #   case_sensitive: true
+  #   propagate_case: true
+  #   word: true
+  #   replace: ""
+  #
+  # - trigger: ""
+  #   case_sensitive: true
+  #   propagate_case: true
+  #   word: true
+  #   replace: ""

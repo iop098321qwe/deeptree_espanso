@@ -1,0 +1,75 @@
+# espanso match file
+
+# Write a dynamic greeting for Emails for Montana and Alaska
+matches:
+  # # Greeting for Montana (MST)
+  # - regex: ";greetmt(?P<person>.*)\\."
+  #   replace: "{{greeting_montana}}"
+  #   vars:
+  #     - name: greeting_montana
+  #       type: shell
+  #       params:
+  #         cmd: |
+  #           hour=$(date +"%H")
+  #           if [ "$hour" -lt 12 ]; then
+  #             echo "Good morning {{person}},$|$"
+  #           elif [ "$hour" -lt 18 ]; then
+  #             echo "Good afternoon {{person}},$|$"
+  #           else
+  #             echo "Good evening {{person}},$|$"
+  #           fi
+  #
+  # # Greeting for Alaska (AKST)
+  # - regex: ";greetak(?P<person>.*)\\."
+  #   replace: "{{greeting_alaska}}"
+  #   vars:
+  #     - name: greeting_alaska
+  #       type: shell
+  #       params:
+  #         cmd: |
+  #           # Adjust to Alaska time (-2 hour from MST)
+  #           alaska_hour=$(date --date='-2 hour' +"%H")
+  #           if [ "$alaska_hour" -lt 12 ]; then
+  #             echo "Good morning {{person}},$|$"
+  #           elif [ "$alaska_hour" -lt 18 ]; then
+  #             echo "Good afternoon {{person}},$|$"
+  #           else
+  #             echo "Good evening {{person}},$|$"
+  #           fi
+
+  - trigger: ";greet"
+    label: Random Greeting
+    comment: "This will output a randomly selected greeting from a pre-selected list."
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - "Hello "
+            - "How are you "
+            - "Greetings "
+            - ""
+
+  - trigger: ";addongreet"
+    label: Add-On For Random Greeting
+    comment: "This will output a randomly selected add on for the random greeting from a pre-selected list."
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: random
+        params:
+          choices:
+            - " I hope this email finds you well,"
+            - " I hope you are doing well,"
+            - " a quick email for you,"
+            - " just reaching out with a quick email,"
+            - " I hope everything is going smoothly on your end,"
+            - " I hope you're having a productive week,"
+            - " I trust you're having a great day so far,"
+            - " just checking in with a brief update,"
+            - " hope all is well with you,"
+            - " just a brief message to touch base,"
+            - " hope your week is going well so far,"
+            - " I hope your day has been treating you kindly,"
+            - ""

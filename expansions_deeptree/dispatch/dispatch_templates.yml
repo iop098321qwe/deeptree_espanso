@@ -1,0 +1,41 @@
+# Espanso Match File
+
+# Ticket Template Matches
+matches:
+  - trigger: ";tmpreq"
+    label: Request Ticket Template
+    comment: "This is the template for a request ticket body."
+    replace: |-
+      The request is: $|$
+
+      The impact of effects:
+
+      Due date:
+
+      -After finishing the request, contact the client to verify the resolution is satisfactory and ask if there are any other issues you can start a ticket for.
+      -Provide documentation, recommendations, or training as needed on how to resolve or prevent future recurrence of similar issues.
+      -Update documentation if any system changes have been made.
+
+  # Set up replacement for incident template
+  - trigger: ";tmpinc"
+    label: Incident Ticket Template
+    comment: "This is the template for an incident ticket body."
+    replace: |-
+      The issue is: $|$ 
+
+      This happens when: 
+
+      This first started:
+
+      The impact of effects: 
+
+      Troubleshooting steps already taken: 
+
+      If applicable
+      -Contact the client and reproduce symptoms to confirm understanding of issue. By default use the contact method they initiated with.
+      -Verify acceptable time to work on issue.
+      -Advise customer of any workaround solutions while we attempt to resolve issue.
+
+      -After resolving issue, contact client to verify the resolution is satisfactory and ask if there are any other issues you can start a ticket for.
+      -Provide documentation, recommendations or training as needed on how to resolve or prevent future recurrence of similar issues.
+      -Update documentation if any system changes have been made.

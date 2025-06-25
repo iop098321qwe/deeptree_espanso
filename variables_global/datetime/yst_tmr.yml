@@ -1,0 +1,111 @@
+# Espanso Match File
+
+# Print the current date
+matches:
+  # Print tomorrow's date in ISO 8861 format
+  - trigger: ";tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'tomorrow' +'%Y-%m-%d'"
+
+  # Print 2 days from now date in ISO 8861 format
+  - trigger: ";2tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '2 days' +'%Y-%m-%d'"
+
+  # Print 3 days from now date in ISO 8861 format
+  - trigger: ";3tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '3 days' +'%Y-%m-%d'"
+
+  # Print 4 days from now date in ISO 8861 format
+  - trigger: ";4tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '4 days' +'%Y-%m-%d'"
+
+  # Print 5 days from now date in ISO 8861 format
+  - trigger: ";5tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '5 days' +'%Y-%m-%d'"
+
+  # Print 6 days from now date in ISO 8861 format
+  - trigger: ";6tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '6 days' +'%Y-%m-%d'"
+
+  # Print yesterday's date in ISO 8861 format
+  - trigger: ";yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'yesterday' +'%Y-%m-%d'"
+
+  # Print 2 days ago date in ISO 8861 format
+  - trigger: ";2yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '2 days ago' +'%Y-%m-%d'"
+
+  # Print 3 days ago date in ISO 8861 format
+  - trigger: ";3yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '3 days ago' +'%Y-%m-%d'"
+
+  # Print 4 days ago date in ISO 8861 format
+  - trigger: ";4yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '4 days ago' +'%Y-%m-%d'"
+
+  # Print 5 days ago date in ISO 8861 format
+  - trigger: ";5yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '5 days ago' +'%Y-%m-%d'"
+
+  # Print 6 days ago date in ISO 8861 format
+  - trigger: ";6yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '6 days ago' +'%Y-%m-%d'"
