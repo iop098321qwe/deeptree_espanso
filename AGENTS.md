@@ -29,7 +29,12 @@ Common `type` values:
 - `test` – Adding or modifying tests.
 - `chore` – Routine tasks such as dependency updates.
 
+
 The subject should be concise (preferably under 50 characters). Provide additional details in the body if needed.
+
+## Pull Request Guidelines
+
+Pull request titles must use the same `type(scope?): subject` format as commits. Keep the description brief and mention any test results in the body.
 
 ## Testing and Validation
 
