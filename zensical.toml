@@ -1,5 +1,5 @@
 [project]
-site_url = "https://www.example.com/"
+site_url = "https://iop098321qwe.github.io/deeptree_espanso/"
 site_name = "Deeptree Espanso"
 # site_description = "Your project description"
 # site_author = "Your name"
@@ -11,8 +11,10 @@ site_name = "Deeptree Espanso"
 # edit_uri = "edit/main/docs/"
 
 nav = [
-  { "Get started" = "index.md" },
-  { "Markdown in 5min" = "markdown.md" },
+  { "Home" = "./" },
+  { "Installation" = "installation/" },
+  { "AGENTS" = "AGENTS/" },
+  { "CHANGELOG" = "CHANGELOG/" },
 ]
 
 # extra_css = ["stylesheets/extra.css"]
