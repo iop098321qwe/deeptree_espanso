@@ -1,0 +1,1 @@
+x 2026-09-24 2026-09-23 add all deeptree espanso configs to repository to build modularly @feat
