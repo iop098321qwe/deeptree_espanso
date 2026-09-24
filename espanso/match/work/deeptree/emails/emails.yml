@@ -1,0 +1,177 @@
+# espanso match file
+
+# email
+matches:
+  - regex: ";emailnorm(?P<person>.*)\\."
+    label: Dynamic Deeptree Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      $|$
+
+      You may respond to this email directly, or call {{dthelp}} with any additional information, questions, or concerns that you may have.
+
+      {{signature}}
+
+  - regex: ";emailreq(?P<person>.*)\\."
+    label: Dynamic Request For Action Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      $|$
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emaildisk(?P<person>.*)\\."
+    label: Dynamic Request For Disk Space Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      We have an automatic alert that was generated for your computer$|$. This alert is a notification that the storage has exceed 95% capacity on your computer.
+
+      At the time of this email, you ({{person}}) were the last known user to login to the computer.
+
+      Due to this alert, we would like to coordinate an appointment (typically 60-90 minutes) to perform cleanup on the computer when it is not in use. We do not need to work directly with you to perform the cleanup, however we will need to ensure that we are connecting at a time that the computer will not be needed for the duration of the appointment.
+
+      Please provide multiple dates and specific times that would work for this appointment, we would love to get it onto our calendar so that we can perform this cleanup operation.
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emailfu(?P<person>.*)\\."
+    label: Dynamic Follow-Up Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{followup}}
+
+      $|$
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emaildy(?P<person>.*)\\."
+    label: Dynamic Done Yet Follow-Up Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{noresponse}}
+      $|$
+      {{assornoass}}
+
+      {{signature}}
+
+  - regex: ";emailvm(?P<person>.*)\\."
+    label: Dynamic Voicemail Follow-Up Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{voicemail}}
+
+      $|$
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emailnovm(?P<person>.*)\\."
+    label: Dynamic Unable to Leave a Voicemail Follow-Up Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{novoicemail}}
+
+      $|$
+
+      {{novmfollowup}}
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emailmissvm(?P<person>.*)\\."
+    label: Dynamic Missed Appointment w/ Voicemail or Message Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{voicemail}}
+
+      {{missappvm}}
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emailmissnovm(?P<person>.*)\\."
+    label: Dynamic Missed Appointment Email
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{novoicemail}}$|$
+
+      {{missappnovm}}
+
+      {{reqresponse}}
+
+      {{signature}}
+
+  - regex: ";emailnoti(?P<person>.*)\\."
+    label: Dynamic Notification Email
+    comment: "This is a dynamically generated email to send notifications. It is useful for sending emails that do not require a response."
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **NO RESPONSE REQUIRED**
+
+      $|$
+
+      {{notification}}
+
+      {{signature}}
+
+  - regex: ";emailcomp(?P<person>.*)\\."
+    label: Dynamic Completion Email
+    comment: "This is a dynamically generated email to send completion notifications. It is useful for notifying the completion of work."
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      **NO RESPONSE REQUIRED**
+
+      {{completedwork}}
+
+      {{checkup}}
+      $|$
+      This is a notification of completion email. To reopen your ticket if anything does not meet satisfactory completion standards, please respond to this email directly, or call {{dthelp}} with any additional information, questions, or concerns that you may have.
+
+      {{signature}}

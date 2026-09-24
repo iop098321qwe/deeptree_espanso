@@ -1,0 +1,23 @@
+# espanso match file
+
+# missed appointment no voicemail
+global_vars:
+  - name: missappnovm
+    type: random
+    params:
+      choices:
+        - As we were unable to reach you, leave a voicemail, or leave a message at the scheduled appointment time, the appointment could not be completed and we will need to coordinate a new time that works with your availability.
+        - We were unable to connect with you or leave a voicemail or message at the scheduled appointment time, so the appointment could not be completed and will need to be rescheduled.
+        - Since we were unable to reach you or leave a message at the scheduled time, we could not complete the appointment and will need to arrange a new time to connect.
+        - We were unable to make contact or leave a voicemail or message during the scheduled appointment, so we will need to coordinate another time based on your availability.
+        - As we could not reach you or leave a voicemail or message at the scheduled time, the appointment was unable to be completed and will need to be rescheduled.
+        - We attempted to connect at the scheduled appointment time but were unable to reach you or leave a voicemail or message. We will need to coordinate a new time that works for you.
+        - Since we were unable to make contact or leave a message at the scheduled appointment time, we will need to arrange another time to complete the appointment.
+        - We were unable to reach you and could not leave a voicemail or message at the scheduled time, so the appointment could not proceed and will need to be rescheduled.
+        - As we were unable to connect with you or leave a voicemail or message during the scheduled appointment, we will need to coordinate a new time that aligns with your availability.
+        - We were not able to reach you or leave a message at the scheduled appointment time, so the appointment could not be completed and a new time will need to be arranged.
+        - Because we were unable to make contact or leave a voicemail or message at the scheduled time, we will need to reschedule the appointment for a time that better fits your availability.
+        - We were unable to connect as scheduled and could not leave a voicemail or message. We will need to coordinate a new appointment time that works with your schedule.
+        - Since we could not reach you or leave a voicemail or message during the scheduled appointment window, we will need to arrange another time to connect.
+        - The scheduled appointment could not be completed because we were unable to reach you or leave a voicemail or message. We will need to coordinate a new time to connect.
+        - As we were unable to establish contact or leave a message at the scheduled appointment time, we will need to reschedule for a time that works with your availability.

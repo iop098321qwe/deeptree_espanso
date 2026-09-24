@@ -1,1 +1,3 @@
 (A) 2026-09-23 add all deeptree espanso configs to repository to build modularly @feat
+(A) 2026-09-24 build a script to install Espanso and automatically append these settings to the Espanso config @feat
+(B) 2026-09-24 create an AUR package to more easily install on Arch @feat

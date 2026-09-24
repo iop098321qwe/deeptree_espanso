@@ -1,0 +1,14 @@
+# espanso match file
+
+# deadlines
+global_vars:
+  - name: deadlines
+    type: random
+    params:
+      choices:
+        - Are there any hard deadlines or scheduling requirements for this ticket? If this is urgent or requires immediate assistance, please call us so we can connect you with a technician.
+        - Please let us know of any hard deadlines, required timeframes, or scheduling factors for this ticket. For urgent issues or emergencies, please call us for direct technician assistance.
+        - Are there any specific deadlines or timing requirements we should consider for this ticket? If immediate assistance is needed, please call us so we can connect you with a technician.
+        - Could you clarify any hard deadlines or scheduling constraints related to this ticket? If this is urgent, please call us directly so we can connect you with a technician.
+        - Please share any deadlines or scheduling requirements that may affect this ticket. If this is an urgent ticket or emergency, please call us for immediate technician assistance.
+        - Are there any required completion dates or scheduling limitations for this ticket? If immediate support is needed, please call us so we can connect you directly with a technician.

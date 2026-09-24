@@ -1,0 +1,38 @@
+# Espanso Match File
+
+# Expand weekday ranges (short or long form)
+matches:
+  - regex: ";(?P<start>(?:m|tu|w|th|f|sa|su))-(?P<end>(?:m|tu|w|th|f|sa|su))"
+    name: "Weekday range expansion"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            start_raw="{{start}}"
+            end_raw="{{end}}"
+            start_token=$(echo "$start_raw" | tr '[:upper:]' '[:lower:]')
+            end_token=$(echo "$end_raw" | tr '[:upper:]' '[:lower:]')
+
+            case "$start_token" in
+              m) start_day="Monday" ;;
+              tu) start_day="Tuesday" ;;
+              w) start_day="Wednesday" ;;
+              th) start_day="Thursday" ;;
+              f) start_day="Friday" ;;
+              sa) start_day="Saturday" ;;
+              su) start_day="Sunday" ;;
+            esac
+
+            case "$end_token" in
+              m) end_day="Monday" ;;
+              tu) end_day="Tuesday" ;;
+              w) end_day="Wednesday" ;;
+              th) end_day="Thursday" ;;
+              f) end_day="Friday" ;;
+              sa) end_day="Saturday" ;;
+              su) end_day="Sunday" ;;
+            esac
+
+            printf '%s - %s' "$start_day" "$end_day"

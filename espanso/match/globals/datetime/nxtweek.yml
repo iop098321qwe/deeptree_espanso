@@ -1,0 +1,22 @@
+# Espanso Match File
+
+# nxtweek Matches
+
+matches:
+  # Get the same weekday from next week in ISO 8601 format
+  - trigger: ";nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'next week' '+%A %Y-%m-%d'"
+
+  # Get the same weekday from N weeks ahead in ISO 8601 format
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtweek"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '+{{weeks}} weeks' '+%A %Y-%m-%d'"

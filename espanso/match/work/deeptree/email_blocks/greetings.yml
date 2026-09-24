@@ -1,0 +1,13 @@
+# espanso match file
+
+# Write a dynamic greeting for Emails for Montana and Alaska
+matches:
+  - trigger: ";greet"
+    label: Random Greeting
+    comment: "This will output a randomly selected greeting from a pre-selected list."
+    replace: "{{greeting}}"
+
+  - trigger: ";addongreet"
+    label: Add-On For Random Greeting
+    comment: "This will output a randomly selected add on for the random greeting from a pre-selected list."
+    replace: "{{addongreeting}}"

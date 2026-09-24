@@ -1,0 +1,13 @@
+# Espanso Match File
+
+# Print the current date
+matches:
+  # Create a match for monthly notes: Print the current month with propagate case.
+  - trigger: ";month"
+    replace: "{{current_month}}"
+    propagate_case: true
+    vars:
+      - name: current_month
+        type: date
+        params:
+          format: "%B"

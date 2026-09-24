@@ -1,0 +1,33 @@
+# Espanso Match File
+
+# Global Variables for Work Environment
+global_vars:
+  - name: completesym
+    label: Complete Symbol
+    type: echo
+    params:
+      echo: "🟩"
+
+  - name: timeentrysym
+    label: Time Entry Symbol
+    type: echo
+    params:
+      echo: "🟦"
+
+  - name: inprogresssym
+    label: In Progress Symbol
+    type: echo
+    params:
+      echo: "🟨"
+
+  - name: scheduledsym
+    label: Scheduled Symbol
+    type: echo
+    params:
+      echo: "🟥"
+
+  - name: lunchsym
+    label: Lunch Symbol
+    type: echo
+    params:
+      echo: "🟪"

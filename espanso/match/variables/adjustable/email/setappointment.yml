@@ -1,0 +1,14 @@
+# espanso match file
+
+# set appointment
+global_vars:
+  - name: setappointment
+    type: random
+    params:
+      choices:
+        - To better facilitate this request, it would be best to set an appointment with the technician. Could you please provide a few dates and times that you are available so we can coordinate with the technician's availability? If you would like to set an appointment more quickly or discuss any blocking factors, please give us a call so you can work directly with our Service Coordinator to ensure the appointment is added to our calendar.
+        - To best support this request, I recommend setting an appointment so we can work with the technician directly. Please send a few dates and times that would work for you, and I will do my best to coordinate an appointment around both your availability and the technician's schedule. If you would like to schedule this more quickly or discuss any blocking factors, please call us to work directly with our Service Coordinator and ensure the appointment is placed on our calendar.
+        - In order to move forward effectively, it would be helpful to schedule an appointment with the technician. Could you provide multiple dates and times that you are available so we can find an appointment time that also works with the technician's availability? If you would like to set the appointment sooner or review any blocking factors, please give us a call so our Service Coordinator can work with you directly and make sure it is scheduled on our calendar.
+        - To ensure this request is handled smoothly, I suggest we set up an appointment with the technician. Please share a few dates and times that work for you, and I will coordinate with the technician to schedule an appointment that aligns as closely as possible. If you would prefer to coordinate this faster or discuss any blocking factors, please call us to work directly with our Service Coordinator and ensure the appointment is set on our calendar.
+        - For efficiency, it would be beneficial to schedule a time to work with the technician. Could you let me know several dates and times when you are available so we can compare them against the technician's availability? If you would like to arrange the appointment more quickly or discuss any blocking factors, please give us a call so you can work directly with our Service Coordinator to get it added to our calendar.
+        - To facilitate this request, scheduling an appointment with the technician would be ideal. Please provide a few available dates and times so I can work to arrange an appointment around both your schedule and the technician's availability. If you would like to schedule sooner or discuss any blocking factors, please call us to work directly with our Service Coordinator and ensure the appointment is set on our calendar.

@@ -1,0 +1,19 @@
+# espanso match file
+
+# still requires assistance
+global_vars:
+  - name: stillreqass
+    type: random
+    params:
+      choices:
+        - If you still require assistance, we kindly request that you respond to this email or call us at {{dthelp}} at your earliest convenience to confirm the next steps regarding your ticket.
+        - If you continue to need assistance, please respond to this email or call us at {{dthelp}} at your earliest convenience so we can discuss the next steps for your ticket.
+        - Should you still require support, we ask that you reply to this email or contact us at {{dthelp}} to determine the appropriate next steps regarding your ticket.
+        - If further assistance is needed, kindly reply to this email or call {{dthelp}} at your convenience so we may proceed with the next steps for your ticket.
+        - To move forward, please respond to this email or reach out to us at {{dthelp}} if you continue to require assistance with your ticket.
+        - If you still need help, we encourage you to respond to this email or call us at {{dthelp}} promptly so that we can determine the next steps for your ticket.
+        - Should you require additional assistance, please reply to this email or call {{dthelp}} at your earliest convenience to confirm the next steps for your ticket.
+        - If you would like us to continue assisting you, kindly respond to this email or contact us at {{dthelp}} so we can determine how best to proceed with your ticket.
+        - If assistance is still needed, please reply to this email or call {{dthelp}} at your convenience to review the next steps.
+        - To ensure we can continue supporting you, we ask that you respond to this email or call {{dthelp}} so we may confirm the next steps on your ticket.
+        - If you still require our help, please reply to this email or reach us at {{dthelp}} to determine how we should proceed with your ticket.

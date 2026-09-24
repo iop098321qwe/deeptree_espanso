@@ -1,0 +1,23 @@
+# espanso match file
+
+# completed work
+global_vars:
+  - name: completedwork
+    type: random
+    params:
+      choices:
+        - I am reaching out to let you know that the work associated with your ticket has been completed and the ticket will now be closed.
+        - I wanted to inform you that the requested work has been completed and your ticket will be closed at this time.
+        - The work related to your request has been completed, and we will be closing your ticket at this time.
+        - I am following up to confirm that the work for your ticket has been completed and the ticket will now be closed.
+        - I am writing to confirm that your request has been completed and your ticket will be closed at this time.
+        - The requested work has now been completed, and your ticket will be closed accordingly.
+        - I wanted to provide an update that the work associated with your ticket is complete and the ticket will now be closed.
+        - Your requested work has been completed, and we will proceed with closing the ticket at this time.
+        - I am reaching out to confirm that the work requested in your ticket has been completed and the ticket is ready to be closed.
+        - The work for your ticket has been completed successfully, and we will be closing the ticket at this time.
+        - I am following up to let you know that your request has been completed and the associated ticket will now be closed.
+        - We have completed the work associated with your request and will be closing the ticket at this time.
+        - I wanted to let you know that the requested work is now complete and your ticket will be closed.
+        - The work outlined in your ticket has been completed, and we will now proceed with closing the ticket.
+        - I am emailing to confirm that the requested work has been completed and your ticket will be closed at this time.

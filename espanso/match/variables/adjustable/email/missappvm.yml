@@ -1,0 +1,23 @@
+# espanso match file
+
+# missed appointment with voicemail
+global_vars:
+  - name: missappvm
+    type: random
+    params:
+      choices:
+        - As we were unable to reach you at the scheduled appointment time, the appointment could not be completed and we will need to coordinate a new time that works with your availability.
+        - We were unable to connect with you at the scheduled appointment time, so the appointment could not be completed. We will need to arrange a new time that better aligns with your availability.
+        - Since we were unable to reach you at the scheduled time, we were not able to complete the appointment and will need to coordinate another time to connect.
+        - We were unable to make contact at the scheduled appointment time, so we will need to reschedule for a time that works with your availability.
+        - As we could not reach you at the scheduled appointment time, we were unable to complete the appointment and will need to arrange a new time to connect.
+        - We were unable to connect as scheduled, so the appointment could not be completed. We will need to coordinate a new appointment time based on your availability.
+        - Since we were not able to reach you at the scheduled time, the appointment was unable to be completed and will need to be rescheduled for a more convenient time.
+        - We attempted to connect at the scheduled appointment time but were unable to reach you. We will need to coordinate a new time that aligns with your availability.
+        - As we were unable to make contact at the scheduled time, the appointment could not proceed and we will need to arrange another time to connect.
+        - We were unable to reach you for the scheduled appointment, so we will need to reschedule and coordinate a new time that works for you.
+        - Because we were unable to connect at the scheduled appointment time, the appointment could not be completed and a new time will need to be arranged.
+        - We were not able to make contact at the scheduled time, so the appointment will need to be rescheduled for a time that better fits your availability.
+        - Since we were unable to connect with you as scheduled, we will need to coordinate another appointment time that works with your schedule.
+        - The scheduled appointment could not be completed because we were unable to reach you at that time. We will need to arrange a new time to connect.
+        - As we were unable to reach you during the scheduled appointment window, we will need to coordinate a new time to complete the appointment.

@@ -1,0 +1,13 @@
+# espanso match file
+
+# notification email
+global_vars:
+  - name: notification
+    type: random
+    params:
+      choices:
+        - This is a notification email. If anything does not meet satisfactory completion standards, please reply directly to this email or call {{dthelp}} with any additional information, questions, or concerns.
+        - This message is intended as a notification. If anything does not meet satisfactory standards or requires further attention, please respond directly to this email or contact {{dthelp}} with any additional details or concerns.
+        - This is a notification email. If anything appears incomplete, incorrect, or requires additional attention, please reply to this email or call {{dthelp}} with any questions, concerns, or further information.
+        - This message serves as a notification. If anything requires further review or attention, please respond directly to this email or contact {{dthelp}} with any additional information, questions, or concerns.
+        - This is a notification email. If you have any additional information, questions, or concerns, or if anything does not meet satisfactory standards, please reply directly to this email or call {{dthelp}}.

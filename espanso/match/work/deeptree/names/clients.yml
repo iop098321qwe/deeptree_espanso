@@ -1,0 +1,199 @@
+# espanso match file
+
+# clients
+matches:
+  # Air Source Alaska
+  - trigger: ";asa"
+    replace: "Air Source Alaska$|$"
+
+  # AK Child & Family
+  - trigger: ";akcf"
+    replace: "AK Child & Family$|$"
+
+  # Alaska Commission for Behavioral Health Certification
+  - trigger: ";acbhc"
+    replace: "Alaska Commission for Behavioral Health Certification$|$"
+
+  # Alaska Correctional Officers Association
+  - trigger: ";acoa"
+    replace: "Alaska Correctional Officers Association$|$"
+
+  # Alaska Family Services
+  - trigger: ";afs"
+    replace: "Alaska Family Services$|$"
+
+  # Alaska Joint Electrical Apprenticeship & Training Trust
+  - trigger: ";ajeatt"
+    replace: "Alaska Joint Electrical Apprenticeship & Training Trust$|$"
+
+  # Alaska Pacific Leasing Company, Inc.
+  - trigger: ";aplc"
+    replace: "Alaska Pacific Leasing Company, Inc.$|$"
+
+  # Alaska Rock Gym
+  - trigger: ";arg"
+    replace: "Alaska Rock Gym$|$"
+
+  # Alaska SeaLife Center
+  - trigger: ";aslc"
+    replace: "Alaska SeaLife Center$|$"
+
+  # Aleutians East Borough
+  - trigger: ";aeb"
+    replace: "Aleutians East Borough$|$"
+
+  # Alutiiq Museum & Archaeological Repository
+  - trigger: ";amar"
+    replace: "Alutiiq Museum & Archaeological Repository$|$"
+
+  # Anchorage Neurosurgical Associates Inc.
+  - trigger: ";anai"
+    replace: "Anchorage Neurosurgical Associates Inc.$|$"
+
+  # Anchorage Opera
+  - trigger: ";ao"
+    replace: "Anchorage Opera$|$"
+
+  # Arctic Oral Surgery
+  - trigger: ";aos"
+    replace: "Arctic Oral Surgery$|$"
+
+  # Bauer Construction
+  - trigger: ";bc"
+    replace: "Bauer Construction$|$"
+
+  # Bayshore Owners Association
+  - trigger: ";boa"
+    replace: "Bayshore Owners Association$|$"
+
+  # Beacon Media + Marketing
+  - trigger: ";bmm"
+    replace: "Beacon Media + Marketing$|$"
+
+  # Camp Fire Alaska
+  - trigger: ";cfa"
+    replace: "Camp Fire Alaska$|$"
+
+  # Cashion Gilmore
+  - trigger: ";cg"
+    replace: "Cashion Gilmore$|$"
+
+  # CCS Early Learning
+  - trigger: ";ccs"
+    replace: "CCS Early Learning$|$"
+
+  # Commercial Contractors, Inc.
+  - trigger: ";cci"
+    replace: "Commercial Contractors, Inc.$|$"
+
+  # Cross Road Medical Center
+  - trigger: ";crmc"
+    replace: "Cross Road Medical Center$|$"
+
+  # Deeptree, Inc
+  - trigger: ";dpt"
+    replace: "Deeptree, Inc$|$"
+
+  # Denali Daniels + Associates
+  - trigger: ";dda"
+    replace: "Denali Daniels + Associates$|$"
+
+  # Dimond Center
+  - trigger: ";dc"
+    replace: "Dimond Center$|$"
+
+  # Eagle Enterprises, Inc.
+  - trigger: ";ee"
+    replace: "Eagle Enterprises, Inc.$|$"
+
+  # Farm Loop Christian Center
+  - trigger: ";flcc"
+    replace: "Farm Loop Christian Center$|$"
+
+  # Fireside Books
+  - trigger: ";fb"
+    replace: "Fireside Books$|$"
+
+  # Girl Scouts of Alaska
+  - trigger: ";gsak"
+    replace: "Girl Scouts of Alaska$|$"
+
+  # Great Plains Tribal Leaders Health Board
+  - trigger: ";gptlhb"
+    replace: "Great Plains Tribal Leaders Health Board$|$"
+
+  # Indian Family Health Clinic
+  - trigger: ";ifhc"
+    replace: "Indian Family Health Clinic$|$"
+
+  # Junior Achievement of Alaska
+  - trigger: ";jaoa"
+    replace: "Junior Achievement of Alaska$|$"
+
+  # Kijik Corporation
+  - trigger: ";kc"
+    replace: "Kijik Corporation$|$"
+
+  # Knom Radio Mission, Inc.
+  - trigger: ";knom"
+    replace: "Knom Radio Mission, Inc.$|$"
+
+  # Larson Chiropractic
+  - trigger: ";lc"
+    replace: "Larson Chiropractic$|$"
+
+  # North Wend Foods, Inc.
+  - trigger: ";nwf"
+    replace: "North Wend Foods, Inc.$|$"
+
+  # O'Banion Real Estate & Relocation Services
+  - trigger: ";orers"
+    replace: "O'Banion Real Estate & Relocation Services$|$"
+
+  # Optimum Performance Chiropractic
+  - trigger: ";opc"
+    replace: "Optimum Performance Chiropractic$|$"
+
+  # Pango Technology
+  - trigger: ";pt"
+    replace: "Pango Technology$|$"
+
+  # Pioneer Peak Orthopedic Surgery
+  - trigger: ";ppos"
+    replace: "Pioneer Peak Orthopedic Surgery$|$"
+
+  # Samuel Simmonds Memorial Hospital
+  - trigger: ";ssmh"
+    replace: "Samuel Simmonds Memorial Hospital$|$"
+
+  # Steve Fishback Architect
+  - trigger: ";sfa"
+    replace: "Steve Fishback Architect$|$"
+
+  # Stinebaugh & Company
+  - trigger: ";sco"
+    replace: "Stinebaugh & Company$|$"
+
+  # The American Legion
+  - trigger: ";al"
+    replace: "The American Legion$|$"
+
+  # The Eureka Space
+  - trigger: ";tes"
+    replace: "The Eureka Space$|$"
+
+  # Tyonek Tribal Conservation District
+  - trigger: ";ttcd"
+    replace: "Tyonek Tribal Conservation District$|$"
+
+  # United Way of Mat-Su
+  - trigger: ";uwm"
+    replace: "United Way of Mat-Su$|$"
+
+  # Victims for Justice
+  - trigger: ";vfj"
+    replace: "Victims for Justice$|$"
+
+  # YWCA Alaska
+  - trigger: ";ywca"
+    replace: "YWCA Alaska$|$"

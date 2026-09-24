@@ -1,0 +1,13 @@
+# espanso match file
+
+# no voicemail follow up
+global_vars:
+  - name: novmfollowup
+    type: random
+    params:
+      choices:
+        - Since we were unable to reach you or leave a message, we will likely need to coordinate a time to connect that works with your availability.
+        - As we were unable to make contact or leave a message, we will need to arrange a time to connect that is convenient for you.
+        - Because we were unable to reach you or leave a message, we will likely need to schedule a time to connect based on your availability.
+        - We were unable to reach you or leave a message, so we will need to coordinate a suitable time to connect with you.
+        - Since we could not make contact or leave a message, we will likely need to arrange a new time to connect that works with your schedule.

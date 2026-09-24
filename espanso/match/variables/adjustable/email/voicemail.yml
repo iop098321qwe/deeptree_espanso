@@ -1,0 +1,23 @@
+# espanso match file
+
+# voicemail sentence expansion
+global_vars:
+  - name: voicemail
+    type: random
+    params:
+      choices:
+        - I attempted to reach you by phone earlier but was unable to make contact. I left a voicemail or note at that time and am following up by email to ensure you received the message.
+        - I tried to contact you by phone earlier but was not able to reach you. I left a voicemail or note and wanted to follow up by email to make sure the message was received.
+        - I attempted to call you earlier but was unable to connect. I left a voicemail or note and am following up with this email to ensure you received the information.
+        - I reached out by phone earlier but was unable to get in touch. I left a voicemail or note at that time and am sending this email as a follow-up.
+        - I attempted to contact you by phone earlier and was unable to reach you. I left a voicemail or note and am following up by email to make sure the message reached you.
+        - I tried to reach you by phone earlier but was unsuccessful. I left a voicemail or note at that time and am following up with this email to ensure you are aware of the message.
+        - I attempted to contact you earlier by phone but was unable to speak with you. I left a voicemail or note and am following up by email to ensure the information was received.
+        - I was unable to reach you by phone earlier, so I left a voicemail or note at that time. I am following up by email to make sure the message was received.
+        - I tried to reach you by phone earlier but was unable to make contact. I left a voicemail or note and wanted to follow up by email to ensure you received the message.
+        - I attempted to call earlier but was unable to reach you. A voicemail or note was left at that time, and I am following up with this email to ensure the message was received.
+        - I reached out by phone earlier but was unable to connect with you. I left a voicemail or note and am following up by email to make sure the message was received.
+        - I attempted to contact you by phone earlier but was not able to reach you. I left a voicemail or note at that time and am sending this email as a follow-up.
+        - I tried to get in touch by phone earlier but was unable to reach you. I left a voicemail or note and am following up with this email to make sure you received the message.
+        - I attempted to reach you earlier by phone but was unable to connect. I left a voicemail or note and am following up via email to ensure the message was received.
+        - I was unable to make contact by phone earlier, so I left a voicemail or note. I am following up with this email to ensure you received the information.

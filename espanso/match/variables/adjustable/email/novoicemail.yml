@@ -1,0 +1,23 @@
+# espanso match file
+
+# no voicemail sentence expansion
+global_vars:
+  - name: novoicemail
+    type: random
+    params:
+      choices:
+        - I attempted to reach you by phone earlier but was unable to make contact. I was not able to leave a voicemail or reach the number on file, so I am following up by email to ensure the message was received.
+        - I tried to contact you by phone earlier but was unable to reach you. I could not leave a voicemail or connect using the number on file, and am following up with this email instead.
+        - I attempted to call you earlier but was unable to make contact. Since I was unable to leave a voicemail or reach the number provided, I am following up by email to ensure you receive the message.
+        - I reached out by phone earlier but was unable to get in touch. I was unable to leave a voicemail or connect through the number on file, so I am sending this email as a follow-up.
+        - I attempted to contact you earlier by phone but was unable to reach you. I could not leave a voicemail or successfully connect using the number on file, and am following up by email.
+        - I tried to reach you by phone earlier but was unsuccessful. I was unable to leave a voicemail or reach the listed number, so I am following up with this email to make sure the message reaches you.
+        - I attempted to call earlier but was unable to connect. I was not able to leave a voicemail or reach you at the number on file, and am following up by email to ensure the message is received.
+        - I was unable to reach you by phone earlier and could not leave a voicemail or connect using the number on file. I am following up with this email to ensure you receive the information.
+        - I tried to get in touch by phone earlier but was unable to make contact. Since I could not leave a voicemail or reach the number on file, I am following up by email.
+        - I attempted to reach you earlier by phone but was unable to connect. I could not leave a voicemail or successfully reach the number listed, so I am following up with this email.
+        - I reached out by phone earlier but was unable to make contact. I was unable to leave a voicemail or reach the number we have on file, and am following up by email to ensure the message is received.
+        - I attempted to contact you by phone earlier but was unsuccessful. I could not leave a voicemail or connect using the listed number, so I am following up with this email.
+        - I tried to reach you earlier by phone but was unable to connect. Because I was unable to leave a voicemail or reach the number on file, I am following up by email to make sure the message is received.
+        - I attempted to call you earlier but was not able to reach you. I could not leave a voicemail or connect through the number on file, and am now following up with this email.
+        - I was unable to make contact by phone earlier and was not able to leave a voicemail or reach the listed number. I am following up by email to ensure you receive the message.
