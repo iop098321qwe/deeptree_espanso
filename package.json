@@ -1,0 +1,26 @@
+{
+  "name": "deeptree_espanso",
+  "version": "0.0.0",
+  "description": "espanso configuration files for Deeptree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iop098321qwe/deeptree_espanso.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iop098321qwe/deeptree_espanso/issues"
+  },
+  "homepage": "https://github.com/iop098321qwe/deeptree_espanso#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "husky": "^9.1.7"
+  }
+}
