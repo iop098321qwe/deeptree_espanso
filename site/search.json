@@ -187,6 +187,14 @@
       "text": "<ul> <li>configs: initial current config import (e262477)</li> </ul>",
       "path": ["Changelog"],
       "tags": []
+    },
+    {
+      "location": "installation/",
+      "level": 1,
+      "title": "Installation Guide",
+      "text": "<p>In this guide, you will need to install Espanso on your system using your preferred method. It may be installed via package managers, direct downloads, or from source. Follow the instructions based on your operating system.</p> <p>Once installed, you will need to copy over the configuration files to the configuration directory for your operating system. The configuration files are found in the <code>espanso</code> directory of this repository. If you do not have any other configuration files (this is your first time installing/using Espanso on your computer), you can copy the entire <code>espanso</code> directory of this repository directly to your computer.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
     }
   ]
 }
