@@ -1,0 +1,5 @@
+matches:
+  - trigger: ";signature"
+    label: Dynamic Deeptree Email
+    force_mode: clipboard
+    replace: "{{signature}}"

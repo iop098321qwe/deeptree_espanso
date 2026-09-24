@@ -1,0 +1,17 @@
+# espanso match file
+
+# no response
+global_vars:
+  - name: noresponse
+    type: random
+    params:
+      choices:
+        - As we have not received a recent response, we would like to confirm the current status of your ticket and ensure it is addressed in a timely manner.
+        - As we have not yet received a reply, we would like to confirm the current status of your ticket and ensure it is progressing appropriately.
+        - Since we have not heard back recently, we are reaching out to verify the status of your ticket and confirm that it is being addressed in a timely manner.
+        - Because no recent response has been received, we are checking in to determine the current status of your ticket and to confirm it remains on track for resolution.
+        - As there has been no recent communication, we would like to follow up regarding the status of your ticket and confirm that it is moving forward as expected.
+        - Given we do not have a recent update, we are writing to check on the current status of your ticket and ensure it receives the attention it requires.
+        - Since we have not received an update, we would like to confirm where your ticket currently stands and make sure it is being handled without delay.
+        - As we have not heard from you, we want to follow up on the status of your ticket and ensure it is receiving the necessary attention.
+        - Because no recent update has been provided, we are reaching out to review the current status of your ticket and confirm timely resolution.

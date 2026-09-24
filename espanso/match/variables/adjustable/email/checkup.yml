@@ -1,0 +1,13 @@
+# espanso match file
+
+# check up
+global_vars:
+  - name: checkup
+    type: random
+    params:
+      choices:
+        - Although no further action is required at this time, we recommend confirming that there are no remaining errors and that the work meets your expectations.
+        - No additional action is currently required, but we recommend reviewing the results to ensure everything is working as expected and no issues remain.
+        - While there are no further steps required, it is recommended that you verify the work and confirm that everything meets your expectations.
+        - No additional action is needed at this time; however, we recommend checking that there are no outstanding errors and that the work is satisfactory.
+        - Although no further action is necessary, please take a moment to confirm that everything is functioning properly and that the work meets your expectations.

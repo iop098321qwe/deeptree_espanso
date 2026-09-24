@@ -1,0 +1,22 @@
+# Espanso Match File
+
+# wkago Matches
+
+matches:
+  # Get the same weekday from last week in ISO 8601 format
+  - trigger: ";wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'last week' +'%Y-%m-%d'"
+
+  # Get the same weekday from N weeks ago in ISO 8601 format
+  - regex: ";(?P<weeks>[0-9]+)\\.wkago"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '{{weeks}} weeks ago' +'%Y-%m-%d'"

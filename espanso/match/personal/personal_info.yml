@@ -1,0 +1,28 @@
+# espanso match file
+
+# Matches for personal information
+matches:
+  # Matches for names
+  - trigger: ";first"
+    label: First Name Match
+    comment: "A match to output your first name."
+    propagate_case: true
+    replace: "{{myfirst}}"
+
+  - trigger: ";last"
+    label: Last Name Match
+    comment: "A match to output your last name."
+    propagate_case: true
+    replace: "{{mylast}}"
+
+  - trigger: ;name
+    label: Full Name Match
+    comment: "A match to output your full name."
+    propagate_case: true
+    replace: "{{myname}}"
+
+  - triggers: [;legalname, ;fullname]
+    label: Full Name Match
+    comment: "A match to output your full name."
+    propagate_case: true
+    replace: "{{mylegalname}}"

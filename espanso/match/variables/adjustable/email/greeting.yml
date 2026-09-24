@@ -1,0 +1,23 @@
+# espanso match file
+
+# Dynamic greetings for Deeptree emails
+global_vars:
+  - name: greeting
+    label: Random Greeting
+    comment: "This will output a randomly selected greeting from a pre-selected list."
+    type: random
+    params:
+      choices:
+        - "Hello "
+        - "Hello there "
+        - "How are you "
+        - "Greetings "
+        - "Salutations "
+        - "Regards "
+        - "High regards "
+        - "Blessings "
+        - "Hail "
+        - "Cordial greetings "
+        - "Humble greetings "
+        - "Salute "
+        - ""

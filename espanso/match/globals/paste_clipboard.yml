@@ -1,0 +1,37 @@
+# Espanso Match File
+
+# Paste Clipboard Matches
+matches:
+  - trigger: ";cbb"
+    label: Beginning-of-Line Clipboard Paste
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+    replace: "$|${{clipboard}}"
+
+  - trigger: ";cbe"
+    label: End-of-Line Clipboard Paste
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+    replace: "{{clipboard}} $|$"
+
+  - trigger: ";cbn"
+    label: New Line Clipboard Paste
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+    replace: |-
+      {{clipboard}}
+
+      $|$
+
+  - trigger: ";cba"
+    label: Above New Line Clipboard Paste
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+    replace: |-
+      $|$
+
+      {{clipboard}}

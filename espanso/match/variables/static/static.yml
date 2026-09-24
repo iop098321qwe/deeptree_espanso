@@ -1,0 +1,10 @@
+# Espanso Match File
+
+# Static Global Variables
+global_vars:
+  # Variables that do not require changing
+  - name: today
+    label: Today's Date Variable
+    type: date
+    params:
+      format: "%Y-%m-%d"

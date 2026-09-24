@@ -1,0 +1,15 @@
+global_vars:
+  - name: signature
+    label: Dynamic Deeptree Email Signature
+    type: echo
+    params:
+      echo: |-
+        {{signoff}}
+
+        {{myname}}
+        {{title}}
+        {{company}}
+        {{dthelp}}
+
+        ---
+        {{quote}}

@@ -1,0 +1,89 @@
+# Espanso Match File
+
+# Print the time
+matches:
+  - trigger: ;time
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
+
+  # Print the current date in ISO 8861 format
+  - trigger: ";date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Print the disabled date in ISO 8861 format
+  - trigger: ";disdate"
+    replace: "Disabled {{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Write a full timestamp with date and time
+  - triggers: [;now, ;ddt, ;datime, ;stamp]
+    replace: "{{timestamp}}"
+    vars:
+      - name: timestamp
+        type: date
+        params:
+          format: "%A %Y-%m-%d %H:%M"
+
+  # Create a match for daily notes
+  - trigger: ";daily"
+    replace: "{{daily}}"
+    vars:
+      - name: daily
+        type: date
+        params:
+          format: "%Y-%m-%d-dallas.md"
+
+  # Print the current day of the week
+  - trigger: ";day"
+    replace: "{{current_day}}"
+    propagate_case: true
+    vars:
+      - name: current_day
+        type: date
+        params:
+          format: "%A"
+
+  # Print the day and date for today
+  - triggers: [";daydate", ";today"]
+    replace: "{{current_day}}"
+    propagate_case: true
+    vars:
+      - name: current_day
+        type: date
+        params:
+          format: "today, %A %Y-%m-%d"
+
+  # Print the day and date for tomorrow
+  - trigger: ";tomorrow"
+    replace: "{{tomorrow}}"
+    propagate_case: true
+    vars:
+      - name: tomorrow
+        type: date
+        params:
+          format: "tomorrow, %A %Y-%m-%d"
+          offset: 86400
+
+  # Print the day and date for yesterday
+  - trigger: ";yesterday"
+    replace: "{{yesterday}}"
+    propagate_case: true
+    vars:
+      - name: yesterday
+        type: date
+        params:
+          format: "yesterday, %A %Y-%m-%d"
+          offset: -86400

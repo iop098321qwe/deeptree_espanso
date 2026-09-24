@@ -1,0 +1,293 @@
+# espanso match file
+
+# Print the current date
+matches:
+  # Print the week range from Monday to Sunday for the current week
+  - trigger: ";wkof"
+    label: Current Week Of
+    comment: "CHANGEME"
+    replace: "week of {{week_start}} to {{week_end}}"
+    propagate_case: true
+    vars:
+      # Calculate week_start: Use today's date if it's Monday, otherwise use last Monday
+      - name: week_start
+        type: shell
+        params:
+          # The command uses the %u format: 1 = Monday, ... , 7 = Sunday.
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              # If today is Monday, output today's date.
+              date '+%A %Y-%m-%d'
+            else
+              # If today is not Monday, output the date of last Monday.
+              date -d 'last Monday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+
+      # Calculate week_end: Use today's date if it's Sunday, otherwise use next Sunday
+      - name: week_end
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 7 ]; then
+              # If today is Sunday, output today's date.
+              date '+%A %Y-%m-%d'
+            else
+              # If today is not Sunday, output the date of next Sunday.
+              date -d 'next Sunday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+
+  - trigger: ";wrkwkof"
+    label: Current Work Week Of
+    comment: "Expands to Monday–Friday of the current work week"
+    replace: "work week of {{week_start}} to {{week_end}}"
+    propagate_case: true
+    vars:
+      # Calculate week_start (Monday)
+      - name: week_start
+        type: shell
+        params:
+          cmd: |
+            case "$(date +%u)" in
+              1)
+                # Monday → today
+                date '+%A %Y-%m-%d'
+                ;;
+              *)
+                # Any other day → last Monday
+                date -d 'last Monday' '+%A %Y-%m-%d'
+                ;;
+            esac
+          trim: true
+
+      # Calculate week_end (Friday)
+      - name: week_end
+        type: shell
+        params:
+          cmd: |
+            case "$(date +%u)" in
+              5)
+                # Friday → today
+                date '+%A %Y-%m-%d'
+                ;;
+              6|7)
+                # Saturday or Sunday → last Friday
+                date -d 'last Friday' '+%A %Y-%m-%d'
+                ;;
+              *)
+                # Monday–Thursday → next Friday
+                date -d 'next Friday' '+%A %Y-%m-%d'
+                ;;
+            esac
+          trim: true
+
+  # Print the week range from Monday to Sunday for the last week
+  - trigger: ";lstwkof"
+    label: Last Week Of
+    comment: "CHANGEME"
+    replace: "week of {{previous_week_start}} to {{previous_week_end}}"
+    propagate_case: true
+    vars:
+      # First, compute the current week’s Monday using the same conditional logic.
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%A %Y-%m-%d'
+            else
+              date -d 'last Monday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+
+      # Then, obtain the Monday of last week by subtracting 7 days.
+      - name: previous_week_start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -7 days' '+%A %Y-%m-%d'"
+          trim: true
+
+      # Calculate the Sunday of last week by adding 6 days to the Monday of last week.
+      - name: previous_week_end
+        type: shell
+        params:
+          cmd: "date -d '{{previous_week_start}} +6 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  - trigger: ";lstwrkwkof"
+    label: Last Work Week Of
+    comment: "Expands to last Monday–Friday (work week only)"
+    replace: "work week of {{previous_week_start}} to {{previous_week_end}}"
+    propagate_case: true
+    vars:
+      # Compute the current week’s Monday.
+      # Keep the same “if today is Monday use today; otherwise last Monday” behavior.
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%A %Y-%m-%d'
+            else
+              date -d 'last Monday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+
+      # Monday of last week = current week Monday - 7 days
+      - name: previous_week_start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -7 days' '+%A %Y-%m-%d'"
+          trim: true
+
+      # Friday of last week = Monday of last week + 4 days
+      - name: previous_week_end
+        type: shell
+        params:
+          cmd: "date -d '{{previous_week_start}} +4 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  - trigger: ";nxtwkof"
+    label: Next Week Of
+    comment: "CHANGEME"
+    replace: "week of {{next_week_start}} to {{next_week_end}}"
+    propagate_case: true
+    vars:
+      # Get the Monday of the next week using GNU date's unambiguous relative term.
+      - name: next_week_start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday' '+%A %Y-%m-%d'"
+          trim: true
+
+      # Compute the Sunday of next week by adding 6 days to next_week_start.
+      - name: next_week_end
+        type: shell
+        params:
+          cmd: "date -d '{{next_week_start}} +6 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  - trigger: ";nxtwrkwkof"
+    label: Next Work Week Of
+    comment: "Expands to next Monday–Friday (work week only)"
+    replace: "work week of {{next_week_start}} to {{next_week_end}}"
+    propagate_case: true
+    vars:
+      # Get the Monday of next week
+      - name: next_week_start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday' '+%A %Y-%m-%d'"
+          trim: true
+
+      # Friday of next week = Monday + 4 days
+      - name: next_week_end
+        type: shell
+        params:
+          cmd: "date -d '{{next_week_start}} +4 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  # N Weeks Ago - Week Range (Monday to Sunday)
+  - regex: ";(?P<weeks>[0-9]+)\\.lstwkof"
+    label: "Nth Order Last Week Of"
+    comment: "Outputs the date range (Mon-Sun) for N weeks ago"
+    name: "N Weeks Ago - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%A %Y-%m-%d'
+            else
+              date -d 'last Monday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -{{weeks}} weeks' '+%A %Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  # N Weeks Ago - Work Week Range (Monday to Friday)
+  - regex: ";(?P<weeks>[0-9]+)\\.lstwrkwkof"
+    label: "Nth Order Last Work Week Of"
+    comment: "Outputs the date range (Mon–Fri) for N work weeks ago"
+    name: "N Weeks Ago - Work Week Range"
+    replace: "work week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      # Compute the current week’s Monday
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%A %Y-%m-%d'
+            else
+              date -d 'last Monday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+
+      # Monday of N weeks ago
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -{{weeks}} weeks' '+%A %Y-%m-%d'"
+          trim: true
+
+      # Friday of that week = Monday + 4 days
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +4 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  # N Weeks Ahead - Week Range (Monday to Sunday)
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtwkof"
+    label: "Nth Order Next Week Of"
+    comment: "Outputs the date range (Mon-Sun) for N weeks ahead"
+    name: "N Weeks Ahead - Week Range"
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday +{{weeks}} weeks' '+%A %Y-%m-%d'"
+          trim: true
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  # N Weeks Ahead - Work Week Range (Monday to Friday)
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtwrkwkof"
+    label: "Nth Order Next Work Week Of"
+    comment: "Outputs the date range (Mon–Fri) for N work weeks ahead"
+    name: "N Weeks Ahead - Work Week Range"
+    replace: "work week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      # Monday of N weeks ahead (relative to next full work week)
+      - name: start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday +{{weeks}} weeks' '+%A %Y-%m-%d'"
+          trim: true
+
+      # Friday of that week = Monday + 4 days
+      - name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +4 days' '+%A %Y-%m-%d'"
+          trim: true

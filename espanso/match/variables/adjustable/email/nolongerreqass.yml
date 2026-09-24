@@ -1,0 +1,19 @@
+# espanso match file
+
+# no longer requires assistance
+global_vars:
+  - name: nolongerreqass
+    type: random
+    params:
+      choices:
+        - If the issue has been resolved and no further support is needed, please let us know so that we may proceed with closing the ticket.
+        - If the matter has already been resolved and you no longer need assistance, kindly let us know so we can proceed with closing the ticket.
+        - Should the issue be resolved and no additional support required, please inform us so we may finalize and close the ticket.
+        - If your concern has been addressed and no further help is needed, please reply to confirm so that we can close the ticket.
+        - In the event that the issue has been resolved and support is no longer necessary, please notify us so we may close the ticket.
+        - If the problem has been resolved and you require no additional assistance, kindly let us know so that we can complete the ticket closure.
+        - Should no further assistance be required and the matter be resolved, please confirm with us so we may close the ticket accordingly.
+        - If your issue has been successfully resolved and you no longer need support, please inform us so we can proceed with closing the ticket.
+        - Once the issue is resolved and no additional support is necessary, we kindly ask that you let us know so we may close the ticket.
+        - If there is no longer a need for support and the issue is resolved, please reply to this message so that we may close the ticket.
+        - Should the matter already be resolved and no further help required, please confirm with us so we may finalize the ticket closure.

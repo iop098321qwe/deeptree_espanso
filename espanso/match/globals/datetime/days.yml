@@ -1,0 +1,367 @@
+# Espanso Match File
+
+# Print the current date
+matches:
+  - trigger: ";mon"
+    name: "Next Monday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Monday" '+Monday %Y-%m-%d'
+
+  - trigger: ";tues"
+    name: "Next Tuesday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Tuesday" '+Tuesday %Y-%m-%d'
+
+  - trigger: ";wed"
+    name: "Next Wednesday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Wednesday" '+Wednesday %Y-%m-%d'
+
+  - trigger: ";thur"
+    name: "Next Thursday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Thursday" '+Thursday %Y-%m-%d'
+
+  - trigger: ";fri"
+    name: "Next Friday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Friday" '+Friday %Y-%m-%d'
+
+  - trigger: ";sat"
+    name: "Next Saturday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Saturday" '+Saturday %Y-%m-%d'
+
+  - trigger: ";sun"
+    name: "Next Sunday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Sunday" '+Sunday %Y-%m-%d'
+
+  - trigger: ";lstmon"
+    name: "Previous Monday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Monday" '+last Monday, %Y-%m-%d'
+
+  # Get date for last Monday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lstmon"
+    name: "Previous Monday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Monday - {{weeks}} weeks" '+Monday %Y-%m-%d'
+
+  - trigger: ";lsttues"
+    name: "Previous Tuesday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Tuesday" '+last Tuesday, %Y-%m-%d'
+
+  # Get date for last Tuesday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lsttue"
+    name: "Previous Tuesday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Tuesday - {{weeks}} weeks" '+Tuesday %Y-%m-%d'
+
+  - trigger: ";lstwed"
+    name: "Previous Wednesday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Wednesday" '+last Wednesday, %Y-%m-%d'
+
+  # Get date for last Wednesday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lstwed"
+    name: "Previous Wednesday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Wednesday - {{weeks}} weeks" '+Wednesday %Y-%m-%d'
+
+  - trigger: ";lstthur"
+    name: "Previous Thursday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Thursday" '+last Thursday, %Y-%m-%d'
+
+  # Get date for last Thursday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lstthu"
+    name: "Previous Thursday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Thursday - {{weeks}} weeks" '+Thursday %Y-%m-%d'
+
+  - trigger: ";lstfri"
+    name: "Previous Friday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Friday" '+last Friday, %Y-%m-%d'
+
+  # Get date for last Friday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lstfri"
+    name: "Previous Friday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Friday - {{weeks}} weeks" '+Friday %Y-%m-%d'
+
+  - trigger: ";lstsat"
+    name: "Previous Saturday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Saturday" '+last Saturday, %Y-%m-%d'
+
+  # Get date for last Saturday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lstsat"
+    name: "Previous Saturday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Saturday - {{weeks}} weeks" '+Saturday %Y-%m-%d'
+
+  - trigger: ";lstsun"
+    name: "Previous Sunday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Sunday" '+last Sunday, %Y-%m-%d'
+
+  # Get date for last Sunday minus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.lstsun"
+    name: "Previous Sunday minus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "last Sunday - {{weeks}} weeks" '+Sunday %Y-%m-%d'
+
+  - trigger: ";nxtmon"
+    name: "Next Monday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Monday + 7 days" '+next Monday, %Y-%m-%d'
+
+  # Get date for next Monday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtmon"
+    name: "Next Monday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Monday + {{weeks}} weeks" '+Monday %Y-%m-%d'
+
+  - trigger: ";nxttues"
+    name: "Next Tuesday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Tuesday + 7 days" '+next Tuesday, %Y-%m-%d'
+
+  # Get date for next Tuesday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxttues"
+    name: "Next Tuesday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Tuesday + {{weeks}} weeks" '+Tuesday %Y-%m-%d'
+
+  - trigger: ";nxtwed"
+    name: "Next Wednesday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Wednesday + 7 days" '+next Wednesday, %Y-%m-%d'
+
+  # Get date for next Wednesday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtwed"
+    name: "Next Wednesday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Wednesday + {{weeks}} weeks" '+Wednesday %Y-%m-%d'
+
+  - trigger: ";nxtthur"
+    name: "Next Thursday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Thursday + 7 days" '+next Thursday, %Y-%m-%d'
+
+  # Get date for next Thursday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtthur"
+    name: "Next Thursday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Thursday + {{weeks}} weeks" '+Thursday %Y-%m-%d'
+
+  - trigger: ";nxtfri"
+    name: "Next Friday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Friday + 7 days" '+next Friday, %Y-%m-%d'
+
+  # Get date for next Friday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtfri"
+    name: "Next Friday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Friday + {{weeks}} weeks" '+Friday %Y-%m-%d'
+
+  - trigger: ";nxtsat"
+    name: "Next Saturday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Saturday + 7 days" '+next Saturday, %Y-%m-%d'
+
+  # Get date for next Saturday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtsat"
+    name: "Next Saturday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Saturday + {{weeks}} weeks" '+Saturday %Y-%m-%d'
+
+  - trigger: ";nxtsun"
+    name: "Next Sunday with date"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Sunday + 7 days" '+next Sunday, %Y-%m-%d'
+
+  # Get date for next Sunday plus N weeks
+  - regex: ";(?P<weeks>[0-9]+)\\.nxtsun"
+    name: "Next Sunday plus N weeks"
+    replace: "{{output}} $|$"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            date -d "next Sunday + {{weeks}} weeks" '+Sunday %Y-%m-%d'

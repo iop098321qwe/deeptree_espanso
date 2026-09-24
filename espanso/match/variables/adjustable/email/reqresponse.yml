@@ -1,0 +1,20 @@
+# espanso match file
+
+# request response
+global_vars:
+  - name: reqresponse
+    type: random
+    params:
+      choices:
+        - We kindly request that you respond to this email or call us at {{dthelp}} at your earliest convenience to confirm the next steps regarding your ticket.
+        - Please reply to this email or contact us at {{dthelp}} when convenient so we can determine how to proceed with your ticket.
+        - We would appreciate a response to this email or a call to {{dthelp}} so we can coordinate the next steps for your request.
+        - When you have a chance, please respond to this email or reach us at {{dthelp}} so we can continue working on your ticket.
+        - Please get back to us by replying to this email or calling {{dthelp}} so we can confirm how you would like to move forward.
+        - At your convenience, please reply to this email or contact us at {{dthelp}} so we can continue assisting with your request.
+        - We are awaiting your response before proceeding. Please reply to this email or contact us at {{dthelp}} when you are able.
+        - Please follow up with us by replying to this email or calling {{dthelp}} so we can determine the appropriate next steps for your ticket.
+        - When convenient, please send us a response to this email or contact us at {{dthelp}} so we can move forward with your ticket.
+        - We would appreciate hearing back from you regarding this ticket. You may reply to this email or call us at {{dthelp}}.
+        - Please provide an update by replying to this email or contacting us at {{dthelp}} so we can continue with the next steps for your ticket.
+        - Please reply to this email or reach us at {{dthelp}} when you are available so we can proceed with your tickets next steps.

@@ -1,0 +1,39 @@
+# Espanso Match File
+
+# Print the current date
+matches:
+  # Print tomorrow's date in ISO 8861 format
+  - trigger: ";tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'tomorrow' +'%Y-%m-%d'"
+
+  # Print N days from now date in ISO 8601 format
+  - regex: ";(?P<days>[0-9]+)\\.tmr"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '+{{days}} days' +'%Y-%m-%d'"
+
+  # Print yesterday's date in ISO 8861 format
+  - trigger: ";yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d 'yesterday' +'%Y-%m-%d'"
+
+  # Print N days ago date in ISO 8601 format
+  - regex: ";(?P<days>[0-9]+)\\.yst"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '+{{days}} days ago' +'%Y-%m-%d'"

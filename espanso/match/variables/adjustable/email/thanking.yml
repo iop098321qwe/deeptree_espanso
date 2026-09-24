@@ -1,0 +1,13 @@
+# espanso match file
+
+# Write a dynamic thank you for submitting a ticket.
+global_vars:
+  - name: outreachthanks
+    label: Random Outreach Thanking
+    comment: "This will output a randomly selected thank you for the outreach from a pre-selected list."
+    type: random
+    params:
+      choices:
+        - "Thank you for reaching out to the Deeptree helpdesk."
+        - "We appreciate you bringing this to our attention."
+        - "We extend our thanks for submitting this ticket."

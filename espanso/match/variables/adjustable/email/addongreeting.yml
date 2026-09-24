@@ -1,0 +1,32 @@
+# espanso match file
+
+# Dynamic greetings for Deeptree emails
+global_vars:
+  - name: addongreeting
+    label: Add-On For Random Greeting
+    comment: "This will output a randomly selected add on for the random greeting from a pre-selected list."
+    type: random
+    params:
+      choices:
+        - " I hope this email finds you well,"
+        - " I hope you are doing well,"
+        - " a quick email for you,"
+        - " just reaching out with an email for you,"
+        - " I hope everything is going smoothly,"
+        - " I hope you are having a productive week,"
+        - " I trust you are having a great day so far,"
+        - " hope all is well with you,"
+        - " hope your week is going well so far,"
+        - " I hope your day has been treating you kindly,"
+        - " I hope this message reaches you in good spirits,"
+        - " reaching out with a brief email,"
+        - " I trust all is proceeding smoothly on your side,"
+        - " hoping things are going well for you,"
+        - " a quick message to stay in touch,"
+        - " wishing you a smooth and productive day,"
+        - " I hope your week is progressing positively,"
+        - " I trust everything is running well on your end,"
+        - " I hope matters are going well for you,"
+        - " I wanted to take a moment to connect with you,"
+        - " an email for your consideration,"
+        - ""

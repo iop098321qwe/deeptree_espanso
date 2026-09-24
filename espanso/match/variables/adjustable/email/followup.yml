@@ -1,0 +1,13 @@
+# espanso match file
+
+# follow up
+global_vars:
+  - name: followup
+    type: random
+    params:
+      choices:
+        - This email is to follow up on the current status of your support ticket and to confirm that any remaining items related to your request are being properly addressed.
+        - I am reaching out to check on the status of your support ticket and to ensure that any outstanding concerns or requests are receiving the appropriate attention.
+        - This message is intended to follow up on your support ticket and verify that all remaining matters associated with your request are being addressed as needed.
+        - I am following up regarding your support ticket to confirm its current status and ensure that any unresolved items are being appropriately handled.
+        - This email is to check in on your support request and make sure that any outstanding questions, concerns, or remaining work are being addressed.

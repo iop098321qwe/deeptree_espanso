@@ -1,0 +1,64 @@
+# Espanso Match File
+
+# Dispatch Email Template Matches
+matches:
+  - regex: ";resreqapp(?P<person>.*)\\."
+    label: Request with Appointment Email Response Template
+    comment: "This is an email response template for a request with an appointment."
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      {{outreachthanks}}
+      $|$
+      {{assigned}}
+
+      {{setappointment}}
+
+      {{deadlines}}
+
+      {{signature}}
+
+  # Set up replacement for first response request without appointment
+  - regex: ";resreqnoapp(?P<person>.*)\\."
+    label: Request without Appointment Email Response Template
+    comment: "This is an email response template for a request without an appointment."
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      {{outreachthanks}}
+      $|$
+      {{assigned}}
+
+      {{deadlines}}
+
+      {{signature}}
+
+  # Set up replacement for first response incident
+  - regex: ";resinc(?P<person>.*)\\."
+    label: Incident Email Response Template
+    comment: "This is an email response template for an incident."
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      {{outreachthanks}}
+      $|$
+      {{assigned}}
+
+      {{setappointment}}
+
+      {{signature}}
+
+  # Set up replacement for first response spam
+  - regex: ";resspam(?P<person>.*)\\."
+    label: Spam Email Response Template
+    comment: "This is an email response template for spam."
+    replace: |-
+      {{greeting}}{{person}},{{addongreeting}}
+
+      {{outreachthanks}}
+
+      {{assigned}}
+
+      They will notify you if this is indeed spam and block the sender. If it is safe, they will reach out to confirm it is all right to access the email and its contents. Please let me know if you have any questions or concerns, and I will do my best to address them!
+
+      {{signature}}
