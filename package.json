@@ -1,6 +1,6 @@
 {
   "name": "deeptree_espanso",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "espanso configuration files for Deeptree",
   "main": "index.js",
   "scripts": {
