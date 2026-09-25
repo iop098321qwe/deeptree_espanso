@@ -1,18 +1,31 @@
 # Deeptree Espanso
 
-A collection of Espanso configuration files for Deeptree.
+A private Espanso package for Deeptree snippets, global variables, and
+scripts.
 
-This is a set of configuration files that have been preconfigured for use by
-Deeptree employees. It is configurable and customizable to each individual or
-position. It can be used to automate repetitive typing tasks, create new
-frequently used snippets, and more. What this aims to do is create a quick and
-easy template for an employee to have a working Espanso configuration file for
-typical Deeptree tasks.
+This repository provides Deeptree-managed Espanso expansions without replacing
+a technician's existing Espanso configuration. The `deeptree` package contains
+shared snippets, shared variables, and scripts that can be updated centrally.
 
-The goal is to have a configuration file that is Deeptree specific, updated in
-a single location so that changes can be made and pushed to all employees, and
-that is easy to use and customize for each employee. This will save time and
-effort for employees, as well as ensure that everyone is using the same
-configuration file. This way, if any changes are made to communication efforts
-from Deeptree, each employee will be able to get the updated version of the
-configuration file without having to manually update it themselves.
+Technician-specific variables are kept outside the package in a local template.
+That lets package updates change shared Deeptree content without overwriting a
+technician's name, title, or work email.
+
+## Install
+
+Install the package from this Git repository:
+
+```sh
+espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external
+```
+
+Then copy `templates/work_information.yml` into your Espanso match directory
+and update the values for the technician using the workstation.
+
+## Update
+
+Update the shared Deeptree package with:
+
+```sh
+espanso package update deeptree
+```
