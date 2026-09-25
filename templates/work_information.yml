@@ -1,27 +1,28 @@
 # Espanso Match File
 
-# Global Variables
+# Technician-specific work information.
+# Copy this file into your Espanso match directory and update the values.
 global_vars:
   - name: myfirst
     label: First Name Variable
     comment: "Input your first name in the 'echo' field."
     type: echo
     params:
-      echo: "Dallas"
+      echo: "First"
 
   - name: mymiddle
     label: Middle Name Variable
     comment: "Input your middle name in the 'echo' field."
     type: echo
     params:
-      echo: "James"
+      echo: "Middle"
 
   - name: mylast
     label: Last Name Variable
     comment: "Input your last name in the 'echo' field."
     type: echo
     params:
-      echo: "Elliott"
+      echo: "Last"
 
   - name: myname
     label: Full Name Variable
@@ -42,4 +43,16 @@ global_vars:
     comment: "Input your personal email in the 'echo' field."
     type: echo
     params:
-      echo: "iop098321qwe@pm.me"
+      echo: "personal@example.com"
+
+  - name: workemail
+    label: Work Email Variable
+    type: echo
+    params:
+      echo: "first.last@deeptree.tech"
+
+  - name: title
+    label: Work Title Variable
+    type: echo
+    params:
+      echo: "Technician"

@@ -1,0 +1,15 @@
+# Espanso Match File
+
+# Deeptree company information
+global_vars:
+  - name: helpdesk_email
+    label: Help Desk Email Variable
+    type: echo
+    params:
+      echo: "helpdesk@deeptree.tech"
+
+  - name: company
+    label: Company
+    type: echo
+    params:
+      echo: "Deeptree, Inc."
