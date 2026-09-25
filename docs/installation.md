@@ -22,7 +22,7 @@ and update the values for that technician. You can find the match directory
 with:
 
 ```sh
-espanso path match
+espanso path
 ```
 
 Keep this copied file local to the technician. It contains values such as name,
@@ -36,3 +36,11 @@ Update the shared Deeptree package with:
 ```sh
 espanso package update deeptree
 ```
+
+There will be a notification sent out to all employees when the package is
+updated. This will only change the `deeptree` package and will leave your own
+configuration untouched. If you have made changes to the `work_information.yml`
+file, those changes will not be overwritten by the update.
+
+Updates will come with any additional information if `work_information.yml` has
+any changes that need to be made.
