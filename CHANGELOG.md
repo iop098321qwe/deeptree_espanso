@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.1](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.0...v0.1.1) (2026-09-25)
+
+### Bug Fixes
+
+* **package:** resolve credential script path ([6ec5d75](https://github.com/iop098321qwe/deeptree_espanso/commit/6ec5d750afc9cbb0941189922e751cae91d1210f))
+
 ## [0.1.0](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.0.1...v0.1.0) (2026-09-25)
 
 ### Features
