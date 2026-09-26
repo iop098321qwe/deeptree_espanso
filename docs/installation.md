@@ -13,8 +13,40 @@ Espanso can be installed on Arch Linux and derivatives of Arch Linux using the
 AUR package `espanso-wayland`. This is the recommended package as the
 `espanso-wayland-bin` package is not up to date.
 
+You can install using your preferred AUR helper or manually download and
+install the package.
+
+#### Wayland/Hyprland Users
+
+##### Pacman
+
+For pacman, you can use the following command:
+
+```sh
+sudo pacman -S espanso-wayland
+```
+
 !!! tip "'Derivatives of Arch Linux'"
     This includes Omarchy and CachyOS.
+
+##### Yay
+
+For yay, you can use the following command:
+
+```sh
+yay -S espanso-wayland
+```
+
+##### Omarchy
+
+On Omarchy, you can install Espanso by opening the Omarchy Menu > Install > AUR
+> search `espanso-wayland` and install the package.
+
+You can also use the following command in the terminal:
+
+```sh
+omarchy pkg aur add espanso-wayland
+```
 
 ## Install the Package
 
