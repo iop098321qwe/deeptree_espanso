@@ -7,177 +7,49 @@
     {
       "location": "",
       "level": 1,
-      "title": "Deeptree Espanso",
-      "text": "<p>A private Espanso package for Deeptree snippets, global variables, and scripts.</p> <p>This repository provides Deeptree-managed Espanso expansions without replacing a technician's existing Espanso configuration. The <code>deeptree</code> package contains shared snippets, shared variables, and scripts that can be updated centrally.</p> <p>Technician-specific variables are kept outside the package in a local template. That lets package updates change shared Deeptree content without overwriting a technician's name, title, or work email.</p>",
-      "path": ["Deeptree Espanso"],
+      "title": "Deeptree Espanso Package",
+      "text": "<p>This is a private Espanso package for centrally managing the Deeptree snippets, global variables, and scripts for Espanso users.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "#what-is-espanso",
+      "level": 2,
+      "title": "What Is Espanso?",
+      "text": "<p>Espanso is a cross-platform text expander that allows users to create custom snippets and scripts that can be triggered by typing a specific keyword or key combination. It is designed to improve productivity by automating repetitive tasks and reducing the amount of typing required for common phrases or commands.</p> <p>It can be used to create snippets for frequently used text, such as email signatures, email templates, code snippets, or any other text that is repetitively typed. It can also be used to create scripts that can perform more complex tasks, such as opening applications, running commands, or interacting with APIs.</p> <p>Between snippets and scripts, Espanso can be used to automate a wide range of tasks and improve productivity for a wide range of users.</p> <p>WIP!</p> <p>There will be an instructional video added in the future to introduce and explain Espanso better.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "#how-to-use-espanso",
+      "level": 2,
+      "title": "How to Use Espanso",
+      "text": "<p>Once installed, Espanso can be configured to use custom snippets and scripts with any trigger keyword or key combination. Users can create their own snippets and scripts, or they can use pre-made packages like the Deeptree Espanso package to quickly set up a collection of useful snippets and scripts.</p> <p>Setting up your own snippets and scripts is easily performed by editing a configuration file in the Espanso directory. The configuration file is written in YAML format and allows users to define their own snippets, scripts, and triggers.</p> <p>This means that users can customize their Espanso experience to fit their specific needs and workflows, making it a powerful tool for improving productivity and efficiency.</p> <p>Some of the more often used snippets and scripts include expanding acronyms, such as typing \"brb\" to expand to \"be right back\", or typing \"addr\" to expand to a full address.</p> <p>The way that I often use it for example is typing something like <code>;signature</code> and it will expand my email signature automatically into:</p> <pre><code>With kind regards,\n\nDallas Elliott\nRapid Response Team Lead\nDeeptree, Inc.\n+1 907 206 2373\n\n---\n\"An ounce of prevention is worth a pound of cure.\" - Benjamin Franklin\n</code></pre> <p>Having been a long time Espanso user, this signature expansion is much more advanced than it appears to be. The way that my signature is configured is by using a selection of variables that I have added to create a dynamic signature that changes each time that I type <code>;signature</code>.</p> <p>I have taken this a step further to generate entire email templates, or ticket templates. I can type a dynamic trigger that uses regex to write nearly an entire email and place the cursor in the correct location for me to continue typing. For example, I can type <code>;emailnotiDeeptree.</code> and it will expand into the following, with the cursor placed at the <code>$|$</code> location for me to continue typing:</p> <pre><code>High regards Deeptree, an email for your consideration,\n\n**NO RESPONSE REQUIRED**\n\n$|$\n\nThis is a notification email. If anything does not meet satisfactory completion standards, please reply directly to this email or call +1 907 206 2373 with any additional information, questions, or concerns.\n\nWith appreciation,\n\nDallas Elliott\nRapid Response Team Lead\nDeeptree, Inc.\n+1 907 206 2373\n\n---\n\"Technology is best when it brings people together.\" - Matt Mullenweg\n</code></pre> <p>Again, this is a dynamic template that uses variables to fill in the technician's name, title, and work email address. It will also randomly select sentences, quotes, and partial sentences to randomize this email generation each time it is used to avoid sounding too automated or templated.</p> <p>With this package, I have made it so that each individual can use these expansion tools for themselves.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "#what-is-the-deeptree-espanso-package",
+      "level": 2,
+      "title": "What Is the Deeptree Espanso Package?",
+      "text": "<p>The repository contains templates for the technician-specific variables that are kept outside the package. These are used to customize the expansions to tailor for each individual technician's name, title, and work email address to automatically be filled in using the shared snippets and scripts.</p> <p>This package is designed to live alongside existing Espanso configuration. This means that a user can install this package and still have their own personal snippets and scripts in their Espanso configuration separately managed. Whenever the package is updated, the shared snippets and scripts will be updated only for the Deeptree Espanso package.</p> <p>This means that new snippets and scripts can be added to the package and shared with all users centrally and automatically without requiring each user to manually update their own Espanso configuration or interfere with their custom configurations.</p> <p>To read more about Espanso, visit the Espanso website.</p>",
+      "path": ["Deeptree Espanso Package"],
       "tags": []
     },
     {
       "location": "#install",
       "level": 2,
       "title": "Install",
-      "text": "<p>Install the package from this Git repository:</p> <pre><code>espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external\n</code></pre> <p>Then copy <code>templates/work_information.yml</code> into your Espanso match directory and update the values for the technician using the workstation.</p>",
-      "path": ["Deeptree Espanso"],
+      "text": "<p>Reference the Installation documentation for installing Espanso and configuring this package on your machine.</p>",
+      "path": ["Deeptree Espanso Package"],
       "tags": []
     },
     {
-      "location": "#update",
+      "location": "#updating",
       "level": 2,
-      "title": "Update",
-      "text": "<p>Update the shared Deeptree package with:</p> <pre><code>espanso package update deeptree\n</code></pre>",
-      "path": ["Deeptree Espanso"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/",
-      "level": 1,
-      "title": "AGENTS.md",
-      "text": "",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#purpose",
-      "level": 2,
-      "title": "Purpose",
-      "text": "<p>This file guides AI coding agents working in <code>deeptree_espanso</code>. All work must follow best practices and industry standards where applicable.</p>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#scope",
-      "level": 2,
-      "title": "Scope",
-      "text": "<p>This file covers repository-wide expectations for Espanso package files, documentation, generated site output, and git work. It does not replace verified instructions in source files, tooling configs, or release automation.</p>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#formatting-rules",
-      "level": 2,
-      "title": "Formatting Rules",
-      "text": "<ul> <li>Keep lines at 80 characters or fewer when practical.</li> <li>Allow longer lines only for URLs, code blocks, hashes, or commands   that cannot be wrapped cleanly.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#quick-start",
-      "level": 2,
-      "title": "Quick Start",
-      "text": "<ul> <li>Read <code>README.md</code> first for project context and setup notes.</li> <li>Run <code>git status --short --branch</code> before editing to confirm repo state.</li> <li>Run <code>git diff --stat</code> before committing to review the change scope.</li> <li>Use <code>./.venv/bin/zensical build</code> after documentation changes that affect   the generated <code>site/</code> directory.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#environment",
-      "level": 2,
-      "title": "Environment",
-      "text": "<ul> <li>Git is required for day-to-day work in this repository.</li> <li>Node dependencies are defined by <code>package.json</code> and <code>package-lock.json</code>.</li> <li>Commit hooks use Husky and Commitlint.</li> <li>Espanso <code>2.4.0</code> was verified locally during package conversion work.</li> <li>Python virtual environment tooling exists under <code>.venv/</code> for Zensical.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#repository-overview",
-      "level": 2,
-      "title": "Repository Overview",
-      "text": "<ul> <li><code>.husky/</code>: Git hook scripts for Commitlint.</li> <li><code>.venv/</code>: Local Python virtual environment used for Zensical commands.</li> <li><code>deeptree/</code>: Espanso external package source.</li> <li><code>docs/</code>: Markdown documentation sources for the generated site.</li> <li><code>node_modules/</code>: Installed Node dependencies for commit tooling.</li> <li><code>site/</code>: Generated static documentation output.</li> <li><code>templates/</code>: Local technician template files that are not package-managed.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#tracked-files-overview",
-      "level": 2,
-      "title": "Tracked Files Overview",
-      "text": "<ul> <li><code>.husky/commit-msg</code>: Runs Commitlint for commit messages.</li> <li><code>AGENTS.md</code>: AI coding agent instructions for this repository.</li> <li><code>CHANGELOG.md</code>: Generated changelog; do not edit manually.</li> <li><code>commitlint.config.cjs</code>: Conventional Commit lint configuration.</li> <li><code>deeptree/_manifest.yml</code>: Espanso package metadata.</li> <li><code>deeptree/package.yml</code>: Espanso package entry point and imports.</li> <li><code>deeptree/README.md</code>: Package-specific install and variable notes.</li> <li><code>deeptree/matches/</code>: Package-managed Espanso match and variable files.</li> <li><code>deeptree/scripts/</code>: Scripts called by package snippets.</li> <li><code>docs/installation.md</code>: Installation guide source.</li> <li><code>done.txt</code>: Root completed task list placeholder.</li> <li><code>inbox.txt.tuxedo-lock</code>: Blank Tuxedo inbox lock file.</li> <li><code>LICENSE</code>: Project license text.</li> <li><code>package-lock.json</code>: Locked Node dependency graph.</li> <li><code>package.json</code>: Node package metadata and scripts.</li> <li><code>README.md</code>: Primary repository overview and setup notes.</li> <li><code>site/</code>: Generated static documentation output; summarize as a directory.</li> <li><code>templates/work_information.yml</code>: Local technician variable template.</li> <li><code>todo.txt</code>: User-owned task list; agents must not touch it.</li> <li><code>zensical.toml</code>: Zensical static site configuration.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#architecture",
-      "level": 2,
-      "title": "Architecture",
-      "text": "<ul> <li><code>deeptree/</code> is an Espanso external package named <code>deeptree</code>.</li> <li><code>deeptree/package.yml</code> imports separate match files to keep snippets,   variables, and work categories independently maintainable.</li> <li>Package-managed variables live under <code>deeptree/matches/variables/</code>.</li> <li>Technician-specific variables live in <code>templates/work_information.yml</code> and   must be copied into the user's Espanso match directory outside the package.</li> <li><code>deeptree/scripts/credential-generator.sh</code> is called by credential snippets.</li> <li><code>docs/</code> is the Markdown source for the generated <code>site/</code> directory.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#commands",
-      "level": 2,
-      "title": "Commands",
-      "text": "<ul> <li><code>git status --short --branch</code>: show the current branch and worktree state.</li> <li><code>git diff --stat</code>: review the size and spread of pending changes.</li> <li><code>git log --oneline --decorate -5</code>: inspect recent commit history.</li> <li><code>npm run test</code>: currently exits with <code>Error: no test specified</code>.</li> <li><code>./.venv/bin/zensical build</code>: build the generated documentation site.</li> <li><code>espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external</code>:   install the package from Git. URL length is an 80-character exception.</li> <li><code>espanso package update deeptree</code>: update the installed package.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#testing",
-      "level": 2,
-      "title": "Testing",
-      "text": "<ul> <li>No automated test suite is currently defined.</li> <li><code>npm run test</code> is not a valid verification gate because it intentionally   exits with an error.</li> <li>Validate YAML syntax for <code>deeptree/**/*.yml</code> and <code>templates/**/*.yml</code> when   changing package files.</li> <li>Run an Espanso install smoke test when package layout or metadata changes.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#linting-and-formatting",
-      "level": 2,
-      "title": "Linting and Formatting",
-      "text": "<ul> <li>Commit messages are linted by Commitlint through <code>.husky/commit-msg</code>.</li> <li>No YAML, Markdown, or shell formatter command is currently defined.</li> <li>Keep changes minimal and consistent with the existing file style.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#ci-and-release",
-      "level": 2,
-      "title": "CI and Release",
-      "text": "<ul> <li>Use Conventional Commits for every commit. Prefer a scope when it adds   clarity.</li> <li>Never create, edit, or update <code>CHANGELOG.md</code> manually.</li> <li><code>CHANGELOG.md</code> is generated and maintained by release tooling only.</li> <li>If release automation adds or changes generated files, let the tooling own   those updates.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#conventions",
-      "level": 2,
-      "title": "Conventions",
-      "text": "<ul> <li>Use small, correct changes that fit the existing project structure.</li> <li>Keep Espanso package files split by topic unless consolidation is required.</li> <li>Keep technician-specific values out of the <code>deeptree</code> package.</li> <li>Agents must never read, create, edit, delete, move, stage, commit, or   otherwise touch <code>todo.txt</code>; only the user may modify it manually.</li> <li>Prefer amending small related corrections into the relevant current-branch   commit instead of creating separate <code>fixup</code>, <code>chore</code>, or cleanup commits.</li> <li>Keep <code>AGENTS.md</code> as instructions, not as a changelog, diary, or work log.</li> <li>Do not add update notes, status logs, or change summaries to <code>AGENTS.md</code>.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#security-and-compliance",
-      "level": 2,
-      "title": "Security and Compliance",
-      "text": "<ul> <li>Never commit secrets, credentials, tokens, or private keys.</li> <li>Keep personal technician data in local templates or user config, not in the   package-managed Espanso files.</li> <li>Verify new dependencies, automation, and scripts before trusting them.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#dependencies-and-services",
-      "level": 2,
-      "title": "Dependencies and Services",
-      "text": "<ul> <li>Espanso is the external runtime for package installation and expansion.</li> <li>Git is required for installing the private package with <code>--git</code>.</li> <li>Node dependencies support commit-message validation.</li> <li>Zensical generates the static documentation site.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#troubleshooting",
-      "level": 2,
-      "title": "Troubleshooting",
-      "text": "<ul> <li>If package installation fails, verify <code>_manifest.yml</code>, <code>package.yml</code>, and   <code>README.md</code> exist under <code>deeptree/</code>.</li> <li>If snippets using signatures fail, verify the user copied and configured   <code>templates/work_information.yml</code> in their Espanso match directory.</li> <li>If docs are stale, run <code>./.venv/bin/zensical build</code> and inspect <code>site/</code>.</li> <li>If generated or managed files change unexpectedly, verify which tool owns   them before editing.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#refining-existing-agentsmd",
-      "level": 2,
-      "title": "Refining Existing AGENTS.md",
-      "text": "<ul> <li>Re-check every statement against the repository before keeping it.</li> <li>Remove stale, duplicated, or vague guidance.</li> <li>Replace placeholders with exact commands, paths, and verified workflows.</li> <li>Keep bullets short and easy for AI agents to scan.</li> <li>Preserve this section order when improving the file.</li> </ul>",
-      "path": ["AGENTS.md"],
-      "tags": []
-    },
-    {
-      "location": "AGENTS/#maintenance",
-      "level": 2,
-      "title": "Maintenance",
-      "text": "<ul> <li>After any code, config, or doc change, verify that <code>AGENTS.md</code> still   matches the repository.</li> <li>When <code>AGENTS.md</code> needs an update, make it in a separate <code>docs</code> Conventional   Commit such as <code>docs(agents): update repo instructions</code>.</li> <li>Keep <code>AGENTS.md</code> out of mixed code commits whenever possible.</li> <li>Remove stale instructions instead of appending historical notes.</li> </ul>",
-      "path": ["AGENTS.md"],
+      "title": "Updating",
+      "text": "<p>Reference the Updating documentation for instructions on how to update the package.</p>",
+      "path": ["Deeptree Espanso Package"],
       "tags": []
     },
     {
@@ -248,7 +120,23 @@
       "location": "installation/",
       "level": 1,
       "title": "Installation Guide",
-      "text": "<p>Install Espanso on your system using your preferred method. It may be installed via package managers, direct downloads, or from source. Follow the instructions for your operating system.</p>",
+      "text": "",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#install-espanso",
+      "level": 2,
+      "title": "Install Espanso",
+      "text": "<p>Install Espanso on your system using your preferred method. It may be installed via package managers, direct downloads, or from source. Follow the instructions for your operating system. Please reference Espanso installation guide for more details to install on your system.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#aur",
+      "level": 3,
+      "title": "AUR",
+      "text": "<p>Espanso can be installed on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>. This is the recommended package as the <code>espanso-wayland-bin</code> package is not up to date.</p> <p>'Derivatives of Arch Linux'</p> <p>This includes Omarchy and CachyOS.</p>",
       "path": ["Installation Guide"],
       "tags": []
     },
@@ -264,16 +152,32 @@
       "location": "installation/#set-work-information",
       "level": 2,
       "title": "Set Work Information",
-      "text": "<p>Copy <code>templates/work_information.yml</code> into the user's Espanso match directory and update the values for that technician. You can find the match directory with:</p> <pre><code>espanso path\n</code></pre> <p>Keep this copied file local to the technician. It contains values such as name, title, personal email, and work email that should not be overwritten by package updates.</p>",
+      "text": "<p>Copy <code>templates/work_information.yml</code> into the user's Espanso match directory and update the values for that technician. You can find the match directory with:</p> <pre><code>espanso path\n</code></pre> <p>You will utilize the config path to access the 'match' directory. You will need to copy the <code>templates/work_information.yml</code> file from the repository into the <code>match</code> directory and update the values with your information.</p> <p>Keep this copied file local to the technician. It contains values such as name, title, personal email, and work email that should not be overwritten by package updates.</p>",
       "path": ["Installation Guide"],
       "tags": []
     },
     {
-      "location": "installation/#update-the-package",
+      "location": "updating/",
+      "level": 1,
+      "title": "Updating the Package",
+      "text": "",
+      "path": ["Updating the Package"],
+      "tags": []
+    },
+    {
+      "location": "updating/#update-command",
       "level": 2,
-      "title": "Update the Package",
-      "text": "<p>Update the shared Deeptree package with:</p> <pre><code>espanso package update deeptree\n</code></pre> <p>There will be a notification sent out to all employees when the package is updated. This will only change the <code>deeptree</code> package and will leave your own configuration untouched. If you have made changes to the <code>work_information.yml</code> file, those changes will not be overwritten by the update.</p> <p>Updates will come with any additional information if <code>work_information.yml</code> has any changes that need to be made.</p>",
-      "path": ["Installation Guide"],
+      "title": "Update Command",
+      "text": "<p>Update the shared Deeptree package with:</p> <pre><code>espanso package update deeptree\n</code></pre>",
+      "path": ["Updating the Package"],
+      "tags": []
+    },
+    {
+      "location": "updating/#deeptree-package-update-notifications",
+      "level": 2,
+      "title": "Deeptree Package Update Notifications",
+      "text": "<p>There will be a notification sent out to all employees when the package is updated. You will need to manually run the command above to update the package. This will only change the <code>deeptree</code> package and will leave your own configuration untouched. If you have made changes to the <code>work_information.yml</code> file, those changes will not be overwritten by the update.</p> <p>Update notifications will come with any additional information and instructions if <code>work_information.yml</code> has any local changes that need to be made.</p>",
+      "path": ["Updating the Package"],
       "tags": []
     }
   ]
