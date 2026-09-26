@@ -136,7 +136,39 @@
       "location": "installation/#aur",
       "level": 3,
       "title": "AUR",
-      "text": "<p>Espanso can be installed on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>. This is the recommended package as the <code>espanso-wayland-bin</code> package is not up to date.</p> <p>'Derivatives of Arch Linux'</p> <p>This includes Omarchy and CachyOS.</p>",
+      "text": "<p>Espanso can be installed on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>. This is the recommended package as the <code>espanso-wayland-bin</code> package is not up to date.</p> <p>You can install using your preferred AUR helper or manually download and install the package.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#waylandhyprland-users",
+      "level": 4,
+      "title": "Wayland/Hyprland Users",
+      "text": "",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#pacman",
+      "level": 5,
+      "title": "Pacman",
+      "text": "<p>For pacman, you can use the following command:</p> <pre><code>sudo pacman -S espanso-wayland\n</code></pre> <p>'Derivatives of Arch Linux'</p> <p>This includes Omarchy and CachyOS.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#yay",
+      "level": 5,
+      "title": "Yay",
+      "text": "<p>For yay, you can use the following command:</p> <pre><code>yay -S espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#omarchy",
+      "level": 5,
+      "title": "Omarchy",
+      "text": "<p>On Omarchy, you can install Espanso by opening the Omarchy Menu &gt; Install &gt; AUR</p> <p>search <code>espanso-wayland</code> and install the package.</p> <p>You can also use the following command in the terminal:</p> <pre><code>omarchy pkg aur add espanso-wayland\n</code></pre>",
       "path": ["Installation Guide"],
       "tags": []
     },
