@@ -13,8 +13,8 @@ site_name = "Deeptree Espanso"
 nav = [
   { "Home" = "./" },
   { "Installation" = "installation/" },
-  { "AGENTS" = "AGENTS/" },
-  { "CHANGELOG" = "CHANGELOG/" },
+  { "Updating" = "updating/" },
+  { "Changelog" = "CHANGELOG/" },
 ]
 
 # extra_css = ["stylesheets/extra.css"]
