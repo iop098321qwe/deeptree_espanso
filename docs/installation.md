@@ -6,8 +6,9 @@ Install Espanso on your system using your preferred method. It may be installed
 via package managers, direct downloads, or from source. Follow the instructions
 for your operating system. Please reference [Espanso installation guide][1]
 for more details to install on your system.
+### Wayland/Hyprland Users
 
-### AUR
+#### AUR
 
 Espanso can be installed on Arch Linux and derivatives of Arch Linux using the
 AUR package `espanso-wayland`. This is the recommended package as the
@@ -16,7 +17,6 @@ AUR package `espanso-wayland`. This is the recommended package as the
 You can install using your preferred AUR helper or manually download and
 install the package.
 
-#### Wayland/Hyprland Users
 
 ##### Pacman
 
@@ -39,13 +39,28 @@ yay -S espanso-wayland
 
 ##### Omarchy
 
-On Omarchy, you can install Espanso by opening the Omarchy Menu > Install > AUR
-> search `espanso-wayland` and install the package.
+On Omarchy, you can install Espanso by opening the Omarchy Menu -> Install ->
+AUR -> search `espanso-wayland` and install the package.
 
 You can also use the following command in the terminal:
 
 ```sh
 omarchy pkg aur add espanso-wayland
+```
+
+#### Fedora
+
+To install Espanso on Fedora, you will first need to install the Terra third
+party repository. You can do this by running the following command:
+```sh
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
+```
+
+You can then install using the Terra Linux package manager `dnf` with the
+following command:
+
+```sh
+sudo dnf install espanso-wayland
 ```
 
 ## Install the Package
