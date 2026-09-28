@@ -63,6 +63,15 @@ You can also use the following command in the terminal:
 omarchy pkg aur add espanso-wayland
 ```
 
+##### Fedora
+
+On Fedora, you can install using the Terra Linux package manager `dnf` with the
+following command:
+
+```sh
+sudo dnf install espanso-wayland
+```
+
 ## Install the Package
 
 Install the Deeptree package from this Git repository:
