@@ -133,18 +133,18 @@
       "tags": []
     },
     {
-      "location": "installation/#aur",
+      "location": "installation/#waylandhyprland-users",
       "level": 3,
-      "title": "AUR",
-      "text": "<p>Espanso can be installed on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>. This is the recommended package as the <code>espanso-wayland-bin</code> package is not up to date.</p> <p>You can install using your preferred AUR helper or manually download and install the package.</p>",
+      "title": "Wayland/Hyprland Users",
+      "text": "",
       "path": ["Installation Guide"],
       "tags": []
     },
     {
-      "location": "installation/#waylandhyprland-users",
+      "location": "installation/#aur",
       "level": 4,
-      "title": "Wayland/Hyprland Users",
-      "text": "",
+      "title": "AUR",
+      "text": "<p>Espanso can be installed on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>. This is the recommended package as the <code>espanso-wayland-bin</code> package is not up to date.</p> <p>You can install using your preferred AUR helper or manually download and install the package.</p>",
       "path": ["Installation Guide"],
       "tags": []
     },
@@ -168,7 +168,15 @@
       "location": "installation/#omarchy",
       "level": 5,
       "title": "Omarchy",
-      "text": "<p>On Omarchy, you can install Espanso by opening the Omarchy Menu &gt; Install &gt; AUR</p> <p>search <code>espanso-wayland</code> and install the package.</p> <p>You can also use the following command in the terminal:</p> <pre><code>omarchy pkg aur add espanso-wayland\n</code></pre>",
+      "text": "<p>On Omarchy, you can install Espanso by opening the Omarchy Menu -&gt; Install -&gt; AUR -&gt; search <code>espanso-wayland</code> and install the package.</p> <p>You can also use the following command in the terminal:</p> <pre><code>omarchy pkg aur add espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#fedora",
+      "level": 4,
+      "title": "Fedora",
+      "text": "<p>To install Espanso on Fedora, you will first need to install the Terra third party repository. You can do this by running the following command: <pre><code>sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys\n</code></pre></p> <p>You can then install using the Terra Linux package manager <code>dnf</code> with the following command:</p> <pre><code>sudo dnf install espanso-wayland\n</code></pre>",
       "path": ["Installation Guide"],
       "tags": []
     },
