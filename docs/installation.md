@@ -1,93 +1,154 @@
 # Installation Guide
 
-## Install Espanso
+## 1. Install Espanso
 
 Install Espanso on your system using your preferred method. It may be installed
 via package managers, direct downloads, or from source. Follow the instructions
-for your operating system. Please reference [Espanso installation guide][1]
-for more details to install on your system.
-### Wayland/Hyprland Users
+for your operating system.
 
-#### Fedora
+!!! warning "Read Installation Documentation"
+    Please reference [Espanso installation documentation][install] for installation
+    documentation on your system.
 
-To install Espanso on Fedora, you will first need to install the Terra third
-party repository. You can do this by running the following command:
-```sh
-sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
-```
+Specific instructions I have put together can be found below.
 
-You can then install using the Terra Linux package manager `dnf` with the
-following command:
+Please select from the tabs below:
 
-```sh
-sudo dnf install espanso-wayland
-```
+=== "Fedora"
 
-#### AUR
+    ### Fedora
 
-Espanso can be installed on Arch Linux and derivatives of Arch Linux using the
-AUR package `espanso-wayland`. This is the recommended package as the
-`espanso-wayland-bin` package is not up to date.
+    To install Espanso on Fedora, you will first need to install the Terra third
+    party repository. You can do this by running the following command:
 
-You can install using your preferred AUR helper or manually download and
-install the package.
+    ```sh
+    sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
+    ```
 
+    You can then install using the Terra repository and Linux package manager
+    `dnf` with the following command:
 
-##### Pacman
+    ```sh
+    sudo dnf install espanso-wayland
+    ```
 
-For pacman, you can use the following command:
+=== "Arch Based"
 
-```sh
-sudo pacman -S espanso-wayland
-```
+    ### AUR
 
-!!! tip "'Derivatives of Arch Linux'"
-    This includes Omarchy and CachyOS.
+    You can install Espanso on Arch Linux and derivatives of Arch Linux using the AUR package `espanso-wayland`.
 
-##### Yay
+    !!! tip "'Derivatives of Arch Linux'"
+        This includes Omarchy and CachyOS!
 
-For yay, you can use the following command:
+    === "yay"
 
-```sh
-yay -S espanso-wayland
-```
+        #### Yay
+    
+        For yay, you can use the following command:
+    
+        ```sh
+        yay -S espanso-wayland
+        ```
+    
+    === "pacman"
 
-##### Omarchy
+        #### Pacman
+    
+        For pacman, you can use the following command:
+    
+        ```sh
+        sudo pacman -S espanso-wayland
+        ```
+    
+    === "Omarchy"
 
-On Omarchy, you can install Espanso by opening the Omarchy Menu -> Install ->
-AUR -> search `espanso-wayland` and install the package.
+        #### Omarchy
+    
+        ##### Omarchy Menu
+    
+        On Omarchy, you can install Espanso by opening the `Omarchy Menu` ->
+        `Install` -> `AUR` -> search `espanso-wayland` and install the package.
+    
+        ##### Omarchy Command
+    
+        You can also use the following command in the terminal:
+    
+        ```sh
+        omarchy pkg aur add espanso-wayland
+        ```
 
-You can also use the following command in the terminal:
+=== "Windows (WIP)"
 
-```sh
-omarchy pkg aur add espanso-wayland
-```
+    ### Windows (WIP)
 
-##### Fedora
+    **Currently under construction...**
 
-On Fedora, you can install using the Terra Linux package manager `dnf` with the
-following command:
+    *(but like why are you using Windows anyway? :P)*
 
-```sh
-sudo dnf install espanso-wayland
-```
+=== "MacOS (WIP)"
 
-## Install the Package
+    ### MacOS (WIP)
 
-Install the Deeptree package from this Git repository:
+    **Currently under construction...**
+
+    *(but like why are you using MacOS anyway? :P)*
+
+## 2. Start and Enable Espanso Service
+
+=== "Linux"
+
+    ### Linux
+
+    After installation, you will need to start the Espanso service. You will
+    also need to enable it to start automatically on boot. You can do both of these
+    by running the following command:
+
+    ```sh
+    espanso service register; espanso start
+    ```
+
+=== "Windows (WIP)"
+
+    ### Windows (WIP)
+
+    **Currently under construction...**
+
+    *(but like why are you using Windows anyway? :P)*
+
+=== "MacOS (WIP)"
+
+    ### MacOS (WIP)
+
+    **Currently under construction...**
+
+    *(but like why are you using MacOS anyway? :P)*
+
+## 3. Install the Package
+
+Now you have Espanso installed and running. Now it is time to install the
+preconfigured Deeptree package.
+
+Install the Deeptree package with the following command:
 
 ```sh
 espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external
 ```
 
 This adds the shared Deeptree snippets, variables, and scripts without
-replacing the user's existing Espanso configuration.
+replacing the user's existing Espanso configuration. It also allows updates to
+be rolled out to all users without requiring them to manually update their
+configuration.
 
-## Set Work Information
+## 4. Set Work Information
 
-Copy `templates/work_information.yml` into the user's Espanso match directory
-and update the values for that technician. You can find the match directory
-with:
+Copy `templates/work_information.yml` from the [Github repository][repo] into
+the user's Espanso match directory within the config directory and update the
+values for that technician. You can find the config directory with:
+
+> [!INFO] Setup Tip
+> Middle click or control click the Github repository link to open it in a new
+> tab to copy the `templates/work_information.yml` and leave this page open.
 
 ```sh
 espanso path
@@ -101,4 +162,5 @@ Keep this copied file local to the technician. It contains values such as name,
 title, personal email, and work email that should not be overwritten by package
 updates.
 
-[1]: <https://espanso.org/install/>
+[install]: <https://espanso.org/install/>
+[repo]: <https://github.com/iop098321qwe/deeptree_espanso>
