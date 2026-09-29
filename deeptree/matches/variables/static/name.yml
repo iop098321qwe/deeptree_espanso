@@ -1,0 +1,17 @@
+# Espanso Match File
+
+# Static Global Variables
+global_vars:
+  - name: myname
+    label: Full Name Variable
+    comment: "Input your full name in the 'echo' field."
+    type: echo
+    params:
+      echo: "{{myfirst}} {{mylast}}"
+
+  - name: mylegalname
+    label: Full Legal Name Variable
+    comment: "Input your full legal name in the 'echo' field."
+    type: echo
+    params:
+      echo: "{{myfirst}} {{mymiddle}} {{mylast}}"
