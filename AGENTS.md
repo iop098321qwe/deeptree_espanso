@@ -57,6 +57,8 @@ or release automation.
 - `deeptree/matches/`: Package-managed Espanso match and variable files.
 - `deeptree/scripts/`: Scripts called by package snippets.
 - `docs/installation.md`: Installation guide source.
+- `docs/usage.md`: User guide for package expansions and scripts.
+- `docs/updating.md`: Package update guide source.
 - `done.txt`: Root completed task list placeholder.
 - `inbox.txt.tuxedo-lock`: Blank Tuxedo inbox lock file.
 - `LICENSE`: Project license text.
