@@ -8,6 +8,21 @@ for your operating system. Please reference [Espanso installation guide][1]
 for more details to install on your system.
 ### Wayland/Hyprland Users
 
+#### Fedora
+
+To install Espanso on Fedora, you will first need to install the Terra third
+party repository. You can do this by running the following command:
+```sh
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
+```
+
+You can then install using the Terra Linux package manager `dnf` with the
+following command:
+
+```sh
+sudo dnf install espanso-wayland
+```
+
 #### AUR
 
 Espanso can be installed on Arch Linux and derivatives of Arch Linux using the
@@ -46,21 +61,6 @@ You can also use the following command in the terminal:
 
 ```sh
 omarchy pkg aur add espanso-wayland
-```
-
-#### Fedora
-
-To install Espanso on Fedora, you will first need to install the Terra third
-party repository. You can do this by running the following command:
-```sh
-sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
-```
-
-You can then install using the Terra Linux package manager `dnf` with the
-following command:
-
-```sh
-sudo dnf install espanso-wayland
 ```
 
 ## Install the Package
