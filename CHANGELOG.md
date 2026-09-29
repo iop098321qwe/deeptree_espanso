@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.2](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.1...v0.1.2) (2026-09-29)
+
+### Features
+
+* **variables:** move static variables for names to own file ([20a2939](https://github.com/iop098321qwe/deeptree_espanso/commit/20a29395782527ebfeb953e7870b8714befd18c6))
+
 ## [0.1.1](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.0...v0.1.1) (2026-09-25)
 
 ### Bug Fixes
