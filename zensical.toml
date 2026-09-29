@@ -13,6 +13,7 @@ site_name = "Deeptree Espanso"
 nav = [
   { "Home" = "./" },
   { "Installation" = "installation/" },
+  { "Usage" = "usage/" },
   { "Updating" = "updating/" },
   { "Changelog" = "CHANGELOG/" },
 ]

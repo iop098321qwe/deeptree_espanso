@@ -1,6 +1,5 @@
 imports:
   - "./matches/globals/paste_clipboard.yml"
-  - "./matches/globals/words.yml"
   - "./matches/globals/datetime/date_time.yml"
   - "./matches/globals/datetime/days.yml"
   - "./matches/globals/datetime/months.yml"

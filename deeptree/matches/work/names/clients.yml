@@ -122,10 +122,6 @@ matches:
   - trigger: ";gptlhb"
     replace: "Great Plains Tribal Leaders Health Board$|$"
 
-  # Indian Family Health Clinic
-  - trigger: ";ifhc"
-    replace: "Indian Family Health Clinic$|$"
-
   # Junior Achievement of Alaska
   - trigger: ";jaoa"
     replace: "Junior Achievement of Alaska$|$"
