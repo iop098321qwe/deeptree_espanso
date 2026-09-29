@@ -3,6 +3,17 @@
 This is a private Espanso package for centrally managing the Deeptree snippets,
 global variables, and scripts for Espanso users.
 
+This package is designed to live alongside existing Espanso configuration. If a
+user already utilizes Espanso, they can install this package and still have
+their own personal snippets and scripts in their Espanso configuration
+separately managed. Whenever the package is updated, the shared snippets and
+scripts will be updated only for the Deeptree Espanso package. If a user does
+not already utilize Espanso, they can install this package and use it as their
+primary Espanso configuration.
+
+This package also outlines the process for installing Espanso for new users and
+configuring it to use the Deeptree Espanso package.
+
 ## What Is [Espanso][espanso]?
 
 Espanso is a cross-platform text expander that allows users to create custom
