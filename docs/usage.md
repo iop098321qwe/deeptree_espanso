@@ -122,8 +122,14 @@ the request, impact, due date, symptoms, troubleshooting, and follow-up steps.
 
 ## Credential Generation
 
-Credential expansions generate a starter username, email address, and temporary
-password for supported clients.
+Credential expansions generate starter username and email documentation for
+supported clients, then include the password currently available on your
+clipboard.
+
+Before using a credential expansion, create the password that the user should
+use and copy it to your clipboard. The current recommended workflow is to use
+`xkpasswd.net` to create and copy a memorable password, then run the credential
+expansion to add the user's information to the ticket for documentation.
 
 Type the client credential trigger, the first name, a comma, the last name, and
 the final period.
@@ -139,8 +145,8 @@ Example:
 ```
 
 The expansion runs the package script `credential-generator.sh`. The script
-normalizes the name, applies the client username format, creates the email
-address for that client, and adds a temporary password from the package.
+normalizes the name, applies the client username format, and creates the email
+address for that client. The password is expected to come from your clipboard.
 
 Supported credential triggers:
 
