@@ -6,9 +6,9 @@ Install Espanso on your system using your preferred method. It may be installed
 via package managers, direct downloads, or from source. Follow the instructions
 for your operating system.
 
-!!! warning "Read Installation Documentation"
-    Please reference [Espanso installation documentation][install] for installation
-    documentation on your system.
+> [!WARNING] "Read Installation Documentation"
+Please reference [Espanso installation documentation][install] for installation
+documentation on your system.
 
 Specific instructions I have put together can be found below.
 
@@ -38,8 +38,8 @@ Please select from the tabs below:
 
     You can install Espanso on Arch Linux and derivatives of Arch Linux using the AUR package `espanso-wayland`.
 
-    !!! tip "'Derivatives of Arch Linux'"
-        This includes Omarchy and CachyOS!
+    > [!TIP] "'Derivatives of Arch Linux'"
+    This includes Omarchy and CachyOS!
 
     === "yay"
 
@@ -124,7 +124,25 @@ Please select from the tabs below:
 
     *(but like why are you using MacOS anyway? :P)*
 
-## 3. Install the Package
+## 3. Verify Espanso Installation
+
+Run the following command to verify that Espanso is installed and running:
+
+```sh
+espanso --version
+```
+
+This should return the version of Espanso that is installed on your system. For example:
+
+```text
+> espanso --version
+2.4.0
+```
+
+If you receive an error, please refer to the Espanso installation documentation
+for troubleshooting steps.
+
+## 4. Install the Package
 
 Now you have Espanso installed and running. Now it is time to install the
 preconfigured Deeptree package.
@@ -140,27 +158,121 @@ replacing the user's existing Espanso configuration. It also allows updates to
 be rolled out to all users without requiring them to manually update their
 configuration.
 
-## 4. Set Work Information
+### Verify Package Installation
+
+You can verify that the package was installed correctly by running the following command:
+
+```sh
+espanso package list
+```
+
+For example, you should see something similar to the following output:
+
+```text
+> espanso package list
+- deeptree - version: 0.1.1 (git: https://github.com/iop098321qwe/deeptree_espanso)
+```
+
+If you see the package listed, then the installation was successful.
+
+## 5. Set Work Information
 
 Copy `templates/work_information.yml` from the [Github repository][repo] into
 the user's Espanso match directory within the config directory and update the
-values for that technician. You can find the config directory with:
+values for that technician.
 
 > [!INFO] Setup Tip
-> Middle click or control click the Github repository link to open it in a new
-> tab to copy the `templates/work_information.yml` and leave this page open.
+Middle click or control click the Github repository link to open it in a new
+tab to copy the `templates/work_information.yml` and leave this page open.
 
-```sh
-espanso path
-```
+=== "Linux"
 
-You will utilize the config path to access the 'match' directory. You will need
-to copy the `templates/work_information.yml` file from the repository into the
-`match` directory and update the values with your information.
+    ### Linux
 
-Keep this copied file local to the technician. It contains values such as name,
-title, personal email, and work email that should not be overwritten by package
-updates.
+    > [!WARNING] Privacy
+    All of the information input into variables is stored locally and not
+    sent to any external servers. All variables are resolved locally as well for
+    expansions and scripts included in the package.
+
+    Run `espanso path` to find your Espanso config directory:
+
+    ```sh
+    espanso path
+    ```
+
+    The output should look similar to this:
+
+    ```text
+    > espanso path
+    Config: /home/<username>/.config/espanso
+    Packages: /home/<username>/.config/espanso/match/packages
+    Runtime: /home/<username>/.cache/espanso
+    ```
+
+    Use the `Config:` path, then open the `match` directory inside it. For the
+    example above, the destination would be:
+
+    ```text
+    /home/<username>/.config/espanso/match/work_information.yml
+    ```
+
+    Copy `templates/work_information.yml` into that `match` directory. Do not put
+    it inside `match/packages/deeptree`; that directory is managed by the
+    installed package.
+
+    Open the copied `work_information.yml` file and replace the placeholder
+    values with the technician's information, including name, personal email,
+    work email, and title.
+
+    Change only the values on `echo` lines between the double quotes. The
+    `label` and `comment` lines help you determine what you are changing and should
+    not be modified. For example, you will change the following line:
+
+    ```yaml hl_lines="6"
+      - name: myfirst
+    label: First Name Variable
+    comment: "Input your first name in the 'echo' field."
+    type: echo
+    params:
+      echo: "First"
+    ```
+
+    to
+    
+    ```yaml hl_lines="6"
+      - name: myfirst
+    label: First Name Variable
+    comment: "Input your first name in the 'echo' field."
+    type: echo
+    params:
+      echo: "Dallas"
+    ```
+
+    Repeat this for all variables in the file. Each individual label is denoted
+    with a name, label, comment, type, params, and echo field. Again, the `echo`
+    field is the only one that should be modified.
+
+    > [!TIP] Comments
+    Read the comment line for each variables instructions.
+
+    Keep this copied file local to the technician. It contains personal
+    technician values and should not be overwritten by Deeptree package updates.
+
+=== "Windows (WIP)"
+
+    ### Windows (WIP)
+
+    **Currently under construction...**
+
+    *(but like why are you using Windows anyway? :P)*
+
+=== "MacOS (WIP)"
+
+    ### MacOS (WIP)
+
+    **Currently under construction...**
+
+    *(but like why are you using MacOS anyway? :P)*
 
 [install]: <https://espanso.org/install/>
-[repo]: <https://github.com/iop098321qwe/deeptree_espanso>
+[repo]: <https://github.com/iop098321qwe/deeptree_espanso/blob/main/templates/work_information.yml>
