@@ -1,5 +1,11 @@
 # Installation Guide
 
+> [!INFO] Installation Guide Tips
+Utilize the Table of Contents on the right to navigate to the numbered steps
+for installation. Each section contains tabbed instructions for different
+systems. Please ensure to select the tab corresponding to your operating system
+for accurate installation instructions.
+
 ## 1. Install Espanso
 
 Install Espanso on your system using your preferred method. It may be installed
@@ -38,7 +44,7 @@ Please select from the tabs below:
 
     You can install Espanso on Arch Linux and derivatives of Arch Linux using the AUR package `espanso-wayland`.
 
-    > [!TIP] "'Derivatives of Arch Linux'"
+    > [!TIP] Derivatives of Arch Linux
     This includes Omarchy and CachyOS!
 
     === "yay"
