@@ -151,7 +151,6 @@ Supported credential triggers:
 - `;credccs<first>,<last>.` for CCS Early Learning.
 - `;credcrmc<first>,<last>.` for Cross Road Medical Center.
 - `;credgsak<first>,<last>.` for Girl Scouts of Alaska.
-- `;credifhc<first>,<last>.` for Indian Family Health Clinic.
 - `;credjaoa<first>,<last>.` for Junior Achievement of Alaska.
 - `;credkc<first>,<last>.` for Kijik Corporation.
 - `;credklebs<first>,<last>.` for KLEBS Heating & Mechanical.
@@ -205,7 +204,6 @@ cursor after the inserted name.
 - `;fb` expands to `Fireside Books`.
 - `;gsak` expands to `Girl Scouts of Alaska`.
 - `;gptlhb` expands to `Great Plains Tribal Leaders Health Board`.
-- `;ifhc` expands to `Indian Family Health Clinic`.
 - `;jaoa` expands to `Junior Achievement of Alaska`.
 - `;kc` expands to `Kijik Corporation`.
 - `;knom` expands to `Knom Radio Mission, Inc.`.
@@ -237,10 +235,6 @@ it in useful ways.
 
 These are useful when quoting copied text and then writing above, below, or
 around it.
-
-## Word Replacement
-
-- `wifi` expands to `Wi-Fi` when typed as a standalone word.
 
 ## Date and Time
 
