@@ -31,9 +31,9 @@ with APIs.
 Between snippets and scripts, Espanso can be used to automate a wide range of
 tasks and improve productivity for a wide range of users.
 
-!!! info "WIP!"
-    There will be an instructional video added in the future to introduce
-    and explain Espanso better.
+> [!INFO] WIP!
+There will be an instructional video added in the future to introduce and
+explain Espanso better.
 
 ## How to Use Espanso
 
