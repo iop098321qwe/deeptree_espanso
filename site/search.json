@@ -141,6 +141,14 @@
       "tags": []
     },
     {
+      "location": "installation/#fedora",
+      "level": 4,
+      "title": "Fedora",
+      "text": "<p>To install Espanso on Fedora, you will first need to install the Terra third party repository. You can do this by running the following command: <pre><code>sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys\n</code></pre></p> <p>You can then install using the Terra Linux package manager <code>dnf</code> with the following command:</p> <pre><code>sudo dnf install espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
       "location": "installation/#aur",
       "level": 4,
       "title": "AUR",
@@ -173,10 +181,10 @@
       "tags": []
     },
     {
-      "location": "installation/#fedora",
-      "level": 4,
+      "location": "installation/#fedora_1",
+      "level": 5,
       "title": "Fedora",
-      "text": "<p>To install Espanso on Fedora, you will first need to install the Terra third party repository. You can do this by running the following command: <pre><code>sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys\n</code></pre></p> <p>You can then install using the Terra Linux package manager <code>dnf</code> with the following command:</p> <pre><code>sudo dnf install espanso-wayland\n</code></pre>",
+      "text": "<p>On Fedora, you can install using the Terra Linux package manager <code>dnf</code> with the following command:</p> <pre><code>sudo dnf install espanso-wayland\n</code></pre>",
       "path": ["Installation Guide"],
       "tags": []
     },
