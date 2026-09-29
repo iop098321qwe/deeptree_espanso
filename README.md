@@ -1,9 +1,25 @@
 # Deeptree Espanso Package
 
+> [!INFO] Get Started NOW
+If you wish to get started without reading about Espanso or the purpose of the
+Deeptree Espanso package, you can skip directly to the [installation
+instructions](installation.md).
+
 This is a private Espanso package for centrally managing the Deeptree snippets,
 global variables, and scripts for Espanso users.
 
-## What Is Espanso?
+This package is designed to live alongside existing Espanso configuration. If a
+user already utilizes Espanso, they can install this package and still have
+their own personal snippets and scripts in their Espanso configuration
+separately managed. Whenever the package is updated, the shared snippets and
+scripts will be updated only for the Deeptree Espanso package. If a user does
+not already utilize Espanso, they can install this package and use it as their
+primary Espanso configuration.
+
+This package also outlines the process for installing Espanso for new users and
+configuring it to use the Deeptree Espanso package.
+
+## What Is [Espanso][espanso]?
 
 Espanso is a cross-platform text expander that allows users to create custom
 snippets and scripts that can be triggered by typing a specific keyword or key
@@ -20,9 +36,9 @@ with APIs.
 Between snippets and scripts, Espanso can be used to automate a wide range of
 tasks and improve productivity for a wide range of users.
 
-!!! info "WIP!"
-    There will be an instructional video added in the future to introduce
-    and explain Espanso better.
+> [!INFO] WIP!
+There will be an instructional video added in the future to introduce and
+explain Espanso better.
 
 ## How to Use Espanso
 
@@ -116,16 +132,6 @@ with all users centrally and automatically without requiring each user to
 manually update their own Espanso configuration or interfere with their custom
 configurations.
 
-To read more about Espanso, visit the [Espanso website][1].
+To read more about Espanso, visit the [Espanso website][espanso].
 
-## Install
-
-Reference the [Installation](installation.md) documentation for installing
-Espanso and configuring this package on your machine.
-
-## Updating
-
-Reference the [Updating](updating.md) documentation for instructions on how to
-update the package.
-
-[1]: https://espanso.org/
+[espanso]: https://espanso.org/
