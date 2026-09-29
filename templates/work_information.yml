@@ -24,20 +24,6 @@ global_vars:
     params:
       echo: "Last"
 
-  - name: myname
-    label: Full Name Variable
-    comment: "Input your full name in the 'echo' field."
-    type: echo
-    params:
-      echo: "{{myfirst}} {{mylast}}"
-
-  - name: mylegalname
-    label: Full Legal Name Variable
-    comment: "Input your full legal name in the 'echo' field."
-    type: echo
-    params:
-      echo: "{{myfirst}} {{mymiddle}} {{mylast}}"
-
   - name: myemail
     label: Personal Email Variable
     comment: "Input your personal email in the 'echo' field."
@@ -47,12 +33,14 @@ global_vars:
 
   - name: workemail
     label: Work Email Variable
+    comment: "input your work email in the 'echo' field."
     type: echo
     params:
       echo: "first.last@deeptree.tech"
 
   - name: title
     label: Work Title Variable
+    comment: "input your work title in the 'echo' field."
     type: echo
     params:
       echo: "Technician"
