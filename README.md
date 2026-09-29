@@ -1,5 +1,10 @@
 # Deeptree Espanso Package
 
+> [!INFO] Get Started NOW
+If you wish to get started without reading about Espanso or the purpose of the
+Deeptree Espanso package, you can skip directly to the [installation
+instructions](installation.md).
+
 This is a private Espanso package for centrally managing the Deeptree snippets,
 global variables, and scripts for Espanso users.
 
