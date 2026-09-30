@@ -1,1 +1,864 @@
-{"config":{"lang":["en"],"separator":"[\\s\\-_,:!=\\[\\]()\\\\\"`/]+|\\.(?!\\d)"},"items":[{"location":"","level":1,"title":"Deeptree Espanso Package","text":"<p>Get Started NOW</p> <p>If you wish to get started without reading about Espanso or the purpose of the Deeptree Espanso package, you can skip directly to the installation instructions.</p> <p>This is a private Espanso package for centrally managing the Deeptree snippets, global variables, and scripts for Espanso users.</p> <p>This package is designed to live alongside existing Espanso configuration. If a user already utilizes Espanso, they can install this package and still have their own personal snippets and scripts in their Espanso configuration separately managed. Whenever the package is updated, the shared snippets and scripts will be updated only for the Deeptree Espanso package. If a user does not already utilize Espanso, they can install this package and use it as their primary Espanso configuration.</p> <p>This package also outlines the process for installing Espanso for new users and configuring it to use the Deeptree Espanso package.</p>","path":["Deeptree Espanso Package"],"tags":[]},{"location":"#what-is-espanso","level":2,"title":"What Is Espanso?","text":"<p>Espanso is a cross-platform text expander that allows users to create custom snippets and scripts that can be triggered by typing a specific keyword or key combination. It is designed to improve productivity by automating repetitive tasks and reducing the amount of typing required for common phrases or commands.</p> <p>It can be used to create snippets for frequently used text, such as email signatures, email templates, code snippets, or any other text that is repetitively typed. It can also be used to create scripts that can perform more complex tasks, such as opening applications, running commands, or interacting with APIs.</p> <p>Between snippets and scripts, Espanso can be used to automate a wide range of tasks and improve productivity for a wide range of users.</p> <p>WIP!</p> <p>There will be an instructional video added in the future to introduce and explain Espanso better.</p>","path":["Deeptree Espanso Package"],"tags":[]},{"location":"#how-to-use-espanso","level":2,"title":"How to Use Espanso","text":"<p>Once installed, Espanso can be configured to use custom snippets and scripts with any trigger keyword or key combination. Users can create their own snippets and scripts, or they can use pre-made packages like the Deeptree Espanso package to quickly set up a collection of useful snippets and scripts.</p> <p>Setting up your own snippets and scripts is easily performed by editing a configuration file in the Espanso directory. The configuration file is written in YAML format and allows users to define their own snippets, scripts, and triggers.</p> <p>This means that users can customize their Espanso experience to fit their specific needs and workflows, making it a powerful tool for improving productivity and efficiency.</p> <p>Some of the more often used snippets and scripts include expanding acronyms, such as typing \"brb\" to expand to \"be right back\", or typing \"addr\" to expand to a full address.</p> <p>The way that I often use it for example is typing something like <code>;signature</code> and it will expand my email signature automatically into:</p> <pre><code>With kind regards,\n\nDallas Elliott\nRapid Response Team Lead\nDeeptree, Inc.\n+1 907 206 2373\n\n---\n\"An ounce of prevention is worth a pound of cure.\" - Benjamin Franklin\n</code></pre> <p>Having been a long time Espanso user, this signature expansion is much more advanced than it appears to be. The way that my signature is configured is by using a selection of variables that I have added to create a dynamic signature that changes each time that I type <code>;signature</code>.</p> <p>I have taken this a step further to generate entire email templates, or ticket templates. I can type a dynamic trigger that uses regex to write nearly an entire email and place the cursor in the correct location for me to continue typing. For example, I can type <code>;emailnotiDeeptree.</code> and it will expand into the following, with the cursor placed at the <code>$|$</code> location for me to continue typing:</p> <pre><code>High regards Deeptree, an email for your consideration,\n\n**NO RESPONSE REQUIRED**\n\n$|$\n\nThis is a notification email. If anything does not meet satisfactory completion standards, please reply directly to this email or call +1 907 206 2373 with any additional information, questions, or concerns.\n\nWith appreciation,\n\nDallas Elliott\nRapid Response Team Lead\nDeeptree, Inc.\n+1 907 206 2373\n\n---\n\"Technology is best when it brings people together.\" - Matt Mullenweg\n</code></pre> <p>Again, this is a dynamic template that uses variables to fill in the technician's name, title, and work email address. It will also randomly select sentences, quotes, and partial sentences to randomize this email generation each time it is used to avoid sounding too automated or templated.</p> <p>With this package, I have made it so that each individual can use these expansion tools for themselves.</p>","path":["Deeptree Espanso Package"],"tags":[]},{"location":"#what-is-the-deeptree-espanso-package","level":2,"title":"What Is the Deeptree Espanso Package?","text":"<p>The repository contains templates for the technician-specific variables that are kept outside the package. These are used to customize the expansions to tailor for each individual technician's name, title, and work email address to automatically be filled in using the shared snippets and scripts.</p> <p>This package is designed to live alongside existing Espanso configuration. This means that a user can install this package and still have their own personal snippets and scripts in their Espanso configuration separately managed. Whenever the package is updated, the shared snippets and scripts will be updated only for the Deeptree Espanso package.</p> <p>This means that new snippets and scripts can be added to the package and shared with all users centrally and automatically without requiring each user to manually update their own Espanso configuration or interfere with their custom configurations.</p> <p>To read more about Espanso, visit the Espanso website.</p>","path":["Deeptree Espanso Package"],"tags":[]},{"location":"CHANGELOG/","level":1,"title":"Changelog","text":"<p>All notable changes to this project will be documented in this file. See commit-and-tag-version for commit guidelines.</p>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#014-2026-09-30","level":2,"title":"0.1.4 (2026-09-30)","text":"","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#features","level":3,"title":"Features","text":"<ul> <li>installation: add Linux GUI work information setup (b7ed3d2)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#013-2026-09-29","level":2,"title":"0.1.3 (2026-09-29)","text":"","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#features_1","level":3,"title":"Features","text":"<ul> <li>expansions: remove IFHC and word shortcuts (00f9254)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#012-2026-09-29","level":2,"title":"0.1.2 (2026-09-29)","text":"","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#features_2","level":3,"title":"Features","text":"<ul> <li>variables: move static variables for names to own file (20a2939)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#011-2026-09-25","level":2,"title":"0.1.1 (2026-09-25)","text":"","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#bug-fixes","level":3,"title":"Bug Fixes","text":"<ul> <li>package: resolve credential script path (6ec5d75)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#010-2026-09-25","level":2,"title":"0.1.0 (2026-09-25)","text":"","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#features_3","level":3,"title":"Features","text":"<ul> <li>package: convert config to external package (8c15120)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#bug-fixes_1","level":3,"title":"Bug Fixes","text":"<ul> <li>config: remove config file to instead use users preferences (bf1d8cf)</li> <li>packages: remove markdown-shortcuts package as it is out of scope (ae3696b)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#001-2026-09-24","level":2,"title":"0.0.1 (2026-09-24)","text":"","path":["Changelog"],"tags":[]},{"location":"CHANGELOG/#features_4","level":3,"title":"Features","text":"<ul> <li>configs: initial current config import (e262477)</li> </ul>","path":["Changelog"],"tags":[]},{"location":"installation/","level":1,"title":"Installation Guide","text":"<p>Installation Guide Tips</p> <p>Utilize the Table of Contents on the right to navigate to the numbered steps for installation. Each section contains tabbed instructions for different systems. Please ensure to select the tab corresponding to your operating system for accurate installation instructions.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#1-install-espanso","level":2,"title":"1. Install Espanso","text":"<p>Install Espanso on your system using your preferred method. It may be installed via package managers, direct downloads, or from source. Follow the instructions for your operating system.</p> <p>\"Read Installation Documentation\"</p> <p>Please reference Espanso installation documentation for installation documentation on your system.</p> <p>Specific instructions I have put together can be found below.</p> <p>Please select from the tabs below:</p> FedoraArch BasedWindows (WIP)MacOS (WIP)","path":["Installation Guide"],"tags":[]},{"location":"installation/#fedora","level":3,"title":"Fedora","text":"<p>To install Espanso on Fedora, you will first need to install the Terra third party repository. You can do this by running the following command:</p> <pre><code>sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys\n</code></pre> <p>You can then install using the Terra repository and Linux package manager <code>dnf</code> with the following command:</p> <pre><code>sudo dnf install espanso-wayland\n</code></pre>","path":["Installation Guide"],"tags":[]},{"location":"installation/#aur","level":3,"title":"AUR","text":"<p>You can install Espanso on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>.</p> <p>Derivatives of Arch Linux</p> <p>This includes Omarchy and CachyOS!</p> yaypacmanOmarchy","path":["Installation Guide"],"tags":[]},{"location":"installation/#yay","level":4,"title":"Yay","text":"<p>For yay, you can use the following command:</p> <pre><code>yay -S espanso-wayland\n</code></pre>","path":["Installation Guide"],"tags":[]},{"location":"installation/#pacman","level":4,"title":"Pacman","text":"<p>For pacman, you can use the following command:</p> <pre><code>sudo pacman -S espanso-wayland\n</code></pre>","path":["Installation Guide"],"tags":[]},{"location":"installation/#omarchy","level":4,"title":"Omarchy","text":"","path":["Installation Guide"],"tags":[]},{"location":"installation/#omarchy-menu","level":5,"title":"Omarchy Menu","text":"<p>On Omarchy, you can install Espanso by opening the <code>Omarchy Menu</code> -&gt; <code>Install</code> -&gt; <code>AUR</code> -&gt; search <code>espanso-wayland</code> and install the package.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#omarchy-command","level":5,"title":"Omarchy Command","text":"<p>You can also use the following command in the terminal:</p> <pre><code>omarchy pkg aur add espanso-wayland\n</code></pre>","path":["Installation Guide"],"tags":[]},{"location":"installation/#windows-wip","level":3,"title":"Windows (WIP)","text":"<p>Currently under construction...</p> <p>(but like why are you using Windows anyway? :P)</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#macos-wip","level":3,"title":"MacOS (WIP)","text":"<p>Currently under construction...</p> <p>(but like why are you using MacOS anyway? :P)</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#2-start-and-enable-espanso-service","level":2,"title":"2. Start and Enable Espanso Service","text":"LinuxWindows (WIP)MacOS (WIP)","path":["Installation Guide"],"tags":[]},{"location":"installation/#linux","level":3,"title":"Linux","text":"<p>After installation, you will need to start the Espanso service. You will also need to enable it to start automatically on boot. You can do both of these by running the following command:</p> <pre><code>espanso service register; espanso start\n</code></pre>","path":["Installation Guide"],"tags":[]},{"location":"installation/#windows-wip_1","level":3,"title":"Windows (WIP)","text":"<p>Currently under construction...</p> <p>(but like why are you using Windows anyway? :P)</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#macos-wip_1","level":3,"title":"MacOS (WIP)","text":"<p>Currently under construction...</p> <p>(but like why are you using MacOS anyway? :P)</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#3-verify-espanso-installation","level":2,"title":"3. Verify Espanso Installation","text":"<p>Run the following command to verify that Espanso is installed and running:</p> <pre><code>espanso --version\n</code></pre> <p>This should return the version of Espanso that is installed on your system. For example:</p> <pre><code>&gt; espanso --version\n2.4.0\n</code></pre> <p>If you receive an error, please refer to the Espanso installation documentation for troubleshooting steps.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#4-install-the-package","level":2,"title":"4. Install the Package","text":"<p>Now you have Espanso installed and running. Now it is time to install the preconfigured Deeptree package.</p> <p>Install the Deeptree package with the following command:</p> <pre><code>espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external\n</code></pre> <p>This adds the shared Deeptree snippets, variables, and scripts without replacing the user's existing Espanso configuration. It also allows updates to be rolled out to all users without requiring them to manually update their configuration.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#verify-package-installation","level":3,"title":"Verify Package Installation","text":"<p>You can verify that the package was installed correctly by running the following command:</p> <pre><code>espanso package list\n</code></pre> <p>For example, you should see something similar to the following output:</p> <pre><code>&gt; espanso package list\n- deeptree - version: 0.1.1 (git: https://github.com/iop098321qwe/deeptree_espanso)\n</code></pre> <p>If you see the package listed, then the installation was successful.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#5-set-work-information","level":2,"title":"5. Set Work Information","text":"<p>Copy <code>templates/work_information.yml</code> from the Github repository into the user's Espanso match directory within the config directory and update the values for that technician.</p> <p>Setup Tip</p> <p>Middle click or control click the Github repository link to open it in a new tab to copy the <code>templates/work_information.yml</code> and leave this page open.</p> Linux GUILinuxWindows (WIP)MacOS (WIP)","path":["Installation Guide"],"tags":[]},{"location":"installation/#linux-gui-setup","level":3,"title":"Linux GUI Setup","text":"<p>Use this alternative walkthrough to complete step 5 with a web browser, file manager, and graphical text editor. Espanso must already be installed and the Deeptree package installed as described above. This does not require a separate Espanso configuration GUI.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#download-the-template","level":4,"title":"Download the Template","text":"<ol> <li>Open the work information template on Github in your browser.</li> <li>Select Download raw file in the file toolbar (on the right hand    side).</li> <li>Save the file in your Downloads folder with the exact filename   <code>work_information.yml</code>. Make sure the browser has not added <code>.txt</code> or   <code>.html</code> to the filename.</li> </ol>","path":["Installation Guide"],"tags":[]},{"location":"installation/#copy-the-file-into-espanso","level":4,"title":"Copy the File into Espanso","text":"<ol> <li>Open your file manager, such as Files, Dolphin, or Thunar, and open your   Home folder.</li> <li>Enable Show Hidden Files in the file manager's menu. In many Linux file    managers, Ctrl+H toggles this setting.</li> <li>From the <code>Home</code> directory, open <code>.config</code>, then <code>espanso</code>, then <code>match</code>.    The default destination is <code>/home/&lt;username&gt;/.config/espanso/match</code>,    where <code>&lt;username&gt;</code> is your Linux account name.</li> <li>In another file manager window (or tab), open Downloads, right-click    <code>work_information.yml</code>, and select Copy. Return to Espanso's <code>match</code>    folder and select Paste.</li> </ol> <p>Do not paste the file into <code>match/packages/deeptree</code>. Package updates manage that folder, while your work information belongs directly in <code>match</code>.</p> <p>If <code>work_information.yml</code> already exists in the destination, cancel any overwrite prompt. Open the existing file and review its values instead of replacing your personalized information. Keep any backup outside the Espanso <code>match</code> folder so it is not loaded as another match file.</p> <p>The path above is the default Linux location. If <code>.config/espanso</code> is missing or your installation uses a custom configuration directory, use the existing <code>espanso path</code> instructions in the Linux tab above to find the Config: path, then open its <code>match</code> folder in your file manager. Do not create a new configuration folder just to match the default path.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#edit-the-technician-values","level":4,"title":"Edit the Technician Values","text":"<ol> <li>Right-click the copied <code>work_information.yml</code> in the <code>match</code> folder and   choose Open With, then select a graphical plain-text editor, such as   GNOME Text Editor, Kate, or Mousepad (or your choice). Do not use a word processor.</li> <li>Read each <code>label</code> and <code>comment</code> to identify the value. Replace only the   text between the double quotes on each <code>echo:</code> line. For example, change   <code>echo: \"First\"</code> to <code>echo: \"Dallas\"</code>.</li> <li>Fill in all six values: first name (<code>myfirst</code>), middle name   (<code>mymiddle</code>), last name (<code>mylast</code>), personal email (<code>myemail</code>), work   email (<code>workemail</code>), and work title (<code>title</code>). If you do not use a middle name,   leave its value empty as <code>echo: \"\"</code>. You can also omit the personal email if   you do not want to use it in matches.</li> <li>Preserve the double quotes, indentation, and all other fields. Do not   change <code>global_vars</code>, <code>name</code>, <code>label</code>, <code>comment</code>, <code>type</code>, or <code>params</code>, and   do not replace indentation spaces with tabs.</li> <li>Select Save or press Ctrl+S. Keep the file as plain text named   <code>work_information.yml</code>, not <code>work_information.yml.txt</code>.</li> </ol>","path":["Installation Guide"],"tags":[]},{"location":"installation/#check-the-result","level":4,"title":"Check the Result","text":"<p>After saving, allow Espanso a moment to reload its configuration. Open a new blank document in a text editor and type <code>;signature</code>. Confirm that the expanded signature contains your name and work title instead of placeholders. Use a local test document rather than an email or ticket that could be sent.</p> <p>If the expansion still uses placeholders or Espanso reports a configuration error, reopen the file from the <code>match</code> folder. Check that your changes were saved, the filename ends in <code>.yml</code>, and the quotes and indentation still match the original template. Also confirm that you edited the copied file rather than the download or a file inside <code>match/packages/deeptree</code>.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#linux_1","level":3,"title":"Linux","text":"<p>Privacy</p> <p>All of the information input into variables is stored locally and not sent to any external servers. All variables are resolved locally as well for expansions and scripts included in the package.</p> <p>Run <code>espanso path</code> to find your Espanso config directory:</p> <pre><code>espanso path\n</code></pre> <p>The output should look similar to this:</p> <pre><code>&gt; espanso path\nConfig: /home/&lt;username&gt;/.config/espanso\nPackages: /home/&lt;username&gt;/.config/espanso/match/packages\nRuntime: /home/&lt;username&gt;/.cache/espanso\n</code></pre> <p>Use the <code>Config:</code> path, then open the <code>match</code> directory inside it. For the example above, the destination would be:</p> <pre><code>/home/&lt;username&gt;/.config/espanso/match/work_information.yml\n</code></pre> <p>Copy <code>templates/work_information.yml</code> into that <code>match</code> directory. Do not put it inside <code>match/packages/deeptree</code>; that directory is managed by the installed package.</p> <p>Open the copied <code>work_information.yml</code> file and replace the placeholder values with the technician's information, including name, personal email, work email, and title.</p> <p>Change only the values on <code>echo</code> lines between the double quotes. The <code>label</code> and <code>comment</code> lines help you determine what you are changing and should not be modified. For example, you will change the following line:</p> <pre><code>  - name: myfirst\nlabel: First Name Variable\ncomment: \"Input your first name in the 'echo' field.\"\ntype: echo\nparams:\n  echo: \"First\"\n</code></pre> <p>to</p> <pre><code>  - name: myfirst\nlabel: First Name Variable\ncomment: \"Input your first name in the 'echo' field.\"\ntype: echo\nparams:\n  echo: \"Dallas\"\n</code></pre> <p>Repeat this for all variables in the file. Each individual label is denoted with a name, label, comment, type, params, and echo field. Again, the <code>echo</code> field is the only one that should be modified.</p> <p>Comments</p> <p>Read the comment line for each variables instructions.</p> <p>Keep this copied file local to the technician. It contains personal technician values and should not be overwritten by Deeptree package updates.</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#windows-wip_2","level":3,"title":"Windows (WIP)","text":"<p>Currently under construction...</p> <p>(but like why are you using Windows anyway? :P)</p>","path":["Installation Guide"],"tags":[]},{"location":"installation/#macos-wip_2","level":3,"title":"MacOS (WIP)","text":"<p>Currently under construction...</p> <p>(but like why are you using MacOS anyway? :P)</p>","path":["Installation Guide"],"tags":[]},{"location":"updating/","level":1,"title":"Updating the Package","text":"","path":["Updating the Package"],"tags":[]},{"location":"updating/#update-command","level":2,"title":"Update Command","text":"<p>Update the shared Deeptree package with:</p> <pre><code>espanso package update deeptree\n</code></pre> <p>Deeptree Package Update Notifications</p> <p>There will be a notification sent out to all employees when the package is updated. You will need to manually run the command above to update the package. This will only change the <code>deeptree</code> package and will leave your own configuration untouched. If you have made changes to the <code>work_information.yml</code> file, those changes will not be overwritten by the update.</p> <p>Update notifications will come with any additional information and instructions if <code>work_information.yml</code> has any local changes that need to be made.</p>","path":["Updating the Package"],"tags":[]},{"location":"usage/","level":1,"title":"Usage Guide","text":"<p>This guide explains how to use the Deeptree Espanso package after Espanso is installed, the package is installed, and your local work information file is configured.</p> <p>It is written for day-to-day use. You do not need to understand how the package is built to use these expansions.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#how-to-type-expansions","level":2,"title":"How to Type Expansions","text":"<p>Most Deeptree expansions begin with <code>;</code>. Type the full trigger exactly as shown and Espanso replaces it with the configured text.</p> <p>Some expansions use a small typed value inside the trigger. In this guide, text inside angle brackets shows the part you replace while typing.</p> <p>For example:</p> <pre><code>;emailnoti&lt;person&gt;.\n</code></pre> <p>To write a notification email to Deeptree, type:</p> <pre><code>;emailnotiDeeptree.\n</code></pre> <p>The final period is part of the trigger. It tells Espanso where the name ends. Espanso uses the value before that final period as the name in the generated email.</p> <p>Many longer templates place your cursor where you should continue typing. This cursor position is shown in examples as <code>$|$</code>, but Espanso moves the cursor there instead of printing <code>$|$</code>.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#dynamic-emails","level":2,"title":"Dynamic Emails","text":"<p>Dynamic email triggers create full email drafts. Type the trigger, the person's or group's name, and the final period.</p> <p>The package fills in the greeting, email body, and signature. Some parts are randomized by package variables so the output does not always sound exactly the same. Your locally configured setup values are used for technician details such as your name, title, and email information.</p> <p>This guide does not explain those variables in detail. A separate variable guide is planned for that.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#general-email-templates","level":3,"title":"General Email Templates","text":"<ul> <li><code>;emailnorm&lt;person&gt;.</code> creates a normal Deeptree email.</li> <li><code>;emailreq&lt;person&gt;.</code> creates a response-requested email.</li> <li><code>;emaildisk&lt;person&gt;.</code> creates a disk-space cleanup request.</li> <li><code>;emailfu&lt;person&gt;.</code> creates a follow-up email.</li> <li><code>;emaildy&lt;person&gt;.</code> creates a done-yet follow-up email.</li> <li><code>;emailvm&lt;person&gt;.</code> creates a voicemail follow-up email.</li> <li><code>;emailnovm&lt;person&gt;.</code> creates an unable-to-leave-voicemail follow-up.</li> <li><code>;emailmissvm&lt;person&gt;.</code> creates a missed-appointment email when a voicemail   or message was left.</li> <li><code>;emailmissnovm&lt;person&gt;.</code> creates a missed-appointment email when no   voicemail was left.</li> <li><code>;emailnoti&lt;person&gt;.</code> creates a notification email that says no response is   required.</li> <li><code>;emailcomp&lt;person&gt;.</code> creates a completion notification email.</li> </ul> <p>Example:</p> <pre><code>;emailnotiDeeptree.\n</code></pre> <p>This expands into a no-response-required notification email addressed to <code>Deeptree</code>. The greeting, notification text, signoff, quote, and signature are assembled from package and setup values.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#email-blocks","level":2,"title":"Email Blocks","text":"<p>Email block expansions insert smaller pieces that are useful while composing an email manually.</p> <ul> <li><code>;signature</code> inserts your Deeptree email signature.</li> <li><code>;greet</code> inserts a randomized greeting.</li> <li><code>;addongreet</code> inserts a randomized sentence that follows a greeting.</li> <li><code>;otu</code> inserts a short explanation for a one-time-use link.</li> <li><code>;dtemail</code> inserts your configured Deeptree work email address.</li> </ul> <p>Use these when you want help with only part of an email instead of generating a full template.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#dispatch-responses","level":2,"title":"Dispatch Responses","text":"<p>Dispatch response expansions create first-response email templates. They use the same name pattern as the dynamic email templates.</p> <ul> <li><code>;resreqapp&lt;person&gt;.</code> creates a request response with an appointment step.</li> <li><code>;resreqnoapp&lt;person&gt;.</code> creates a request response without an appointment   step.</li> <li><code>;resinc&lt;person&gt;.</code> creates an incident response with an appointment step.</li> <li><code>;resspam&lt;person&gt;.</code> creates a spam-ticket response.</li> </ul> <p>Example:</p> <pre><code>;resreqappJordan.\n</code></pre> <p>This creates a response addressed to <code>Jordan</code>, thanks them for reaching out, adds assignment and scheduling language, and includes your signature.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#dispatch-ticket-templates","level":2,"title":"Dispatch Ticket Templates","text":"<p>Dispatch ticket templates help start ticket bodies with the standard prompts and follow-up reminders already included.</p> <ul> <li><code>;tmpreq</code> creates a request ticket template.</li> <li><code>;tmpinc</code> creates an incident ticket template.</li> </ul> <p>Use these in ticket descriptions when you want a structured starting point for the request, impact, due date, symptoms, troubleshooting, and follow-up steps.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#credential-generation","level":2,"title":"Credential Generation","text":"<p>Credential expansions generate starter username and email documentation for supported clients, then include the password currently available on your clipboard.</p> <p>Before using a credential expansion, create the password that the user should use and copy it to your clipboard. The current recommended workflow is to use <code>xkpasswd.net</code> to create and copy a memorable password, then run the credential expansion to add the user's information to the ticket for documentation.</p> <p>Type the client credential trigger, the first name, a comma, the last name, and the final period.</p> <pre><code>;cred&lt;client&gt;&lt;first&gt;,&lt;last&gt;.\n</code></pre> <p>Example:</p> <pre><code>;credafsJane,Smith.\n</code></pre> <p>The expansion runs the package script <code>credential-generator.sh</code>. The script normalizes the name, applies the client username format, and creates the email address for that client. The password is expected to come from your clipboard.</p> <p>Supported credential triggers:</p> <ul> <li><code>;credafs&lt;first&gt;,&lt;last&gt;.</code> for Alaska Family Services.</li> <li><code>;credaslc&lt;first&gt;,&lt;last&gt;.</code> for Alaska SeaLife Center.</li> <li><code>;credanai&lt;first&gt;,&lt;last&gt;.</code> for Anchorage Neurosurgical Associates, Inc.</li> <li><code>;credcfa&lt;first&gt;,&lt;last&gt;.</code> for Camp Fire Alaska.</li> <li><code>;credccs&lt;first&gt;,&lt;last&gt;.</code> for CCS Early Learning.</li> <li><code>;credcrmc&lt;first&gt;,&lt;last&gt;.</code> for Cross Road Medical Center.</li> <li><code>;credgsak&lt;first&gt;,&lt;last&gt;.</code> for Girl Scouts of Alaska.</li> <li><code>;credjaoa&lt;first&gt;,&lt;last&gt;.</code> for Junior Achievement of Alaska.</li> <li><code>;credkc&lt;first&gt;,&lt;last&gt;.</code> for Kijik Corporation.</li> <li><code>;credklebs&lt;first&gt;,&lt;last&gt;.</code> for KLEBS Heating &amp; Mechanical.</li> <li><code>;credorers&lt;first&gt;,&lt;last&gt;.</code> for O'Banion Real Estate &amp; Relocation   Services.</li> <li><code>;credppos&lt;first&gt;,&lt;last&gt;.</code> for Pioneer Peak Orthopedic Surgery.</li> </ul>","path":["Usage Guide"],"tags":[]},{"location":"usage/#personal-information","level":2,"title":"Personal Information","text":"<p>Personal information expansions use the values you configured during setup.</p> <ul> <li><code>;first</code> inserts your first name.</li> <li><code>;last</code> inserts your last name.</li> <li><code>;name</code> inserts your full display name.</li> <li><code>;legalname</code> inserts your full legal name.</li> <li><code>;fullname</code> also inserts your full legal name.</li> </ul>","path":["Usage Guide"],"tags":[]},{"location":"usage/#client-name-shortcuts","level":2,"title":"Client Name Shortcuts","text":"<p>Client name shortcuts expand short codes into full client names and place your cursor after the inserted name.</p> <ul> <li><code>;asa</code> expands to <code>Air Source Alaska</code>.</li> <li><code>;akcf</code> expands to <code>AK Child &amp; Family</code>.</li> <li><code>;acbhc</code> expands to <code>Alaska Commission for Behavioral Health Certification</code>.</li> <li><code>;acoa</code> expands to <code>Alaska Correctional Officers Association</code>.</li> <li><code>;afs</code> expands to <code>Alaska Family Services</code>.</li> <li><code>;ajeatt</code> expands to <code>Alaska Joint Electrical Apprenticeship &amp; Training   Trust</code>.</li> <li><code>;aplc</code> expands to <code>Alaska Pacific Leasing Company, Inc.</code>.</li> <li><code>;arg</code> expands to <code>Alaska Rock Gym</code>.</li> <li><code>;aslc</code> expands to <code>Alaska SeaLife Center</code>.</li> <li><code>;aeb</code> expands to <code>Aleutians East Borough</code>.</li> <li><code>;amar</code> expands to <code>Alutiiq Museum &amp; Archaeological Repository</code>.</li> <li><code>;anai</code> expands to <code>Anchorage Neurosurgical Associates Inc.</code>.</li> <li><code>;ao</code> expands to <code>Anchorage Opera</code>.</li> <li><code>;aos</code> expands to <code>Arctic Oral Surgery</code>.</li> <li><code>;bc</code> expands to <code>Bauer Construction</code>.</li> <li><code>;boa</code> expands to <code>Bayshore Owners Association</code>.</li> <li><code>;bmm</code> expands to <code>Beacon Media + Marketing</code>.</li> <li><code>;cfa</code> expands to <code>Camp Fire Alaska</code>.</li> <li><code>;cg</code> expands to <code>Cashion Gilmore</code>.</li> <li><code>;ccs</code> expands to <code>CCS Early Learning</code>.</li> <li><code>;cci</code> expands to <code>Commercial Contractors, Inc.</code>.</li> <li><code>;crmc</code> expands to <code>Cross Road Medical Center</code>.</li> <li><code>;dpt</code> expands to <code>Deeptree, Inc</code>.</li> <li><code>;dda</code> expands to <code>Denali Daniels + Associates</code>.</li> <li><code>;dc</code> expands to <code>Dimond Center</code>.</li> <li><code>;ee</code> expands to <code>Eagle Enterprises, Inc.</code>.</li> <li><code>;flcc</code> expands to <code>Farm Loop Christian Center</code>.</li> <li><code>;fb</code> expands to <code>Fireside Books</code>.</li> <li><code>;gsak</code> expands to <code>Girl Scouts of Alaska</code>.</li> <li><code>;gptlhb</code> expands to <code>Great Plains Tribal Leaders Health Board</code>.</li> <li><code>;jaoa</code> expands to <code>Junior Achievement of Alaska</code>.</li> <li><code>;kc</code> expands to <code>Kijik Corporation</code>.</li> <li><code>;knom</code> expands to <code>Knom Radio Mission, Inc.</code>.</li> <li><code>;lc</code> expands to <code>Larson Chiropractic</code>.</li> <li><code>;nwf</code> expands to <code>North Wend Foods, Inc.</code>.</li> <li><code>;orers</code> expands to <code>O'Banion Real Estate &amp; Relocation Services</code>.</li> <li><code>;opc</code> expands to <code>Optimum Performance Chiropractic</code>.</li> <li><code>;pt</code> expands to <code>Pango Technology</code>.</li> <li><code>;ppos</code> expands to <code>Pioneer Peak Orthopedic Surgery</code>.</li> <li><code>;ssmh</code> expands to <code>Samuel Simmonds Memorial Hospital</code>.</li> <li><code>;sfa</code> expands to <code>Steve Fishback Architect</code>.</li> <li><code>;sco</code> expands to <code>Stinebaugh &amp; Company</code>.</li> <li><code>;al</code> expands to <code>The American Legion</code>.</li> <li><code>;tes</code> expands to <code>The Eureka Space</code>.</li> <li><code>;ttcd</code> expands to <code>Tyonek Tribal Conservation District</code>.</li> <li><code>;uwm</code> expands to <code>United Way of Mat-Su</code>.</li> <li><code>;vfj</code> expands to <code>Victims for Justice</code>.</li> <li><code>;ywca</code> expands to <code>YWCA Alaska</code>.</li> </ul>","path":["Usage Guide"],"tags":[]},{"location":"usage/#clipboard-helpers","level":2,"title":"Clipboard Helpers","text":"<p>Clipboard helpers paste your current clipboard text and place the cursor around it in useful ways.</p> <ul> <li><code>;cbb</code> places the cursor before the clipboard text.</li> <li><code>;cbe</code> places the cursor after the clipboard text.</li> <li><code>;cbn</code> inserts the clipboard text, then leaves a blank line below it.</li> <li><code>;cba</code> leaves a blank line above the clipboard text.</li> </ul> <p>These are useful when quoting copied text and then writing above, below, or around it.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#date-and-time","level":2,"title":"Date and Time","text":"<p>Date and time expansions generate dates from your current system date and time. Some use fixed triggers, and some let you type a number for a relative date.</p>","path":["Usage Guide"],"tags":[]},{"location":"usage/#current-date-and-time","level":3,"title":"Current Date and Time","text":"<ul> <li><code>;time</code> inserts the current time in 24-hour format.</li> <li><code>;date</code> inserts today's date as <code>YYYY-MM-DD</code>.</li> <li><code>;disdate</code> inserts <code>Disabled YYYY-MM-DD</code>.</li> <li><code>;now</code>, <code>;ddt</code>, <code>;datime</code>, and <code>;stamp</code> insert a full day, date, and time   stamp.</li> <li><code>;daily</code> inserts a daily note filename.</li> <li><code>;day</code> inserts the current weekday name.</li> <li><code>;daydate</code> and <code>;today</code> insert today with the weekday and date.</li> <li><code>;tomorrow</code> inserts tomorrow with the weekday and date.</li> <li><code>;yesterday</code> inserts yesterday with the weekday and date.</li> <li><code>;month</code> inserts the current month name.</li> </ul>","path":["Usage Guide"],"tags":[]},{"location":"usage/#relative-days-and-weeks","level":3,"title":"Relative Days and Weeks","text":"<ul> <li><code>;tmr</code> inserts tomorrow's date.</li> <li><code>;&lt;days&gt;.tmr</code> inserts the date that many days from now.</li> <li><code>;yst</code> inserts yesterday's date.</li> <li><code>;&lt;days&gt;.yst</code> inserts the date that many days ago.</li> <li><code>;wkago</code> inserts the date one week ago.</li> <li><code>;&lt;weeks&gt;.wkago</code> inserts the date that many weeks ago.</li> <li><code>;nxtweek</code> inserts the same weekday next week.</li> <li><code>;&lt;weeks&gt;.nxtweek</code> inserts the same weekday that many weeks ahead.</li> </ul> <p>Examples:</p> <pre><code>;3.tmr\n;2.wkago\n;4.nxtweek\n</code></pre>","path":["Usage Guide"],"tags":[]},{"location":"usage/#weekday-names-and-dates","level":3,"title":"Weekday Names and Dates","text":"<p>Use these to insert the next matching weekday and date:</p> <ul> <li><code>;mon</code>, <code>;tues</code>, <code>;wed</code>, <code>;thur</code>, <code>;fri</code>, <code>;sat</code>, <code>;sun</code></li> </ul> <p>Use these to insert the previous matching weekday and date:</p> <ul> <li><code>;lstmon</code>, <code>;lsttues</code>, <code>;lstwed</code>, <code>;lstthur</code>, <code>;lstfri</code>, <code>;lstsat</code>,   <code>;lstsun</code></li> </ul> <p>Use these to insert the matching weekday one full week beyond the next occurrence:</p> <ul> <li><code>;nxtmon</code>, <code>;nxttues</code>, <code>;nxtwed</code>, <code>;nxtthur</code>, <code>;nxtfri</code>, <code>;nxtsat</code>,   <code>;nxtsun</code></li> </ul> <p>You can also type a number before the weekday pattern:</p> <ul> <li><code>;&lt;weeks&gt;.lstmon</code> through <code>;&lt;weeks&gt;.lstsun</code> inserts that weekday from a   previous week.</li> <li><code>;&lt;weeks&gt;.nxtmon</code> through <code>;&lt;weeks&gt;.nxtsun</code> inserts that weekday from a   future week.</li> </ul> <p>Examples:</p> <pre><code>;2.lstfri\n;3.nxtwed\n</code></pre>","path":["Usage Guide"],"tags":[]},{"location":"usage/#week-ranges","level":3,"title":"Week Ranges","text":"<ul> <li><code>;wkof</code> inserts the current Monday-to-Sunday week range.</li> <li><code>;wrkwkof</code> inserts the current Monday-to-Friday work week range.</li> <li><code>;lstwkof</code> inserts last week's Monday-to-Sunday range.</li> <li><code>;lstwrkwkof</code> inserts last week's Monday-to-Friday work week range.</li> <li><code>;nxtwkof</code> inserts next week's Monday-to-Sunday range.</li> <li><code>;nxtwrkwkof</code> inserts next week's Monday-to-Friday work week range.</li> <li><code>;&lt;weeks&gt;.lstwkof</code> inserts the Monday-to-Sunday range that many weeks ago.</li> <li><code>;&lt;weeks&gt;.lstwrkwkof</code> inserts the Monday-to-Friday range that many weeks ago.</li> <li><code>;&lt;weeks&gt;.nxtwkof</code> inserts the Monday-to-Sunday range that many weeks ahead.</li> <li><code>;&lt;weeks&gt;.nxtwrkwkof</code> inserts the Monday-to-Friday range that many weeks   ahead.</li> </ul>","path":["Usage Guide"],"tags":[]},{"location":"usage/#weekly-filename-ranges","level":3,"title":"Weekly Filename Ranges","text":"<p>Weekly filename ranges use dates only and join them with <code>_-_</code>.</p> <ul> <li><code>;wkly</code> inserts the current weekly date range.</li> <li><code>;lstwkly</code> inserts last week's date range.</li> <li><code>;nxtwkly</code> inserts next week's date range.</li> <li><code>;&lt;weeks&gt;.lstwkly</code> inserts the weekly range that many weeks ago.</li> <li><code>;&lt;weeks&gt;.nxtwkly</code> inserts the weekly range that many weeks ahead.</li> </ul>","path":["Usage Guide"],"tags":[]},{"location":"usage/#weekday-ranges","level":3,"title":"Weekday Ranges","text":"<p>Weekday range expansions turn short weekday codes into readable ranges.</p> <pre><code>;&lt;start&gt;-&lt;end&gt;\n</code></pre> <p>Use these weekday codes:</p> <ul> <li><code>m</code> for Monday.</li> <li><code>tu</code> for Tuesday.</li> <li><code>w</code> for Wednesday.</li> <li><code>th</code> for Thursday.</li> <li><code>f</code> for Friday.</li> <li><code>sa</code> for Saturday.</li> <li><code>su</code> for Sunday.</li> </ul> <p>Example:</p> <pre><code>;m-f\n</code></pre> <p>This expands to:</p> <pre><code>Monday - Friday\n</code></pre>","path":["Usage Guide"],"tags":[]},{"location":"usage/#updating-your-package","level":2,"title":"Updating Your Package","text":"<p>When Deeptree publishes package updates, update your local installation with:</p> <pre><code>espanso package update deeptree\n</code></pre> <p>Your local work information file is not replaced by package updates.</p>","path":["Usage Guide"],"tags":[]}]}
+{
+  "config": {
+    "lang": ["en"],
+    "separator": "[\\s\\-_,:!=\\[\\]()\\\\\"`/]+|\\.(?!\\d)"
+  },
+  "items": [
+    {
+      "location": "",
+      "level": 1,
+      "title": "Deeptree Espanso Package",
+      "text": "<p>Get Started NOW</p> <p>If you wish to get started without reading about Espanso or the purpose of the Deeptree Espanso package, you can skip directly to the installation instructions.</p> <p>This is a private Espanso package for centrally managing the Deeptree snippets, global variables, and scripts for Espanso users.</p> <p>This package is designed to live alongside existing Espanso configuration. If a user already utilizes Espanso, they can install this package and still have their own personal snippets and scripts in their Espanso configuration separately managed. Whenever the package is updated, the shared snippets and scripts will be updated only for the Deeptree Espanso package. If a user does not already utilize Espanso, they can install this package and use it as their primary Espanso configuration.</p> <p>This package also outlines the process for installing Espanso for new users and configuring it to use the Deeptree Espanso package.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "#what-is-espanso",
+      "level": 2,
+      "title": "What Is Espanso?",
+      "text": "<p>Espanso is a cross-platform text expander that allows users to create custom snippets and scripts that can be triggered by typing a specific keyword or key combination. It is designed to improve productivity by automating repetitive tasks and reducing the amount of typing required for common phrases or commands.</p> <p>It can be used to create snippets for frequently used text, such as email signatures, email templates, code snippets, or any other text that is repetitively typed. It can also be used to create scripts that can perform more complex tasks, such as opening applications, running commands, or interacting with APIs.</p> <p>Between snippets and scripts, Espanso can be used to automate a wide range of tasks and improve productivity for a wide range of users.</p> <p>WIP!</p> <p>There will be an instructional video added in the future to introduce and explain Espanso better.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "#how-to-use-espanso",
+      "level": 2,
+      "title": "How to Use Espanso",
+      "text": "<p>Once installed, Espanso can be configured to use custom snippets and scripts with any trigger keyword or key combination. Users can create their own snippets and scripts, or they can use pre-made packages like the Deeptree Espanso package to quickly set up a collection of useful snippets and scripts.</p> <p>Setting up your own snippets and scripts is easily performed by editing a configuration file in the Espanso directory. The configuration file is written in YAML format and allows users to define their own snippets, scripts, and triggers.</p> <p>This means that users can customize their Espanso experience to fit their specific needs and workflows, making it a powerful tool for improving productivity and efficiency.</p> <p>Some of the more often used snippets and scripts include expanding acronyms, such as typing \"brb\" to expand to \"be right back\", or typing \"addr\" to expand to a full address.</p> <p>The way that I often use it for example is typing something like <code>;signature</code> and it will expand my email signature automatically into:</p> <pre><code>With kind regards,\n\nDallas Elliott\nRapid Response Team Lead\nDeeptree, Inc.\n+1 907 206 2373\n\n---\n\"An ounce of prevention is worth a pound of cure.\" - Benjamin Franklin\n</code></pre> <p>Having been a long time Espanso user, this signature expansion is much more advanced than it appears to be. The way that my signature is configured is by using a selection of variables that I have added to create a dynamic signature that changes each time that I type <code>;signature</code>.</p> <p>I have taken this a step further to generate entire email templates, or ticket templates. I can type a dynamic trigger that uses regex to write nearly an entire email and place the cursor in the correct location for me to continue typing. For example, I can type <code>;emailnotiDeeptree.</code> and it will expand into the following, with the cursor placed at the <code>$|$</code> location for me to continue typing:</p> <pre><code>High regards Deeptree, an email for your consideration,\n\n**NO RESPONSE REQUIRED**\n\n$|$\n\nThis is a notification email. If anything does not meet satisfactory completion standards, please reply directly to this email or call +1 907 206 2373 with any additional information, questions, or concerns.\n\nWith appreciation,\n\nDallas Elliott\nRapid Response Team Lead\nDeeptree, Inc.\n+1 907 206 2373\n\n---\n\"Technology is best when it brings people together.\" - Matt Mullenweg\n</code></pre> <p>Again, this is a dynamic template that uses variables to fill in the technician's name, title, and work email address. It will also randomly select sentences, quotes, and partial sentences to randomize this email generation each time it is used to avoid sounding too automated or templated.</p> <p>With this package, I have made it so that each individual can use these expansion tools for themselves.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "#what-is-the-deeptree-espanso-package",
+      "level": 2,
+      "title": "What Is the Deeptree Espanso Package?",
+      "text": "<p>The repository contains templates for the technician-specific variables that are kept outside the package. These are used to customize the expansions to tailor for each individual technician's name, title, and work email address to automatically be filled in using the shared snippets and scripts.</p> <p>This package is designed to live alongside existing Espanso configuration. This means that a user can install this package and still have their own personal snippets and scripts in their Espanso configuration separately managed. Whenever the package is updated, the shared snippets and scripts will be updated only for the Deeptree Espanso package.</p> <p>This means that new snippets and scripts can be added to the package and shared with all users centrally and automatically without requiring each user to manually update their own Espanso configuration or interfere with their custom configurations.</p> <p>To read more about Espanso, visit the Espanso website.</p>",
+      "path": ["Deeptree Espanso Package"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/",
+      "level": 1,
+      "title": "Changelog",
+      "text": "<p>All notable changes to this project will be documented in this file. See commit-and-tag-version for commit guidelines.</p>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#014-2026-09-30",
+      "level": 2,
+      "title": "0.1.4 (2026-09-30)",
+      "text": "",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#features",
+      "level": 3,
+      "title": "Features",
+      "text": "<ul> <li>installation: add Linux GUI work information setup (b7ed3d2)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#013-2026-09-29",
+      "level": 2,
+      "title": "0.1.3 (2026-09-29)",
+      "text": "",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#features_1",
+      "level": 3,
+      "title": "Features",
+      "text": "<ul> <li>expansions: remove IFHC and word shortcuts (00f9254)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#012-2026-09-29",
+      "level": 2,
+      "title": "0.1.2 (2026-09-29)",
+      "text": "",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#features_2",
+      "level": 3,
+      "title": "Features",
+      "text": "<ul> <li>variables: move static variables for names to own file (20a2939)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#011-2026-09-25",
+      "level": 2,
+      "title": "0.1.1 (2026-09-25)",
+      "text": "",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#bug-fixes",
+      "level": 3,
+      "title": "Bug Fixes",
+      "text": "<ul> <li>package: resolve credential script path (6ec5d75)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#010-2026-09-25",
+      "level": 2,
+      "title": "0.1.0 (2026-09-25)",
+      "text": "",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#features_3",
+      "level": 3,
+      "title": "Features",
+      "text": "<ul> <li>package: convert config to external package (8c15120)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#bug-fixes_1",
+      "level": 3,
+      "title": "Bug Fixes",
+      "text": "<ul> <li>config: remove config file to instead use users preferences (bf1d8cf)</li> <li>packages: remove markdown-shortcuts package as it is out of scope (ae3696b)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#001-2026-09-24",
+      "level": 2,
+      "title": "0.0.1 (2026-09-24)",
+      "text": "",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "CHANGELOG/#features_4",
+      "level": 3,
+      "title": "Features",
+      "text": "<ul> <li>configs: initial current config import (e262477)</li> </ul>",
+      "path": ["Changelog"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/",
+      "level": 1,
+      "title": "Global Variables",
+      "text": "<p>This reference covers all 35 names declared under <code>global_vars</code> in <code>deeptree/matches/**/*.yml</code> and <code>templates/work_information.yml</code>: 21 random variables with 224 choices, 13 echo variables, and one date variable. Source paths below are relative to the repository root.</p>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#scope-and-behavior",
+      "level": 2,
+      "title": "Scope and Behavior",
+      "text": "<p>Use a global as <code>{{variable}}</code> in a replacement or another variable's content. Dependencies below mean globals referenced by that variable's content, not every snippet that uses it. <code>None</code> means no such references.</p> <p>Only entries under <code>global_vars</code> are globals. A match's <code>vars</code> entries are local to that match, even when its file lives under <code>matches/globals/</code>. For example, <code>clipboard</code> in <code>globals/paste_clipboard.yml</code> is local; date helpers such as <code>mydate</code>, <code>week_start</code>, and <code>week_end</code> are also local. Named regex captures, such as <code>person</code> from <code>(?P&lt;person&gt;.*)</code>, come from the typed trigger and are not declared globals. <code>$|$</code> is a cursor marker, not a variable.</p> <p>Random variables select one configured choice when evaluated. They do not rotate through the list or guarantee unique results: consecutive expansions can repeat. There is no fixed default choice. References such as <code>{{dthelp}}</code> inside choices are retained below and resolved when expanding the content.</p> <p>The numbered lists preserve all choices in source order. Inline code shows the exact string content; surrounding quotes on whitespace-sensitive choices are delimiters, not output. Thus <code>\"Hello \"</code> ends with one space, <code>\" I hope this email finds you well,\"</code> starts with one space, and <code>\"\"</code> means an empty string. Quotes within the <code>quote</code> choices are actual output. Exact long strings and source paths are code line-length exceptions so their content is not altered by wrapping.</p> <p>Both <code>greeting</code> and <code>addongreeting</code> have an empty option. In email templates, <code>{{greeting}}{{person}},{{addongreeting}}</code> retains the person's name and the template's comma even when either or both random selections are empty.</p> <p>Package globals are loaded through <code>deeptree/package.yml</code> imports. <code>deeptree/matches/variables/static/name.yml</code> is not imported there. Its <code>myname</code> and <code>mylegalname</code> definitions exist in source but are not loaded through that entry point. Matches and <code>signature</code> reference these names, so they need definitions loaded separately to resolve. This reference records the omission; it does not change imports or repair it.</p> <p>Technician globals are supplied by <code>templates/work_information.yml</code>, not the package. Copy that template into your Espanso match directory outside the package and customize its placeholder values. Package updates do not manage those local values.</p> <p><code>helpdesk_email</code>, <code>myemail</code>, and <code>today</code> are declared but currently unused by replacements or variable content in <code>deeptree/matches/**/*.yml</code> and the technician template. They remain available for user-defined snippets.</p>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#technician-variables",
+      "level": 2,
+      "title": "Technician Variables",
+      "text": "",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#myfirst",
+      "level": 3,
+      "title": "myfirst",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Default content: <code>First</code>.</li> <li>Purpose: Technician's first name; used by <code>;first</code> and composite names.</li> <li>Dependencies: None.</li> <li>Source: <code>templates/work_information.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#mymiddle",
+      "level": 3,
+      "title": "mymiddle",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Default content: <code>Middle</code>.</li> <li>Purpose: Technician's middle name for <code>mylegalname</code>.</li> <li>Dependencies: None.</li> <li>Source: <code>templates/work_information.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#mylast",
+      "level": 3,
+      "title": "mylast",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Default content: <code>Last</code>.</li> <li>Purpose: Technician's last name; used by <code>;last</code> and composite names.</li> <li>Dependencies: None.</li> <li>Source: <code>templates/work_information.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#myemail",
+      "level": 3,
+      "title": "myemail",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Default content: <code>personal@example.com</code>.</li> <li>Purpose: Technician's personal email address; currently unused in package   replacements and variable content.</li> <li>Dependencies: None.</li> <li>Source: <code>templates/work_information.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#workemail",
+      "level": 3,
+      "title": "workemail",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Default content: <code>first.last@deeptree.tech</code>.</li> <li>Purpose: Technician's work email address for the <code>;dtemail</code> expansion,   not the signature.</li> <li>Dependencies: None.</li> <li>Source: <code>templates/work_information.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#title",
+      "level": 3,
+      "title": "title",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Default content: <code>Technician</code>.</li> <li>Purpose: Technician's job title in <code>signature</code>.</li> <li>Dependencies: None.</li> <li>Source: <code>templates/work_information.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#static-and-composite-variables",
+      "level": 2,
+      "title": "Static and Composite Variables",
+      "text": "",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#myname",
+      "level": 3,
+      "title": "myname",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Exact content: <code>{{myfirst}} {{mylast}}</code>.</li> <li>Purpose: First and last name for <code>;name</code> and <code>signature</code>; template defaults   would produce <code>First Last</code> if this definition were loaded.</li> <li>Dependencies: <code>myfirst</code>, <code>mylast</code>.</li> <li>Source: <code>deeptree/matches/variables/static/name.yml</code>.</li> <li>Loading: Missing from <code>deeptree/package.yml</code> imports.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#mylegalname",
+      "level": 3,
+      "title": "mylegalname",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Exact content: <code>{{myfirst}} {{mymiddle}} {{mylast}}</code>.</li> <li>Purpose: Full name for <code>;legalname</code> and <code>;fullname</code>; template defaults   would produce <code>First Middle Last</code> if this definition were loaded.</li> <li>Dependencies: <code>myfirst</code>, <code>mymiddle</code>, <code>mylast</code>.</li> <li>Source: <code>deeptree/matches/variables/static/name.yml</code>.</li> <li>Loading: Missing from <code>deeptree/package.yml</code> imports.</li> </ul> <p>The composite inserts literal spaces around <code>mymiddle</code>; an empty middle name does not remove either space.</p>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#helpdesk_email",
+      "level": 3,
+      "title": "helpdesk_email",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Exact content: <code>helpdesk@deeptree.tech</code>.</li> <li>Purpose: Shared help desk email address; currently unused in package   replacements and variable content.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/static/company.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#company",
+      "level": 3,
+      "title": "company",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Exact content: <code>Deeptree, Inc.</code>.</li> <li>Purpose: Company name in <code>signature</code>.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/static/company.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#dthelp",
+      "level": 3,
+      "title": "dthelp",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Exact content: <code>+1 907 206 2373</code>.</li> <li>Purpose: Shared help desk phone number for signatures, email contact   instructions, and random response-request paragraphs.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/static/phone_numbers.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#today",
+      "level": 3,
+      "title": "today",
+      "text": "<ul> <li>Type: <code>date</code>.</li> <li>Exact format: <code>%Y-%m-%d</code>.</li> <li>Content: Current date at evaluation, as a four-digit year, two-digit month,   and two-digit day separated by hyphens, for example <code>2026-09-30</code>.</li> <li>Purpose: Reusable current date; currently unused in package replacements   and variable content. It is not a fixed date or the local <code>mydate</code> helper.</li> <li>Dependencies: None; uses Espanso's date extension.</li> <li>Source: <code>deeptree/matches/variables/static/date.yml</code>.</li> </ul>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#assornoass",
+      "level": 3,
+      "title": "assornoass",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Purpose: Combines both assistance-status paragraphs. It does not randomly   choose between them: it includes one <code>stillreqass</code> choice, a blank line,   and one <code>nolongerreqass</code> choice.</li> <li>Dependencies: <code>stillreqass</code>, <code>nolongerreqass</code>; transitively <code>dthelp</code>.</li> <li>Source: <code>deeptree/matches/variables/static/assornoass.yml</code>.</li> </ul> <p>Exact content (<code>|-</code> in YAML strips the final newline):</p> <pre><code>{{stillreqass}}\n\n{{nolongerreqass}}\n</code></pre>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#signature",
+      "level": 3,
+      "title": "signature",
+      "text": "<ul> <li>Type: <code>echo</code>.</li> <li>Purpose: Dynamic email signature with a random signoff and quote, the   technician's name and title, company, and shared help desk phone number.</li> <li>Dependencies: <code>signoff</code>, <code>myname</code>, <code>title</code>, <code>company</code>, <code>dthelp</code>, <code>quote</code>;   transitively <code>myfirst</code> and <code>mylast</code> through <code>myname</code>.</li> <li>Source: <code>deeptree/matches/variables/static/signature.yml</code>.</li> </ul> <p>Exact content (<code>|-</code> in YAML strips the final newline):</p> <pre><code>{{signoff}}\n\n{{myname}}\n{{title}}\n{{company}}\n{{dthelp}}\n\n---\n{{quote}}\n</code></pre> <p>The signature does not include any email address: neither <code>workemail</code>, <code>myemail</code>, nor <code>helpdesk_email</code> appears in its content. Its <code>myname</code> dependency is affected by the missing <code>static/name.yml</code> package import.</p>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#random-variables",
+      "level": 2,
+      "title": "Random Variables",
+      "text": "<p>Each entry has type <code>random</code>, no fixed default, and the complete list of exact configured choices below.</p>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#addongreeting",
+      "level": 3,
+      "title": "addongreeting",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Optional continuation after the recipient's name and comma.   Nonempty choices begin with one space; the final choice is empty.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/addongreeting.yml</code>.</li> </ul> <p>Choices (22):</p> <ol> <li><code>\" I hope this email finds you well,\"</code></li> <li><code>\" I hope you are doing well,\"</code></li> <li><code>\" a quick email for you,\"</code></li> <li><code>\" just reaching out with an email for you,\"</code></li> <li><code>\" I hope everything is going smoothly,\"</code></li> <li><code>\" I hope you are having a productive week,\"</code></li> <li><code>\" I trust you are having a great day so far,\"</code></li> <li><code>\" hope all is well with you,\"</code></li> <li><code>\" hope your week is going well so far,\"</code></li> <li><code>\" I hope your day has been treating you kindly,\"</code></li> <li><code>\" I hope this message reaches you in good spirits,\"</code></li> <li><code>\" reaching out with a brief email,\"</code></li> <li><code>\" I trust all is proceeding smoothly on your side,\"</code></li> <li><code>\" hoping things are going well for you,\"</code></li> <li><code>\" a quick message to stay in touch,\"</code></li> <li><code>\" wishing you a smooth and productive day,\"</code></li> <li><code>\" I hope your week is progressing positively,\"</code></li> <li><code>\" I trust everything is running well on your end,\"</code></li> <li><code>\" I hope matters are going well for you,\"</code></li> <li><code>\" I wanted to take a moment to connect with you,\"</code></li> <li><code>\" an email for your consideration,\"</code></li> <li><code>\"\"</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#assigned",
+      "level": 3,
+      "title": "assigned",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Confirms assignment of a support ticket to a technician.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/assigned.yml</code>.</li> </ul> <p>Choices (4):</p> <ol> <li><code>Your ticket has been assigned to a technician.</code></li> <li><code>A technician has been assigned to your ticket.</code></li> <li><code>This has been assigned to a technician.</code></li> <li><code>We have assigned a technician to your ticket.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#checkup",
+      "level": 3,
+      "title": "checkup",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Asks the recipient to verify completed work despite no required   further action.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/checkup.yml</code>.</li> </ul> <p>Choices (5):</p> <ol> <li><code>Although no further action is required at this time, we recommend confirming that there are no remaining errors and that the work meets your expectations.</code></li> <li><code>No additional action is currently required, but we recommend reviewing the results to ensure everything is working as expected and no issues remain.</code></li> <li><code>While there are no further steps required, it is recommended that you verify the work and confirm that everything meets your expectations.</code></li> <li><code>No additional action is needed at this time; however, we recommend checking that there are no outstanding errors and that the work is satisfactory.</code></li> <li><code>Although no further action is necessary, please take a moment to confirm that everything is functioning properly and that the work meets your expectations.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#completedwork",
+      "level": 3,
+      "title": "completedwork",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Announces completion of requested work and ticket closure.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/completedwork.yml</code>.</li> </ul> <p>Choices (15):</p> <ol> <li><code>I am reaching out to let you know that the work associated with your ticket has been completed and the ticket will now be closed.</code></li> <li><code>I wanted to inform you that the requested work has been completed and your ticket will be closed at this time.</code></li> <li><code>The work related to your request has been completed, and we will be closing your ticket at this time.</code></li> <li><code>I am following up to confirm that the work for your ticket has been completed and the ticket will now be closed.</code></li> <li><code>I am writing to confirm that your request has been completed and your ticket will be closed at this time.</code></li> <li><code>The requested work has now been completed, and your ticket will be closed accordingly.</code></li> <li><code>I wanted to provide an update that the work associated with your ticket is complete and the ticket will now be closed.</code></li> <li><code>Your requested work has been completed, and we will proceed with closing the ticket at this time.</code></li> <li><code>I am reaching out to confirm that the work requested in your ticket has been completed and the ticket is ready to be closed.</code></li> <li><code>The work for your ticket has been completed successfully, and we will be closing the ticket at this time.</code></li> <li><code>I am following up to let you know that your request has been completed and the associated ticket will now be closed.</code></li> <li><code>We have completed the work associated with your request and will be closing the ticket at this time.</code></li> <li><code>I wanted to let you know that the requested work is now complete and your ticket will be closed.</code></li> <li><code>The work outlined in your ticket has been completed, and we will now proceed with closing the ticket.</code></li> <li><code>I am emailing to confirm that the requested work has been completed and your ticket will be closed at this time.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#deadlines",
+      "level": 3,
+      "title": "deadlines",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Requests deadlines or scheduling constraints and directs urgent   requests to phone support.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/deadlines.yml</code>.</li> </ul> <p>Choices (6):</p> <ol> <li><code>Are there any hard deadlines or scheduling requirements for this ticket? If this is urgent or requires immediate assistance, please call us so we can connect you with a technician.</code></li> <li><code>Please let us know of any hard deadlines, required timeframes, or scheduling factors for this ticket. For urgent issues or emergencies, please call us for direct technician assistance.</code></li> <li><code>Are there any specific deadlines or timing requirements we should consider for this ticket? If immediate assistance is needed, please call us so we can connect you with a technician.</code></li> <li><code>Could you clarify any hard deadlines or scheduling constraints related to this ticket? If this is urgent, please call us directly so we can connect you with a technician.</code></li> <li><code>Please share any deadlines or scheduling requirements that may affect this ticket. If this is an urgent ticket or emergency, please call us for immediate technician assistance.</code></li> <li><code>Are there any required completion dates or scheduling limitations for this ticket? If immediate support is needed, please call us so we can connect you directly with a technician.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#followup",
+      "level": 3,
+      "title": "followup",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Checks support ticket status and outstanding work or concerns.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/followup.yml</code>.</li> </ul> <p>Choices (5):</p> <ol> <li><code>This email is to follow up on the current status of your support ticket and to confirm that any remaining items related to your request are being properly addressed.</code></li> <li><code>I am reaching out to check on the status of your support ticket and to ensure that any outstanding concerns or requests are receiving the appropriate attention.</code></li> <li><code>This message is intended to follow up on your support ticket and verify that all remaining matters associated with your request are being addressed as needed.</code></li> <li><code>I am following up regarding your support ticket to confirm its current status and ensure that any unresolved items are being appropriately handled.</code></li> <li><code>This email is to check in on your support request and make sure that any outstanding questions, concerns, or remaining work are being addressed.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#greeting",
+      "level": 3,
+      "title": "greeting",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Optional opening before the recipient's name. Nonempty choices   end with one space; the final choice is empty.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/greeting.yml</code>.</li> </ul> <p>Choices (13):</p> <ol> <li><code>\"Hello \"</code></li> <li><code>\"Hello there \"</code></li> <li><code>\"How are you \"</code></li> <li><code>\"Greetings \"</code></li> <li><code>\"Salutations \"</code></li> <li><code>\"Regards \"</code></li> <li><code>\"High regards \"</code></li> <li><code>\"Blessings \"</code></li> <li><code>\"Hail \"</code></li> <li><code>\"Cordial greetings \"</code></li> <li><code>\"Humble greetings \"</code></li> <li><code>\"Salute \"</code></li> <li><code>\"\"</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#missappnovm",
+      "level": 3,
+      "title": "missappnovm",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Explains a missed appointment when no contact or message was   possible and requests rescheduling.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/missappnovm.yml</code>.</li> </ul> <p>Choices (15):</p> <ol> <li><code>As we were unable to reach you, leave a voicemail, or leave a message at the scheduled appointment time, the appointment could not be completed and we will need to coordinate a new time that works with your availability.</code></li> <li><code>We were unable to connect with you or leave a voicemail or message at the scheduled appointment time, so the appointment could not be completed and will need to be rescheduled.</code></li> <li><code>Since we were unable to reach you or leave a message at the scheduled time, we could not complete the appointment and will need to arrange a new time to connect.</code></li> <li><code>We were unable to make contact or leave a voicemail or message during the scheduled appointment, so we will need to coordinate another time based on your availability.</code></li> <li><code>As we could not reach you or leave a voicemail or message at the scheduled time, the appointment was unable to be completed and will need to be rescheduled.</code></li> <li><code>We attempted to connect at the scheduled appointment time but were unable to reach you or leave a voicemail or message. We will need to coordinate a new time that works for you.</code></li> <li><code>Since we were unable to make contact or leave a message at the scheduled appointment time, we will need to arrange another time to complete the appointment.</code></li> <li><code>We were unable to reach you and could not leave a voicemail or message at the scheduled time, so the appointment could not proceed and will need to be rescheduled.</code></li> <li><code>As we were unable to connect with you or leave a voicemail or message during the scheduled appointment, we will need to coordinate a new time that aligns with your availability.</code></li> <li><code>We were not able to reach you or leave a message at the scheduled appointment time, so the appointment could not be completed and a new time will need to be arranged.</code></li> <li><code>Because we were unable to make contact or leave a voicemail or message at the scheduled time, we will need to reschedule the appointment for a time that better fits your availability.</code></li> <li><code>We were unable to connect as scheduled and could not leave a voicemail or message. We will need to coordinate a new appointment time that works with your schedule.</code></li> <li><code>Since we could not reach you or leave a voicemail or message during the scheduled appointment window, we will need to arrange another time to connect.</code></li> <li><code>The scheduled appointment could not be completed because we were unable to reach you or leave a voicemail or message. We will need to coordinate a new time to connect.</code></li> <li><code>As we were unable to establish contact or leave a message at the scheduled appointment time, we will need to reschedule for a time that works with your availability.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#missappvm",
+      "level": 3,
+      "title": "missappvm",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Explains a missed appointment and the need to reschedule. The   email template supplies the separate <code>voicemail</code> paragraph; these choices   do not themselves say that a voicemail was left.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/missappvm.yml</code>.</li> </ul> <p>Choices (15):</p> <ol> <li><code>As we were unable to reach you at the scheduled appointment time, the appointment could not be completed and we will need to coordinate a new time that works with your availability.</code></li> <li><code>We were unable to connect with you at the scheduled appointment time, so the appointment could not be completed. We will need to arrange a new time that better aligns with your availability.</code></li> <li><code>Since we were unable to reach you at the scheduled time, we were not able to complete the appointment and will need to coordinate another time to connect.</code></li> <li><code>We were unable to make contact at the scheduled appointment time, so we will need to reschedule for a time that works with your availability.</code></li> <li><code>As we could not reach you at the scheduled appointment time, we were unable to complete the appointment and will need to arrange a new time to connect.</code></li> <li><code>We were unable to connect as scheduled, so the appointment could not be completed. We will need to coordinate a new appointment time based on your availability.</code></li> <li><code>Since we were not able to reach you at the scheduled time, the appointment was unable to be completed and will need to be rescheduled for a more convenient time.</code></li> <li><code>We attempted to connect at the scheduled appointment time but were unable to reach you. We will need to coordinate a new time that aligns with your availability.</code></li> <li><code>As we were unable to make contact at the scheduled time, the appointment could not proceed and we will need to arrange another time to connect.</code></li> <li><code>We were unable to reach you for the scheduled appointment, so we will need to reschedule and coordinate a new time that works for you.</code></li> <li><code>Because we were unable to connect at the scheduled appointment time, the appointment could not be completed and a new time will need to be arranged.</code></li> <li><code>We were not able to make contact at the scheduled time, so the appointment will need to be rescheduled for a time that better fits your availability.</code></li> <li><code>Since we were unable to connect with you as scheduled, we will need to coordinate another appointment time that works with your schedule.</code></li> <li><code>The scheduled appointment could not be completed because we were unable to reach you at that time. We will need to arrange a new time to connect.</code></li> <li><code>As we were unable to reach you during the scheduled appointment window, we will need to coordinate a new time to complete the appointment.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#nolongerreqass",
+      "level": 3,
+      "title": "nolongerreqass",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Requests confirmation for ticket closure if support is no longer   needed; also supplies the second paragraph of <code>assornoass</code>.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/nolongerreqass.yml</code>.</li> </ul> <p>Choices (11):</p> <ol> <li><code>If the issue has been resolved and no further support is needed, please let us know so that we may proceed with closing the ticket.</code></li> <li><code>If the matter has already been resolved and you no longer need assistance, kindly let us know so we can proceed with closing the ticket.</code></li> <li><code>Should the issue be resolved and no additional support required, please inform us so we may finalize and close the ticket.</code></li> <li><code>If your concern has been addressed and no further help is needed, please reply to confirm so that we can close the ticket.</code></li> <li><code>In the event that the issue has been resolved and support is no longer necessary, please notify us so we may close the ticket.</code></li> <li><code>If the problem has been resolved and you require no additional assistance, kindly let us know so that we can complete the ticket closure.</code></li> <li><code>Should no further assistance be required and the matter be resolved, please confirm with us so we may close the ticket accordingly.</code></li> <li><code>If your issue has been successfully resolved and you no longer need support, please inform us so we can proceed with closing the ticket.</code></li> <li><code>Once the issue is resolved and no additional support is necessary, we kindly ask that you let us know so we may close the ticket.</code></li> <li><code>If there is no longer a need for support and the issue is resolved, please reply to this message so that we may close the ticket.</code></li> <li><code>Should the matter already be resolved and no further help required, please confirm with us so we may finalize the ticket closure.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#noresponse",
+      "level": 3,
+      "title": "noresponse",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Follows up when no recent response or update has been received.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/noresponse.yml</code>.</li> </ul> <p>Choices (9):</p> <ol> <li><code>As we have not received a recent response, we would like to confirm the current status of your ticket and ensure it is addressed in a timely manner.</code></li> <li><code>As we have not yet received a reply, we would like to confirm the current status of your ticket and ensure it is progressing appropriately.</code></li> <li><code>Since we have not heard back recently, we are reaching out to verify the status of your ticket and confirm that it is being addressed in a timely manner.</code></li> <li><code>Because no recent response has been received, we are checking in to determine the current status of your ticket and to confirm it remains on track for resolution.</code></li> <li><code>As there has been no recent communication, we would like to follow up regarding the status of your ticket and confirm that it is moving forward as expected.</code></li> <li><code>Given we do not have a recent update, we are writing to check on the current status of your ticket and ensure it receives the attention it requires.</code></li> <li><code>Since we have not received an update, we would like to confirm where your ticket currently stands and make sure it is being handled without delay.</code></li> <li><code>As we have not heard from you, we want to follow up on the status of your ticket and ensure it is receiving the necessary attention.</code></li> <li><code>Because no recent update has been provided, we are reaching out to review the current status of your ticket and confirm timely resolution.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#notification",
+      "level": 3,
+      "title": "notification",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Notification footer inviting replies or calls if anything needs   attention.</li> <li>Dependencies: <code>dthelp</code>.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/notification.yml</code>.</li> </ul> <p>Choices (5):</p> <ol> <li><code>This is a notification email. If anything does not meet satisfactory completion standards, please reply directly to this email or call {{dthelp}} with any additional information, questions, or concerns.</code></li> <li><code>This message is intended as a notification. If anything does not meet satisfactory standards or requires further attention, please respond directly to this email or contact {{dthelp}} with any additional details or concerns.</code></li> <li><code>This is a notification email. If anything appears incomplete, incorrect, or requires additional attention, please reply to this email or call {{dthelp}} with any questions, concerns, or further information.</code></li> <li><code>This message serves as a notification. If anything requires further review or attention, please respond directly to this email or contact {{dthelp}} with any additional information, questions, or concerns.</code></li> <li><code>This is a notification email. If you have any additional information, questions, or concerns, or if anything does not meet satisfactory standards, please reply directly to this email or call {{dthelp}}.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#novoicemail",
+      "level": 3,
+      "title": "novoicemail",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Explains an unsuccessful call when no voicemail or contact was   possible and follows up by email.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/novoicemail.yml</code>.</li> </ul> <p>Choices (15):</p> <ol> <li><code>I attempted to reach you by phone earlier but was unable to make contact. I was not able to leave a voicemail or reach the number on file, so I am following up by email to ensure the message was received.</code></li> <li><code>I tried to contact you by phone earlier but was unable to reach you. I could not leave a voicemail or connect using the number on file, and am following up with this email instead.</code></li> <li><code>I attempted to call you earlier but was unable to make contact. Since I was unable to leave a voicemail or reach the number provided, I am following up by email to ensure you receive the message.</code></li> <li><code>I reached out by phone earlier but was unable to get in touch. I was unable to leave a voicemail or connect through the number on file, so I am sending this email as a follow-up.</code></li> <li><code>I attempted to contact you earlier by phone but was unable to reach you. I could not leave a voicemail or successfully connect using the number on file, and am following up by email.</code></li> <li><code>I tried to reach you by phone earlier but was unsuccessful. I was unable to leave a voicemail or reach the listed number, so I am following up with this email to make sure the message reaches you.</code></li> <li><code>I attempted to call earlier but was unable to connect. I was not able to leave a voicemail or reach you at the number on file, and am following up by email to ensure the message is received.</code></li> <li><code>I was unable to reach you by phone earlier and could not leave a voicemail or connect using the number on file. I am following up with this email to ensure you receive the information.</code></li> <li><code>I tried to get in touch by phone earlier but was unable to make contact. Since I could not leave a voicemail or reach the number on file, I am following up by email.</code></li> <li><code>I attempted to reach you earlier by phone but was unable to connect. I could not leave a voicemail or successfully reach the number listed, so I am following up with this email.</code></li> <li><code>I reached out by phone earlier but was unable to make contact. I was unable to leave a voicemail or reach the number we have on file, and am following up by email to ensure the message is received.</code></li> <li><code>I attempted to contact you by phone earlier but was unsuccessful. I could not leave a voicemail or connect using the listed number, so I am following up with this email.</code></li> <li><code>I tried to reach you earlier by phone but was unable to connect. Because I was unable to leave a voicemail or reach the number on file, I am following up by email to make sure the message is received.</code></li> <li><code>I attempted to call you earlier but was not able to reach you. I could not leave a voicemail or connect through the number on file, and am now following up with this email.</code></li> <li><code>I was unable to make contact by phone earlier and was not able to leave a voicemail or reach the listed number. I am following up by email to ensure you receive the message.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#novmfollowup",
+      "level": 3,
+      "title": "novmfollowup",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Proposes coordinating a time to connect after unsuccessful   contact without a message.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/novmfollowup.yml</code>.</li> </ul> <p>Choices (5):</p> <ol> <li><code>Since we were unable to reach you or leave a message, we will likely need to coordinate a time to connect that works with your availability.</code></li> <li><code>As we were unable to make contact or leave a message, we will need to arrange a time to connect that is convenient for you.</code></li> <li><code>Because we were unable to reach you or leave a message, we will likely need to schedule a time to connect based on your availability.</code></li> <li><code>We were unable to reach you or leave a message, so we will need to coordinate a suitable time to connect with you.</code></li> <li><code>Since we could not make contact or leave a message, we will likely need to arrange a new time to connect that works with your schedule.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#outreachthanks",
+      "level": 3,
+      "title": "outreachthanks",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Thanks the recipient for contacting the help desk or submitting   a ticket.</li> <li>Dependencies: None; the company wording is literal, not <code>{{company}}</code>.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/thanking.yml</code>.</li> </ul> <p>Choices (3):</p> <ol> <li><code>Thank you for reaching out to the Deeptree helpdesk.</code></li> <li><code>We appreciate you bringing this to our attention.</code></li> <li><code>We extend our thanks for submitting this ticket.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#quote",
+      "level": 3,
+      "title": "quote",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Quotation and attribution for <code>signature</code> and <code>;quote</code>.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/quotes.yml</code>.</li> </ul> <p>Choices (17), including literal quotation marks:</p> <ol> <li><code>\"The only thing more expensive than hiring a professional is hiring an amateur.\" - Red Adair</code></li> <li><code>\"If you define the problem correctly, you almost have the solution.\" - Steve Jobs</code></li> <li><code>\"Every problem has a solution. You just have to be creative enough to find it.\" - Travis Kalanick</code></li> <li><code>\"A problem well stated is a problem half solved.\" - Charles Kettering</code></li> <li><code>\"Efficiency is doing things right; effectiveness is doing the right things.\" - Peter Drucker</code></li> <li><code>\"Knowledge is of no value unless you put it into practice.\" - Anton Chekhov</code></li> <li><code>\"To err is human, but to really foul things up you need a computer.\" - Paul R. Ehrlich</code></li> <li><code>\"Cybersecurity is much more than a matter of IT.\" - Stephane Nappo</code></li> <li><code>\"An ounce of prevention is worth a pound of cure.\" - Benjamin Franklin</code></li> <li><code>\"Quality means doing it right when no one is looking.\" - Henry Ford</code></li> <li><code>\"Security is a process, not a product.\" - Bruce Schneier</code></li> <li><code>\"Never trust a computer you cannot throw out a window.\" - Steve Wozniak</code></li> <li><code>\"Computers are good at following instructions, but not at reading your mind.\" - Donald Knuth</code></li> <li><code>\"Technology is best when it brings people together.\" - Matt Mullenweg</code></li> <li><code>\"There are no problems, only solutions.\" - John Lennon</code></li> <li><code>\"Progress is impossible without change, and those who cannot change their minds cannot change anything.\" - George Bernard Shaw</code></li> <li><code>\"In IT, change is the only constant.\" - Common Industry Aphorism</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#reqresponse",
+      "level": 3,
+      "title": "reqresponse",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Requests a reply or phone call to confirm ticket next steps.</li> <li>Dependencies: <code>dthelp</code>.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/reqresponse.yml</code>.</li> </ul> <p>Choices (12):</p> <ol> <li><code>We kindly request that you respond to this email or call us at {{dthelp}} at your earliest convenience to confirm the next steps regarding your ticket.</code></li> <li><code>Please reply to this email or contact us at {{dthelp}} when convenient so we can determine how to proceed with your ticket.</code></li> <li><code>We would appreciate a response to this email or a call to {{dthelp}} so we can coordinate the next steps for your request.</code></li> <li><code>When you have a chance, please respond to this email or reach us at {{dthelp}} so we can continue working on your ticket.</code></li> <li><code>Please get back to us by replying to this email or calling {{dthelp}} so we can confirm how you would like to move forward.</code></li> <li><code>At your convenience, please reply to this email or contact us at {{dthelp}} so we can continue assisting with your request.</code></li> <li><code>We are awaiting your response before proceeding. Please reply to this email or contact us at {{dthelp}} when you are able.</code></li> <li><code>Please follow up with us by replying to this email or calling {{dthelp}} so we can determine the appropriate next steps for your ticket.</code></li> <li><code>When convenient, please send us a response to this email or contact us at {{dthelp}} so we can move forward with your ticket.</code></li> <li><code>We would appreciate hearing back from you regarding this ticket. You may reply to this email or call us at {{dthelp}}.</code></li> <li><code>Please provide an update by replying to this email or contacting us at {{dthelp}} so we can continue with the next steps for your ticket.</code></li> <li><code>Please reply to this email or reach us at {{dthelp}} when you are available so we can proceed with your tickets next steps.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#setappointment",
+      "level": 3,
+      "title": "setappointment",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Requests available appointment dates and times and offers faster   scheduling through the Service Coordinator by phone.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/setappointment.yml</code>.</li> </ul> <p>Choices (6):</p> <ol> <li><code>To better facilitate this request, it would be best to set an appointment with the technician. Could you please provide a few dates and times that you are available so we can coordinate with the technician's availability? If you would like to set an appointment more quickly or discuss any blocking factors, please give us a call so you can work directly with our Service Coordinator to ensure the appointment is added to our calendar.</code></li> <li><code>To best support this request, I recommend setting an appointment so we can work with the technician directly. Please send a few dates and times that would work for you, and I will do my best to coordinate an appointment around both your availability and the technician's schedule. If you would like to schedule this more quickly or discuss any blocking factors, please call us to work directly with our Service Coordinator and ensure the appointment is placed on our calendar.</code></li> <li><code>In order to move forward effectively, it would be helpful to schedule an appointment with the technician. Could you provide multiple dates and times that you are available so we can find an appointment time that also works with the technician's availability? If you would like to set the appointment sooner or review any blocking factors, please give us a call so our Service Coordinator can work with you directly and make sure it is scheduled on our calendar.</code></li> <li><code>To ensure this request is handled smoothly, I suggest we set up an appointment with the technician. Please share a few dates and times that work for you, and I will coordinate with the technician to schedule an appointment that aligns as closely as possible. If you would prefer to coordinate this faster or discuss any blocking factors, please call us to work directly with our Service Coordinator and ensure the appointment is set on our calendar.</code></li> <li><code>For efficiency, it would be beneficial to schedule a time to work with the technician. Could you let me know several dates and times when you are available so we can compare them against the technician's availability? If you would like to arrange the appointment more quickly or discuss any blocking factors, please give us a call so you can work directly with our Service Coordinator to get it added to our calendar.</code></li> <li><code>To facilitate this request, scheduling an appointment with the technician would be ideal. Please provide a few available dates and times so I can work to arrange an appointment around both your schedule and the technician's availability. If you would like to schedule sooner or discuss any blocking factors, please call us to work directly with our Service Coordinator and ensure the appointment is set on our calendar.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#signoff",
+      "level": 3,
+      "title": "signoff",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Closing salutation at the start of <code>signature</code>.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/signoffs.yml</code>.</li> </ul> <p>Choices (15):</p> <ol> <li><code>Thank you,</code></li> <li><code>Yours truly,</code></li> <li><code>Best regards,</code></li> <li><code>Respectfully,</code></li> <li><code>Best wishes,</code></li> <li><code>Many thanks,</code></li> <li><code>With gratitude,</code></li> <li><code>Cordially,</code></li> <li><code>With best regards,</code></li> <li><code>Thank you for your time,</code></li> <li><code>With respect,</code></li> <li><code>Sincerely,</code></li> <li><code>With appreciation,</code></li> <li><code>Kind regards,</code></li> <li><code>With kind regards,</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#stillreqass",
+      "level": 3,
+      "title": "stillreqass",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Requests a reply or call if support is still needed; also supplies   the first paragraph of <code>assornoass</code>.</li> <li>Dependencies: <code>dthelp</code>.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/stillreqass.yml</code>.</li> </ul> <p>Choices (11):</p> <ol> <li><code>If you still require assistance, we kindly request that you respond to this email or call us at {{dthelp}} at your earliest convenience to confirm the next steps regarding your ticket.</code></li> <li><code>If you continue to need assistance, please respond to this email or call us at {{dthelp}} at your earliest convenience so we can discuss the next steps for your ticket.</code></li> <li><code>Should you still require support, we ask that you reply to this email or contact us at {{dthelp}} to determine the appropriate next steps regarding your ticket.</code></li> <li><code>If further assistance is needed, kindly reply to this email or call {{dthelp}} at your convenience so we may proceed with the next steps for your ticket.</code></li> <li><code>To move forward, please respond to this email or reach out to us at {{dthelp}} if you continue to require assistance with your ticket.</code></li> <li><code>If you still need help, we encourage you to respond to this email or call us at {{dthelp}} promptly so that we can determine the next steps for your ticket.</code></li> <li><code>Should you require additional assistance, please reply to this email or call {{dthelp}} at your earliest convenience to confirm the next steps for your ticket.</code></li> <li><code>If you would like us to continue assisting you, kindly respond to this email or contact us at {{dthelp}} so we can determine how best to proceed with your ticket.</code></li> <li><code>If assistance is still needed, please reply to this email or call {{dthelp}} at your convenience to review the next steps.</code></li> <li><code>To ensure we can continue supporting you, we ask that you respond to this email or call {{dthelp}} so we may confirm the next steps on your ticket.</code></li> <li><code>If you still require our help, please reply to this email or reach us at {{dthelp}} to determine how we should proceed with your ticket.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "global-variables/#voicemail",
+      "level": 3,
+      "title": "voicemail",
+      "text": "<ul> <li>Type: <code>random</code>.</li> <li>Purpose: Explains an unsuccessful call where a voicemail or note was left   and follows up by email.</li> <li>Dependencies: None.</li> <li>Source: <code>deeptree/matches/variables/adjustable/email/voicemail.yml</code>.</li> </ul> <p>Choices (15):</p> <ol> <li><code>I attempted to reach you by phone earlier but was unable to make contact. I left a voicemail or note at that time and am following up by email to ensure you received the message.</code></li> <li><code>I tried to contact you by phone earlier but was not able to reach you. I left a voicemail or note and wanted to follow up by email to make sure the message was received.</code></li> <li><code>I attempted to call you earlier but was unable to connect. I left a voicemail or note and am following up with this email to ensure you received the information.</code></li> <li><code>I reached out by phone earlier but was unable to get in touch. I left a voicemail or note at that time and am sending this email as a follow-up.</code></li> <li><code>I attempted to contact you by phone earlier and was unable to reach you. I left a voicemail or note and am following up by email to make sure the message reached you.</code></li> <li><code>I tried to reach you by phone earlier but was unsuccessful. I left a voicemail or note at that time and am following up with this email to ensure you are aware of the message.</code></li> <li><code>I attempted to contact you earlier by phone but was unable to speak with you. I left a voicemail or note and am following up by email to ensure the information was received.</code></li> <li><code>I was unable to reach you by phone earlier, so I left a voicemail or note at that time. I am following up by email to make sure the message was received.</code></li> <li><code>I tried to reach you by phone earlier but was unable to make contact. I left a voicemail or note and wanted to follow up by email to ensure you received the message.</code></li> <li><code>I attempted to call earlier but was unable to reach you. A voicemail or note was left at that time, and I am following up with this email to ensure the message was received.</code></li> <li><code>I reached out by phone earlier but was unable to connect with you. I left a voicemail or note and am following up by email to make sure the message was received.</code></li> <li><code>I attempted to contact you by phone earlier but was not able to reach you. I left a voicemail or note at that time and am sending this email as a follow-up.</code></li> <li><code>I tried to get in touch by phone earlier but was unable to reach you. I left a voicemail or note and am following up with this email to make sure you received the message.</code></li> <li><code>I attempted to reach you earlier by phone but was unable to connect. I left a voicemail or note and am following up via email to ensure the message was received.</code></li> <li><code>I was unable to make contact by phone earlier, so I left a voicemail or note. I am following up with this email to ensure you received the information.</code></li> </ol>",
+      "path": ["Global Variables"],
+      "tags": []
+    },
+    {
+      "location": "installation/",
+      "level": 1,
+      "title": "Installation Guide",
+      "text": "<p>Installation Guide Tips</p> <p>Utilize the Table of Contents on the right to navigate to the numbered steps for installation. Each section contains tabbed instructions for different systems. Please ensure to select the tab corresponding to your operating system for accurate installation instructions.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#1-install-espanso",
+      "level": 2,
+      "title": "1. Install Espanso",
+      "text": "<p>Install Espanso on your system using your preferred method. It may be installed via package managers, direct downloads, or from source. Follow the instructions for your operating system.</p> <p>\"Read Installation Documentation\"</p> <p>Please reference Espanso installation documentation for installation documentation on your system.</p> <p>Specific instructions I have put together can be found below.</p> <p>Please select from the tabs below:</p> FedoraArch BasedWindows (WIP)MacOS (WIP)",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#fedora",
+      "level": 3,
+      "title": "Fedora",
+      "text": "<p>To install Espanso on Fedora, you will first need to install the Terra third party repository. You can do this by running the following command:</p> <pre><code>sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys\n</code></pre> <p>You can then install using the Terra repository and Linux package manager <code>dnf</code> with the following command:</p> <pre><code>sudo dnf install espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#aur",
+      "level": 3,
+      "title": "AUR",
+      "text": "<p>You can install Espanso on Arch Linux and derivatives of Arch Linux using the AUR package <code>espanso-wayland</code>.</p> <p>Derivatives of Arch Linux</p> <p>This includes Omarchy and CachyOS!</p> yaypacmanOmarchy",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#yay",
+      "level": 4,
+      "title": "Yay",
+      "text": "<p>For yay, you can use the following command:</p> <pre><code>yay -S espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#pacman",
+      "level": 4,
+      "title": "Pacman",
+      "text": "<p>For pacman, you can use the following command:</p> <pre><code>sudo pacman -S espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#omarchy",
+      "level": 4,
+      "title": "Omarchy",
+      "text": "",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#omarchy-menu",
+      "level": 5,
+      "title": "Omarchy Menu",
+      "text": "<p>On Omarchy, you can install Espanso by opening the <code>Omarchy Menu</code> -&gt; <code>Install</code> -&gt; <code>AUR</code> -&gt; search <code>espanso-wayland</code> and install the package.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#omarchy-command",
+      "level": 5,
+      "title": "Omarchy Command",
+      "text": "<p>You can also use the following command in the terminal:</p> <pre><code>omarchy pkg aur add espanso-wayland\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#windows-wip",
+      "level": 3,
+      "title": "Windows (WIP)",
+      "text": "<p>Currently under construction...</p> <p>(but like why are you using Windows anyway? :P)</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#macos-wip",
+      "level": 3,
+      "title": "MacOS (WIP)",
+      "text": "<p>Currently under construction...</p> <p>(but like why are you using MacOS anyway? :P)</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#2-start-and-enable-espanso-service",
+      "level": 2,
+      "title": "2. Start and Enable Espanso Service",
+      "text": "LinuxWindows (WIP)MacOS (WIP)",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#linux",
+      "level": 3,
+      "title": "Linux",
+      "text": "<p>After installation, you will need to start the Espanso service. You will also need to enable it to start automatically on boot. You can do both of these by running the following command:</p> <pre><code>espanso service register; espanso start\n</code></pre>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#windows-wip_1",
+      "level": 3,
+      "title": "Windows (WIP)",
+      "text": "<p>Currently under construction...</p> <p>(but like why are you using Windows anyway? :P)</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#macos-wip_1",
+      "level": 3,
+      "title": "MacOS (WIP)",
+      "text": "<p>Currently under construction...</p> <p>(but like why are you using MacOS anyway? :P)</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#3-verify-espanso-installation",
+      "level": 2,
+      "title": "3. Verify Espanso Installation",
+      "text": "<p>Run the following command to verify that Espanso is installed and running:</p> <pre><code>espanso --version\n</code></pre> <p>This should return the version of Espanso that is installed on your system. For example:</p> <pre><code>&gt; espanso --version\n2.4.0\n</code></pre> <p>If you receive an error, please refer to the Espanso installation documentation for troubleshooting steps.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#4-install-the-package",
+      "level": 2,
+      "title": "4. Install the Package",
+      "text": "<p>Now you have Espanso installed and running. Now it is time to install the preconfigured Deeptree package.</p> <p>Install the Deeptree package with the following command:</p> <pre><code>espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external\n</code></pre> <p>This adds the shared Deeptree snippets, variables, and scripts without replacing the user's existing Espanso configuration. It also allows updates to be rolled out to all users without requiring them to manually update their configuration.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#verify-package-installation",
+      "level": 3,
+      "title": "Verify Package Installation",
+      "text": "<p>You can verify that the package was installed correctly by running the following command:</p> <pre><code>espanso package list\n</code></pre> <p>For example, you should see something similar to the following output:</p> <pre><code>&gt; espanso package list\n- deeptree - version: 0.1.1 (git: https://github.com/iop098321qwe/deeptree_espanso)\n</code></pre> <p>If you see the package listed, then the installation was successful.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#5-set-work-information",
+      "level": 2,
+      "title": "5. Set Work Information",
+      "text": "<p>Copy <code>templates/work_information.yml</code> from the Github repository into the user's Espanso match directory within the config directory and update the values for that technician.</p> <p>Setup Tip</p> <p>Middle click or control click the Github repository link to open it in a new tab to copy the <code>templates/work_information.yml</code> and leave this page open.</p> Linux GUILinuxWindows (WIP)MacOS (WIP)",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#linux-gui-setup",
+      "level": 3,
+      "title": "Linux GUI Setup",
+      "text": "<p>Use this alternative walkthrough to complete step 5 with a web browser, file manager, and graphical text editor. Espanso must already be installed and the Deeptree package installed as described above. This does not require a separate Espanso configuration GUI.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#download-the-template",
+      "level": 4,
+      "title": "Download the Template",
+      "text": "<ol> <li>Open the work information template on Github in your browser.</li> <li>Select Download raw file in the file toolbar (on the right hand    side).</li> <li>Save the file in your Downloads folder with the exact filename   <code>work_information.yml</code>. Make sure the browser has not added <code>.txt</code> or   <code>.html</code> to the filename.</li> </ol>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#copy-the-file-into-espanso",
+      "level": 4,
+      "title": "Copy the File into Espanso",
+      "text": "<ol> <li>Open your file manager, such as Files, Dolphin, or Thunar, and open your   Home folder.</li> <li>Enable Show Hidden Files in the file manager's menu. In many Linux file    managers, Ctrl+H toggles this setting.</li> <li>From the <code>Home</code> directory, open <code>.config</code>, then <code>espanso</code>, then <code>match</code>.    The default destination is <code>/home/&lt;username&gt;/.config/espanso/match</code>,    where <code>&lt;username&gt;</code> is your Linux account name.</li> <li>In another file manager window (or tab), open Downloads, right-click    <code>work_information.yml</code>, and select Copy. Return to Espanso's <code>match</code>    folder and select Paste.</li> </ol> <p>Do not paste the file into <code>match/packages/deeptree</code>. Package updates manage that folder, while your work information belongs directly in <code>match</code>.</p> <p>If <code>work_information.yml</code> already exists in the destination, cancel any overwrite prompt. Open the existing file and review its values instead of replacing your personalized information. Keep any backup outside the Espanso <code>match</code> folder so it is not loaded as another match file.</p> <p>The path above is the default Linux location. If <code>.config/espanso</code> is missing or your installation uses a custom configuration directory, use the existing <code>espanso path</code> instructions in the Linux tab above to find the Config: path, then open its <code>match</code> folder in your file manager. Do not create a new configuration folder just to match the default path.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#edit-the-technician-values",
+      "level": 4,
+      "title": "Edit the Technician Values",
+      "text": "<ol> <li>Right-click the copied <code>work_information.yml</code> in the <code>match</code> folder and   choose Open With, then select a graphical plain-text editor, such as   GNOME Text Editor, Kate, or Mousepad (or your choice). Do not use a word processor.</li> <li>Read each <code>label</code> and <code>comment</code> to identify the value. Replace only the   text between the double quotes on each <code>echo:</code> line. For example, change   <code>echo: \"First\"</code> to <code>echo: \"Dallas\"</code>.</li> <li>Fill in all six values: first name (<code>myfirst</code>), middle name   (<code>mymiddle</code>), last name (<code>mylast</code>), personal email (<code>myemail</code>), work   email (<code>workemail</code>), and work title (<code>title</code>). If you do not use a middle name,   leave its value empty as <code>echo: \"\"</code>. You can also omit the personal email if   you do not want to use it in matches.</li> <li>Preserve the double quotes, indentation, and all other fields. Do not   change <code>global_vars</code>, <code>name</code>, <code>label</code>, <code>comment</code>, <code>type</code>, or <code>params</code>, and   do not replace indentation spaces with tabs.</li> <li>Select Save or press Ctrl+S. Keep the file as plain text named   <code>work_information.yml</code>, not <code>work_information.yml.txt</code>.</li> </ol>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#check-the-result",
+      "level": 4,
+      "title": "Check the Result",
+      "text": "<p>After saving, allow Espanso a moment to reload its configuration. Open a new blank document in a text editor and type <code>;signature</code>. Confirm that the expanded signature contains your name and work title instead of placeholders. Use a local test document rather than an email or ticket that could be sent.</p> <p>If the expansion still uses placeholders or Espanso reports a configuration error, reopen the file from the <code>match</code> folder. Check that your changes were saved, the filename ends in <code>.yml</code>, and the quotes and indentation still match the original template. Also confirm that you edited the copied file rather than the download or a file inside <code>match/packages/deeptree</code>.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#linux_1",
+      "level": 3,
+      "title": "Linux",
+      "text": "<p>Privacy</p> <p>All of the information input into variables is stored locally and not sent to any external servers. All variables are resolved locally as well for expansions and scripts included in the package.</p> <p>Run <code>espanso path</code> to find your Espanso config directory:</p> <pre><code>espanso path\n</code></pre> <p>The output should look similar to this:</p> <pre><code>&gt; espanso path\nConfig: /home/&lt;username&gt;/.config/espanso\nPackages: /home/&lt;username&gt;/.config/espanso/match/packages\nRuntime: /home/&lt;username&gt;/.cache/espanso\n</code></pre> <p>Use the <code>Config:</code> path, then open the <code>match</code> directory inside it. For the example above, the destination would be:</p> <pre><code>/home/&lt;username&gt;/.config/espanso/match/work_information.yml\n</code></pre> <p>Copy <code>templates/work_information.yml</code> into that <code>match</code> directory. Do not put it inside <code>match/packages/deeptree</code>; that directory is managed by the installed package.</p> <p>Open the copied <code>work_information.yml</code> file and replace the placeholder values with the technician's information, including name, personal email, work email, and title.</p> <p>Change only the values on <code>echo</code> lines between the double quotes. The <code>label</code> and <code>comment</code> lines help you determine what you are changing and should not be modified. For example, you will change the following line:</p> <pre><code>  - name: myfirst\nlabel: First Name Variable\ncomment: \"Input your first name in the 'echo' field.\"\ntype: echo\nparams:\n  echo: \"First\"\n</code></pre> <p>to</p> <pre><code>  - name: myfirst\nlabel: First Name Variable\ncomment: \"Input your first name in the 'echo' field.\"\ntype: echo\nparams:\n  echo: \"Dallas\"\n</code></pre> <p>Repeat this for all variables in the file. Each individual label is denoted with a name, label, comment, type, params, and echo field. Again, the <code>echo</code> field is the only one that should be modified.</p> <p>Comments</p> <p>Read the comment line for each variables instructions.</p> <p>Keep this copied file local to the technician. It contains personal technician values and should not be overwritten by Deeptree package updates.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#windows-wip_2",
+      "level": 3,
+      "title": "Windows (WIP)",
+      "text": "<p>Currently under construction...</p> <p>(but like why are you using Windows anyway? :P)</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#macos-wip_2",
+      "level": 3,
+      "title": "MacOS (WIP)",
+      "text": "<p>Currently under construction...</p> <p>(but like why are you using MacOS anyway? :P)</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "updating/",
+      "level": 1,
+      "title": "Updating the Package",
+      "text": "",
+      "path": ["Updating the Package"],
+      "tags": []
+    },
+    {
+      "location": "updating/#update-command",
+      "level": 2,
+      "title": "Update Command",
+      "text": "<p>Update the shared Deeptree package with:</p> <pre><code>espanso package update deeptree\n</code></pre> <p>Deeptree Package Update Notifications</p> <p>There will be a notification sent out to all employees when the package is updated. You will need to manually run the command above to update the package. This will only change the <code>deeptree</code> package and will leave your own configuration untouched. If you have made changes to the <code>work_information.yml</code> file, those changes will not be overwritten by the update.</p> <p>Update notifications will come with any additional information and instructions if <code>work_information.yml</code> has any local changes that need to be made.</p>",
+      "path": ["Updating the Package"],
+      "tags": []
+    },
+    {
+      "location": "usage/",
+      "level": 1,
+      "title": "Usage Guide",
+      "text": "<p>This guide explains how to use the Deeptree Espanso package after Espanso is installed, the package is installed, and your local work information file is configured.</p> <p>It is written for day-to-day use. You do not need to understand how the package is built to use these expansions.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#how-to-type-expansions",
+      "level": 2,
+      "title": "How to Type Expansions",
+      "text": "<p>Most Deeptree expansions begin with <code>;</code>. Type the full trigger exactly as shown and Espanso replaces it with the configured text.</p> <p>Some expansions use a small typed value inside the trigger. In this guide, text inside angle brackets shows the part you replace while typing.</p> <p>For example:</p> <pre><code>;emailnoti&lt;person&gt;.\n</code></pre> <p>To write a notification email to Deeptree, type:</p> <pre><code>;emailnotiDeeptree.\n</code></pre> <p>The final period is part of the trigger. It tells Espanso where the name ends. Espanso uses the value before that final period as the name in the generated email.</p> <p>Many longer templates place your cursor where you should continue typing. This cursor position is shown in examples as <code>$|$</code>, but Espanso moves the cursor there instead of printing <code>$|$</code>.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#dynamic-emails",
+      "level": 2,
+      "title": "Dynamic Emails",
+      "text": "<p>Dynamic email triggers create full email drafts. Type the trigger, the person's or group's name, and the final period.</p> <p>The package fills in the greeting, email body, and signature. Some parts are randomized by package variables so the output does not always sound exactly the same. Your locally configured setup values supply your name and title. The signature includes the company and helpdesk phone number, not an email address; <code>;dtemail</code> separately inserts your work email address.</p> <p>See the global variable guide for variable definitions. Below, direct globals are referenced by the expansion itself. Indirect globals are referenced inside those globals, including nested dependencies. Regex values such as <code>person</code> are typed captures, not global variables.</p> <p>Every general email and dispatch response directly uses greeting, addongreeting, and signature. Their shared indirect dependencies come from <code>signature</code>: signoff, myname, title, company, dthelp, and quote. In turn, <code>myname</code> uses myfirst and mylast. Each email below inherits this shared indirect list; additional paths are listed separately, even when they reach the same <code>dthelp</code> global.</p> <p>Current import limitation: <code>deeptree/package.yml</code> does not import <code>deeptree/matches/variables/static/name.yml</code>, which defines <code>myname</code> and <code>mylegalname</code>. Signatures, full emails, and name expansions that depend on these globals require them to be loaded separately. Local first and last name values alone do not load these composed globals. This guide documents the limitation; it does not change the package imports.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#general-email-templates",
+      "level": 3,
+      "title": "General Email Templates",
+      "text": "<ul> <li><code>;emailnorm&lt;person&gt;.</code> creates a normal Deeptree email.   Direct: greeting,   addongreeting,   signature,   dthelp.   Indirect: shared signature dependencies only.</li> <li><code>;emailreq&lt;person&gt;.</code> creates a response-requested email.   Direct: greeting,   addongreeting,   signature,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emaildisk&lt;person&gt;.</code> creates a disk-space cleanup request.   Direct: greeting,   addongreeting,   signature,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emailfu&lt;person&gt;.</code> creates a follow-up email.   Direct: greeting,   addongreeting,   signature,   followup,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emaildy&lt;person&gt;.</code> creates a done-yet follow-up email.   Direct: greeting,   addongreeting,   signature,   noresponse,   assornoass.   Indirect: shared list, plus <code>assornoass</code> includes both   stillreqass and   nolongerreqass; <code>stillreqass</code> uses   dthelp. Both assistance paragraphs appear;   <code>assornoass</code> is not a random choice between them.</li> <li><code>;emailvm&lt;person&gt;.</code> creates a voicemail follow-up email.   Direct: greeting,   addongreeting,   signature,   voicemail,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emailnovm&lt;person&gt;.</code> creates an unable-to-leave-voicemail follow-up.   Direct: greeting,   addongreeting,   signature,   novoicemail,   novmfollowup,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emailmissvm&lt;person&gt;.</code> creates a missed-appointment email when a voicemail   or message was left.   Direct: greeting,   addongreeting,   signature,   voicemail,   missappvm,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emailmissnovm&lt;person&gt;.</code> creates a missed-appointment email when no   voicemail was left.   Direct: greeting,   addongreeting,   signature,   novoicemail,   missappnovm,   reqresponse.   Indirect: shared list, plus <code>reqresponse</code> uses   dthelp.</li> <li><code>;emailnoti&lt;person&gt;.</code> creates a notification email that says no response is   required.   Direct: greeting,   addongreeting,   signature,   notification.   Indirect: shared list, plus <code>notification</code> uses   dthelp.</li> <li><code>;emailcomp&lt;person&gt;.</code> creates a completion notification email.   Direct: greeting,   addongreeting,   signature,   completedwork,   checkup, dthelp.   Indirect: shared signature dependencies only.</li> </ul> <p>Example:</p> <pre><code>;emailnotiDeeptree.\n</code></pre> <p>This expands into a no-response-required notification email addressed to <code>Deeptree</code>. The greeting, notification text, signoff, quote, and signature are assembled from package and setup values.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#email-blocks",
+      "level": 2,
+      "title": "Email Blocks",
+      "text": "<p>Email block expansions insert smaller pieces that are useful while composing an email manually.</p> <ul> <li><code>;signature</code> inserts your Deeptree email signature.   Direct: signature.   Indirect: the shared signature dependencies listed under Dynamic Emails.</li> <li><code>;greet</code> inserts a randomized greeting.   Direct: greeting. Indirect: none.</li> <li><code>;addongreet</code> inserts a randomized sentence that follows a greeting.   Direct: addongreeting. Indirect: none.</li> <li><code>;otu</code> inserts a short explanation for a one-time-use link.   Direct and indirect globals: none; this is static text.</li> <li><code>;dtemail</code> inserts your configured Deeptree work email address.   Direct: workemail. Indirect: none.</li> <li><code>;quote</code> inserts a randomized quotation.   Direct: quote. Indirect: none.</li> </ul> <p>Use these when you want help with only part of an email instead of generating a full template.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#dispatch-responses",
+      "level": 2,
+      "title": "Dispatch Responses",
+      "text": "<p>Dispatch response expansions create first-response email templates. They use the same name pattern as the dynamic email templates.</p> <ul> <li><code>;resreqapp&lt;person&gt;.</code> creates a request response with an appointment step.   Direct: greeting,   addongreeting,   signature,   outreachthanks,   assigned,   setappointment,   deadlines.   Indirect: shared signature dependencies only.</li> <li><code>;resreqnoapp&lt;person&gt;.</code> creates a request response without an appointment   step.   Direct: greeting,   addongreeting,   signature,   outreachthanks,   assigned,   deadlines.   Indirect: shared signature dependencies only.</li> <li><code>;resinc&lt;person&gt;.</code> creates an incident response with an appointment step.   Direct: greeting,   addongreeting,   signature,   outreachthanks,   assigned,   setappointment.   Indirect: shared signature dependencies only.</li> <li><code>;resspam&lt;person&gt;.</code> creates a spam-ticket response.   Direct: greeting,   addongreeting,   signature,   outreachthanks,   assigned.   Indirect: shared signature dependencies only.</li> </ul> <p>Example:</p> <pre><code>;resreqappJordan.\n</code></pre> <p>This creates a response addressed to <code>Jordan</code>, thanks them for reaching out, adds assignment and scheduling language, and includes your signature.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#random-choice-outcomes",
+      "level": 2,
+      "title": "Random-Choice Outcomes",
+      "text": "<p>For a fixed recipient and fixed technician configuration, with no handwritten content added at the cursor, every full email has the same base choice count: greeting (13) <code>*</code> addongreeting (22) <code>*</code> signoff (15) <code>*</code> quote (17) = 72,930. <code>signature</code> composes the signoff and quote; it is not another random factor.</p> <p>The table multiplies this base by each email's additional random variables. Counts describe random-choice combinations, not guaranteed unique rendered strings. They assume all dependencies resolve, including the missing name import described above. Random selections may repeat between expansions. These counts make no claims about selection probabilities.</p> <p>Table rows exceed 80 columns to keep factor names and arithmetic auditable.</p> Full email trigger Additional factors (variable and choice count) Additional multiplier Combinations (72,930 * multiplier) <code>;emailnorm&lt;person&gt;.</code> None 1 72,930 <code>;emailreq&lt;person&gt;.</code> <code>reqresponse</code> (12) 12 875,160 <code>;emaildisk&lt;person&gt;.</code> <code>reqresponse</code> (12) 12 875,160 <code>;emailfu&lt;person&gt;.</code> <code>followup</code> (5) <code>*</code> <code>reqresponse</code> (12) 60 4,375,800 <code>;emaildy&lt;person&gt;.</code> <code>noresponse</code> (9) <code>*</code> <code>stillreqass</code> (11) <code>*</code> <code>nolongerreqass</code> (11); the two assistance variables come via <code>assornoass</code> 1,089 79,420,770 <code>;emailvm&lt;person&gt;.</code> <code>voicemail</code> (15) <code>*</code> <code>reqresponse</code> (12) 180 13,127,400 <code>;emailnovm&lt;person&gt;.</code> <code>novoicemail</code> (15) <code>*</code> <code>novmfollowup</code> (5) <code>*</code> <code>reqresponse</code> (12) 900 65,637,000 <code>;emailmissvm&lt;person&gt;.</code> <code>voicemail</code> (15) <code>*</code> <code>missappvm</code> (15) <code>*</code> <code>reqresponse</code> (12) 2,700 196,911,000 <code>;emailmissnovm&lt;person&gt;.</code> <code>novoicemail</code> (15) <code>*</code> <code>missappnovm</code> (15) <code>*</code> <code>reqresponse</code> (12) 2,700 196,911,000 <code>;emailnoti&lt;person&gt;.</code> <code>notification</code> (5) 5 364,650 <code>;emailcomp&lt;person&gt;.</code> <code>completedwork</code> (15) <code>*</code> <code>checkup</code> (5) 75 5,469,750 <code>;resreqapp&lt;person&gt;.</code> <code>outreachthanks</code> (3) <code>*</code> <code>assigned</code> (4) <code>*</code> <code>setappointment</code> (6) <code>*</code> <code>deadlines</code> (6) 432 31,505,760 <code>;resreqnoapp&lt;person&gt;.</code> <code>outreachthanks</code> (3) <code>*</code> <code>assigned</code> (4) <code>*</code> <code>deadlines</code> (6) 72 5,250,960 <code>;resinc&lt;person&gt;.</code> <code>outreachthanks</code> (3) <code>*</code> <code>assigned</code> (4) <code>*</code> <code>setappointment</code> (6) 72 5,250,960 <code>;resspam&lt;person&gt;.</code> <code>outreachthanks</code> (3) <code>*</code> <code>assigned</code> (4) 12 875,160",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#dispatch-ticket-templates",
+      "level": 2,
+      "title": "Dispatch Ticket Templates",
+      "text": "<p>Dispatch ticket templates help start ticket bodies with the standard prompts and follow-up reminders already included.</p> <p>All expansions in this section use no direct or indirect globals. They insert static text and a cursor marker, with no local variables or typed captures.</p> <ul> <li><code>;tmpreq</code> creates a request ticket template.</li> <li><code>;tmpinc</code> creates an incident ticket template.</li> </ul> <p>Use these in ticket descriptions when you want a structured starting point for the request, impact, due date, symptoms, troubleshooting, and follow-up steps.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#credential-generation",
+      "level": 2,
+      "title": "Credential Generation",
+      "text": "<p>Credential expansions generate starter username and email documentation for supported clients, then invoke a separate <code>;tp</code> match for the password.</p> <p>The credential definitions listed here reference no globals directly. <code>firstname</code> and <code>lastname</code> are regex captures. <code>client_config</code>, <code>credentials</code>, and <code>temppass</code> are match-local variables: they supply client settings, run the script, and invoke the <code>;tp</code> match for the temporary password, respectively. They are not technician name globals. The package does not define <code>;tp</code>, so its behavior and any indirect global dependencies depend on your local match.</p> <p>Before using a credential expansion, configure <code>;tp</code> separately. If your match inserts clipboard text, create the user's password and copy it first. You can use <code>xkpasswd.net</code> to create a memorable password. Copying a password alone does not supply the missing match.</p> <p>Type the client credential trigger, the first name, a comma, the last name, and the final period.</p> <pre><code>;cred&lt;client&gt;&lt;first&gt;,&lt;last&gt;.\n</code></pre> <p>Example:</p> <pre><code>;credafsJane,Smith.\n</code></pre> <p>The expansion runs the package script <code>credential-generator.sh</code>. The script normalizes the name, applies the client username format, and creates the email address for that client. The script does not supply the password; your separately configured <code>;tp</code> match does.</p> <p>Supported credential triggers:</p> <ul> <li><code>;credafs&lt;first&gt;,&lt;last&gt;.</code> for Alaska Family Services.</li> <li><code>;credaslc&lt;first&gt;,&lt;last&gt;.</code> for Alaska SeaLife Center.</li> <li><code>;credanai&lt;first&gt;,&lt;last&gt;.</code> for Anchorage Neurosurgical Associates, Inc.</li> <li><code>;credcfa&lt;first&gt;,&lt;last&gt;.</code> for Camp Fire Alaska.</li> <li><code>;credccs&lt;first&gt;,&lt;last&gt;.</code> for CCS Early Learning.</li> <li><code>;credcrmc&lt;first&gt;,&lt;last&gt;.</code> for Cross Road Medical Center.</li> <li><code>;credgsak&lt;first&gt;,&lt;last&gt;.</code> for Girl Scouts of Alaska.</li> <li><code>;credjaoa&lt;first&gt;,&lt;last&gt;.</code> for Junior Achievement of Alaska.</li> <li><code>;credkc&lt;first&gt;,&lt;last&gt;.</code> for Kijik Corporation.</li> <li><code>;credklebs&lt;first&gt;,&lt;last&gt;.</code> for KLEBS Heating &amp; Mechanical.</li> <li><code>;credorers&lt;first&gt;,&lt;last&gt;.</code> for O'Banion Real Estate &amp; Relocation   Services.</li> <li><code>;credppos&lt;first&gt;,&lt;last&gt;.</code> for Pioneer Peak Orthopedic Surgery.</li> </ul>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#personal-information",
+      "level": 2,
+      "title": "Personal Information",
+      "text": "<p>Personal information expansions use the values you configured during setup.</p> <ul> <li><code>;first</code> inserts your first name.   Direct: myfirst. Indirect: none.</li> <li><code>;last</code> inserts your last name.   Direct: mylast. Indirect: none.</li> <li><code>;name</code> inserts your full display name.   Direct: myname.   Indirect: myfirst,   mylast.</li> <li><code>;legalname</code> inserts your full legal name.   Direct: mylegalname.   Indirect: myfirst,   mymiddle,   mylast.</li> <li><code>;fullname</code> also inserts your full legal name.   Direct: mylegalname.   Indirect: myfirst,   mymiddle,   mylast.   This is an alias of <code>;legalname</code> with the same dependencies.</li> </ul>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#client-name-shortcuts",
+      "level": 2,
+      "title": "Client Name Shortcuts",
+      "text": "<p>Client name shortcuts expand short codes into full client names and place your cursor after the inserted name.</p> <p>All client name shortcuts listed here use no direct or indirect globals. They insert static names and cursor markers, with no local variables or captures.</p> <ul> <li><code>;asa</code> expands to <code>Air Source Alaska</code>.</li> <li><code>;akcf</code> expands to <code>AK Child &amp; Family</code>.</li> <li><code>;acbhc</code> expands to <code>Alaska Commission for Behavioral Health Certification</code>.</li> <li><code>;acoa</code> expands to <code>Alaska Correctional Officers Association</code>.</li> <li><code>;afs</code> expands to <code>Alaska Family Services</code>.</li> <li><code>;ajeatt</code> expands to <code>Alaska Joint Electrical Apprenticeship &amp; Training   Trust</code>.</li> <li><code>;aplc</code> expands to <code>Alaska Pacific Leasing Company, Inc.</code>.</li> <li><code>;arg</code> expands to <code>Alaska Rock Gym</code>.</li> <li><code>;aslc</code> expands to <code>Alaska SeaLife Center</code>.</li> <li><code>;aeb</code> expands to <code>Aleutians East Borough</code>.</li> <li><code>;amar</code> expands to <code>Alutiiq Museum &amp; Archaeological Repository</code>.</li> <li><code>;anai</code> expands to <code>Anchorage Neurosurgical Associates Inc.</code>.</li> <li><code>;ao</code> expands to <code>Anchorage Opera</code>.</li> <li><code>;aos</code> expands to <code>Arctic Oral Surgery</code>.</li> <li><code>;bc</code> expands to <code>Bauer Construction</code>.</li> <li><code>;boa</code> expands to <code>Bayshore Owners Association</code>.</li> <li><code>;bmm</code> expands to <code>Beacon Media + Marketing</code>.</li> <li><code>;cfa</code> expands to <code>Camp Fire Alaska</code>.</li> <li><code>;cg</code> expands to <code>Cashion Gilmore</code>.</li> <li><code>;ccs</code> expands to <code>CCS Early Learning</code>.</li> <li><code>;cci</code> expands to <code>Commercial Contractors, Inc.</code>.</li> <li><code>;crmc</code> expands to <code>Cross Road Medical Center</code>.</li> <li><code>;dpt</code> expands to <code>Deeptree, Inc</code>.</li> <li><code>;dda</code> expands to <code>Denali Daniels + Associates</code>.</li> <li><code>;dc</code> expands to <code>Dimond Center</code>.</li> <li><code>;ee</code> expands to <code>Eagle Enterprises, Inc.</code>.</li> <li><code>;flcc</code> expands to <code>Farm Loop Christian Center</code>.</li> <li><code>;fb</code> expands to <code>Fireside Books</code>.</li> <li><code>;gsak</code> expands to <code>Girl Scouts of Alaska</code>.</li> <li><code>;gptlhb</code> expands to <code>Great Plains Tribal Leaders Health Board</code>.</li> <li><code>;jaoa</code> expands to <code>Junior Achievement of Alaska</code>.</li> <li><code>;kc</code> expands to <code>Kijik Corporation</code>.</li> <li><code>;knom</code> expands to <code>Knom Radio Mission, Inc.</code>.</li> <li><code>;lc</code> expands to <code>Larson Chiropractic</code>.</li> <li><code>;nwf</code> expands to <code>North Wend Foods, Inc.</code>.</li> <li><code>;orers</code> expands to <code>O'Banion Real Estate &amp; Relocation Services</code>.</li> <li><code>;opc</code> expands to <code>Optimum Performance Chiropractic</code>.</li> <li><code>;pt</code> expands to <code>Pango Technology</code>.</li> <li><code>;ppos</code> expands to <code>Pioneer Peak Orthopedic Surgery</code>.</li> <li><code>;ssmh</code> expands to <code>Samuel Simmonds Memorial Hospital</code>.</li> <li><code>;sfa</code> expands to <code>Steve Fishback Architect</code>.</li> <li><code>;sco</code> expands to <code>Stinebaugh &amp; Company</code>.</li> <li><code>;al</code> expands to <code>The American Legion</code>.</li> <li><code>;tes</code> expands to <code>The Eureka Space</code>.</li> <li><code>;ttcd</code> expands to <code>Tyonek Tribal Conservation District</code>.</li> <li><code>;uwm</code> expands to <code>United Way of Mat-Su</code>.</li> <li><code>;vfj</code> expands to <code>Victims for Justice</code>.</li> <li><code>;ywca</code> expands to <code>YWCA Alaska</code>.</li> </ul>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#clipboard-helpers",
+      "level": 2,
+      "title": "Clipboard Helpers",
+      "text": "<p>Clipboard helpers paste your current clipboard text and place the cursor around it in useful ways.</p> <p>All clipboard expansions listed here use no direct or indirect globals. Each defines its own match-local <code>clipboard</code> variable using the clipboard extension; there are no typed captures.</p> <ul> <li><code>;cbb</code> places the cursor before the clipboard text.</li> <li><code>;cbe</code> places the cursor after the clipboard text.</li> <li><code>;cbn</code> inserts the clipboard text, then leaves a blank line below it.</li> <li><code>;cba</code> leaves a blank line above the clipboard text.</li> </ul> <p>These are useful when quoting copied text and then writing above, below, or around it.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#date-and-time",
+      "level": 2,
+      "title": "Date and Time",
+      "text": "<p>Date and time expansions generate dates from your current system date and time. Some use fixed triggers, and some let you type a number for a relative date.</p> <p>All date and time expansions in every subsection below, including aliases, use no direct or indirect globals. They use match-local date or shell variables and, for regex triggers, typed captures such as <code>days</code>, <code>weeks</code>, <code>start</code>, and <code>end</code>. A local result can feed another local calculation, such as a week end derived from a week start; that is not a global dependency. In particular, <code>;today</code> and its alias <code>;daydate</code> use the local <code>current_day</code> date variable, not the global today.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#current-date-and-time",
+      "level": 3,
+      "title": "Current Date and Time",
+      "text": "<ul> <li><code>;time</code> inserts the current time in 24-hour format.</li> <li><code>;date</code> inserts today's date as <code>YYYY-MM-DD</code>.</li> <li><code>;disdate</code> inserts <code>Disabled YYYY-MM-DD</code>.</li> <li><code>;now</code>, <code>;ddt</code>, <code>;datime</code>, and <code>;stamp</code> insert a full day, date, and time   stamp.</li> <li><code>;daily</code> inserts a daily note filename.</li> <li><code>;day</code> inserts the current weekday name.</li> <li><code>;daydate</code> and <code>;today</code> insert today with the weekday and date.</li> <li><code>;tomorrow</code> inserts tomorrow with the weekday and date.</li> <li><code>;yesterday</code> inserts yesterday with the weekday and date.</li> <li><code>;month</code> inserts the current month name.</li> </ul>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#relative-days-and-weeks",
+      "level": 3,
+      "title": "Relative Days and Weeks",
+      "text": "<ul> <li><code>;tmr</code> inserts tomorrow's date.</li> <li><code>;&lt;days&gt;.tmr</code> inserts the date that many days from now.</li> <li><code>;yst</code> inserts yesterday's date.</li> <li><code>;&lt;days&gt;.yst</code> inserts the date that many days ago.</li> <li><code>;wkago</code> inserts the date one week ago.</li> <li><code>;&lt;weeks&gt;.wkago</code> inserts the date that many weeks ago.</li> <li><code>;nxtweek</code> inserts the same weekday next week.</li> <li><code>;&lt;weeks&gt;.nxtweek</code> inserts the same weekday that many weeks ahead.</li> </ul> <p>Examples:</p> <pre><code>;3.tmr\n;2.wkago\n;4.nxtweek\n</code></pre>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#weekday-names-and-dates",
+      "level": 3,
+      "title": "Weekday Names and Dates",
+      "text": "<p>Use these to insert the next matching weekday and date:</p> <ul> <li><code>;mon</code>, <code>;tues</code>, <code>;wed</code>, <code>;thur</code>, <code>;fri</code>, <code>;sat</code>, <code>;sun</code></li> </ul> <p>Use these to insert the previous matching weekday and date:</p> <ul> <li><code>;lstmon</code>, <code>;lsttues</code>, <code>;lstwed</code>, <code>;lstthur</code>, <code>;lstfri</code>, <code>;lstsat</code>,   <code>;lstsun</code></li> </ul> <p>Use these to insert the matching weekday one full week beyond the next occurrence:</p> <ul> <li><code>;nxtmon</code>, <code>;nxttues</code>, <code>;nxtwed</code>, <code>;nxtthur</code>, <code>;nxtfri</code>, <code>;nxtsat</code>,   <code>;nxtsun</code></li> </ul> <p>You can also type a number before the weekday pattern:</p> <ul> <li><code>;&lt;weeks&gt;.lstmon</code> through <code>;&lt;weeks&gt;.lstsun</code> inserts that weekday from a   previous week.</li> <li><code>;&lt;weeks&gt;.nxtmon</code> through <code>;&lt;weeks&gt;.nxtsun</code> inserts that weekday from a   future week.</li> </ul> <p>Examples:</p> <pre><code>;2.lstfri\n;3.nxtwed\n</code></pre>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#week-ranges",
+      "level": 3,
+      "title": "Week Ranges",
+      "text": "<ul> <li><code>;wkof</code> inserts the current Monday-to-Sunday week range.</li> <li><code>;wrkwkof</code> inserts the current Monday-to-Friday work week range.</li> <li><code>;lstwkof</code> inserts last week's Monday-to-Sunday range.</li> <li><code>;lstwrkwkof</code> inserts last week's Monday-to-Friday work week range.</li> <li><code>;nxtwkof</code> inserts next week's Monday-to-Sunday range.</li> <li><code>;nxtwrkwkof</code> inserts next week's Monday-to-Friday work week range.</li> <li><code>;&lt;weeks&gt;.lstwkof</code> inserts the Monday-to-Sunday range that many weeks ago.</li> <li><code>;&lt;weeks&gt;.lstwrkwkof</code> inserts the Monday-to-Friday range that many weeks ago.</li> <li><code>;&lt;weeks&gt;.nxtwkof</code> inserts the Monday-to-Sunday range that many weeks ahead.</li> <li><code>;&lt;weeks&gt;.nxtwrkwkof</code> inserts the Monday-to-Friday range that many weeks   ahead.</li> </ul>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#weekly-filename-ranges",
+      "level": 3,
+      "title": "Weekly Filename Ranges",
+      "text": "<p>Weekly filename ranges use dates only and join them with <code>_-_</code>.</p> <ul> <li><code>;wkly</code> inserts the current weekly date range.</li> <li><code>;lstwkly</code> inserts last week's date range.</li> <li><code>;nxtwkly</code> inserts next week's date range.</li> <li><code>;&lt;weeks&gt;.lstwkly</code> inserts the weekly range that many weeks ago.</li> <li><code>;&lt;weeks&gt;.nxtwkly</code> inserts the weekly range that many weeks ahead.</li> </ul>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#weekday-ranges",
+      "level": 3,
+      "title": "Weekday Ranges",
+      "text": "<p>Weekday range expansions turn short weekday codes into readable ranges.</p> <pre><code>;&lt;start&gt;-&lt;end&gt;\n</code></pre> <p>Use these weekday codes:</p> <ul> <li><code>m</code> for Monday.</li> <li><code>tu</code> for Tuesday.</li> <li><code>w</code> for Wednesday.</li> <li><code>th</code> for Thursday.</li> <li><code>f</code> for Friday.</li> <li><code>sa</code> for Saturday.</li> <li><code>su</code> for Sunday.</li> </ul> <p>Example:</p> <pre><code>;m-f\n</code></pre> <p>This expands to:</p> <pre><code>Monday - Friday\n</code></pre>",
+      "path": ["Usage Guide"],
+      "tags": []
+    },
+    {
+      "location": "usage/#updating-your-package",
+      "level": 2,
+      "title": "Updating Your Package",
+      "text": "<p>When Deeptree publishes package updates, update your local installation with:</p> <pre><code>espanso package update deeptree\n</code></pre> <p>Your local work information file is not replaced by package updates.</p>",
+      "path": ["Usage Guide"],
+      "tags": []
+    }
+  ]
+}
