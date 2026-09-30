@@ -42,28 +42,127 @@ or group's name, and the final period.
 
 The package fills in the greeting, email body, and signature. Some parts are
 randomized by package variables so the output does not always sound exactly the
-same. Your locally configured setup values are used for technician details such
-as your name, title, and email information.
+same. Your locally configured setup values supply your name and title. The
+signature includes the company and helpdesk phone number, not an email address;
+`;dtemail` separately inserts your work email address.
 
-This guide does not explain those variables in detail. A separate variable guide
-is planned for that.
+See the [global variable guide](global-variables.md) for variable definitions.
+Below, **direct** globals are referenced by the expansion itself. **Indirect**
+globals are referenced inside those globals, including nested dependencies.
+Regex values such as `person` are typed captures, not global variables.
+
+Every general email and dispatch response directly uses
+[greeting](global-variables.md#greeting),
+[addongreeting](global-variables.md#addongreeting), and
+[signature](global-variables.md#signature). Their shared indirect dependencies
+come from `signature`: [signoff](global-variables.md#signoff),
+[myname](global-variables.md#myname), [title](global-variables.md#title),
+[company](global-variables.md#company), [dthelp](global-variables.md#dthelp),
+and [quote](global-variables.md#quote). In turn, `myname` uses
+[myfirst](global-variables.md#myfirst) and [mylast](global-variables.md#mylast).
+Each email below inherits this shared indirect list; additional paths are
+listed separately, even when they reach the same `dthelp` global.
+
+**Current import limitation:** `deeptree/package.yml` does not import
+`deeptree/matches/variables/static/name.yml`, which defines `myname` and
+`mylegalname`. Signatures, full emails, and name expansions that depend on
+these globals require them to be loaded separately. Local first and last name
+values alone do not load these composed globals. This guide documents the
+limitation; it does not change the package imports.
 
 ### General Email Templates
 
 - `;emailnorm<person>.` creates a normal Deeptree email.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [dthelp](global-variables.md#dthelp).
+  Indirect: shared signature dependencies only.
 - `;emailreq<person>.` creates a response-requested email.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emaildisk<person>.` creates a disk-space cleanup request.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emailfu<person>.` creates a follow-up email.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [followup](global-variables.md#followup),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emaildy<person>.` creates a done-yet follow-up email.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [noresponse](global-variables.md#noresponse),
+  [assornoass](global-variables.md#assornoass).
+  Indirect: shared list, plus `assornoass` includes both
+  [stillreqass](global-variables.md#stillreqass) and
+  [nolongerreqass](global-variables.md#nolongerreqass); `stillreqass` uses
+  [dthelp](global-variables.md#dthelp). Both assistance paragraphs appear;
+  `assornoass` is not a random choice between them.
 - `;emailvm<person>.` creates a voicemail follow-up email.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [voicemail](global-variables.md#voicemail),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emailnovm<person>.` creates an unable-to-leave-voicemail follow-up.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [novoicemail](global-variables.md#novoicemail),
+  [novmfollowup](global-variables.md#novmfollowup),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emailmissvm<person>.` creates a missed-appointment email when a voicemail
   or message was left.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [voicemail](global-variables.md#voicemail),
+  [missappvm](global-variables.md#missappvm),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emailmissnovm<person>.` creates a missed-appointment email when no
   voicemail was left.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [novoicemail](global-variables.md#novoicemail),
+  [missappnovm](global-variables.md#missappnovm),
+  [reqresponse](global-variables.md#reqresponse).
+  Indirect: shared list, plus `reqresponse` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emailnoti<person>.` creates a notification email that says no response is
   required.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [notification](global-variables.md#notification).
+  Indirect: shared list, plus `notification` uses
+  [dthelp](global-variables.md#dthelp).
 - `;emailcomp<person>.` creates a completion notification email.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [completedwork](global-variables.md#completedwork),
+  [checkup](global-variables.md#checkup), [dthelp](global-variables.md#dthelp).
+  Indirect: shared signature dependencies only.
 
 Example:
 
@@ -81,10 +180,18 @@ Email block expansions insert smaller pieces that are useful while composing an
 email manually.
 
 - `;signature` inserts your Deeptree email signature.
+  Direct: [signature](global-variables.md#signature).
+  Indirect: the shared signature dependencies listed under Dynamic Emails.
 - `;greet` inserts a randomized greeting.
+  Direct: [greeting](global-variables.md#greeting). Indirect: none.
 - `;addongreet` inserts a randomized sentence that follows a greeting.
+  Direct: [addongreeting](global-variables.md#addongreeting). Indirect: none.
 - `;otu` inserts a short explanation for a one-time-use link.
+  Direct and indirect globals: none; this is static text.
 - `;dtemail` inserts your configured Deeptree work email address.
+  Direct: [workemail](global-variables.md#workemail). Indirect: none.
+- `;quote` inserts a randomized quotation.
+  Direct: [quote](global-variables.md#quote). Indirect: none.
 
 Use these when you want help with only part of an email instead of generating a
 full template.
@@ -95,10 +202,38 @@ Dispatch response expansions create first-response email templates. They use the
 same name pattern as the dynamic email templates.
 
 - `;resreqapp<person>.` creates a request response with an appointment step.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [outreachthanks](global-variables.md#outreachthanks),
+  [assigned](global-variables.md#assigned),
+  [setappointment](global-variables.md#setappointment),
+  [deadlines](global-variables.md#deadlines).
+  Indirect: shared signature dependencies only.
 - `;resreqnoapp<person>.` creates a request response without an appointment
   step.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [outreachthanks](global-variables.md#outreachthanks),
+  [assigned](global-variables.md#assigned),
+  [deadlines](global-variables.md#deadlines).
+  Indirect: shared signature dependencies only.
 - `;resinc<person>.` creates an incident response with an appointment step.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [outreachthanks](global-variables.md#outreachthanks),
+  [assigned](global-variables.md#assigned),
+  [setappointment](global-variables.md#setappointment).
+  Indirect: shared signature dependencies only.
 - `;resspam<person>.` creates a spam-ticket response.
+  Direct: [greeting](global-variables.md#greeting),
+  [addongreeting](global-variables.md#addongreeting),
+  [signature](global-variables.md#signature),
+  [outreachthanks](global-variables.md#outreachthanks),
+  [assigned](global-variables.md#assigned).
+  Indirect: shared signature dependencies only.
 
 Example:
 
@@ -109,10 +244,49 @@ Example:
 This creates a response addressed to `Jordan`, thanks them for reaching out,
 adds assignment and scheduling language, and includes your signature.
 
+## Random-Choice Outcomes
+
+For a fixed recipient and fixed technician configuration, with no handwritten
+content added at the cursor, every full email has the same base choice count:
+[greeting](global-variables.md#greeting) (13) `*`
+[addongreeting](global-variables.md#addongreeting) (22) `*`
+[signoff](global-variables.md#signoff) (15) `*`
+[quote](global-variables.md#quote) (17) = **72,930**.
+`signature` composes the signoff and quote; it is not another random factor.
+
+The table multiplies this base by each email's additional random variables.
+Counts describe random-choice combinations, not guaranteed unique rendered
+strings. They assume all dependencies resolve, including the missing name
+import described above. Random selections may repeat between expansions.
+These counts make no claims about selection probabilities.
+
+Table rows exceed 80 columns to keep factor names and arithmetic auditable.
+
+| Full email trigger | Additional factors (variable and choice count) | Additional multiplier | Combinations (72,930 * multiplier) |
+| --- | --- | ---: | ---: |
+| `;emailnorm<person>.` | None | 1 | 72,930 |
+| `;emailreq<person>.` | `reqresponse` (12) | 12 | 875,160 |
+| `;emaildisk<person>.` | `reqresponse` (12) | 12 | 875,160 |
+| `;emailfu<person>.` | `followup` (5) `*` `reqresponse` (12) | 60 | 4,375,800 |
+| `;emaildy<person>.` | `noresponse` (9) `*` `stillreqass` (11) `*` `nolongerreqass` (11); the two assistance variables come via `assornoass` | 1,089 | 79,420,770 |
+| `;emailvm<person>.` | `voicemail` (15) `*` `reqresponse` (12) | 180 | 13,127,400 |
+| `;emailnovm<person>.` | `novoicemail` (15) `*` `novmfollowup` (5) `*` `reqresponse` (12) | 900 | 65,637,000 |
+| `;emailmissvm<person>.` | `voicemail` (15) `*` `missappvm` (15) `*` `reqresponse` (12) | 2,700 | 196,911,000 |
+| `;emailmissnovm<person>.` | `novoicemail` (15) `*` `missappnovm` (15) `*` `reqresponse` (12) | 2,700 | 196,911,000 |
+| `;emailnoti<person>.` | `notification` (5) | 5 | 364,650 |
+| `;emailcomp<person>.` | `completedwork` (15) `*` `checkup` (5) | 75 | 5,469,750 |
+| `;resreqapp<person>.` | `outreachthanks` (3) `*` `assigned` (4) `*` `setappointment` (6) `*` `deadlines` (6) | 432 | 31,505,760 |
+| `;resreqnoapp<person>.` | `outreachthanks` (3) `*` `assigned` (4) `*` `deadlines` (6) | 72 | 5,250,960 |
+| `;resinc<person>.` | `outreachthanks` (3) `*` `assigned` (4) `*` `setappointment` (6) | 72 | 5,250,960 |
+| `;resspam<person>.` | `outreachthanks` (3) `*` `assigned` (4) | 12 | 875,160 |
+
 ## Dispatch Ticket Templates
 
 Dispatch ticket templates help start ticket bodies with the standard prompts and
 follow-up reminders already included.
+
+All expansions in this section use no direct or indirect globals. They insert
+static text and a cursor marker, with no local variables or typed captures.
 
 - `;tmpreq` creates a request ticket template.
 - `;tmpinc` creates an incident ticket template.
@@ -123,13 +297,19 @@ the request, impact, due date, symptoms, troubleshooting, and follow-up steps.
 ## Credential Generation
 
 Credential expansions generate starter username and email documentation for
-supported clients, then include the password currently available on your
-clipboard.
+supported clients, then invoke a separate `;tp` match for the password.
 
-Before using a credential expansion, create the password that the user should
-use and copy it to your clipboard. The current recommended workflow is to use
-`xkpasswd.net` to create and copy a memorable password, then run the credential
-expansion to add the user's information to the ticket for documentation.
+The credential definitions listed here reference no globals directly.
+`firstname` and `lastname` are regex captures. `client_config`, `credentials`,
+and `temppass` are match-local variables: they supply client settings, run the
+script, and invoke the `;tp` match for the temporary password, respectively.
+They are not technician name globals. The package does not define `;tp`, so
+its behavior and any indirect global dependencies depend on your local match.
+
+Before using a credential expansion, configure `;tp` separately. If your match
+inserts clipboard text, create the user's password and copy it first. You can
+use `xkpasswd.net` to create a memorable password. Copying a password alone
+does not supply the missing match.
 
 Type the client credential trigger, the first name, a comma, the last name, and
 the final period.
@@ -146,7 +326,9 @@ Example:
 
 The expansion runs the package script `credential-generator.sh`. The script
 normalizes the name, applies the client username format, and creates the email
-address for that client. The password is expected to come from your clipboard.
+address for that client.
+The script does not supply the password; your separately configured `;tp`
+match does.
 
 Supported credential triggers:
 
@@ -169,15 +351,32 @@ Supported credential triggers:
 Personal information expansions use the values you configured during setup.
 
 - `;first` inserts your first name.
+  Direct: [myfirst](global-variables.md#myfirst). Indirect: none.
 - `;last` inserts your last name.
+  Direct: [mylast](global-variables.md#mylast). Indirect: none.
 - `;name` inserts your full display name.
+  Direct: [myname](global-variables.md#myname).
+  Indirect: [myfirst](global-variables.md#myfirst),
+  [mylast](global-variables.md#mylast).
 - `;legalname` inserts your full legal name.
+  Direct: [mylegalname](global-variables.md#mylegalname).
+  Indirect: [myfirst](global-variables.md#myfirst),
+  [mymiddle](global-variables.md#mymiddle),
+  [mylast](global-variables.md#mylast).
 - `;fullname` also inserts your full legal name.
+  Direct: [mylegalname](global-variables.md#mylegalname).
+  Indirect: [myfirst](global-variables.md#myfirst),
+  [mymiddle](global-variables.md#mymiddle),
+  [mylast](global-variables.md#mylast).
+  This is an alias of `;legalname` with the same dependencies.
 
 ## Client Name Shortcuts
 
 Client name shortcuts expand short codes into full client names and place your
 cursor after the inserted name.
+
+All client name shortcuts listed here use no direct or indirect globals. They
+insert static names and cursor markers, with no local variables or captures.
 
 - `;asa` expands to `Air Source Alaska`.
 - `;akcf` expands to `AK Child & Family`.
@@ -234,6 +433,10 @@ cursor after the inserted name.
 Clipboard helpers paste your current clipboard text and place the cursor around
 it in useful ways.
 
+All clipboard expansions listed here use no direct or indirect globals. Each
+defines its own match-local `clipboard` variable using the clipboard extension;
+there are no typed captures.
+
 - `;cbb` places the cursor before the clipboard text.
 - `;cbe` places the cursor after the clipboard text.
 - `;cbn` inserts the clipboard text, then leaves a blank line below it.
@@ -246,6 +449,14 @@ around it.
 
 Date and time expansions generate dates from your current system date and time.
 Some use fixed triggers, and some let you type a number for a relative date.
+
+All date and time expansions in every subsection below, including aliases,
+use no direct or indirect globals. They use match-local date or shell variables
+and, for regex triggers, typed captures such as `days`, `weeks`, `start`, and
+`end`. A local result can feed another local calculation, such as a week end
+derived from a week start; that is not a global dependency. In particular,
+`;today` and its alias `;daydate` use the local `current_day` date variable,
+not the global [today](global-variables.md#today).
 
 ### Current Date and Time
 

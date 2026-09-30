@@ -16,7 +16,7 @@ or release automation.
 ## Formatting Rules
 
 - Keep lines at 80 characters or fewer when practical.
-- Allow longer lines only for URLs, code blocks, hashes, or commands
+- Allow longer lines only for URLs, code blocks, tables, hashes, or commands
   that cannot be wrapped cleanly.
 
 ## Quick Start
@@ -24,8 +24,8 @@ or release automation.
 - Read `README.md` first for project context and setup notes.
 - Run `git status --short --branch` before editing to confirm repo state.
 - Run `git diff --stat` before committing to review the change scope.
-- Use `./.venv/bin/zensical build` after documentation changes that affect
-  the generated `site/` directory.
+- Build the generated `site/` directory only when explicitly requested by
+  the user; documentation changes do not authorize a build.
 
 ## Environment
 
@@ -56,6 +56,7 @@ or release automation.
 - `deeptree/README.md`: Package-specific install and variable notes.
 - `deeptree/matches/`: Package-managed Espanso match and variable files.
 - `deeptree/scripts/`: Scripts called by package snippets.
+- `docs/global-variables.md`: Global values, dependencies, and random options.
 - `docs/installation.md`: Installation guide source.
 - `docs/usage.md`: User guide for package expansions and scripts.
 - `docs/updating.md`: Package update guide source.
@@ -87,7 +88,8 @@ or release automation.
 - `git diff --stat`: review the size and spread of pending changes.
 - `git log --oneline --decorate -5`: inspect recent commit history.
 - `npm run test`: currently exits with `Error: no test specified`.
-- `./.venv/bin/zensical build`: build the generated documentation site.
+- `./.venv/bin/zensical build`: build the generated documentation site only
+  when explicitly requested by the user.
 - `espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external`:
   install the package from Git. URL length is an 80-character exception.
 - `espanso package update deeptree`: update the installed package.
@@ -111,6 +113,8 @@ or release automation.
 
 - Use Conventional Commits for every commit. Prefer a scope when it adds
   clarity.
+- Site builds and `build(site):` commits are manual steps. Never perform
+  either automatically; each requires an explicit user request.
 - Never create, edit, or update `CHANGELOG.md` manually.
 - `CHANGELOG.md` is generated and maintained by release tooling only.
 - If release automation adds or changes generated files, let the tooling own
@@ -148,7 +152,8 @@ or release automation.
   `README.md` exist under `deeptree/`.
 - If snippets using signatures fail, verify the user copied and configured
   `templates/work_information.yml` in their Espanso match directory.
-- If docs are stale, run `./.venv/bin/zensical build` and inspect `site/`.
+- If docs are stale, report that `site/` needs a manual rebuild. Run
+  `./.venv/bin/zensical build` only when explicitly requested by the user.
 - If generated or managed files change unexpectedly, verify which tool owns
   them before editing.
 
