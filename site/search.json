@@ -309,6 +309,46 @@
       "tags": []
     },
     {
+      "location": "installation/#linux-gui-setup",
+      "level": 3,
+      "title": "Linux GUI Setup",
+      "text": "<p>Use this alternative walkthrough to complete step 5 with a web browser, file manager, and graphical text editor. Espanso must already be installed and the Deeptree package installed as described above. This does not require a separate Espanso configuration GUI.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#download-the-template",
+      "level": 4,
+      "title": "Download the Template",
+      "text": "<ol> <li>Open the work information template on Github in your browser. Sign    in with an account that has repository access if prompted.</li> <li>Select Download raw file in the file toolbar. If that option is not    available, select Raw, then use your browser's Save Page As option    to save the raw text. Do not save the Github webpage itself.</li> <li>Save the file in your Downloads folder with the exact filename    <code>work_information.yml</code>. Make sure the browser has not added <code>.txt</code> or    <code>.html</code> to the filename.</li> </ol>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#copy-the-file-into-espanso",
+      "level": 4,
+      "title": "Copy the File into Espanso",
+      "text": "<ol> <li>Open your file manager, such as Files, Dolphin, or Thunar, and open your    Home folder.</li> <li>Enable Show Hidden Files in the file manager's menu. In many Linux file    managers, Ctrl+H toggles this setting.</li> <li>Open <code>.config</code>, then <code>espanso</code>, then <code>match</code>. The default destination is    <code>/home/&lt;username&gt;/.config/espanso/match</code>, where <code>&lt;username&gt;</code> is your Linux    account name. You can also enter <code>~/.config/espanso/match</code> in the location    bar if your file manager supports it.</li> <li>In another file manager window, open Downloads, right-click    <code>work_information.yml</code>, and select Copy. Return to Espanso's <code>match</code>    folder and select Paste.</li> </ol> <p>Do not paste the file into <code>match/packages/deeptree</code>. Package updates manage that folder, while your work information belongs directly in <code>match</code>.</p> <p>If <code>work_information.yml</code> already exists in the destination, cancel any overwrite prompt. Open the existing file and review its values instead of replacing your personalized information. Keep any backup outside the Espanso <code>match</code> folder so it is not loaded as another match file.</p> <p>The path above is the default Linux location. If <code>.config/espanso</code> is missing or your installation uses a custom configuration directory, use the existing <code>espanso path</code> instructions in the Linux tab above to find the Config: path, then open its <code>match</code> folder in your file manager. Do not create a new configuration folder just to match the default path.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#edit-the-technician-values",
+      "level": 4,
+      "title": "Edit the Technician Values",
+      "text": "<ol> <li>Right-click the copied <code>work_information.yml</code> in the <code>match</code> folder and    choose Open With, then select a graphical plain-text editor, such as    GNOME Text Editor, Kate, or Mousepad. Do not use a word processor.</li> <li>Read each <code>label</code> and <code>comment</code> to identify the value. Replace only the    text between the double quotes on each <code>echo:</code> line. For example, change    <code>echo: \"First\"</code> to <code>echo: \"Dallas\"</code>.</li> <li>Fill in all six values: first name (<code>myfirst</code>), middle name (<code>mymiddle</code>),    last name (<code>mylast</code>), personal email (<code>myemail</code>), work email (<code>workemail</code>),    and work title (<code>title</code>). If you do not use a middle name, leave its value    empty as <code>echo: \"\"</code>.</li> <li>Preserve the double quotes, indentation, and all other fields. Do not    change <code>global_vars</code>, <code>name</code>, <code>label</code>, <code>comment</code>, <code>type</code>, or <code>params</code>, and    do not replace indentation spaces with tabs.</li> <li>Select Save or press Ctrl+S. Keep the file as plain text named    <code>work_information.yml</code>, not <code>work_information.yml.txt</code>.</li> </ol> <p>Keep this personalized file on the technician's machine. Do not upload it to Github or copy it back into the shared package.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
+      "location": "installation/#check-the-result",
+      "level": 4,
+      "title": "Check the Result",
+      "text": "<p>After saving, allow Espanso a moment to reload its configuration. Open a new blank document in a text editor and type <code>;signature</code>. Confirm that the expanded signature contains your name and work title instead of placeholders. Use a local test document rather than an email or ticket that could be sent.</p> <p>If the expansion still uses placeholders or Espanso reports a configuration error, reopen the file from the <code>match</code> folder. Check that your changes were saved, the filename ends in <code>.yml</code>, and the quotes and indentation still match the original template. Also confirm that you edited the copied file rather than the download or a file inside <code>match/packages/deeptree</code>.</p>",
+      "path": ["Installation Guide"],
+      "tags": []
+    },
+    {
       "location": "updating/",
       "level": 1,
       "title": "Updating the Package",
