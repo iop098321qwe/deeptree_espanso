@@ -191,6 +191,83 @@ values for that technician.
 Middle click or control click the Github repository link to open it in a new
 tab to copy the `templates/work_information.yml` and leave this page open.
 
+=== "Linux GUI"
+
+    ### Linux GUI Setup
+
+    Use this alternative walkthrough to complete step 5 with a web browser, file
+    manager, and graphical text editor. Espanso must already be installed and the
+    Deeptree package installed as described above. This does not require a separate
+    Espanso configuration GUI.
+    
+    #### Download the Template
+    
+    1. Open the [work information template on Github][repo] in your browser.
+    2. Select **Download raw file** in the file toolbar (on the right hand
+       side).
+    3. Save the file in your **Downloads** folder with the exact filename
+      `work_information.yml`. Make sure the browser has not added `.txt` or
+      `.html` to the filename.
+    
+    #### Copy the File into Espanso
+    
+    1. Open your file manager, such as Files, Dolphin, or Thunar, and open your
+      **Home** folder.
+    2. Enable **Show Hidden Files** in the file manager's menu. In many Linux file
+       managers, **Ctrl+H** toggles this setting.
+    3. From the `Home` directory, open `.config`, then `espanso`, then `match`.
+       The default destination is `/home/<username>/.config/espanso/match`,
+       where `<username>` is your Linux account name.
+    4. In another file manager window (or tab), open **Downloads**, right-click
+       `work_information.yml`, and select **Copy**. Return to Espanso's `match`
+       folder and select **Paste**.
+    
+    Do not paste the file into `match/packages/deeptree`. Package updates manage
+    that folder, while your work information belongs directly in `match`.
+    
+    If `work_information.yml` already exists in the destination, cancel any
+    overwrite prompt. Open the existing file and review its values instead of
+    replacing your personalized information. Keep any backup outside the Espanso
+    `match` folder so it is not loaded as another match file.
+    
+    The path above is the default Linux location. If `.config/espanso` is missing
+    or your installation uses a custom configuration directory, use the existing
+    `espanso path` instructions in the Linux tab above to find the **Config:**
+    path, then open its `match` folder in your file manager. Do not create a new
+    configuration folder just to match the default path.
+    
+    #### Edit the Technician Values
+    
+    1. Right-click the copied `work_information.yml` in the `match` folder and
+      choose **Open With**, then select a graphical plain-text editor, such as
+      GNOME Text Editor, Kate, or Mousepad (or your choice). Do not use a word processor.
+    2. Read each `label` and `comment` to identify the value. Replace only the
+      text between the double quotes on each `echo:` line. For example, change
+      `echo: "First"` to `echo: "Dallas"`.
+    3. Fill in all six values: first name (`myfirst`), middle name
+      (`mymiddle`), last name (`mylast`), personal email (`myemail`), work
+      email (`workemail`), and work title (`title`). If you do not use a middle name,
+      leave its value empty as `echo: ""`. You can also omit the personal email if
+      you do not want to use it in matches.
+    4. Preserve the double quotes, indentation, and all other fields. Do not
+      change `global_vars`, `name`, `label`, `comment`, `type`, or `params`, and
+      do not replace indentation spaces with tabs.
+    5. Select **Save** or press **Ctrl+S**. Keep the file as plain text named
+      `work_information.yml`, not `work_information.yml.txt`.
+    
+    #### Check the Result
+    
+    After saving, allow Espanso a moment to reload its configuration. Open a new
+    blank document in a text editor and type `;signature`. Confirm that the
+    expanded signature contains your name and work title instead of placeholders.
+    Use a local test document rather than an email or ticket that could be sent.
+    
+    If the expansion still uses placeholders or Espanso reports a configuration
+    error, reopen the file from the `match` folder. Check that your changes were
+    saved, the filename ends in `.yml`, and the quotes and indentation still match
+    the original template. Also confirm that you edited the copied file rather
+    than the download or a file inside `match/packages/deeptree`.
+
 === "Linux"
 
     ### Linux
