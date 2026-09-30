@@ -1,3 +1,2 @@
 (A) 2026-09-29 add all current clients to client specific expansions @feat
 (B) 2026-09-29 build global variables documentation @docs
-(A) 2026-09-29 build out installation documentation assuming GUI interfaces are used @feat
