@@ -44,4 +44,4 @@ imports:
   - "./matches/work/email_blocks/onetimeuse.yml"
   - "./matches/work/email_blocks/signature.yml"
   - "./matches/work/emails/emails.yml"
-  - "./matches/work/names/clients.yml"
+  - "./matches/work/client_specific//clients.yml"
