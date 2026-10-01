@@ -1,1 +1,3 @@
-(A) 2026-09-29 add all current clients to client specific expansions @feat
+(A) 2026-09-29 add all current clients to client specific expansions @feat +expansions
+(A) 2026-09-30 add form versions of expansions for optional use +forms @feat
+(B) 2026-10-01 add comments and labels to all expansions for user readability/usage +all @docs
