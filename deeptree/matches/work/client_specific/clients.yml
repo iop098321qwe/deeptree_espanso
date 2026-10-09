@@ -186,6 +186,10 @@ matches:
   - trigger: ";ssmh"
     replace: "Samuel Simmonds Memorial Hospital$|$"
 
+  # Specialty Imports, LLC
+  - trigger: ";si"
+    replace: "Specialty Imports, LLC$|$"
+
   # Steve Fishback Architect
   - trigger: ";sfa"
     replace: "Steve Fishback Architect$|$"
