@@ -1,3 +1,4 @@
 x 2026-09-24 2026-09-23 add all deeptree espanso configs to repository to build modularly @feat
 x 2026-09-29 2026-09-29 build out installation documentation assuming GUI interfaces are used @feat
 x 2026-09-30 2026-09-29 build global variables documentation @docs
+x 2026-10-08 2026-09-30 add form versions of expansions for optional use +forms @feat
