@@ -114,6 +114,10 @@ matches:
   - trigger: ";ee"
     replace: "Eagle Enterprises, Inc.$|$"
 
+  # Family Promise of Mat-Su
+  - trigger: ";fpms"
+    replace: "Family Promise of Mat-Su$|$"
+
   # Farm Loop Christian Center
   - trigger: ";flcc"
     replace: "Farm Loop Christian Center$|$"
