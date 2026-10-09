@@ -291,3 +291,99 @@ matches:
         params:
           cmd: "date -d '{{start}} +4 days' '+%A %Y-%m-%d'"
           trim: true
+
+  - trigger: ":lstwkof"
+    label: N weeks ago - week range (Form)
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - &range_form
+        name: input
+        type: form
+        params:
+          layout: "Weeks (non-negative whole number): [[count]]"
+          fields:
+            count:
+              default: "1"
+      - &range_count
+        name: count
+        type: echo
+        params:
+          echo: "{{input.count}}"
+      - &range_weeks
+        name: weeks
+        type: shell
+        depends_on: [count]
+        params:
+          cmd: |-
+            case "$ESPANSO_COUNT" in
+              ""|*[!0-9]*) exit 1 ;;
+              *) printf '%s' "$ESPANSO_COUNT" ;;
+            esac
+      - &range_monday
+        name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%A %Y-%m-%d'
+            else
+              date -d 'last Monday' '+%A %Y-%m-%d'
+            fi
+          trim: true
+      - &range_previous_start
+        name: start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -{{weeks}} weeks' '+%A %Y-%m-%d'"
+          trim: true
+      - &range_sunday
+        name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +6 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  - trigger: ":lstwrkwkof"
+    label: N weeks ago - work week range (Form)
+    replace: "work week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - *range_form
+      - *range_count
+      - *range_weeks
+      - *range_monday
+      - *range_previous_start
+      - &range_friday
+        name: end
+        type: shell
+        params:
+          cmd: "date -d '{{start}} +4 days' '+%A %Y-%m-%d'"
+          trim: true
+
+  - trigger: ":nxtwkof"
+    label: N weeks ahead - week range (Form)
+    replace: "week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - *range_form
+      - *range_count
+      - *range_weeks
+      - &range_next_start
+        name: start
+        type: shell
+        params:
+          cmd: "date -d 'next Monday +{{weeks}} weeks' '+%A %Y-%m-%d'"
+          trim: true
+      - *range_sunday
+
+  - trigger: ":nxtwrkwkof"
+    label: N weeks ahead - work week range (Form)
+    replace: "work week of {{start}} to {{end}}"
+    propagate_case: true
+    vars:
+      - *range_form
+      - *range_count
+      - *range_weeks
+      - *range_next_start
+      - *range_friday

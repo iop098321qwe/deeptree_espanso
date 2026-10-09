@@ -39,3 +39,80 @@ matches:
       -After resolving issue, contact client to verify the resolution is satisfactory and ask if there are any other issues you can start a ticket for.
       -Provide documentation, recommendations or training as needed on how to resolve or prevent future recurrence of similar issues.
       -Update documentation if any system changes have been made.
+
+  - trigger: ":tmpreq"
+    label: Request Ticket Template (Form)
+    force_mode: clipboard
+    replace: |-
+      The request is: {{input.request}}
+
+      The impact of effects: {{input.impact}}
+
+      Due date: {{input.due_date}}
+
+      -After finishing the request, contact the client to verify the resolution is satisfactory and ask if there are any other issues you can start a ticket for.
+      -Provide documentation, recommendations, or training as needed on how to resolve or prevent future recurrence of similar issues.
+      -Update documentation if any system changes have been made.
+      $|$
+    vars:
+      - name: input
+        type: form
+        params:
+          layout: |-
+            The request is:
+            [[request]]
+            The impact of effects:
+            [[impact]]
+            Due date: [[due_date]]
+          fields:
+            request:
+              multiline: true
+            impact:
+              multiline: true
+
+  - trigger: ":tmpinc"
+    label: Incident Ticket Template (Form)
+    force_mode: clipboard
+    replace: |-
+      The issue is: {{input.issue}}
+
+      This happens when: {{input.when}}
+
+      This first started: {{input.started}}
+
+      The impact of effects: {{input.impact}}
+
+      Troubleshooting steps already taken: {{input.troubleshooting}}
+
+      If applicable
+      -Contact the client and reproduce symptoms to confirm understanding of issue. By default use the contact method they initiated with.
+      -Verify acceptable time to work on issue.
+      -Advise customer of any workaround solutions while we attempt to resolve issue.
+
+      -After resolving issue, contact client to verify the resolution is satisfactory and ask if there are any other issues you can start a ticket for.
+      -Provide documentation, recommendations or training as needed on how to resolve or prevent future recurrence of similar issues.
+      -Update documentation if any system changes have been made.
+      $|$
+    vars:
+      - name: input
+        type: form
+        params:
+          layout: |-
+            The issue is:
+            [[issue]]
+            This happens when:
+            [[when]]
+            This first started: [[started]]
+            The impact of effects:
+            [[impact]]
+            Troubleshooting steps already taken:
+            [[troubleshooting]]
+          fields:
+            issue:
+              multiline: true
+            when:
+              multiline: true
+            impact:
+              multiline: true
+            troubleshooting:
+              multiline: true
