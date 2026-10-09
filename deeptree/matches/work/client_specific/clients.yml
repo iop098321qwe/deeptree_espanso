@@ -170,6 +170,10 @@ matches:
   - trigger: ";pt"
     replace: "Pango Technology$|$"
 
+  # Pemberton & Young, LLC
+  - trigger: ";py"
+    replace: "Pemberton & Young, LLC$|$"
+
   # Pioneer Peak Orthopedic Surgery
   - trigger: ";ppos"
     replace: "Pioneer Peak Orthopedic Surgery$|$"
