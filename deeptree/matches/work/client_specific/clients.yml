@@ -198,9 +198,9 @@ matches:
   - trigger: ";sco"
     replace: "Stinebaugh & Company$|$"
 
-  # The American Legion
-  - trigger: ";al"
-    replace: "The American Legion$|$"
+  # The American Legion - Department of Alaska
+  - trigger: ";tal"
+    replace: "The American Legion - Department of Alaska$|$"
 
   # The Eureka Space
   - trigger: ";tes"
