@@ -62,3 +62,77 @@ matches:
       They will notify you if this is indeed spam and block the sender. If it is safe, they will reach out to confirm it is all right to access the email and its contents. Please let me know if you have any questions or concerns, and I will do my best to address them!
 
       {{signature}}
+
+  - trigger: ":resreqapp"
+    label: Request with Appointment Response (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      {{outreachthanks}}
+      {{input.message}}$|$
+      {{assigned}}
+
+      {{setappointment}}
+
+      {{deadlines}}
+
+      {{signature}}
+    vars: &response_form
+      - name: input
+        type: form
+        params:
+          layout: |-
+            Recipient: [[person]]
+            Message (optional):
+            [[message]]
+          fields:
+            message:
+              multiline: true
+
+  - trigger: ":resreqnoapp"
+    label: Request without Appointment Response (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      {{outreachthanks}}
+      {{input.message}}$|$
+      {{assigned}}
+
+      {{deadlines}}
+
+      {{signature}}
+    vars: *response_form
+
+  - trigger: ":resinc"
+    label: Incident Response (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      {{outreachthanks}}
+      {{input.message}}$|$
+      {{assigned}}
+
+      {{setappointment}}
+
+      {{signature}}
+    vars: *response_form
+
+  - trigger: ":resspam"
+    label: Spam Response (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      {{outreachthanks}}
+
+      {{assigned}}
+
+      They will notify you if this is indeed spam and block the sender. If it is safe, they will reach out to confirm it is all right to access the email and its contents. Please let me know if you have any questions or concerns, and I will do my best to address them!
+
+      {{input.message}}$|$
+
+      {{signature}}
+    vars: *response_form

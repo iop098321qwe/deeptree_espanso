@@ -20,3 +20,32 @@ matches:
         type: shell
         params:
           cmd: "date -d '{{weeks}} weeks ago' +'%Y-%m-%d'"
+
+  - trigger: ":wkago"
+    label: N weeks ago (Form)
+    replace: "{{mydate}}"
+    vars:
+      - name: input
+        type: form
+        params:
+          layout: "Weeks (non-negative whole number): [[count]]"
+          fields:
+            count:
+              default: "1"
+      - name: count
+        type: echo
+        params:
+          echo: "{{input.count}}"
+      - name: weeks
+        type: shell
+        depends_on: [count]
+        params:
+          cmd: |-
+            case "$ESPANSO_COUNT" in
+              ""|*[!0-9]*) exit 1 ;;
+              *) printf '%s' "$ESPANSO_COUNT" ;;
+            esac
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '{{weeks}} weeks ago' +'%Y-%m-%d'"

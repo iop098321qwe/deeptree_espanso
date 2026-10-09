@@ -37,3 +37,47 @@ matches:
         type: shell
         params:
           cmd: "date -d '+{{days}} days ago' +'%Y-%m-%d'"
+
+  - trigger: ":tmr"
+    label: N days from now (Form)
+    replace: "{{mydate}}"
+    vars:
+      - &days_form
+        name: input
+        type: form
+        params:
+          layout: "Days (non-negative whole number): [[count]]"
+          fields:
+            count:
+              default: "1"
+      - &days_count
+        name: count
+        type: echo
+        params:
+          echo: "{{input.count}}"
+      - &validated_days
+        name: days
+        type: shell
+        depends_on: [count]
+        params:
+          cmd: |-
+            case "$ESPANSO_COUNT" in
+              ""|*[!0-9]*) exit 1 ;;
+              *) printf '%s' "$ESPANSO_COUNT" ;;
+            esac
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '+{{days}} days' +'%Y-%m-%d'"
+
+  - trigger: ":yst"
+    label: N days ago (Form)
+    replace: "{{mydate}}"
+    vars:
+      - *days_form
+      - *days_count
+      - *validated_days
+      - name: mydate
+        type: shell
+        params:
+          cmd: "date -d '+{{days}} days ago' +'%Y-%m-%d'"

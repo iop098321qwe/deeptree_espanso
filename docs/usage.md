@@ -35,6 +35,97 @@ Many longer templates place your cursor where you should continue typing. This
 cursor position is shown in examples as `$|$`, but Espanso moves the cursor
 there instead of printing `$|$`.
 
+## Optional Form Expansions
+
+Use a colon (`:`) instead of a semicolon (`;`) to open a form for the
+templates listed below. Type only the form trigger: do not append a recipient,
+number, comma, or final period. Fill in the fields, then click **Submit** or
+press **Ctrl+Enter**. Canceling the form does not insert a completed template.
+
+For example, `;emailnotiJordan.` expands directly, while `:emailnoti` asks
+for the recipient and an optional multiline message. Enter `Jordan` in the
+Recipient field and type your message on as many lines as needed. The generated
+email uses the same package text, randomized variables, and local signature
+values as the direct version. After submission, the cursor is placed after
+your message so you can continue drafting. Leave Message blank to draft there
+instead. The signature dependencies described below apply to both versions.
+
+### Email and Dispatch Forms
+
+All general email forms include Recipient and an optional multiline Message:
+
+- `:emailnorm`, `:emailreq`, `:emaildisk`, `:emailfu`, `:emaildy`
+- `:emailvm`, `:emailnovm`, `:emailmissvm`, `:emailmissnovm`
+- `:emailnoti`, `:emailcomp`
+
+`:emaildisk` also includes an optional Computer suffix field. Include a leading
+space if supplying a computer identifier, such as ` PC-123`. Its multiline
+Message is a separate paragraph rather than part of the computer sentence.
+
+Dispatch forms also include Recipient and an optional multiline Message:
+
+- `:resreqapp`, `:resreqnoapp`, `:resinc`, `:resspam`
+
+The form versions preserve the template paragraphs and add a drafting area
+where the direct template has none. Message text stays separate from the
+standard paragraphs in the missed-appointment and spam forms.
+
+### Structured Ticket Forms
+
+Use `:tmpreq` for a request ticket. It provides:
+
+- Request details (multiline).
+- Impact (multiline).
+- Due date (single line, free text).
+
+Use `:tmpinc` for an incident ticket. It provides:
+
+- Issue description (multiline).
+- When it happens (multiline).
+- When it first started (single line, free text).
+- Impact (multiline).
+- Troubleshooting steps already taken (multiline).
+
+Ticket fields can be left blank. Both forms keep the existing headings and
+follow-up reminders, preserve the line breaks you enter, and place the cursor
+at the end of the ticket for additional notes.
+
+### Credential Forms
+
+All supported clients have a form version asking for First name and Last name:
+
+- `:credafs`, `:credaslc`, `:credanai`, `:credcfa`
+- `:credccs`, `:credcrmc`, `:credgsak`, `:credjaoa`
+- `:credkc`, `:credklebs`, `:credorers`, `:credppos`
+
+These forms use the same client settings and credential generator as the
+direct triggers. They still require your separately configured `;tp` match
+for the temporary password; the form does not generate a password itself.
+
+### Date and Range Forms
+
+Date forms ask for the number normally typed into a parameterized trigger:
+
+- `:tmr` and `:yst` ask for Days.
+- `:wkago` and `:nxtweek` ask for Weeks.
+- `:lstmon`, `:lsttues`, `:lstwed`, `:lstthur`, `:lstfri`, `:lstsat`,
+  and `:lstsun` ask for Weeks before the previous matching weekday.
+- `:nxtmon`, `:nxttues`, `:nxtwed`, `:nxtthur`, `:nxtfri`, `:nxtsat`,
+  and `:nxtsun` ask for Weeks after the next matching weekday.
+- `:lstwkof`, `:lstwrkwkof`, `:nxtwkof`, and `:nxtwrkwkof` ask for Weeks
+  using the same calculations as the parameterized week-range triggers.
+- `:lstwkly` and `:nxtwkly` ask for Weeks for weekly filename ranges.
+- `:weekdays` lets you choose start and end weekday names.
+
+Numeric fields default to `1` and accept non-negative whole numbers, including
+`0`. Blank, negative, fractional, or nonnumeric input aborts the expansion.
+The calculations require GNU `date`, just like their direct counterparts.
+For example, `:tmr` with `3` produces the same date as `;3.tmr`.
+
+Forms are available for input-taking expansions and structured tickets.
+Short fixed-text helpers such as `;signature`, `;greet`, and client-name
+shortcuts keep their direct triggers.
+
 ## Dynamic Emails
 
 Dynamic email triggers create full email drafts. Type the trigger, the person's

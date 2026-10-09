@@ -365,3 +365,192 @@ matches:
         params:
           cmd: |
             date -d "next Sunday + {{weeks}} weeks" '+Sunday %Y-%m-%d'
+
+  # Numeric form input is validated before interpolation into date commands.
+  - trigger: ":lstmon"
+    label: Previous Monday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - &weeks_form
+        name: input
+        type: form
+        params:
+          layout: "Weeks (non-negative whole number): [[count]]"
+          fields:
+            count:
+              default: "1"
+      - &weeks_count
+        name: count
+        type: echo
+        params:
+          echo: "{{input.count}}"
+      - &validated_weeks
+        name: weeks
+        type: shell
+        depends_on: [count]
+        params:
+          cmd: |-
+            case "$ESPANSO_COUNT" in
+              ""|*[!0-9]*) exit 1 ;;
+              *) printf '%s' "$ESPANSO_COUNT" ;;
+            esac
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Monday - {{weeks}} weeks' '+Monday %Y-%m-%d'"
+
+  - trigger: ":lsttues"
+    label: Previous Tuesday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Tuesday - {{weeks}} weeks' '+Tuesday %Y-%m-%d'"
+
+  - trigger: ":lstwed"
+    label: Previous Wednesday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Wednesday - {{weeks}} weeks' '+Wednesday %Y-%m-%d'"
+
+  - trigger: ":lstthur"
+    label: Previous Thursday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Thursday - {{weeks}} weeks' '+Thursday %Y-%m-%d'"
+
+  - trigger: ":lstfri"
+    label: Previous Friday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Friday - {{weeks}} weeks' '+Friday %Y-%m-%d'"
+
+  - trigger: ":lstsat"
+    label: Previous Saturday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Saturday - {{weeks}} weeks' '+Saturday %Y-%m-%d'"
+
+  - trigger: ":lstsun"
+    label: Previous Sunday minus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'last Sunday - {{weeks}} weeks' '+Sunday %Y-%m-%d'"
+
+  - trigger: ":nxtmon"
+    label: Next Monday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Monday + {{weeks}} weeks' '+Monday %Y-%m-%d'"
+
+  - trigger: ":nxttues"
+    label: Next Tuesday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Tuesday + {{weeks}} weeks' '+Tuesday %Y-%m-%d'"
+
+  - trigger: ":nxtwed"
+    label: Next Wednesday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Wednesday + {{weeks}} weeks' '+Wednesday %Y-%m-%d'"
+
+  - trigger: ":nxtthur"
+    label: Next Thursday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Thursday + {{weeks}} weeks' '+Thursday %Y-%m-%d'"
+
+  - trigger: ":nxtfri"
+    label: Next Friday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Friday + {{weeks}} weeks' '+Friday %Y-%m-%d'"
+
+  - trigger: ":nxtsat"
+    label: Next Saturday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Saturday + {{weeks}} weeks' '+Saturday %Y-%m-%d'"
+
+  - trigger: ":nxtsun"
+    label: Next Sunday plus N weeks (Form)
+    replace: "{{output}} $|$"
+    vars:
+      - *weeks_form
+      - *weeks_count
+      - *validated_weeks
+      - name: output
+        type: shell
+        params:
+          cmd: "date -d 'next Sunday + {{weeks}} weeks' '+Sunday %Y-%m-%d'"

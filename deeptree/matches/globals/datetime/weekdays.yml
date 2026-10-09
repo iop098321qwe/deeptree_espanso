@@ -36,3 +36,34 @@ matches:
             esac
 
             printf '%s - %s' "$start_day" "$end_day"
+
+  - trigger: ":weekdays"
+    label: Weekday Range (Form)
+    replace: "{{output}}"
+    vars:
+      - name: input
+        type: form
+        params:
+          layout: |-
+            Start weekday: [[start]]
+            End weekday: [[end]]
+          fields:
+            start:
+              type: choice
+              values: &weekday_choices
+                - Monday
+                - Tuesday
+                - Wednesday
+                - Thursday
+                - Friday
+                - Saturday
+                - Sunday
+              default: Monday
+            end:
+              type: choice
+              values: *weekday_choices
+              default: Friday
+      - name: output
+        type: echo
+        params:
+          echo: "{{input.start}} - {{input.end}}"
