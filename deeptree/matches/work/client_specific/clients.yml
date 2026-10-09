@@ -218,6 +218,10 @@ matches:
   - trigger: ";vfj"
     replace: "Victims for Justice$|$"
 
+  # Wasilla Area Seniors, Inc.
+  - trigger: ";wasi"
+    replace: "Wasilla Area Seniors, Inc.$|$"
+
   # YWCA Alaska
   - trigger: ";ywca"
     replace: "YWCA Alaska$|$"
