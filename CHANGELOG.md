@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.5](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.4...v0.1.5) (2026-10-09)
+
+### Features
+
+* **expansions:** add optional colon-triggered forms ([8abf898](https://github.com/iop098321qwe/deeptree_espanso/commit/8abf898b66a83b11e989eaacf872784532bb26c5))
+
 ## [0.1.4](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.3...v0.1.4) (2026-09-30)
 
 ### Features
