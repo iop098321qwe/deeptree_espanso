@@ -142,6 +142,10 @@ matches:
   - trigger: ";kc"
     replace: "Kijik Corporation$|$"
 
+  # KLEBS Heating and Mechanical
+  - trigger: ";klebs"
+    replace: "KLEBS Heating and Mechanical$|$"
+
   # Knom Radio Mission, Inc.
   - trigger: ";knom"
     replace: "Knom Radio Mission, Inc.$|$"
