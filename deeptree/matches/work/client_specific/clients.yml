@@ -178,6 +178,10 @@ matches:
   - trigger: ";ppos"
     replace: "Pioneer Peak Orthopedic Surgery$|$"
 
+  # ProsserDagg Construction
+  - trigger: ";pdc"
+    replace: "ProsserDagg Construction$|$"
+
   # Samuel Simmonds Memorial Hospital
   - trigger: ";ssmh"
     replace: "Samuel Simmonds Memorial Hospital$|$"
