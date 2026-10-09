@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.6](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.5...v0.1.6) (2026-10-09)
+
+### Features
+
+* **clients:** add Bookkeeping Standards expansions ([337a622](https://github.com/iop098321qwe/deeptree_espanso/commit/337a6226339b2f6be8a2238b64c4f008d044464c))
+* **clients:** add Burg + Co. expansions ([60c55e1](https://github.com/iop098321qwe/deeptree_espanso/commit/60c55e149adbec03be6d283d9e31b569c688495d))
+* **clients:** add Family Promise of Mat-Su expansions ([905251f](https://github.com/iop098321qwe/deeptree_espanso/commit/905251ffe76712cf72d6b5c2197a8548935f78b2))
+* **clients:** add KLEBS Heating and Mechanical expansion ([6eea157](https://github.com/iop098321qwe/deeptree_espanso/commit/6eea1579bbc7776eebcffb0a00b728bc46385d01))
+* **clients:** add Pemberton & Young, LLC expansions ([2bb5533](https://github.com/iop098321qwe/deeptree_espanso/commit/2bb55337d52f29d7a09aeda3f2e815b14b851a30))
+* **clients:** add ProsserDagg Construction expansions ([8132359](https://github.com/iop098321qwe/deeptree_espanso/commit/81323595d784e27e7263dc872da5ce2a46a97791))
+* **clients:** add Specialty Imports, LLC expansions ([920a077](https://github.com/iop098321qwe/deeptree_espanso/commit/920a07759ddf00090f4f5d83ecfeab98be72cad4))
+* **clients:** add Wasilla Area Seniors, Inc. expansions ([783641c](https://github.com/iop098321qwe/deeptree_espanso/commit/783641cad12e1cf4586412ad9cf6f35f006dddc2))
+
+### Bug Fixes
+
+* **clients:** correct American Legion Alaska name and trigger ([06b9702](https://github.com/iop098321qwe/deeptree_espanso/commit/06b9702557929e000db6fd2def795be84ee81e2d))
+
 ## [0.1.5](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.4...v0.1.5) (2026-10-09)
 
 ### Features
