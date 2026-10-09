@@ -175,3 +175,214 @@ matches:
       This is a notification of completion email. To reopen your ticket if anything does not meet satisfactory completion standards, please respond to this email directly, or call {{dthelp}} with any additional information, questions, or concerns that you may have.
 
       {{signature}}
+
+  # Optional form versions of the dynamic email templates.
+  - trigger: ":emailnorm"
+    label: Deeptree Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      {{input.message}}$|$
+
+      You may respond to this email directly, or call {{dthelp}} with any additional information, questions, or concerns that you may have.
+
+      {{signature}}
+    vars: &email_form
+      - name: input
+        type: form
+        params:
+          layout: |-
+            Recipient: [[person]]
+            Message (optional):
+            [[message]]
+          fields:
+            message:
+              multiline: true
+
+  - trigger: ":emailreq"
+    label: Request For Action Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{input.message}}$|$
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emaildisk"
+    label: Request For Disk Space Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      We have an automatic alert that was generated for your computer{{input.computer}}. This alert is a notification that the storage has exceed 95% capacity on your computer.
+
+      At the time of this email, you ({{input.person}}) were the last known user to login to the computer.
+
+      Due to this alert, we would like to coordinate an appointment (typically 60-90 minutes) to perform cleanup on the computer when it is not in use. We do not need to work directly with you to perform the cleanup, however we will need to ensure that we are connecting at a time that the computer will not be needed for the duration of the appointment.
+
+      Please provide multiple dates and specific times that would work for this appointment, we would love to get it onto our calendar so that we can perform this cleanup operation.
+
+      {{input.message}}$|$
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars:
+      - name: input
+        type: form
+        params:
+          layout: |-
+            Recipient: [[person]]
+            Computer suffix (optional, include leading space): [[computer]]
+            Message (optional):
+            [[message]]
+          fields:
+            message:
+              multiline: true
+
+  - trigger: ":emailfu"
+    label: Follow-Up Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{followup}}
+
+      {{input.message}}$|$
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emaildy"
+    label: Done Yet Follow-Up Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{noresponse}}
+      {{input.message}}$|$
+      {{assornoass}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emailvm"
+    label: Voicemail Follow-Up Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{voicemail}}
+
+      {{input.message}}$|$
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emailnovm"
+    label: Unable to Leave a Voicemail Follow-Up Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{novoicemail}}
+
+      {{input.message}}$|$
+
+      {{novmfollowup}}
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emailmissvm"
+    label: Missed Appointment with Voicemail Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{voicemail}}
+
+      {{missappvm}}
+
+      {{input.message}}$|$
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emailmissnovm"
+    label: Missed Appointment Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **RESPONSE REQUESTED**
+
+      {{novoicemail}}
+
+      {{input.message}}$|$
+
+      {{missappnovm}}
+
+      {{reqresponse}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emailnoti"
+    label: Notification Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **NO RESPONSE REQUIRED**
+
+      {{input.message}}$|$
+
+      {{notification}}
+
+      {{signature}}
+    vars: *email_form
+
+  - trigger: ":emailcomp"
+    label: Completion Email (Form)
+    force_mode: clipboard
+    replace: |-
+      {{greeting}}{{input.person}},{{addongreeting}}
+
+      **NO RESPONSE REQUIRED**
+
+      {{completedwork}}
+
+      {{checkup}}
+      {{input.message}}$|$
+      This is a notification of completion email. To reopen your ticket if anything does not meet satisfactory completion standards, please respond to this email directly, or call {{dthelp}} with any additional information, questions, or concerns that you may have.
+
+      {{signature}}
+    vars: *email_form

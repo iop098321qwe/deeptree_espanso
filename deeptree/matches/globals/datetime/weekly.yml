@@ -122,3 +122,71 @@ matches:
         params:
           cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
           trim: true
+
+  - trigger: ":lstwkly"
+    label: N weeks ago - weekly filename range (Form)
+    replace: "{{week_start}}_-_{{week_end}}"
+    vars:
+      - &weekly_form
+        name: input
+        type: form
+        params:
+          layout: "Weeks (non-negative whole number): [[count]]"
+          fields:
+            count:
+              default: "1"
+      - &weekly_count
+        name: count
+        type: echo
+        params:
+          echo: "{{input.count}}"
+      - &weekly_weeks
+        name: weeks
+        type: shell
+        depends_on: [count]
+        params:
+          cmd: |-
+            case "$ESPANSO_COUNT" in
+              ""|*[!0-9]*) exit 1 ;;
+              *) printf '%s' "$ESPANSO_COUNT" ;;
+            esac
+      - name: current_week_monday
+        type: shell
+        params:
+          cmd: |
+            if [ "$(date +%u)" -eq 1 ]; then
+              date '+%Y-%m-%d'
+            else
+              date -d 'last Monday' '+%Y-%m-%d'
+            fi
+          trim: true
+      - name: week_start
+        type: shell
+        params:
+          cmd: "date -d '{{current_week_monday}} -{{weeks}} weeks' '+%Y-%m-%d'"
+          trim: true
+      - &weekly_end
+        name: week_end
+        type: shell
+        params:
+          cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
+          trim: true
+
+  - trigger: ":nxtwkly"
+    label: N weeks ahead - weekly filename range (Form)
+    replace: "{{week_start}}_-_{{week_end}}"
+    vars:
+      - *weekly_form
+      - *weekly_count
+      - *weekly_weeks
+      - name: next_week_monday
+        type: shell
+        params:
+          cmd: "date -d 'next Monday' '+%Y-%m-%d'"
+          trim: true
+      - name: week_start
+        type: shell
+        params:
+          cmd: "date -d '{{next_week_monday}} +{{weeks}} weeks' '+%Y-%m-%d'"
+          trim: true
+      - *weekly_end
