@@ -70,6 +70,10 @@ matches:
   - trigger: ";bmm"
     replace: "Beacon Media + Marketing$|$"
 
+  # Bookkeeping Standards
+  - trigger: ";bs"
+    replace: "Bookkeeping Standards$|$"
+
   # Camp Fire Alaska
   - trigger: ";cfa"
     replace: "Camp Fire Alaska$|$"
