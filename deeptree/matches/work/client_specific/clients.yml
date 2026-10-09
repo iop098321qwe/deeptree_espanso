@@ -74,6 +74,10 @@ matches:
   - trigger: ";bs"
     replace: "Bookkeeping Standards$|$"
 
+  # Burg + Co.
+  - trigger: ";burg"
+    replace: "Burg + Co.$|$"
+
   # Camp Fire Alaska
   - trigger: ";cfa"
     replace: "Camp Fire Alaska$|$"
