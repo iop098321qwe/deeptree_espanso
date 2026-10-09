@@ -70,6 +70,14 @@ matches:
   - trigger: ";bmm"
     replace: "Beacon Media + Marketing$|$"
 
+  # Bookkeeping Standards
+  - trigger: ";bs"
+    replace: "Bookkeeping Standards$|$"
+
+  # Burg + Co.
+  - trigger: ";burg"
+    replace: "Burg + Co.$|$"
+
   # Camp Fire Alaska
   - trigger: ";cfa"
     replace: "Camp Fire Alaska$|$"
@@ -106,6 +114,10 @@ matches:
   - trigger: ";ee"
     replace: "Eagle Enterprises, Inc.$|$"
 
+  # Family Promise of Mat-Su
+  - trigger: ";fpms"
+    replace: "Family Promise of Mat-Su$|$"
+
   # Farm Loop Christian Center
   - trigger: ";flcc"
     replace: "Farm Loop Christian Center$|$"
@@ -129,6 +141,10 @@ matches:
   # Kijik Corporation
   - trigger: ";kc"
     replace: "Kijik Corporation$|$"
+
+  # KLEBS Heating and Mechanical
+  - trigger: ";klebs"
+    replace: "KLEBS Heating and Mechanical$|$"
 
   # Knom Radio Mission, Inc.
   - trigger: ";knom"
@@ -154,13 +170,25 @@ matches:
   - trigger: ";pt"
     replace: "Pango Technology$|$"
 
+  # Pemberton & Young, LLC
+  - trigger: ";py"
+    replace: "Pemberton & Young, LLC$|$"
+
   # Pioneer Peak Orthopedic Surgery
   - trigger: ";ppos"
     replace: "Pioneer Peak Orthopedic Surgery$|$"
 
+  # ProsserDagg Construction
+  - trigger: ";pdc"
+    replace: "ProsserDagg Construction$|$"
+
   # Samuel Simmonds Memorial Hospital
   - trigger: ";ssmh"
     replace: "Samuel Simmonds Memorial Hospital$|$"
+
+  # Specialty Imports, LLC
+  - trigger: ";si"
+    replace: "Specialty Imports, LLC$|$"
 
   # Steve Fishback Architect
   - trigger: ";sfa"
@@ -170,9 +198,9 @@ matches:
   - trigger: ";sco"
     replace: "Stinebaugh & Company$|$"
 
-  # The American Legion
-  - trigger: ";al"
-    replace: "The American Legion$|$"
+  # The American Legion - Department of Alaska
+  - trigger: ";tal"
+    replace: "The American Legion - Department of Alaska$|$"
 
   # The Eureka Space
   - trigger: ";tes"
@@ -189,6 +217,10 @@ matches:
   # Victims for Justice
   - trigger: ";vfj"
     replace: "Victims for Justice$|$"
+
+  # Wasilla Area Seniors, Inc.
+  - trigger: ";wasi"
+    replace: "Wasilla Area Seniors, Inc.$|$"
 
   # YWCA Alaska
   - trigger: ";ywca"
