@@ -469,7 +469,7 @@
 <div class="admonition info">
 <p class="admonition-title">Get Started NOW</p>
 <p>If you wish to get started without reading about Espanso or the purpose of the
-Deeptree Espanso package, you can skip directly to the <a href="installation/">installation
+Deeptree Espanso package, you can skip directly to the <a href="https://iop098321qwe.github.io/deeptree_espanso/installation/">installation
 instructions</a>.</p>
 </div>
 <p>This is a private Espanso package for centrally managing the Deeptree snippets,
@@ -556,11 +556,16 @@ typing:</p>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>"Technology is best when it brings people together." - Matt Mullenweg
 </span></code></pre></div>
 <p>Again, this is a dynamic template that uses variables to fill in the
-technician's name, title, and work email address. It will also randomly select
+technician's name and title, company, and shared helpdesk phone number.
+The signature does not include an email address; <code>;dtemail</code> separately inserts
+the technician's work email address. It will also randomly select
 sentences, quotes, and partial sentences to randomize this email generation
 each time it is used to avoid sounding too automated or templated.</p>
 <p>With this package, I have made it so that each individual can use these
 expansion tools for themselves.</p>
+<p>The examples assume your local technician values and composed name globals
+are loaded. The package entry point currently omits <code>static/name.yml</code>; follow
+the <a href="https://iop098321qwe.github.io/deeptree_espanso/installation/">installation guide</a> to load those name definitions locally.</p>
 <h2 id="what-is-the-deeptree-espanso-package">What Is the Deeptree Espanso Package?<a class="headerlink" href="#what-is-the-deeptree-espanso-package" title="Permanent link">&para;</a></h2>
 <p>The repository contains templates for the technician-specific variables that
 are kept outside the package. These are used to customize the expansions to
@@ -571,10 +576,10 @@ means that a user can install this package and still have their own personal
 snippets and scripts in their Espanso configuration separately managed.
 Whenever the package is updated, the shared snippets and scripts will be
 updated only for the Deeptree Espanso package.</p>
-<p>This means that new snippets and scripts can be added to the package and shared
-with all users centrally and automatically without requiring each user to
-manually update their own Espanso configuration or interfere with their custom
-configurations.</p>
+<p>New snippets and scripts can be shared centrally without requiring users to
+edit their own Espanso configuration. Users receive these changes by running
+<code>espanso package update deeptree</code>; package updates are not automatic and leave
+separately managed personal configuration intact.</p>
 <p>To read more about Espanso, visit the <a href="https://espanso.org/">Espanso website</a>.</p>
 
 

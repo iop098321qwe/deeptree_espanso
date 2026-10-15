@@ -57,16 +57,6 @@ Please select from the tabs below:
         yay -S espanso-wayland
         ```
     
-    === "pacman"
-
-        #### Pacman
-    
-        For pacman, you can use the following command:
-    
-        ```sh
-        sudo pacman -S espanso-wayland
-        ```
-    
     === "Omarchy"
 
         #### Omarchy
@@ -132,7 +122,7 @@ Please select from the tabs below:
 
 ## 3. Verify Espanso Installation
 
-Run the following command to verify that Espanso is installed and running:
+Run the following command to verify that Espanso is installed:
 
 ```sh
 espanso --version
@@ -148,6 +138,13 @@ This should return the version of Espanso that is installed on your system. For 
 If you receive an error, please refer to the Espanso installation documentation
 for troubleshooting steps.
 
+The version command does not check whether the service is running. Check that
+separately with:
+
+```sh
+espanso service status
+```
+
 ## 4. Install the Package
 
 Now you have Espanso installed and running. Now it is time to install the
@@ -155,14 +152,29 @@ preconfigured Deeptree package.
 
 Install the Deeptree package with the following command:
 
+Git must be installed and able to authenticate to this private repository.
+Use your organization's configured Git credentials for the HTTPS URL below.
+
 ```sh
 espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external
 ```
 
 This adds the shared Deeptree snippets, variables, and scripts without
-replacing the user's existing Espanso configuration. It also allows updates to
-be rolled out to all users without requiring them to manually update their
-configuration.
+replacing the user's existing Espanso configuration. Users receive subsequent
+updates by running `espanso package update deeptree`; they do not need to edit
+their personal configuration for shared package changes.
+
+### Script Requirements
+
+The shell-based date helpers require GNU `date` with `-d` support.
+Credential expansions require Bash, `sed`, `tr`, and `awk`. The Windows and
+macOS walkthroughs are incomplete; installing Espanso alone does not provide
+these shell dependencies on every platform.
+
+Before using credential expansions, define a separate `;tp` match in your
+local Espanso configuration for the temporary password. The package does not
+define this match or generate passwords. See the
+[credential usage guide](usage.md#credential-generation) for details.
 
 ### Verify Package Installation
 
@@ -176,16 +188,35 @@ For example, you should see something similar to the following output:
 
 ```text
 > espanso package list
-- deeptree - version: 0.1.1 (git: https://github.com/iop098321qwe/deeptree_espanso)
+- deeptree - version: 0.1.6 (git: https://github.com/iop098321qwe/deeptree_espanso)
 ```
 
-If you see the package listed, then the installation was successful.
+The version may differ after a release. A listed package confirms installation;
+the expansion checks below verify your local setup.
 
 ## 5. Set Work Information
 
 Copy `templates/work_information.yml` from the [Github repository][repo] into
 the user's Espanso match directory within the config directory and update the
 values for that technician.
+
+### Load the Composed Name Variables
+
+The current `deeptree/package.yml` does not import
+`deeptree/matches/variables/static/name.yml`. That file defines `myname` and
+`mylegalname`, which compose your local first, middle, and last name values.
+Signatures, full emails, and full-name expansions need these definitions in
+addition to the six values in `work_information.yml`.
+
+Copy the [composed name definitions][names] into your local Espanso `match`
+directory as `deeptree_names.yml`, alongside `work_information.yml`. Keep the
+definitions unchanged so they reference your personalized technician values.
+If you already define `myname` and `mylegalname` locally, review those
+definitions instead of adding duplicates. Keep this file outside
+`match/packages/deeptree` so package updates preserve it.
+
+An empty `mymiddle` leaves two spaces between first and last name in
+`mylegalname`; `myname` always uses just first and last name.
 
 > [!INFO] Setup Tip
 Middle click or control click the Github repository link to open it in a new
@@ -231,8 +262,8 @@ tab to copy the `templates/work_information.yml` and leave this page open.
     `match` folder so it is not loaded as another match file.
     
     The path above is the default Linux location. If `.config/espanso` is missing
-    or your installation uses a custom configuration directory, use the existing
-    `espanso path` instructions in the Linux tab above to find the **Config:**
+    or your installation uses a custom configuration directory, run
+    `espanso path` as shown in the Linux tab below to find the **Config:**
     path, then open its `match` folder in your file manager. Do not create a new
     configuration folder just to match the default path.
     
@@ -257,6 +288,7 @@ tab to copy the `templates/work_information.yml` and leave this page open.
     
     #### Check the Result
     
+    Also complete the composed name setup above before testing signatures.
     After saving, allow Espanso a moment to reload its configuration. Open a new
     blank document in a text editor and type `;signature`. Confirm that the
     expanded signature contains your name and work title instead of placeholders.
@@ -313,22 +345,22 @@ tab to copy the `templates/work_information.yml` and leave this page open.
 
     ```yaml hl_lines="6"
       - name: myfirst
-    label: First Name Variable
-    comment: "Input your first name in the 'echo' field."
-    type: echo
-    params:
-      echo: "First"
+        label: First Name Variable
+        comment: "Input your first name in the 'echo' field."
+        type: echo
+        params:
+          echo: "First"
     ```
 
     to
     
     ```yaml hl_lines="6"
       - name: myfirst
-    label: First Name Variable
-    comment: "Input your first name in the 'echo' field."
-    type: echo
-    params:
-      echo: "Dallas"
+        label: First Name Variable
+        comment: "Input your first name in the 'echo' field."
+        type: echo
+        params:
+          echo: "Dallas"
     ```
 
     Repeat this for all variables in the file. Each individual label is denoted
@@ -340,6 +372,11 @@ tab to copy the `templates/work_information.yml` and leave this page open.
 
     Keep this copied file local to the technician. It contains personal
     technician values and should not be overwritten by Deeptree package updates.
+
+    After completing the composed name setup above, allow Espanso to reload.
+    In a local text document, check `;first`, `;name`, `;signature`, and
+    `;dtemail` against your configured values. If first name and email work but
+    signatures fail, confirm that `deeptree_names.yml` is also loaded.
 
 === "Windows (WIP)"
 
@@ -359,3 +396,4 @@ tab to copy the `templates/work_information.yml` and leave this page open.
 
 [install]: <https://espanso.org/install/>
 [repo]: <https://github.com/iop098321qwe/deeptree_espanso/blob/main/templates/work_information.yml>
+[names]: <https://github.com/iop098321qwe/deeptree_espanso/blob/main/deeptree/matches/variables/static/name.yml>

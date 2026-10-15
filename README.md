@@ -3,7 +3,7 @@
 > [!INFO] Get Started NOW
 If you wish to get started without reading about Espanso or the purpose of the
 Deeptree Espanso package, you can skip directly to the [installation
-instructions](installation.md).
+instructions][installation].
 
 This is a private Espanso package for centrally managing the Deeptree snippets,
 global variables, and scripts for Espanso users.
@@ -107,12 +107,18 @@ Deeptree, Inc.
 ```
 
 Again, this is a dynamic template that uses variables to fill in the
-technician's name, title, and work email address. It will also randomly select
+technician's name and title, company, and shared helpdesk phone number.
+The signature does not include an email address; `;dtemail` separately inserts
+the technician's work email address. It will also randomly select
 sentences, quotes, and partial sentences to randomize this email generation
 each time it is used to avoid sounding too automated or templated.
 
 With this package, I have made it so that each individual can use these
 expansion tools for themselves.
+
+The examples assume your local technician values and composed name globals
+are loaded. The package entry point currently omits `static/name.yml`; follow
+the [installation guide][installation] to load those name definitions locally.
 
 ## What Is the Deeptree Espanso Package?
 
@@ -127,11 +133,12 @@ snippets and scripts in their Espanso configuration separately managed.
 Whenever the package is updated, the shared snippets and scripts will be
 updated only for the Deeptree Espanso package.
 
-This means that new snippets and scripts can be added to the package and shared
-with all users centrally and automatically without requiring each user to
-manually update their own Espanso configuration or interfere with their custom
-configurations.
+New snippets and scripts can be shared centrally without requiring users to
+edit their own Espanso configuration. Users receive these changes by running
+`espanso package update deeptree`; package updates are not automatic and leave
+separately managed personal configuration intact.
 
 To read more about Espanso, visit the [Espanso website][espanso].
 
 [espanso]: https://espanso.org/
+[installation]: https://iop098321qwe.github.io/deeptree_espanso/installation/

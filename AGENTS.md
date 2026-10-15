@@ -37,6 +37,7 @@ or release automation.
 
 ## Repository Overview
 
+- `.github/workflows/`: GitHub Pages documentation build and deployment.
 - `.husky/`: Git hook scripts for Commitlint.
 - `.venv/`: Local Python virtual environment used for Zensical commands.
 - `deeptree/`: Espanso external package source.
@@ -47,6 +48,9 @@ or release automation.
 
 ## Tracked Files Overview
 
+- `.github/workflows/docs.yml`: Builds and deploys docs on `main`/`master`
+  pushes.
+- `.gitignore`: Excludes local caches, Node dependencies, and the Python venv.
 - `.husky/commit-msg`: Runs Commitlint for commit messages.
 - `AGENTS.md`: AI coding agent instructions for this repository.
 - `CHANGELOG.md`: Generated changelog; do not edit manually.
@@ -56,6 +60,8 @@ or release automation.
 - `deeptree/README.md`: Package-specific install and variable notes.
 - `deeptree/matches/`: Package-managed Espanso match and variable files.
 - `deeptree/scripts/`: Scripts called by package snippets.
+- `docs/CHANGELOG.md`: Symlink to the release-managed root changelog.
+- `docs/README.md`: Symlink to the root README used as the site home page.
 - `docs/global-variables.md`: Global values, dependencies, and random options.
 - `docs/installation.md`: Installation guide source.
 - `docs/usage.md`: User guide for package expansions and scripts.
@@ -81,6 +87,10 @@ or release automation.
   must be copied into the user's Espanso match directory outside the package.
 - `deeptree/scripts/credential-generator.sh` is called by credential snippets.
 - `docs/` is the Markdown source for the generated `site/` directory.
+- `docs/README.md` and `docs/CHANGELOG.md` are symlinks to root documents;
+  README links must work both in the repository and on the generated site.
+- `deeptree/package.yml` currently omits `variables/static/name.yml`.
+  Installation docs explain loading composed name globals in a local file.
 
 ## Commands
 
@@ -114,7 +124,9 @@ or release automation.
 - Use Conventional Commits for every commit. Prefer a scope when it adds
   clarity.
 - Site builds and `build(site):` commits are manual steps. Never perform
-  either automatically; each requires an explicit user request.
+  either locally without an explicit user request.
+- `.github/workflows/docs.yml` builds with `zensical build --clean` and
+  deploys GitHub Pages on pushes to `main` or `master`.
 - Never create, edit, or update `CHANGELOG.md` manually.
 - `CHANGELOG.md` is generated and maintained by release tooling only.
 - If release automation adds or changes generated files, let the tooling own
@@ -151,7 +163,8 @@ or release automation.
 - If package installation fails, verify `_manifest.yml`, `package.yml`, and
   `README.md` exist under `deeptree/`.
 - If snippets using signatures fail, verify the user copied and configured
-  `templates/work_information.yml` in their Espanso match directory.
+  `templates/work_information.yml` in their Espanso match directory and loaded
+  the composed name globals as described in `docs/installation.md`.
 - If docs are stale, report that `site/` needs a manual rebuild. Run
   `./.venv/bin/zensical build` only when explicitly requested by the user.
 - If generated or managed files change unexpectedly, verify which tool owns
@@ -167,6 +180,25 @@ or release automation.
 
 ## Maintenance
 
+- After every change, without exception, review documentation against the
+  current implementation. This applies to code, configuration, package,
+  dependency, tooling, and documentation changes, including follow-up edits.
+- Always perform the review, even when no documentation update seems needed.
+  Inspect the full change set and trace affected behavior and workflows to
+  their implementation; do not rely only on which documentation files changed.
+- Check the root and package READMEs, `docs/`, and relevant `AGENTS.md`
+  guidance for affected instructions, examples, triggers, variables,
+  dependencies, paths, links, and workflows.
+- Automatically document new or changed behavior that lacks coverage, correct
+  existing documentation that no longer matches the implementation, and remove
+  or revise obsolete instructions and references as part of the same work.
+- Recheck documentation after follow-up edits. Complete necessary corrections
+  and verification before declaring work finished or committing and pushing it.
+  If accuracy cannot be verified, report the specific blocker.
+- Report the documentation review outcome in the final response, including
+  when the review finds that no documentation updates are required.
+- Preserve generated-file ownership: documentation review does not authorize
+  local `site/` builds or manual `CHANGELOG.md` edits.
 - After any code, config, or doc change, verify that `AGENTS.md` still
   matches the repository.
 - When `AGENTS.md` needs an update, make it in a separate `docs` Conventional
