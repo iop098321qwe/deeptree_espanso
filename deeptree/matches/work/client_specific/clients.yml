@@ -187,7 +187,7 @@ matches:
     replace: "Samuel Simmonds Memorial Hospital$|$"
 
   # Specialty Imports, LLC
-  - trigger: ";si"
+  - trigger: ";sillc"
     replace: "Specialty Imports, LLC$|$"
 
   # Steve Fishback Architect
