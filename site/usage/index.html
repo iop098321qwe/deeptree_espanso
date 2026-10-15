@@ -1121,8 +1121,10 @@ at the end of the ticket for additional notes.</p>
 <p>All supported clients have a form version asking for First name and Last name:</p>
 <ul>
 <li><code>:credafs</code>, <code>:credaslc</code>, <code>:credanai</code>, <code>:credcfa</code></li>
+<li><code>:credbs</code>, <code>:credburg</code>, <code>:credfpms</code>, <code>:credpy</code></li>
 <li><code>:credccs</code>, <code>:credcrmc</code>, <code>:credgsak</code>, <code>:credjaoa</code></li>
 <li><code>:credkc</code>, <code>:credklebs</code>, <code>:credorers</code>, <code>:credppos</code></li>
+<li><code>:credpdc</code>, <code>:credsi</code>, <code>:credwasi</code></li>
 </ul>
 <p>These forms use the same client settings and credential generator as the
 direct triggers. They still require your separately configured <code>;tp</code> match
@@ -1143,7 +1145,8 @@ for the temporary password; the form does not generate a password itself.</p>
 </ul>
 <p>Numeric fields default to <code>1</code> and accept non-negative whole numbers, including
 <code>0</code>. Blank, negative, fractional, or nonnumeric input aborts the expansion.
-The calculations require GNU <code>date</code>, just like their direct counterparts.
+Numeric date calculations require GNU <code>date</code>, just like their direct
+counterparts; <code>:weekdays</code> only echoes the selected names.
 For example, <code>:tmr</code> with <code>3</code> produces the same date as <code>;3.tmr</code>.</p>
 <p>Forms are available for input-taking expansions and structured tickets.
 Short fixed-text helpers such as <code>;signature</code>, <code>;greet</code>, and client-name
@@ -1175,8 +1178,9 @@ listed separately, even when they reach the same <code>dthelp</code> global.</p>
 <code>deeptree/matches/variables/static/name.yml</code>, which defines <code>myname</code> and
 <code>mylegalname</code>. Signatures, full emails, and name expansions that depend on
 these globals require them to be loaded separately. Local first and last name
-values alone do not load these composed globals. This guide documents the
-limitation; it does not change the package imports.</p>
+values alone do not load these composed globals. Follow the
+<a href="../installation/#load-the-composed-name-variables">installation workaround</a>
+to load them locally.</p>
 <h3 id="general-email-templates">General Email Templates<a class="headerlink" href="#general-email-templates" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>;emailnorm&lt;person&gt;.</code> creates a normal Deeptree email.
@@ -1459,8 +1463,10 @@ These counts make no claims about selection probabilities.</p>
 <h2 id="dispatch-ticket-templates">Dispatch Ticket Templates<a class="headerlink" href="#dispatch-ticket-templates" title="Permanent link">&para;</a></h2>
 <p>Dispatch ticket templates help start ticket bodies with the standard prompts and
 follow-up reminders already included.</p>
-<p>All expansions in this section use no direct or indirect globals. They insert
-static text and a cursor marker, with no local variables or typed captures.</p>
+<p>The direct expansions below use no direct or indirect globals. They insert
+static text and a cursor marker, with no local variables or typed captures.
+Their <code>:tmpreq</code> and <code>:tmpinc</code> form versions use match-local form values, as
+described under Structured Ticket Forms.</p>
 <ul>
 <li><code>;tmpreq</code> creates a request ticket template.</li>
 <li><code>;tmpinc</code> creates an incident ticket template.</li>
@@ -1490,6 +1496,11 @@ the final period.</p>
 <p>The expansion runs the package script <code>credential-generator.sh</code>. The script
 normalizes the name, applies the client username format, and creates the email
 address for that client.
+It requires Bash, <code>sed</code>, <code>tr</code>, and <code>awk</code>. Names are lowercased and whitespace
+is removed for account names; initial-based formats take an initial from each
+whitespace-separated name component. Other punctuation is preserved. The
+script formats documentation only; it does not create accounts or check for
+duplicate usernames or addresses.
 The script does not supply the password; your separately configured <code>;tp</code>
 match does.</p>
 <p>Supported credential triggers:</p>
@@ -1497,16 +1508,23 @@ match does.</p>
 <li><code>;credafs&lt;first&gt;,&lt;last&gt;.</code> for Alaska Family Services.</li>
 <li><code>;credaslc&lt;first&gt;,&lt;last&gt;.</code> for Alaska SeaLife Center.</li>
 <li><code>;credanai&lt;first&gt;,&lt;last&gt;.</code> for Anchorage Neurosurgical Associates, Inc.</li>
+<li><code>;credbs&lt;first&gt;,&lt;last&gt;.</code> for Bookkeeping Standards.</li>
+<li><code>;credburg&lt;first&gt;,&lt;last&gt;.</code> for Burg + Co.</li>
 <li><code>;credcfa&lt;first&gt;,&lt;last&gt;.</code> for Camp Fire Alaska.</li>
 <li><code>;credccs&lt;first&gt;,&lt;last&gt;.</code> for CCS Early Learning.</li>
 <li><code>;credcrmc&lt;first&gt;,&lt;last&gt;.</code> for Cross Road Medical Center.</li>
+<li><code>;credfpms&lt;first&gt;,&lt;last&gt;.</code> for Family Promise of Mat-Su.</li>
 <li><code>;credgsak&lt;first&gt;,&lt;last&gt;.</code> for Girl Scouts of Alaska.</li>
 <li><code>;credjaoa&lt;first&gt;,&lt;last&gt;.</code> for Junior Achievement of Alaska.</li>
 <li><code>;credkc&lt;first&gt;,&lt;last&gt;.</code> for Kijik Corporation.</li>
 <li><code>;credklebs&lt;first&gt;,&lt;last&gt;.</code> for KLEBS Heating &amp; Mechanical.</li>
 <li><code>;credorers&lt;first&gt;,&lt;last&gt;.</code> for O'Banion Real Estate &amp; Relocation
   Services.</li>
+<li><code>;credpy&lt;first&gt;,&lt;last&gt;.</code> for Pemberton &amp; Young, LLC.</li>
 <li><code>;credppos&lt;first&gt;,&lt;last&gt;.</code> for Pioneer Peak Orthopedic Surgery.</li>
+<li><code>;credpdc&lt;first&gt;,&lt;last&gt;.</code> for ProsserDagg Construction.</li>
+<li><code>;credsi&lt;first&gt;,&lt;last&gt;.</code> for Specialty Imports, LLC.</li>
+<li><code>;credwasi&lt;first&gt;,&lt;last&gt;.</code> for Wasilla Area Seniors, Inc.</li>
 </ul>
 <h2 id="personal-information">Personal Information<a class="headerlink" href="#personal-information" title="Permanent link">&para;</a></h2>
 <p>Personal information expansions use the values you configured during setup.</p>
@@ -1555,6 +1573,8 @@ insert static names and cursor markers, with no local variables or captures.</p>
 <li><code>;bc</code> expands to <code>Bauer Construction</code>.</li>
 <li><code>;boa</code> expands to <code>Bayshore Owners Association</code>.</li>
 <li><code>;bmm</code> expands to <code>Beacon Media + Marketing</code>.</li>
+<li><code>;bs</code> expands to <code>Bookkeeping Standards</code>.</li>
+<li><code>;burg</code> expands to <code>Burg + Co.</code>.</li>
 <li><code>;cfa</code> expands to <code>Camp Fire Alaska</code>.</li>
 <li><code>;cg</code> expands to <code>Cashion Gilmore</code>.</li>
 <li><code>;ccs</code> expands to <code>CCS Early Learning</code>.</li>
@@ -1564,27 +1584,33 @@ insert static names and cursor markers, with no local variables or captures.</p>
 <li><code>;dda</code> expands to <code>Denali Daniels + Associates</code>.</li>
 <li><code>;dc</code> expands to <code>Dimond Center</code>.</li>
 <li><code>;ee</code> expands to <code>Eagle Enterprises, Inc.</code>.</li>
+<li><code>;fpms</code> expands to <code>Family Promise of Mat-Su</code>.</li>
 <li><code>;flcc</code> expands to <code>Farm Loop Christian Center</code>.</li>
 <li><code>;fb</code> expands to <code>Fireside Books</code>.</li>
 <li><code>;gsak</code> expands to <code>Girl Scouts of Alaska</code>.</li>
 <li><code>;gptlhb</code> expands to <code>Great Plains Tribal Leaders Health Board</code>.</li>
 <li><code>;jaoa</code> expands to <code>Junior Achievement of Alaska</code>.</li>
 <li><code>;kc</code> expands to <code>Kijik Corporation</code>.</li>
+<li><code>;klebs</code> expands to <code>KLEBS Heating and Mechanical</code>.</li>
 <li><code>;knom</code> expands to <code>Knom Radio Mission, Inc.</code>.</li>
 <li><code>;lc</code> expands to <code>Larson Chiropractic</code>.</li>
 <li><code>;nwf</code> expands to <code>North Wend Foods, Inc.</code>.</li>
 <li><code>;orers</code> expands to <code>O'Banion Real Estate &amp; Relocation Services</code>.</li>
 <li><code>;opc</code> expands to <code>Optimum Performance Chiropractic</code>.</li>
 <li><code>;pt</code> expands to <code>Pango Technology</code>.</li>
+<li><code>;py</code> expands to <code>Pemberton &amp; Young, LLC</code>.</li>
 <li><code>;ppos</code> expands to <code>Pioneer Peak Orthopedic Surgery</code>.</li>
+<li><code>;pdc</code> expands to <code>ProsserDagg Construction</code>.</li>
 <li><code>;ssmh</code> expands to <code>Samuel Simmonds Memorial Hospital</code>.</li>
+<li><code>;si</code> expands to <code>Specialty Imports, LLC</code>.</li>
 <li><code>;sfa</code> expands to <code>Steve Fishback Architect</code>.</li>
 <li><code>;sco</code> expands to <code>Stinebaugh &amp; Company</code>.</li>
-<li><code>;al</code> expands to <code>The American Legion</code>.</li>
+<li><code>;tal</code> expands to <code>The American Legion - Department of Alaska</code>.</li>
 <li><code>;tes</code> expands to <code>The Eureka Space</code>.</li>
 <li><code>;ttcd</code> expands to <code>Tyonek Tribal Conservation District</code>.</li>
 <li><code>;uwm</code> expands to <code>United Way of Mat-Su</code>.</li>
 <li><code>;vfj</code> expands to <code>Victims for Justice</code>.</li>
+<li><code>;wasi</code> expands to <code>Wasilla Area Seniors, Inc.</code>.</li>
 <li><code>;ywca</code> expands to <code>YWCA Alaska</code>.</li>
 </ul>
 <h2 id="clipboard-helpers">Clipboard Helpers<a class="headerlink" href="#clipboard-helpers" title="Permanent link">&para;</a></h2>
@@ -1595,15 +1621,18 @@ defines its own match-local <code>clipboard</code> variable using the clipboard 
 there are no typed captures.</p>
 <ul>
 <li><code>;cbb</code> places the cursor before the clipboard text.</li>
-<li><code>;cbe</code> places the cursor after the clipboard text.</li>
+<li><code>;cbe</code> inserts the clipboard text and a space, then places the cursor after it.</li>
 <li><code>;cbn</code> inserts the clipboard text, then leaves a blank line below it.</li>
-<li><code>;cba</code> leaves a blank line above the clipboard text.</li>
+<li><code>;cba</code> places the cursor above a blank line and the clipboard text.</li>
 </ul>
 <p>These are useful when quoting copied text and then writing above, below, or
 around it.</p>
 <h2 id="date-and-time">Date and Time<a class="headerlink" href="#date-and-time" title="Permanent link">&para;</a></h2>
 <p>Date and time expansions generate dates from your current system date and time.
-Some use fixed triggers, and some let you type a number for a relative date.</p>
+Some use fixed triggers, and some let you type a number for a relative date.
+Shell-based relative date and week-range helpers require GNU <code>date</code> with
+<code>-d</code> support. Native Espanso date helpers such as <code>;date</code> and <code>;stamp</code> do not
+require that command.</p>
 <p>All date and time expansions in every subsection below, including aliases,
 use no direct or indirect globals. They use match-local date or shell variables
 and, for regex triggers, typed captures such as <code>days</code>, <code>weeks</code>, <code>start</code>, and
@@ -1616,15 +1645,22 @@ not the global <a href="../global-variables/#today">today</a>.</p>
 <li><code>;time</code> inserts the current time in 24-hour format.</li>
 <li><code>;date</code> inserts today's date as <code>YYYY-MM-DD</code>.</li>
 <li><code>;disdate</code> inserts <code>Disabled YYYY-MM-DD</code>.</li>
-<li><code>;now</code>, <code>;ddt</code>, <code>;datime</code>, and <code>;stamp</code> insert a full day, date, and time
-  stamp.</li>
-<li><code>;daily</code> inserts a daily note filename.</li>
+<li><code>;stamp</code> inserts the current time in parentheses: <code>(HH:MM)</code>.</li>
+<li><code>;fullstamp</code> inserts the date and time in parentheses:
+  <code>(YYYY-MM-DD HH:MM)</code>.</li>
+<li><code>;daystamp</code> inserts the full weekday, date, and time:
+  <code>Thursday 2026-10-15 14:30</code>, for example, without parentheses.</li>
+<li><code>;daily</code> inserts a daily note filename as <code>YYYY-MM-DD-dallas.md</code>.
+  The <code>dallas</code> suffix is fixed in the package; it does not use your name globals.</li>
 <li><code>;day</code> inserts the current weekday name.</li>
 <li><code>;daydate</code> and <code>;today</code> insert today with the weekday and date.</li>
 <li><code>;tomorrow</code> inserts tomorrow with the weekday and date.</li>
 <li><code>;yesterday</code> inserts yesterday with the weekday and date.</li>
 <li><code>;month</code> inserts the current month name.</li>
 </ul>
+<p>The former <code>;now</code>, <code>;ddt</code>, and <code>;datime</code> aliases have been removed. Use
+<code>;daystamp</code> for their previous weekday/date/time output. <code>;stamp</code> now inserts
+only the parenthesized time; use <code>;fullstamp</code> when you need the date as well.</p>
 <h3 id="relative-days-and-weeks">Relative Days and Weeks<a class="headerlink" href="#relative-days-and-weeks" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>;tmr</code> inserts tomorrow's date.</li>
@@ -1633,8 +1669,10 @@ not the global <a href="../global-variables/#today">today</a>.</p>
 <li><code>;&lt;days&gt;.yst</code> inserts the date that many days ago.</li>
 <li><code>;wkago</code> inserts the date one week ago.</li>
 <li><code>;&lt;weeks&gt;.wkago</code> inserts the date that many weeks ago.</li>
-<li><code>;nxtweek</code> inserts the same weekday next week.</li>
-<li><code>;&lt;weeks&gt;.nxtweek</code> inserts the same weekday that many weeks ahead.</li>
+<li><code>;nxtweek</code> inserts the same weekday next week, including its full weekday
+  name and date.</li>
+<li><code>;&lt;weeks&gt;.nxtweek</code> inserts the same weekday that many weeks ahead, including
+  its full weekday name and date.</li>
 </ul>
 <p>Examples:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>;3.tmr
@@ -1659,11 +1697,17 @@ occurrence:</p>
 </ul>
 <p>You can also type a number before the weekday pattern:</p>
 <ul>
-<li><code>;&lt;weeks&gt;.lstmon</code> through <code>;&lt;weeks&gt;.lstsun</code> inserts that weekday from a
-  previous week.</li>
-<li><code>;&lt;weeks&gt;.nxtmon</code> through <code>;&lt;weeks&gt;.nxtsun</code> inserts that weekday from a
-  future week.</li>
+<li><code>;&lt;weeks&gt;.lstmon</code>, <code>;&lt;weeks&gt;.lsttue</code>, <code>;&lt;weeks&gt;.lstwed</code>,
+  <code>;&lt;weeks&gt;.lstthu</code>, <code>;&lt;weeks&gt;.lstfri</code>, <code>;&lt;weeks&gt;.lstsat</code>, and
+  <code>;&lt;weeks&gt;.lstsun</code> subtract that many weeks from the previous matching weekday.
+  The numbered Tuesday and Thursday triggers use <code>lsttue</code> and <code>lstthu</code>,
+  unlike the fixed triggers <code>;lsttues</code> and <code>;lstthur</code> and their form versions.</li>
+<li><code>;&lt;weeks&gt;.nxtmon</code> through <code>;&lt;weeks&gt;.nxtsun</code> add that many weeks to the next
+  matching weekday. Tuesday and Thursday use <code>nxttues</code> and <code>nxtthur</code>.</li>
 </ul>
+<p>For these numbered weekday triggers, <code>0</code> means the previous or next matching
+weekday itself; <code>1</code> means one additional week away. The forms use the same
+offsets.</p>
 <p>Examples:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>;2.lstfri
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>;3.nxtwed
@@ -1678,10 +1722,15 @@ occurrence:</p>
 <li><code>;nxtwrkwkof</code> inserts next week's Monday-to-Friday work week range.</li>
 <li><code>;&lt;weeks&gt;.lstwkof</code> inserts the Monday-to-Sunday range that many weeks ago.</li>
 <li><code>;&lt;weeks&gt;.lstwrkwkof</code> inserts the Monday-to-Friday range that many weeks ago.</li>
-<li><code>;&lt;weeks&gt;.nxtwkof</code> inserts the Monday-to-Sunday range that many weeks ahead.</li>
-<li><code>;&lt;weeks&gt;.nxtwrkwkof</code> inserts the Monday-to-Friday range that many weeks
-  ahead.</li>
+<li><code>;&lt;weeks&gt;.nxtwkof</code> adds that many weeks to next Monday, then inserts its
+  Monday-to-Sunday range.</li>
+<li><code>;&lt;weeks&gt;.nxtwrkwkof</code> adds that many weeks to next Monday, then inserts its
+  Monday-to-Friday range.</li>
 </ul>
+<p>Numbered previous ranges count back from the current week's Monday (<code>0</code> means
+the current week). Numbered next ranges count forward from next Monday (<code>0</code>
+means next week, <code>1</code> means the week after next). The range forms use these
+same offsets.</p>
 <h3 id="weekly-filename-ranges">Weekly Filename Ranges<a class="headerlink" href="#weekly-filename-ranges" title="Permanent link">&para;</a></h3>
 <p>Weekly filename ranges use dates only and join them with <code>_-_</code>.</p>
 <ul>
@@ -1689,8 +1738,13 @@ occurrence:</p>
 <li><code>;lstwkly</code> inserts last week's date range.</li>
 <li><code>;nxtwkly</code> inserts next week's date range.</li>
 <li><code>;&lt;weeks&gt;.lstwkly</code> inserts the weekly range that many weeks ago.</li>
-<li><code>;&lt;weeks&gt;.nxtwkly</code> inserts the weekly range that many weeks ahead.</li>
+<li><code>;&lt;weeks&gt;.nxtwkly</code> adds that many weeks to next Monday, then inserts its
+  Monday-to-Sunday range.</li>
 </ul>
+<p>Numbered previous ranges count back from the current week's Monday; numbered
+next ranges count forward from next Monday. Thus <code>;0.nxtwkly</code> matches
+<code>;nxtwkly</code>, while <code>;1.nxtwkly</code> means the week after next. The forms use the
+same calculations.</p>
 <h3 id="weekday-ranges">Weekday Ranges<a class="headerlink" href="#weekday-ranges" title="Permanent link">&para;</a></h3>
 <p>Weekday range expansions turn short weekday codes into readable ranges.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>;&lt;start&gt;-&lt;end&gt;

@@ -40,8 +40,9 @@ Package globals are loaded through `deeptree/package.yml` imports.
 **`deeptree/matches/variables/static/name.yml` is not imported there.**
 Its `myname` and `mylegalname` definitions exist in source but are not loaded
 through that entry point. Matches and `signature` reference these names, so
-they need definitions loaded separately to resolve. This reference records
-the omission; it does not change imports or repair it.
+they need definitions loaded separately to resolve. Follow the
+[installation workaround](installation.md#load-the-composed-name-variables)
+to load them locally without editing the package imports.
 
 Technician globals are supplied by `templates/work_information.yml`, not
 the package. Copy that template into your Espanso match directory outside

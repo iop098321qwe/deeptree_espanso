@@ -27,8 +27,25 @@ Espanso match directory:
 - `myfirst`
 - `mymiddle`
 - `mylast`
-- `myname`
-- `mylegalname`
 - `myemail`
 - `workemail`
 - `title`
+
+The technician template defines these six values. `myemail` is available for
+personal snippets but is not used by the package. The signature uses your name
+and title, the company, and the shared helpdesk phone number; `;dtemail`
+separately inserts `workemail`.
+
+The package also requires `myname` and `mylegalname`, but `package.yml`
+currently omits `matches/variables/static/name.yml` from its imports. Until
+that import is added, copy that file into your local Espanso match directory
+as `deeptree_names.yml`, alongside `work_information.yml`. It composes the
+names from your local first, middle, and last name values. Keep both files
+outside `match/packages/deeptree` so package updates preserve them.
+
+## Script Requirements
+
+Relative date and week-range helpers require GNU `date` with `-d` support.
+Credential expansions require Bash, `sed`, `tr`, and `awk`, and a separately
+configured `;tp` match for the temporary password. The package does not define
+`;tp` or generate passwords itself.

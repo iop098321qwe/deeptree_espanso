@@ -1411,8 +1411,9 @@ template's comma even when either or both random selections are empty.</p>
 <strong><code>deeptree/matches/variables/static/name.yml</code> is not imported there.</strong>
 Its <code>myname</code> and <code>mylegalname</code> definitions exist in source but are not loaded
 through that entry point. Matches and <code>signature</code> reference these names, so
-they need definitions loaded separately to resolve. This reference records
-the omission; it does not change imports or repair it.</p>
+they need definitions loaded separately to resolve. Follow the
+<a href="../installation/#load-the-composed-name-variables">installation workaround</a>
+to load them locally without editing the package imports.</p>
 <p>Technician globals are supplied by <code>templates/work_information.yml</code>, not
 the package. Copy that template into your Espanso match directory outside
 the package and customize its placeholder values. Package updates do not
