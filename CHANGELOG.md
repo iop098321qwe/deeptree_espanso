@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.1](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.0...v0.2.1) (2026-10-15)
+
+### Bug Fixes
+
+* **clients:** change trigger for Specialty Imports, LLC ([0edbd5d](https://github.com/iop098321qwe/deeptree_espanso/commit/0edbd5d5500b14aafb6fd233e6951350bbef863d))
+
 ## [0.2.0](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.6...v0.2.0) (2026-10-15)
 
 ### ⚠ BREAKING CHANGES
