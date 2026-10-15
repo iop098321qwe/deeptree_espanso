@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.0](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.6...v0.2.0) (2026-10-15)
+
+### ⚠ BREAKING CHANGES
+
+* **datetime:** ;stamp now inserts only (HH:MM). Replace ;now, ;ddt,
+  and ;datime with ;daystamp for weekday/date/time output.
+
+### Features
+
+* **datetime:** add dedicated time and date timestamp triggers ([36f0763](https://github.com/iop098321qwe/deeptree_espanso/commit/36f07637ecefd49931f391cf35781602d3855395))
+
 ## [0.1.6](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.1.5...v0.1.6) (2026-10-09)
 
 ### Features
