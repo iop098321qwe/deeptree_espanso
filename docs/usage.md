@@ -95,8 +95,10 @@ at the end of the ticket for additional notes.
 All supported clients have a form version asking for First name and Last name:
 
 - `:credafs`, `:credaslc`, `:credanai`, `:credcfa`
+- `:credbs`, `:credburg`, `:credfpms`, `:credpy`
 - `:credccs`, `:credcrmc`, `:credgsak`, `:credjaoa`
 - `:credkc`, `:credklebs`, `:credorers`, `:credppos`
+- `:credpdc`, `:credsi`, `:credwasi`
 
 These forms use the same client settings and credential generator as the
 direct triggers. They still require your separately configured `;tp` match
@@ -119,7 +121,8 @@ Date forms ask for the number normally typed into a parameterized trigger:
 
 Numeric fields default to `1` and accept non-negative whole numbers, including
 `0`. Blank, negative, fractional, or nonnumeric input aborts the expansion.
-The calculations require GNU `date`, just like their direct counterparts.
+Numeric date calculations require GNU `date`, just like their direct
+counterparts; `:weekdays` only echoes the selected names.
 For example, `:tmr` with `3` produces the same date as `;3.tmr`.
 
 Forms are available for input-taking expansions and structured tickets.
@@ -158,8 +161,9 @@ listed separately, even when they reach the same `dthelp` global.
 `deeptree/matches/variables/static/name.yml`, which defines `myname` and
 `mylegalname`. Signatures, full emails, and name expansions that depend on
 these globals require them to be loaded separately. Local first and last name
-values alone do not load these composed globals. This guide documents the
-limitation; it does not change the package imports.
+values alone do not load these composed globals. Follow the
+[installation workaround](installation.md#load-the-composed-name-variables)
+to load them locally.
 
 ### General Email Templates
 
@@ -376,8 +380,10 @@ Table rows exceed 80 columns to keep factor names and arithmetic auditable.
 Dispatch ticket templates help start ticket bodies with the standard prompts and
 follow-up reminders already included.
 
-All expansions in this section use no direct or indirect globals. They insert
+The direct expansions below use no direct or indirect globals. They insert
 static text and a cursor marker, with no local variables or typed captures.
+Their `:tmpreq` and `:tmpinc` form versions use match-local form values, as
+described under Structured Ticket Forms.
 
 - `;tmpreq` creates a request ticket template.
 - `;tmpinc` creates an incident ticket template.
@@ -418,6 +424,11 @@ Example:
 The expansion runs the package script `credential-generator.sh`. The script
 normalizes the name, applies the client username format, and creates the email
 address for that client.
+It requires Bash, `sed`, `tr`, and `awk`. Names are lowercased and whitespace
+is removed for account names; initial-based formats take an initial from each
+whitespace-separated name component. Other punctuation is preserved. The
+script formats documentation only; it does not create accounts or check for
+duplicate usernames or addresses.
 The script does not supply the password; your separately configured `;tp`
 match does.
 
@@ -426,16 +437,23 @@ Supported credential triggers:
 - `;credafs<first>,<last>.` for Alaska Family Services.
 - `;credaslc<first>,<last>.` for Alaska SeaLife Center.
 - `;credanai<first>,<last>.` for Anchorage Neurosurgical Associates, Inc.
+- `;credbs<first>,<last>.` for Bookkeeping Standards.
+- `;credburg<first>,<last>.` for Burg + Co.
 - `;credcfa<first>,<last>.` for Camp Fire Alaska.
 - `;credccs<first>,<last>.` for CCS Early Learning.
 - `;credcrmc<first>,<last>.` for Cross Road Medical Center.
+- `;credfpms<first>,<last>.` for Family Promise of Mat-Su.
 - `;credgsak<first>,<last>.` for Girl Scouts of Alaska.
 - `;credjaoa<first>,<last>.` for Junior Achievement of Alaska.
 - `;credkc<first>,<last>.` for Kijik Corporation.
 - `;credklebs<first>,<last>.` for KLEBS Heating & Mechanical.
 - `;credorers<first>,<last>.` for O'Banion Real Estate & Relocation
   Services.
+- `;credpy<first>,<last>.` for Pemberton & Young, LLC.
 - `;credppos<first>,<last>.` for Pioneer Peak Orthopedic Surgery.
+- `;credpdc<first>,<last>.` for ProsserDagg Construction.
+- `;credsi<first>,<last>.` for Specialty Imports, LLC.
+- `;credwasi<first>,<last>.` for Wasilla Area Seniors, Inc.
 
 ## Personal Information
 
@@ -487,6 +505,8 @@ insert static names and cursor markers, with no local variables or captures.
 - `;bc` expands to `Bauer Construction`.
 - `;boa` expands to `Bayshore Owners Association`.
 - `;bmm` expands to `Beacon Media + Marketing`.
+- `;bs` expands to `Bookkeeping Standards`.
+- `;burg` expands to `Burg + Co.`.
 - `;cfa` expands to `Camp Fire Alaska`.
 - `;cg` expands to `Cashion Gilmore`.
 - `;ccs` expands to `CCS Early Learning`.
@@ -496,27 +516,33 @@ insert static names and cursor markers, with no local variables or captures.
 - `;dda` expands to `Denali Daniels + Associates`.
 - `;dc` expands to `Dimond Center`.
 - `;ee` expands to `Eagle Enterprises, Inc.`.
+- `;fpms` expands to `Family Promise of Mat-Su`.
 - `;flcc` expands to `Farm Loop Christian Center`.
 - `;fb` expands to `Fireside Books`.
 - `;gsak` expands to `Girl Scouts of Alaska`.
 - `;gptlhb` expands to `Great Plains Tribal Leaders Health Board`.
 - `;jaoa` expands to `Junior Achievement of Alaska`.
 - `;kc` expands to `Kijik Corporation`.
+- `;klebs` expands to `KLEBS Heating and Mechanical`.
 - `;knom` expands to `Knom Radio Mission, Inc.`.
 - `;lc` expands to `Larson Chiropractic`.
 - `;nwf` expands to `North Wend Foods, Inc.`.
 - `;orers` expands to `O'Banion Real Estate & Relocation Services`.
 - `;opc` expands to `Optimum Performance Chiropractic`.
 - `;pt` expands to `Pango Technology`.
+- `;py` expands to `Pemberton & Young, LLC`.
 - `;ppos` expands to `Pioneer Peak Orthopedic Surgery`.
+- `;pdc` expands to `ProsserDagg Construction`.
 - `;ssmh` expands to `Samuel Simmonds Memorial Hospital`.
+- `;si` expands to `Specialty Imports, LLC`.
 - `;sfa` expands to `Steve Fishback Architect`.
 - `;sco` expands to `Stinebaugh & Company`.
-- `;al` expands to `The American Legion`.
+- `;tal` expands to `The American Legion - Department of Alaska`.
 - `;tes` expands to `The Eureka Space`.
 - `;ttcd` expands to `Tyonek Tribal Conservation District`.
 - `;uwm` expands to `United Way of Mat-Su`.
 - `;vfj` expands to `Victims for Justice`.
+- `;wasi` expands to `Wasilla Area Seniors, Inc.`.
 - `;ywca` expands to `YWCA Alaska`.
 
 ## Clipboard Helpers
@@ -529,9 +555,9 @@ defines its own match-local `clipboard` variable using the clipboard extension;
 there are no typed captures.
 
 - `;cbb` places the cursor before the clipboard text.
-- `;cbe` places the cursor after the clipboard text.
+- `;cbe` inserts the clipboard text and a space, then places the cursor after it.
 - `;cbn` inserts the clipboard text, then leaves a blank line below it.
-- `;cba` leaves a blank line above the clipboard text.
+- `;cba` places the cursor above a blank line and the clipboard text.
 
 These are useful when quoting copied text and then writing above, below, or
 around it.
@@ -540,6 +566,9 @@ around it.
 
 Date and time expansions generate dates from your current system date and time.
 Some use fixed triggers, and some let you type a number for a relative date.
+Shell-based relative date and week-range helpers require GNU `date` with
+`-d` support. Native Espanso date helpers such as `;date` and `;stamp` do not
+require that command.
 
 All date and time expansions in every subsection below, including aliases,
 use no direct or indirect globals. They use match-local date or shell variables
@@ -554,14 +583,22 @@ not the global [today](global-variables.md#today).
 - `;time` inserts the current time in 24-hour format.
 - `;date` inserts today's date as `YYYY-MM-DD`.
 - `;disdate` inserts `Disabled YYYY-MM-DD`.
-- `;now`, `;ddt`, `;datime`, and `;stamp` insert a full day, date, and time
-  stamp.
-- `;daily` inserts a daily note filename.
+- `;stamp` inserts the current time in parentheses: `(HH:MM)`.
+- `;fullstamp` inserts the date and time in parentheses:
+  `(YYYY-MM-DD HH:MM)`.
+- `;daystamp` inserts the full weekday, date, and time:
+  `Thursday 2026-10-15 14:30`, for example, without parentheses.
+- `;daily` inserts a daily note filename as `YYYY-MM-DD-dallas.md`.
+  The `dallas` suffix is fixed in the package; it does not use your name globals.
 - `;day` inserts the current weekday name.
 - `;daydate` and `;today` insert today with the weekday and date.
 - `;tomorrow` inserts tomorrow with the weekday and date.
 - `;yesterday` inserts yesterday with the weekday and date.
 - `;month` inserts the current month name.
+
+The former `;now`, `;ddt`, and `;datime` aliases have been removed. Use
+`;daystamp` for their previous weekday/date/time output. `;stamp` now inserts
+only the parenthesized time; use `;fullstamp` when you need the date as well.
 
 ### Relative Days and Weeks
 
@@ -571,8 +608,10 @@ not the global [today](global-variables.md#today).
 - `;<days>.yst` inserts the date that many days ago.
 - `;wkago` inserts the date one week ago.
 - `;<weeks>.wkago` inserts the date that many weeks ago.
-- `;nxtweek` inserts the same weekday next week.
-- `;<weeks>.nxtweek` inserts the same weekday that many weeks ahead.
+- `;nxtweek` inserts the same weekday next week, including its full weekday
+  name and date.
+- `;<weeks>.nxtweek` inserts the same weekday that many weeks ahead, including
+  its full weekday name and date.
 
 Examples:
 
@@ -601,10 +640,17 @@ occurrence:
 
 You can also type a number before the weekday pattern:
 
-- `;<weeks>.lstmon` through `;<weeks>.lstsun` inserts that weekday from a
-  previous week.
-- `;<weeks>.nxtmon` through `;<weeks>.nxtsun` inserts that weekday from a
-  future week.
+- `;<weeks>.lstmon`, `;<weeks>.lsttue`, `;<weeks>.lstwed`,
+  `;<weeks>.lstthu`, `;<weeks>.lstfri`, `;<weeks>.lstsat`, and
+  `;<weeks>.lstsun` subtract that many weeks from the previous matching weekday.
+  The numbered Tuesday and Thursday triggers use `lsttue` and `lstthu`,
+  unlike the fixed triggers `;lsttues` and `;lstthur` and their form versions.
+- `;<weeks>.nxtmon` through `;<weeks>.nxtsun` add that many weeks to the next
+  matching weekday. Tuesday and Thursday use `nxttues` and `nxtthur`.
+
+For these numbered weekday triggers, `0` means the previous or next matching
+weekday itself; `1` means one additional week away. The forms use the same
+offsets.
 
 Examples:
 
@@ -623,9 +669,15 @@ Examples:
 - `;nxtwrkwkof` inserts next week's Monday-to-Friday work week range.
 - `;<weeks>.lstwkof` inserts the Monday-to-Sunday range that many weeks ago.
 - `;<weeks>.lstwrkwkof` inserts the Monday-to-Friday range that many weeks ago.
-- `;<weeks>.nxtwkof` inserts the Monday-to-Sunday range that many weeks ahead.
-- `;<weeks>.nxtwrkwkof` inserts the Monday-to-Friday range that many weeks
-  ahead.
+- `;<weeks>.nxtwkof` adds that many weeks to next Monday, then inserts its
+  Monday-to-Sunday range.
+- `;<weeks>.nxtwrkwkof` adds that many weeks to next Monday, then inserts its
+  Monday-to-Friday range.
+
+Numbered previous ranges count back from the current week's Monday (`0` means
+the current week). Numbered next ranges count forward from next Monday (`0`
+means next week, `1` means the week after next). The range forms use these
+same offsets.
 
 ### Weekly Filename Ranges
 
@@ -635,7 +687,13 @@ Weekly filename ranges use dates only and join them with `_-_`.
 - `;lstwkly` inserts last week's date range.
 - `;nxtwkly` inserts next week's date range.
 - `;<weeks>.lstwkly` inserts the weekly range that many weeks ago.
-- `;<weeks>.nxtwkly` inserts the weekly range that many weeks ahead.
+- `;<weeks>.nxtwkly` adds that many weeks to next Monday, then inserts its
+  Monday-to-Sunday range.
+
+Numbered previous ranges count back from the current week's Monday; numbered
+next ranges count forward from next Monday. Thus `;0.nxtwkly` matches
+`;nxtwkly`, while `;1.nxtwkly` means the week after next. The forms use the
+same calculations.
 
 ### Weekday Ranges
 
