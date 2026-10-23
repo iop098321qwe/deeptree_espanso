@@ -171,10 +171,11 @@ Credential expansions require Bash, `sed`, `tr`, and `awk`. The Windows and
 macOS walkthroughs are incomplete; installing Espanso alone does not provide
 these shell dependencies on every platform.
 
-Before using credential expansions, define a separate `;tp` match in your
-local Espanso configuration for the temporary password. The package does not
-define this match or generate passwords. See the
-[credential usage guide](usage.md#credential-generation) for details.
+The package includes the `;tp` temporary-password match. It inserts
+`Password: ` followed by the clipboard contents, with the cursor on the next
+line. Create and copy the password before using credential expansions; the
+package does not generate passwords. No separate local `;tp` match is needed.
+See the [credential usage guide](usage.md#credential-generation) for details.
 
 ### Verify Package Installation
 
