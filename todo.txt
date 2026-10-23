@@ -1,2 +1,6 @@
 (B) 2026-10-01 add comments and labels to all expansions for user readability/usage +all @docs
 (A) 2026-10-08 ensure that all documentation is up to date with current changes +all @docs
+x 2026-10-23 2026-10-23 include `;tp` match in package instead of user configs as it is required for other packages @feat +all
+(A) 2026-10-23 build Ubuntu specific installation instructions +all @feat
+(A) 2026-10-23 review package to ensure it is fully self-contained so that it doesn't rely on any external expansions and ensure all dependencies for expansions are included in installation documentation +all @docs
+(A) 2026-10-23 add form version of ajeatt credentials expansion and update documentation to reflect the change +all @feat

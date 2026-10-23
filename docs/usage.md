@@ -92,7 +92,7 @@ at the end of the ticket for additional notes.
 
 ### Credential Forms
 
-All supported clients have a form version asking for First name and Last name:
+The following clients have a form version asking for First name and Last name:
 
 - `:credafs`, `:credaslc`, `:credanai`, `:credcfa`
 - `:credbs`, `:credburg`, `:credfpms`, `:credpy`
@@ -100,9 +100,12 @@ All supported clients have a form version asking for First name and Last name:
 - `:credkc`, `:credklebs`, `:credorers`, `:credppos`
 - `:credpdc`, `:credsi`, `:credwasi`
 
+AJEATT currently supports only the direct `;credajeatt<first>,<last>.`
+trigger; there is no `:credajeatt` form.
+
 These forms use the same client settings and credential generator as the
-direct triggers. They still require your separately configured `;tp` match
-for the temporary password; the form does not generate a password itself.
+direct triggers. They use the package's `;tp` match for the temporary password.
+Copy the password before opening the form; the form does not generate one.
 
 ### Date and Range Forms
 
@@ -394,19 +397,32 @@ the request, impact, due date, symptoms, troubleshooting, and follow-up steps.
 ## Credential Generation
 
 Credential expansions generate starter username and email documentation for
-supported clients, then invoke a separate `;tp` match for the password.
+supported clients, then invoke the package's `;tp` match for the password.
 
 The credential definitions listed here reference no globals directly.
 `firstname` and `lastname` are regex captures. `client_config`, `credentials`,
 and `temppass` are match-local variables: they supply client settings, run the
 script, and invoke the `;tp` match for the temporary password, respectively.
-They are not technician name globals. The package does not define `;tp`, so
-its behavior and any indirect global dependencies depend on your local match.
+They are not technician name globals. The `;tp` match defines its own local
+`clipb` clipboard variable and has no global dependencies.
 
-Before using a credential expansion, configure `;tp` separately. If your match
-inserts clipboard text, create the user's password and copy it first. You can
-use `xkpasswd.net` to create a memorable password. Copying a password alone
-does not supply the missing match.
+Before using a credential expansion, create the user's password and copy it
+to the clipboard. You can use `xkpasswd.net` to create a memorable password.
+The package does not generate passwords.
+
+You can also type `;tp` directly to insert `Password: ` followed by the current
+clipboard contents, with the cursor on the next line. For example, copying
+`ExamplePassword` and typing `;tp` inserts:
+
+```text
+Password: ExamplePassword
+$|$
+```
+
+Here `$|$` shows the cursor position, rather than literal output. Both direct
+credential triggers and credential forms append this same password block.
+If you previously configured `;tp` locally, remove the local definition after
+updating the package to avoid duplicate triggers.
 
 Type the client credential trigger, the first name, a comma, the last name, and
 the final period.
@@ -429,12 +445,15 @@ is removed for account names; initial-based formats take an initial from each
 whitespace-separated name component. Other punctuation is preserved. The
 script formats documentation only; it does not create accounts or check for
 duplicate usernames or addresses.
-The script does not supply the password; your separately configured `;tp`
-match does.
+The script does not supply the password; the package's `;tp` match reads it
+from the clipboard.
 
 Supported credential triggers:
 
 - `;credafs<first>,<last>.` for Alaska Family Services.
+- `;credajeatt<first>,<last>.` for Alaska Joint Electrical Apprenticeship &
+  Training Trust. Uses the first name only for the username and email local
+  part, with the domain `ajeatt.org`.
 - `;credaslc<first>,<last>.` for Alaska SeaLife Center.
 - `;credanai<first>,<last>.` for Anchorage Neurosurgical Associates, Inc.
 - `;credbs<first>,<last>.` for Bookkeeping Standards.
@@ -454,6 +473,33 @@ Supported credential triggers:
 - `;credpdc<first>,<last>.` for ProsserDagg Construction.
 - `;credsi<first>,<last>.` for Specialty Imports, LLC.
 - `;credwasi<first>,<last>.` for Wasilla Area Seniors, Inc.
+
+### AJEATT Example
+
+AJEATT's entry in `deeptree/matches/work/client_specific/credentials.yml`
+uses `client_config: fn|ajeatt.org|`. The `fn` format lowercases the first
+name and removes whitespace for both the username and email local part.
+The last name is still required in the trigger and appears in the display
+name, but is not included in the username or email address.
+
+Copy `ExamplePassword` to the clipboard, then type:
+
+```text
+;credajeattJane,Smith.
+```
+
+This inserts:
+
+```text
+Jane Smith
+Username: jane
+Email: jane@ajeatt.org
+Password: ExamplePassword
+$|$
+```
+
+Here `$|$` shows the cursor position after the password block. Use the direct
+trigger for AJEATT; a credential form is not currently defined for this client.
 
 ## Personal Information
 
