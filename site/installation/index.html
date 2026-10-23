@@ -1287,10 +1287,11 @@ their personal configuration for shared package changes.</p>
 Credential expansions require Bash, <code>sed</code>, <code>tr</code>, and <code>awk</code>. The Windows and
 macOS walkthroughs are incomplete; installing Espanso alone does not provide
 these shell dependencies on every platform.</p>
-<p>Before using credential expansions, define a separate <code>;tp</code> match in your
-local Espanso configuration for the temporary password. The package does not
-define this match or generate passwords. See the
-<a href="../usage/#credential-generation">credential usage guide</a> for details.</p>
+<p>The package includes the <code>;tp</code> temporary-password match. It inserts
+<code>Password:</code> followed by the clipboard contents, with the cursor on the next
+line. Create and copy the password before using credential expansions; the
+package does not generate passwords. No separate local <code>;tp</code> match is needed.
+See the <a href="../usage/#credential-generation">credential usage guide</a> for details.</p>
 <h3 id="verify-package-installation">Verify Package Installation<a class="headerlink" href="#verify-package-installation" title="Permanent link">&para;</a></h3>
 <p>You can verify that the package was installed correctly by running the following command:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>list

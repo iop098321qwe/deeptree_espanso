@@ -487,6 +487,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Credential Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajeatt-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        AJEATT Example
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -895,6 +912,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Credential Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajeatt-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        AJEATT Example
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1118,7 +1152,7 @@ standard paragraphs in the missed-appointment and spam forms.</p>
 follow-up reminders, preserve the line breaks you enter, and place the cursor
 at the end of the ticket for additional notes.</p>
 <h3 id="credential-forms">Credential Forms<a class="headerlink" href="#credential-forms" title="Permanent link">&para;</a></h3>
-<p>All supported clients have a form version asking for First name and Last name:</p>
+<p>The following clients have a form version asking for First name and Last name:</p>
 <ul>
 <li><code>:credafs</code>, <code>:credaslc</code>, <code>:credanai</code>, <code>:credcfa</code></li>
 <li><code>:credbs</code>, <code>:credburg</code>, <code>:credfpms</code>, <code>:credpy</code></li>
@@ -1126,9 +1160,11 @@ at the end of the ticket for additional notes.</p>
 <li><code>:credkc</code>, <code>:credklebs</code>, <code>:credorers</code>, <code>:credppos</code></li>
 <li><code>:credpdc</code>, <code>:credsi</code>, <code>:credwasi</code></li>
 </ul>
+<p>AJEATT currently supports only the direct <code>;credajeatt&lt;first&gt;,&lt;last&gt;.</code>
+trigger; there is no <code>:credajeatt</code> form.</p>
 <p>These forms use the same client settings and credential generator as the
-direct triggers. They still require your separately configured <code>;tp</code> match
-for the temporary password; the form does not generate a password itself.</p>
+direct triggers. They use the package's <code>;tp</code> match for the temporary password.
+Copy the password before opening the form; the form does not generate one.</p>
 <h3 id="date-and-range-forms">Date and Range Forms<a class="headerlink" href="#date-and-range-forms" title="Permanent link">&para;</a></h3>
 <p>Date forms ask for the number normally typed into a parameterized trigger:</p>
 <ul>
@@ -1475,23 +1511,32 @@ described under Structured Ticket Forms.</p>
 the request, impact, due date, symptoms, troubleshooting, and follow-up steps.</p>
 <h2 id="credential-generation">Credential Generation<a class="headerlink" href="#credential-generation" title="Permanent link">&para;</a></h2>
 <p>Credential expansions generate starter username and email documentation for
-supported clients, then invoke a separate <code>;tp</code> match for the password.</p>
+supported clients, then invoke the package's <code>;tp</code> match for the password.</p>
 <p>The credential definitions listed here reference no globals directly.
 <code>firstname</code> and <code>lastname</code> are regex captures. <code>client_config</code>, <code>credentials</code>,
 and <code>temppass</code> are match-local variables: they supply client settings, run the
 script, and invoke the <code>;tp</code> match for the temporary password, respectively.
-They are not technician name globals. The package does not define <code>;tp</code>, so
-its behavior and any indirect global dependencies depend on your local match.</p>
-<p>Before using a credential expansion, configure <code>;tp</code> separately. If your match
-inserts clipboard text, create the user's password and copy it first. You can
-use <code>xkpasswd.net</code> to create a memorable password. Copying a password alone
-does not supply the missing match.</p>
+They are not technician name globals. The <code>;tp</code> match defines its own local
+<code>clipb</code> clipboard variable and has no global dependencies.</p>
+<p>Before using a credential expansion, create the user's password and copy it
+to the clipboard. You can use <code>xkpasswd.net</code> to create a memorable password.
+The package does not generate passwords.</p>
+<p>You can also type <code>;tp</code> directly to insert <code>Password:</code> followed by the current
+clipboard contents, with the cursor on the next line. For example, copying
+<code>ExamplePassword</code> and typing <code>;tp</code> inserts:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Password: ExamplePassword
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$|$
+</span></code></pre></div>
+<p>Here <code>$|$</code> shows the cursor position, rather than literal output. Both direct
+credential triggers and credential forms append this same password block.
+If you previously configured <code>;tp</code> locally, remove the local definition after
+updating the package to avoid duplicate triggers.</p>
 <p>Type the client credential trigger, the first name, a comma, the last name, and
 the final period.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>;cred&lt;client&gt;&lt;first&gt;,&lt;last&gt;.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>;cred&lt;client&gt;&lt;first&gt;,&lt;last&gt;.
 </span></code></pre></div>
 <p>Example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>;credafsJane,Smith.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>;credafsJane,Smith.
 </span></code></pre></div>
 <p>The expansion runs the package script <code>credential-generator.sh</code>. The script
 normalizes the name, applies the client username format, and creates the email
@@ -1501,11 +1546,14 @@ is removed for account names; initial-based formats take an initial from each
 whitespace-separated name component. Other punctuation is preserved. The
 script formats documentation only; it does not create accounts or check for
 duplicate usernames or addresses.
-The script does not supply the password; your separately configured <code>;tp</code>
-match does.</p>
+The script does not supply the password; the package's <code>;tp</code> match reads it
+from the clipboard.</p>
 <p>Supported credential triggers:</p>
 <ul>
 <li><code>;credafs&lt;first&gt;,&lt;last&gt;.</code> for Alaska Family Services.</li>
+<li><code>;credajeatt&lt;first&gt;,&lt;last&gt;.</code> for Alaska Joint Electrical Apprenticeship &amp;
+  Training Trust. Uses the first name only for the username and email local
+  part, with the domain <code>ajeatt.org</code>.</li>
 <li><code>;credaslc&lt;first&gt;,&lt;last&gt;.</code> for Alaska SeaLife Center.</li>
 <li><code>;credanai&lt;first&gt;,&lt;last&gt;.</code> for Anchorage Neurosurgical Associates, Inc.</li>
 <li><code>;credbs&lt;first&gt;,&lt;last&gt;.</code> for Bookkeeping Standards.</li>
@@ -1526,6 +1574,24 @@ match does.</p>
 <li><code>;credsi&lt;first&gt;,&lt;last&gt;.</code> for Specialty Imports, LLC.</li>
 <li><code>;credwasi&lt;first&gt;,&lt;last&gt;.</code> for Wasilla Area Seniors, Inc.</li>
 </ul>
+<h3 id="ajeatt-example">AJEATT Example<a class="headerlink" href="#ajeatt-example" title="Permanent link">&para;</a></h3>
+<p>AJEATT's entry in <code>deeptree/matches/work/client_specific/credentials.yml</code>
+uses <code>client_config: fn|ajeatt.org|</code>. The <code>fn</code> format lowercases the first
+name and removes whitespace for both the username and email local part.
+The last name is still required in the trigger and appears in the display
+name, but is not included in the username or email address.</p>
+<p>Copy <code>ExamplePassword</code> to the clipboard, then type:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>;credajeattJane,Smith.
+</span></code></pre></div>
+<p>This inserts:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Jane Smith
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Username: jane
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Email: jane@ajeatt.org
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Password: ExamplePassword
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$|$
+</span></code></pre></div>
+<p>Here <code>$|$</code> shows the cursor position after the password block. Use the direct
+trigger for AJEATT; a credential form is not currently defined for this client.</p>
 <h2 id="personal-information">Personal Information<a class="headerlink" href="#personal-information" title="Permanent link">&para;</a></h2>
 <p>Personal information expansions use the values you configured during setup.</p>
 <ul>
@@ -1675,9 +1741,9 @@ only the parenthesized time; use <code>;fullstamp</code> when you need the date 
   its full weekday name and date.</li>
 </ul>
 <p>Examples:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>;3.tmr
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>;2.wkago
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>;4.nxtweek
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>;3.tmr
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>;2.wkago
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>;4.nxtweek
 </span></code></pre></div>
 <h3 id="weekday-names-and-dates">Weekday Names and Dates<a class="headerlink" href="#weekday-names-and-dates" title="Permanent link">&para;</a></h3>
 <p>Use these to insert the next matching weekday and date:</p>
@@ -1709,8 +1775,8 @@ occurrence:</p>
 weekday itself; <code>1</code> means one additional week away. The forms use the same
 offsets.</p>
 <p>Examples:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>;2.lstfri
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>;3.nxtwed
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>;2.lstfri
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>;3.nxtwed
 </span></code></pre></div>
 <h3 id="week-ranges">Week Ranges<a class="headerlink" href="#week-ranges" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1747,7 +1813,7 @@ next ranges count forward from next Monday. Thus <code>;0.nxtwkly</code> matches
 same calculations.</p>
 <h3 id="weekday-ranges">Weekday Ranges<a class="headerlink" href="#weekday-ranges" title="Permanent link">&para;</a></h3>
 <p>Weekday range expansions turn short weekday codes into readable ranges.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>;&lt;start&gt;-&lt;end&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>;&lt;start&gt;-&lt;end&gt;
 </span></code></pre></div>
 <p>Use these weekday codes:</p>
 <ul>
@@ -1760,14 +1826,14 @@ same calculations.</p>
 <li><code>su</code> for Sunday.</li>
 </ul>
 <p>Example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>;m-f
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>;m-f
 </span></code></pre></div>
 <p>This expands to:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Monday - Friday
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Monday - Friday
 </span></code></pre></div>
 <h2 id="updating-your-package">Updating Your Package<a class="headerlink" href="#updating-your-package" title="Permanent link">&para;</a></h2>
 <p>When Deeptree publishes package updates, update your local installation with:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>update<span class="w"> </span>deeptree
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>update<span class="w"> </span>deeptree
 </span></code></pre></div>
 <p>Your local work information file is not replaced by package updates.</p>
 
