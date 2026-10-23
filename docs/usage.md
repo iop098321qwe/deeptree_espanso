@@ -92,13 +92,16 @@ at the end of the ticket for additional notes.
 
 ### Credential Forms
 
-All supported clients have a form version asking for First name and Last name:
+The following clients have a form version asking for First name and Last name:
 
 - `:credafs`, `:credaslc`, `:credanai`, `:credcfa`
 - `:credbs`, `:credburg`, `:credfpms`, `:credpy`
 - `:credccs`, `:credcrmc`, `:credgsak`, `:credjaoa`
 - `:credkc`, `:credklebs`, `:credorers`, `:credppos`
 - `:credpdc`, `:credsi`, `:credwasi`
+
+AJEATT currently supports only the direct `;credajeatt<first>,<last>.`
+trigger; there is no `:credajeatt` form.
 
 These forms use the same client settings and credential generator as the
 direct triggers. They use the package's `;tp` match for the temporary password.
@@ -448,6 +451,9 @@ from the clipboard.
 Supported credential triggers:
 
 - `;credafs<first>,<last>.` for Alaska Family Services.
+- `;credajeatt<first>,<last>.` for Alaska Joint Electrical Apprenticeship &
+  Training Trust. Uses the first name only for the username and email local
+  part, with the domain `ajeatt.org`.
 - `;credaslc<first>,<last>.` for Alaska SeaLife Center.
 - `;credanai<first>,<last>.` for Anchorage Neurosurgical Associates, Inc.
 - `;credbs<first>,<last>.` for Bookkeeping Standards.
@@ -467,6 +473,33 @@ Supported credential triggers:
 - `;credpdc<first>,<last>.` for ProsserDagg Construction.
 - `;credsi<first>,<last>.` for Specialty Imports, LLC.
 - `;credwasi<first>,<last>.` for Wasilla Area Seniors, Inc.
+
+### AJEATT Example
+
+AJEATT's entry in `deeptree/matches/work/client_specific/credentials.yml`
+uses `client_config: fn|ajeatt.org|`. The `fn` format lowercases the first
+name and removes whitespace for both the username and email local part.
+The last name is still required in the trigger and appears in the display
+name, but is not included in the username or email address.
+
+Copy `ExamplePassword` to the clipboard, then type:
+
+```text
+;credajeattJane,Smith.
+```
+
+This inserts:
+
+```text
+Jane Smith
+Username: jane
+Email: jane@ajeatt.org
+Password: ExamplePassword
+$|$
+```
+
+Here `$|$` shows the cursor position after the password block. Use the direct
+trigger for AJEATT; a credential form is not currently defined for this client.
 
 ## Personal Information
 
