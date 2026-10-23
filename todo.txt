@@ -1,4 +1,4 @@
 (B) 2026-10-01 add comments and labels to all expansions for user readability/usage +all @docs
 (A) 2026-10-08 ensure that all documentation is up to date with current changes +all @docs
-(A) 2026-10-23 include `;tp` match in package instead of user configs as it is required for other packages @feat +all
+x 2026-10-23 2026-10-23 include `;tp` match in package instead of user configs as it is required for other packages @feat +all
 (A) 2026-10-23 build Ubuntu specific installation instructions +all @feat
