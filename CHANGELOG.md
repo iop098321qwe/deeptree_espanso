@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.3](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.2...v0.2.3) (2026-10-23)
+
+### Features
+
+* **credentials:** add clipboard-based temporary password expansion ([6573f61](https://github.com/iop098321qwe/deeptree_espanso/commit/6573f6174153453ade1949bcee280268c96d723f))
+
 ## [0.2.2](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.1...v0.2.2) (2026-10-23)
 
 ### Features
