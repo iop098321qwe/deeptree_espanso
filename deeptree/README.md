@@ -46,6 +46,14 @@ outside `match/packages/deeptree` so package updates preserve them.
 ## Script Requirements
 
 Relative date and week-range helpers require GNU `date` with `-d` support.
-Credential expansions require Bash, `sed`, `tr`, and `awk`, and a separately
-configured `;tp` match for the temporary password. The package does not define
-`;tp` or generate passwords itself.
+Credential expansions require Bash, `sed`, `tr`, and `awk`.
+
+## Temporary Passwords
+
+The package includes `;tp`, which inserts `Password: ` followed by the current
+clipboard contents and places the cursor on the next line. Credential triggers
+and forms use this match automatically. Create the password and copy it before
+expanding credentials; the package does not generate passwords.
+
+After updating from a version that required a local `;tp` match, remove that
+local definition so only the package match remains.
