@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.2](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.1...v0.2.2) (2026-10-23)
+
+### Features
+
+* **clients:** add AJEATT credentials generation ([315f495](https://github.com/iop098321qwe/deeptree_espanso/commit/315f4958ff6c7ee98f2fffa27fb62b25dec99547))
+
 ## [0.2.1](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.0...v0.2.1) (2026-10-15)
 
 ### Bug Fixes
