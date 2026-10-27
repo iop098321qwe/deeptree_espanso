@@ -387,6 +387,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#maintainer-release-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Maintainer Release Versions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-command" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -472,6 +483,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#maintainer-release-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Maintainer Release Versions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-command" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -506,9 +528,19 @@
                   
 
 <h1 id="updating-the-package">Updating the Package<a class="headerlink" href="#updating-the-package" title="Permanent link">&para;</a></h1>
+<h2 id="maintainer-release-versions">Maintainer Release Versions<a class="headerlink" href="#maintainer-release-versions" title="Permanent link">&para;</a></h2>
+<p>The repository-local <code>.versionrc.json</code> configures <code>commit-and-tag-version</code>
+to update <code>package.json</code>, <code>package-lock.json</code>, and
+<code>deeptree/_manifest.yml</code> to the same release version. The shared <code>verg</code>
+shell function invokes this tool and uses this configuration when releasing
+from this repository; other repositories are unaffected.</p>
+<p>To preview the version updates without creating a release, run this directly
+from the repository root:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>commit-and-tag-version<span class="w"> </span>--dry-run
+</span></code></pre></div>
 <h2 id="update-command">Update Command<a class="headerlink" href="#update-command" title="Permanent link">&para;</a></h2>
 <p>Update the shared Deeptree package with:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>update<span class="w"> </span>deeptree
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>update<span class="w"> </span>deeptree
 </span></code></pre></div>
 <p>Updates are manual. Git must be installed and able to authenticate to the
 private repository. Before updating, review the release instructions for

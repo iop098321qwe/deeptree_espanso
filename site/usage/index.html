@@ -1105,10 +1105,11 @@ email.</p>
 cursor position is shown in examples as <code>$|$</code>, but Espanso moves the cursor
 there instead of printing <code>$|$</code>.</p>
 <h2 id="optional-form-expansions">Optional Form Expansions<a class="headerlink" href="#optional-form-expansions" title="Permanent link">&para;</a></h2>
-<p>Use a colon (<code>:</code>) instead of a semicolon (<code>;</code>) to open a form for the
-templates listed below. Type only the form trigger: do not append a recipient,
-number, comma, or final period. Fill in the fields, then click <strong>Submit</strong> or
-press <strong>Ctrl+Enter</strong>. Canceling the form does not insert a completed template.</p>
+<p>Every regex expansion has a form version, as listed below. Use a colon (<code>:</code>)
+instead of a semicolon (<code>;</code>) to open a form. Type only the form trigger: do not
+append a recipient, number, comma, or final period. Fill in the fields, then
+click <strong>Submit</strong> or press <strong>Ctrl+Enter</strong>. Canceling the form does not insert a
+completed template.</p>
 <p>For example, <code>;emailnotiJordan.</code> expands directly, while <code>:emailnoti</code> asks
 for the recipient and an optional multiline message. Enter <code>Jordan</code> in the
 Recipient field and type your message on as many lines as needed. The generated
@@ -1154,14 +1155,12 @@ at the end of the ticket for additional notes.</p>
 <h3 id="credential-forms">Credential Forms<a class="headerlink" href="#credential-forms" title="Permanent link">&para;</a></h3>
 <p>The following clients have a form version asking for First name and Last name:</p>
 <ul>
-<li><code>:credafs</code>, <code>:credaslc</code>, <code>:credanai</code>, <code>:credcfa</code></li>
+<li><code>:credafs</code>, <code>:credajeatt</code>, <code>:credaslc</code>, <code>:credanai</code>, <code>:credcfa</code></li>
 <li><code>:credbs</code>, <code>:credburg</code>, <code>:credfpms</code>, <code>:credpy</code></li>
 <li><code>:credccs</code>, <code>:credcrmc</code>, <code>:credgsak</code>, <code>:credjaoa</code></li>
 <li><code>:credkc</code>, <code>:credklebs</code>, <code>:credorers</code>, <code>:credppos</code></li>
 <li><code>:credpdc</code>, <code>:credsi</code>, <code>:credwasi</code></li>
 </ul>
-<p>AJEATT currently supports only the direct <code>;credajeatt&lt;first&gt;,&lt;last&gt;.</code>
-trigger; there is no <code>:credajeatt</code> form.</p>
 <p>These forms use the same client settings and credential generator as the
 direct triggers. They use the package's <code>;tp</code> match for the temporary password.
 Copy the password before opening the form; the form does not generate one.</p>
@@ -1578,7 +1577,7 @@ from the clipboard.</p>
 <p>AJEATT's entry in <code>deeptree/matches/work/client_specific/credentials.yml</code>
 uses <code>client_config: fn|ajeatt.org|</code>. The <code>fn</code> format lowercases the first
 name and removes whitespace for both the username and email local part.
-The last name is still required in the trigger and appears in the display
+The last name is still required in the direct trigger and appears in the display
 name, but is not included in the username or email address.</p>
 <p>Copy <code>ExamplePassword</code> to the clipboard, then type:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>;credajeattJane,Smith.
@@ -1590,8 +1589,10 @@ name, but is not included in the username or email address.</p>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Password: ExamplePassword
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$|$
 </span></code></pre></div>
-<p>Here <code>$|$</code> shows the cursor position after the password block. Use the direct
-trigger for AJEATT; a credential form is not currently defined for this client.</p>
+<p>Here <code>$|$</code> shows the cursor position after the password block. For the same
+output using a form, copy the password, type <code>:credajeatt</code>, enter <code>Jane</code> in
+First name and <code>Smith</code> in Last name, then submit. Both versions use the same
+first-name-only account format and clipboard password block.</p>
 <h2 id="personal-information">Personal Information<a class="headerlink" href="#personal-information" title="Permanent link">&para;</a></h2>
 <p>Personal information expansions use the values you configured during setup.</p>
 <ul>
