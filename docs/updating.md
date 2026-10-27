@@ -27,9 +27,24 @@ Updates are manual. Git must be installed and able to authenticate to the
 private repository. Before updating, review the release instructions for
 trigger changes and any required local setup changes.
 
-Keep personal matches, `work_information.yml`, and any local composed name
-definitions outside `match/packages/deeptree`. Changes made inside the installed
-package are package-managed and may be replaced by an update.
+Keep personal matches and `work_information.yml` outside the installed
+package directory. Changes made inside the installed package are
+package-managed and may be replaced by an update.
+
+### Local Name Definitions
+
+The package now imports `matches/variables/static/name.yml`, supplying `myname`
+and `mylegalname` from your local technician values. After updating to a version
+with that import, remove any unchanged `deeptree_names.yml` copied under the
+previous installation workaround. Review customized local definitions before
+removing them, preserving intentional customizations without duplicate global
+names. If you never created that local file, no name-file migration is needed.
+Keep your personalized `work_information.yml`; its values are still required.
+Older packages under Espanso's default `match` tree may already have loaded
+`name.yml` through recursive discovery, even without an explicit import.
+
+Credential scripts now use `%PACKAGES%/deeptree/scripts/credential-generator.sh`
+so custom package directories are supported. No local script copy is needed.
 
 > [!INFO] Deeptree Package Update Notifications
 > There will be a notification sent out to all employees when the package is
