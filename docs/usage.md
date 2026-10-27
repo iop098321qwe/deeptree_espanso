@@ -37,10 +37,11 @@ there instead of printing `$|$`.
 
 ## Optional Form Expansions
 
-Use a colon (`:`) instead of a semicolon (`;`) to open a form for the
-templates listed below. Type only the form trigger: do not append a recipient,
-number, comma, or final period. Fill in the fields, then click **Submit** or
-press **Ctrl+Enter**. Canceling the form does not insert a completed template.
+Every regex expansion has a form version, as listed below. Use a colon (`:`)
+instead of a semicolon (`;`) to open a form. Type only the form trigger: do not
+append a recipient, number, comma, or final period. Fill in the fields, then
+click **Submit** or press **Ctrl+Enter**. Canceling the form does not insert a
+completed template.
 
 For example, `;emailnotiJordan.` expands directly, while `:emailnoti` asks
 for the recipient and an optional multiline message. Enter `Jordan` in the
@@ -94,14 +95,11 @@ at the end of the ticket for additional notes.
 
 The following clients have a form version asking for First name and Last name:
 
-- `:credafs`, `:credaslc`, `:credanai`, `:credcfa`
+- `:credafs`, `:credajeatt`, `:credaslc`, `:credanai`, `:credcfa`
 - `:credbs`, `:credburg`, `:credfpms`, `:credpy`
 - `:credccs`, `:credcrmc`, `:credgsak`, `:credjaoa`
 - `:credkc`, `:credklebs`, `:credorers`, `:credppos`
 - `:credpdc`, `:credsi`, `:credwasi`
-
-AJEATT currently supports only the direct `;credajeatt<first>,<last>.`
-trigger; there is no `:credajeatt` form.
 
 These forms use the same client settings and credential generator as the
 direct triggers. They use the package's `;tp` match for the temporary password.
@@ -479,7 +477,7 @@ Supported credential triggers:
 AJEATT's entry in `deeptree/matches/work/client_specific/credentials.yml`
 uses `client_config: fn|ajeatt.org|`. The `fn` format lowercases the first
 name and removes whitespace for both the username and email local part.
-The last name is still required in the trigger and appears in the display
+The last name is still required in the direct trigger and appears in the display
 name, but is not included in the username or email address.
 
 Copy `ExamplePassword` to the clipboard, then type:
@@ -498,8 +496,10 @@ Password: ExamplePassword
 $|$
 ```
 
-Here `$|$` shows the cursor position after the password block. Use the direct
-trigger for AJEATT; a credential form is not currently defined for this client.
+Here `$|$` shows the cursor position after the password block. For the same
+output using a form, copy the password, type `:credajeatt`, enter `Jane` in
+First name and `Smith` in Last name, then submit. Both versions use the same
+first-name-only account format and clipboard password block.
 
 ## Personal Information
 
