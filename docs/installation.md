@@ -368,17 +368,8 @@ It defines `myname` and `mylegalname` by composing your local first, middle,
 and last name values. Only `work_information.yml` needs to be copied locally;
 do not copy `name.yml` or create another local composed-name file.
 
-Espanso also discovers YAML files recursively beneath its `match` directory
-by default. This can load the packaged `name.yml` even in older versions that
-omitted its explicit import. The import makes the package entry point complete
-without relying on recursive discovery. If you use a custom package directory
-outside `match`, ensure your configuration includes that package's `package.yml`.
-
-If you followed the older workaround and copied `deeptree_names.yml`, remove
-that duplicate local file after updating to a package version with the name
-import. Review any customized `myname` or `mylegalname` definitions before
-removing them so you can preserve intentional customizations without duplicate
-global definitions. See the [update guide](updating.md#local-name-definitions).
+If you use a custom package directory outside `match`, ensure your configuration
+includes that package's `package.yml`.
 
 An empty `mymiddle` leaves two spaces between first and last name in
 `mylegalname`; `myname` always uses just first and last name.
