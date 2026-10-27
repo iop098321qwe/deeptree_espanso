@@ -416,8 +416,6 @@ $|$
 
 Here `$|$` shows the cursor position, rather than literal output. Both direct
 credential triggers and credential forms append this same password block.
-If you previously configured `;tp` locally, remove the local definition after
-updating the package to avoid duplicate triggers.
 
 Type the client credential trigger, the first name, a comma, the last name, and
 the final period.
