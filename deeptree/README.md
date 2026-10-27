@@ -36,17 +36,33 @@ personal snippets but is not used by the package. The signature uses your name
 and title, the company, and the shared helpdesk phone number; `;dtemail`
 separately inserts `workemail`.
 
-The package also requires `myname` and `mylegalname`, but `package.yml`
-currently omits `matches/variables/static/name.yml` from its imports. Until
-that import is added, copy that file into your local Espanso match directory
-as `deeptree_names.yml`, alongside `work_information.yml`. It composes the
-names from your local first, middle, and last name values. Keep both files
-outside `match/packages/deeptree` so package updates preserve them.
+The package imports `matches/variables/static/name.yml`, which defines
+`myname` and `mylegalname` from your local first, middle, and last name values.
+No separate local name-definition file or external expansion package is needed.
+Keep `work_information.yml` outside the installed package so updates preserve
+your technician values. If you copied `deeptree_names.yml` for an older version,
+remove that duplicate local file after updating to a version with this import.
 
 ## Script Requirements
 
-Relative date and week-range helpers require GNU `date` with `-d` support.
-Credential expansions require Bash, `sed`, `tr`, and `awk`.
+Shell-based relative date, weekday-date, and week-range helpers require a
+Bourne-compatible shell and GNU `date` with `-d` support. The direct weekday
+range helper (`;m-f`, for example) requires a compatible shell and `tr`.
+Espanso defaults to Bash on Linux; these commands are not PowerShell syntax.
+Credential expansions explicitly invoke Bash and require `sed`, `tr`, and
+`awk`. All commands must be available in the Espanso process's `PATH`.
+
+Credential scripts are included and located through
+`%PACKAGES%/deeptree/scripts/credential-generator.sh`, using Espanso's configured
+package directory rather than assuming it is beneath the config directory.
+Clipboard helpers and `;tp` use Espanso's built-in clipboard extension. Forms,
+random text, and native date helpers use built-in extensions and need no
+additional expansion packages, Python, or Node.js.
+
+See the [installation guide][installation] for dependency installation commands,
+verification steps, and current Windows/macOS limitations. Git and repository
+authentication are required for installation and updates; the bundled
+expansions do not call network services.
 
 ## Temporary Passwords
 
@@ -57,3 +73,5 @@ expanding credentials; the package does not generate passwords.
 
 After updating from a version that required a local `;tp` match, remove that
 local definition so only the package match remains.
+
+[installation]: https://iop098321qwe.github.io/deeptree_espanso/installation/

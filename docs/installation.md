@@ -166,10 +166,62 @@ their personal configuration for shared package changes.
 
 ### Script Requirements
 
-The shell-based date helpers require GNU `date` with `-d` support.
-Credential expansions require Bash, `sed`, `tr`, and `awk`. The Windows and
-macOS walkthroughs are incomplete; installing Espanso alone does not provide
-these shell dependencies on every platform.
+The package includes all shared expansion definitions, composed name globals,
+and the credential script. No other Espanso package or personal expansion is
+required. Technician-specific values still need the local template in step 5.
+
+Runtime requirements depend on the expansions you use:
+
+- Relative dates, weekday dates, and week ranges: a Bourne-compatible shell
+  and GNU `date` with `-d` support, including their numeric form versions.
+- Direct weekday ranges, such as `;m-f`: a compatible shell and `tr`.
+  The `:weekdays` form uses built-in form and echo extensions instead.
+- Credential triggers and forms: Bash, `sed`, `tr`, and `awk`. The included
+  script formats names, usernames, and email addresses; no Python is needed.
+- Clipboard helpers, `;tp`, and credentials: a working clipboard with the
+  text you intend to insert. Credentials append the package's `;tp` match.
+- Signatures, emails, and personal-name helpers: local technician values from
+  step 5. `;dtemail` uses your local `workemail` value.
+- Native date/time, random text, and forms: Espanso's built-in extensions.
+  Forms need a working graphical Espanso session, not a separate GUI package.
+
+On Linux, Espanso uses Bash by default for shell extensions. Ensure the tools
+are installed with your system package manager:
+
+```sh
+# Fedora
+sudo dnf install bash coreutils sed gawk git
+
+# Arch Linux and derivatives
+sudo pacman -S --needed bash coreutils sed gawk git
+```
+
+GNU coreutils supplies `date` and `tr`; `gawk` supplies `awk`. Check that the
+commands are available in the environment Espanso runs in:
+
+```sh
+command -v bash date sed tr awk git
+date -d 'tomorrow' +'%Y-%m-%d'
+```
+
+The second command must print tomorrow's date without an error. After changing
+the service environment or its `PATH`, restart Espanso. A command available
+only through a terminal alias may not be available to Espanso.
+
+The Windows and macOS walkthroughs are incomplete. These shell snippets are
+written for a Bourne-compatible shell, not Windows' default PowerShell. macOS
+ships BSD `date`, which does not provide the required GNU `-d` behavior.
+Installing Espanso alone, or installing GNU date only as `gdate`, does not make
+all helpers work: the snippets invoke `date`. A compatible shell and GNU `date`
+under that command name must be available to Espanso. Full package operation
+on those platforms has not been verified here.
+
+Credential script arguments use Espanso's `%PACKAGES%` placeholder:
+`%PACKAGES%/deeptree/scripts/credential-generator.sh`. This resolves from the
+configured package directory shown by `espanso path`, including custom paths.
+No separate script copy is required. Node.js and Python are repository tooling,
+not expansion runtime dependencies. Git authentication is needed to install
+and update the private package; the bundled expansions make no network calls.
 
 The package includes the `;tp` temporary-password match. It inserts
 `Password: ` followed by the clipboard contents, with the cursor on the next
@@ -203,18 +255,22 @@ values for that technician.
 
 ### Load the Composed Name Variables
 
-The current `deeptree/package.yml` does not import
-`deeptree/matches/variables/static/name.yml`. That file defines `myname` and
-`mylegalname`, which compose your local first, middle, and last name values.
-Signatures, full emails, and full-name expansions need these definitions in
-addition to the six values in `work_information.yml`.
+`deeptree/package.yml` imports `matches/variables/static/name.yml` automatically.
+It defines `myname` and `mylegalname` by composing your local first, middle,
+and last name values. Only `work_information.yml` needs to be copied locally;
+do not copy `name.yml` or create another local composed-name file.
 
-Copy the [composed name definitions][names] into your local Espanso `match`
-directory as `deeptree_names.yml`, alongside `work_information.yml`. Keep the
-definitions unchanged so they reference your personalized technician values.
-If you already define `myname` and `mylegalname` locally, review those
-definitions instead of adding duplicates. Keep this file outside
-`match/packages/deeptree` so package updates preserve it.
+Espanso also discovers YAML files recursively beneath its `match` directory
+by default. This can load the packaged `name.yml` even in older versions that
+omitted its explicit import. The import makes the package entry point complete
+without relying on recursive discovery. If you use a custom package directory
+outside `match`, ensure your configuration includes that package's `package.yml`.
+
+If you followed the older workaround and copied `deeptree_names.yml`, remove
+that duplicate local file after updating to a package version with the name
+import. Review any customized `myname` or `mylegalname` definitions before
+removing them so you can preserve intentional customizations without duplicate
+global definitions. See the [update guide](updating.md#local-name-definitions).
 
 An empty `mymiddle` leaves two spaces between first and last name in
 `mylegalname`; `myname` always uses just first and last name.
@@ -289,7 +345,7 @@ tab to copy the `templates/work_information.yml` and leave this page open.
     
     #### Check the Result
     
-    Also complete the composed name setup above before testing signatures.
+    The package supplies the composed name definitions automatically.
     After saving, allow Espanso a moment to reload its configuration. Open a new
     blank document in a text editor and type `;signature`. Confirm that the
     expanded signature contains your name and work title instead of placeholders.
@@ -374,10 +430,11 @@ tab to copy the `templates/work_information.yml` and leave this page open.
     Keep this copied file local to the technician. It contains personal
     technician values and should not be overwritten by Deeptree package updates.
 
-    After completing the composed name setup above, allow Espanso to reload.
+    After saving your technician values, allow Espanso to reload.
     In a local text document, check `;first`, `;name`, `;signature`, and
     `;dtemail` against your configured values. If first name and email work but
-    signatures fail, confirm that `deeptree_names.yml` is also loaded.
+    signatures fail, confirm the installed package imports `static/name.yml`
+    and check `espanso log` for missing or duplicate variable definitions.
 
 === "Windows (WIP)"
 
@@ -395,6 +452,25 @@ tab to copy the `templates/work_information.yml` and leave this page open.
 
     *(but like why are you using MacOS anyway? :P)*
 
+## 6. Check Expansion Dependencies
+
+In a blank local text document, verify these representative expansions:
+
+1. Type `;name`, `;legalname`, `;signature`, and `;dtemail`. Confirm your
+   configured name, title, and email appear in the appropriate expansions.
+2. Type `;emailnotiTest.` to check a full email with nested signature globals.
+3. Type `;date`, `;tmr`, `;wkly`, and `;m-f`. The relative date and week range
+   check GNU `date`; `;m-f` should insert `Monday - Friday` using the shell.
+4. Copy harmless test text such as `ExamplePassword`, then type `;tp` and
+   `;credafsJane,Smith.`. Confirm the credential output includes the username,
+   email address, and copied test password.
+5. Open `:credafs` and `:tmr` to check graphical forms and their script or shell
+   dependencies. Use synthetic names and a non-negative whole number of days.
+
+If an expansion fails, run `espanso log`. Check missing commands against the
+requirements above, confirm script paths against the `Packages:` output of
+`espanso path`, and review missing or duplicate globals. Keep test output in
+the local document rather than sending it as a real email or ticket.
+
 [install]: <https://espanso.org/install/>
 [repo]: <https://github.com/iop098321qwe/deeptree_espanso/blob/main/templates/work_information.yml>
-[names]: <https://github.com/iop098321qwe/deeptree_espanso/blob/main/deeptree/matches/variables/static/name.yml>

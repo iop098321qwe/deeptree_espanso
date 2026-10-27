@@ -158,13 +158,10 @@ and [quote](global-variables.md#quote). In turn, `myname` uses
 Each email below inherits this shared indirect list; additional paths are
 listed separately, even when they reach the same `dthelp` global.
 
-**Current import limitation:** `deeptree/package.yml` does not import
-`deeptree/matches/variables/static/name.yml`, which defines `myname` and
-`mylegalname`. Signatures, full emails, and name expansions that depend on
-these globals require them to be loaded separately. Local first and last name
-values alone do not load these composed globals. Follow the
-[installation workaround](installation.md#load-the-composed-name-variables)
-to load them locally.
+`deeptree/package.yml` imports the `myname` and `mylegalname` definitions from
+`matches/variables/static/name.yml`. They use the local technician values you
+configure during [installation](installation.md#5-set-work-information).
+No separate local name-definition file or external expansion package is needed.
 
 ### General Email Templates
 
@@ -352,8 +349,8 @@ content added at the cursor, every full email has the same base choice count:
 
 The table multiplies this base by each email's additional random variables.
 Counts describe random-choice combinations, not guaranteed unique rendered
-strings. They assume all dependencies resolve, including the missing name
-import described above. Random selections may repeat between expansions.
+strings. They assume all dependencies resolve, including your local technician
+values. Random selections may repeat between expansions.
 These counts make no claims about selection probabilities.
 
 Table rows exceed 80 columns to keep factor names and arithmetic auditable.
@@ -435,9 +432,11 @@ Example:
 ;credafsJane,Smith.
 ```
 
-The expansion runs the package script `credential-generator.sh`. The script
-normalizes the name, applies the client username format, and creates the email
-address for that client.
+The expansion runs the package script `credential-generator.sh`, located via
+`%PACKAGES%/deeptree/scripts/credential-generator.sh` in both direct and form
+versions. Espanso resolves `%PACKAGES%` to its configured package directory.
+The script normalizes the name, applies the client username format, and creates
+the email address for that client.
 It requires Bash, `sed`, `tr`, and `awk`. Names are lowercased and whitespace
 is removed for account names; initial-based formats take an initial from each
 whitespace-separated name component. Other punctuation is preserved. The
@@ -612,9 +611,12 @@ around it.
 
 Date and time expansions generate dates from your current system date and time.
 Some use fixed triggers, and some let you type a number for a relative date.
-Shell-based relative date and week-range helpers require GNU `date` with
-`-d` support. Native Espanso date helpers such as `;date` and `;stamp` do not
-require that command.
+Shell-based relative date, weekday-date, and week-range helpers require a
+Bourne-compatible shell and GNU `date` with `-d` support. The direct weekday
+range helper, such as `;m-f`, also needs a compatible shell and `tr`, while
+`:weekdays` uses only built-in form and echo extensions. Native Espanso date
+helpers such as `;date` and `;stamp` do not require those commands. See the
+[installation requirements](installation.md#script-requirements) for setup.
 
 All date and time expansions in every subsection below, including aliases,
 use no direct or indirect globals. They use match-local date or shell variables
