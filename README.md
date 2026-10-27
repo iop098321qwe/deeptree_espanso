@@ -116,9 +116,10 @@ each time it is used to avoid sounding too automated or templated.
 With this package, I have made it so that each individual can use these
 expansion tools for themselves.
 
-The examples assume your local technician values and composed name globals
-are loaded. The package entry point currently omits `static/name.yml`; follow
-the [installation guide][installation] to load those name definitions locally.
+The examples assume your local technician values are loaded. The package loads
+the composed name definitions from `static/name.yml`; follow the
+[installation guide][installation] to configure your technician values and
+install the runtime dependencies for shell-based expansions.
 
 ## What Is the Deeptree Espanso Package?
 
