@@ -70,7 +70,4 @@ clipboard contents and places the cursor on the next line. Credential triggers
 and forms use this match automatically. Create the password and copy it before
 expanding credentials; the package does not generate passwords.
 
-After updating from a version that required a local `;tp` match, remove that
-local definition so only the package match remains.
-
 [installation]: https://iop098321qwe.github.io/deeptree_espanso/installation/
