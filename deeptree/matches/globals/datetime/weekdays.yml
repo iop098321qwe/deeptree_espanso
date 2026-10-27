@@ -2,8 +2,11 @@
 
 # Expand weekday ranges (short or long form)
 matches:
+  # Print a range of weekday names
   - regex: ";(?P<start>(?:m|tu|w|th|f|sa|su))-(?P<end>(?:m|tu|w|th|f|sa|su))"
     name: "Weekday range expansion"
+    label: Weekday Range
+    comment: "Expands short weekday codes into a range of full weekday names."
     replace: "{{output}}"
     vars:
       - name: output
@@ -37,7 +40,10 @@ matches:
 
             printf '%s - %s' "$start_day" "$end_day"
 
+  # Print a range of weekday names using a form
   - trigger: ":weekdays"
+    name: Weekday Range Form
+    comment: "Asks for two weekdays and outputs their names as a range."
     label: Weekday Range (Form)
     replace: "{{output}}"
     vars:

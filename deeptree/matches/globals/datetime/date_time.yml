@@ -2,7 +2,11 @@
 
 # Print the time
 matches:
+  # Print the current time
   - trigger: ;time
+    name: Current Time
+    label: Current Time
+    comment: "Outputs the current time in 24-hour format."
     replace: "{{mytime}}"
     vars:
       - name: mytime
@@ -10,8 +14,11 @@ matches:
         params:
           format: "%H:%M"
 
-  # Print the current date in ISO 8861 format
+  # Print the current date in ISO 8601 format
   - trigger: ";date"
+    name: Current Date
+    label: Current Date
+    comment: "Outputs today's date as YYYY-MM-DD."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -19,8 +26,11 @@ matches:
         params:
           format: "%Y-%m-%d"
 
-  # Print the disabled date in ISO 8861 format
+  # Print the disabled date in ISO 8601 format
   - trigger: ";disdate"
+    name: Disabled Date
+    label: Disabled Date
+    comment: "Outputs Disabled followed by today's date."
     replace: "Disabled {{mydate}}"
     vars:
       - name: mydate
@@ -30,6 +40,9 @@ matches:
 
   # Write a timestamp
   - trigger: ;stamp
+    name: Time Stamp
+    label: Time Stamp
+    comment: "Outputs the current time in parentheses."
     replace: "{{timestamp}}"
     vars:
       - name: timestamp
@@ -39,6 +52,9 @@ matches:
 
   # Write a full timestamp
   - trigger: ;fullstamp
+    name: Full Time Stamp
+    label: Full Time Stamp
+    comment: "Outputs the current date and time in parentheses."
     replace: "{{timestamp}}"
     vars:
       - name: timestamp
@@ -48,6 +64,9 @@ matches:
 
   # Write a full timestamp with day, date and time
   - trigger: ;daystamp
+    name: Day Date and Time Stamp
+    label: Day Date and Time Stamp
+    comment: "Outputs the current weekday, date, and time."
     replace: "{{timestamp}}"
     vars:
       - name: timestamp
@@ -57,6 +76,9 @@ matches:
 
   # Create a match for daily notes
   - trigger: ";daily"
+    name: Daily Note Filename
+    label: Daily Note Filename
+    comment: "Outputs today's date with the fixed -dallas.md suffix."
     replace: "{{daily}}"
     vars:
       - name: daily
@@ -66,6 +88,9 @@ matches:
 
   # Print the current day of the week
   - trigger: ";day"
+    name: Current Weekday
+    label: Current Weekday
+    comment: "Outputs the current weekday name."
     replace: "{{current_day}}"
     propagate_case: true
     vars:
@@ -76,6 +101,9 @@ matches:
 
   # Print the day and date for today
   - triggers: [";daydate", ";today"]
+    name: Today with Weekday and Date
+    label: Today with Weekday and Date
+    comment: "Outputs today with the weekday and date."
     replace: "{{current_day}}"
     propagate_case: true
     vars:
@@ -86,6 +114,9 @@ matches:
 
   # Print the day and date for tomorrow
   - trigger: ";tomorrow"
+    name: Tomorrow with Weekday and Date
+    label: Tomorrow with Weekday and Date
+    comment: "Outputs tomorrow with the weekday and date."
     replace: "{{tomorrow}}"
     propagate_case: true
     vars:
@@ -97,6 +128,9 @@ matches:
 
   # Print the day and date for yesterday
   - trigger: ";yesterday"
+    name: Yesterday with Weekday and Date
+    label: Yesterday with Weekday and Date
+    comment: "Outputs yesterday with the weekday and date."
     replace: "{{yesterday}}"
     propagate_case: true
     vars:

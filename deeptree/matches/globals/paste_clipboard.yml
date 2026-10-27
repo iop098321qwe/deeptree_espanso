@@ -2,21 +2,30 @@
 
 # Paste Clipboard Matches
 matches:
+  # Paste clipboard text with the cursor at the beginning
   - trigger: ";cbb"
+    name: Clipboard Paste at Beginning
+    comment: "Pastes clipboard text and places the cursor before it."
     label: Beginning-of-Line Clipboard Paste
     vars:
       - name: "clipboard"
         type: "clipboard"
     replace: "$|${{clipboard}}"
 
+  # Paste clipboard text with the cursor at the end
   - trigger: ";cbe"
+    name: Clipboard Paste at End
+    comment: "Pastes clipboard text and a space, with the cursor after them."
     label: End-of-Line Clipboard Paste
     vars:
       - name: "clipboard"
         type: "clipboard"
     replace: "{{clipboard}} $|$"
 
+  # Paste clipboard text with a blank line below
   - trigger: ";cbn"
+    name: Clipboard Paste with Line Below
+    comment: "Pastes clipboard text and places the cursor below a blank line."
     label: New Line Clipboard Paste
     vars:
       - name: "clipboard"
@@ -26,7 +35,10 @@ matches:
 
       $|$
 
+  # Paste clipboard text with a blank line above
   - trigger: ";cba"
+    name: Clipboard Paste with Line Above
+    comment: "Pastes clipboard text and places the cursor above a blank line."
     label: Above New Line Clipboard Paste
     vars:
       - name: "clipboard"

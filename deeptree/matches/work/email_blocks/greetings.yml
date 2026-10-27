@@ -2,12 +2,16 @@
 
 # Write a dynamic greeting for Emails for Montana and Alaska
 matches:
+  # Set up replacement for random greeting
   - trigger: ";greet"
+    name: Random Greeting
     label: Random Greeting
     comment: "This will output a randomly selected greeting from a pre-selected list."
     replace: "{{greeting}}"
 
+  # Set up replacement for random greeting add-on
   - trigger: ";addongreet"
+    name: Random Greeting Add-On
     label: Add-On For Random Greeting
     comment: "This will output a randomly selected add on for the random greeting from a pre-selected list."
     replace: "{{addongreeting}}"

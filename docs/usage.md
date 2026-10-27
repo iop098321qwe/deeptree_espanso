@@ -35,6 +35,37 @@ Many longer templates place your cursor where you should continue typing. This
 cursor position is shown in examples as `$|$`, but Espanso moves the cursor
 there instead of printing `$|$`.
 
+## Reading Expansion Definitions
+
+Every expansion in the package's YAML files has a short comment above it
+explaining its purpose, following the existing style such as
+`# Set up replacement for request template` or `# Print the current time`.
+Each definition also includes:
+
+- `name`: a descriptive name for identifying the expansion in source.
+- `comment`: a short explanation of what the expansion does.
+- `label`: the description displayed in Espanso's search interface.
+
+For example:
+
+```yaml
+matches:
+  # Set up replacement for work email address
+  - trigger: ";dtemail"
+    name: Deeptree Work Email
+    label: Deeptree Work Email
+    comment: "Outputs your configured Deeptree work email address."
+    replace: "{{workemail}}"
+```
+
+At the match level, `name` and `comment` are documentation metadata; Espanso
+uses `label` for search and the trigger and replacement fields for expansion.
+Form versions have their own descriptions and labels. A definition with
+multiple trigger aliases shares the same metadata across those aliases.
+This convention applies to expansions, including regex and form versions;
+shared global variable definitions are documented separately in the
+[global variable guide](global-variables.md).
+
 ## Optional Form Expansions
 
 Every regex expansion has a form version, as listed below. Use a colon (`:`)

@@ -2,226 +2,394 @@
 
 # clients
 matches:
-  # Air Source Alaska
+  # Expand Air Source Alaska client name
   - trigger: ";asa"
+    name: Air Source Alaska Client Name
+    label: Air Source Alaska
+    comment: "Outputs the full client name."
     replace: "Air Source Alaska$|$"
 
-  # AK Child & Family
+  # Expand AK Child & Family client name
   - trigger: ";akcf"
+    name: AK Child and Family Client Name
+    label: AK Child & Family
+    comment: "Outputs the full client name."
     replace: "AK Child & Family$|$"
 
-  # Alaska Commission for Behavioral Health Certification
+  # Expand Alaska Commission for Behavioral Health Certification client name
   - trigger: ";acbhc"
+    name: ACBHC Client Name
+    label: Alaska Commission for Behavioral Health Certification
+    comment: "Outputs the full client name."
     replace: "Alaska Commission for Behavioral Health Certification$|$"
 
-  # Alaska Correctional Officers Association
+  # Expand Alaska Correctional Officers Association client name
   - trigger: ";acoa"
+    name: ACOA Client Name
+    label: Alaska Correctional Officers Association
+    comment: "Outputs the full client name."
     replace: "Alaska Correctional Officers Association$|$"
 
-  # Alaska Family Services
+  # Expand Alaska Family Services client name
   - trigger: ";afs"
+    name: Alaska Family Services Client Name
+    label: Alaska Family Services
+    comment: "Outputs the full client name."
     replace: "Alaska Family Services$|$"
 
-  # Alaska Joint Electrical Apprenticeship & Training Trust
+  # Expand Alaska Joint Electrical Apprenticeship & Training Trust client name
   - trigger: ";ajeatt"
+    name: AJEATT Client Name
+    label: Alaska Joint Electrical Apprenticeship & Training Trust
+    comment: "Outputs the full client name."
     replace: "Alaska Joint Electrical Apprenticeship & Training Trust$|$"
 
-  # Alaska Pacific Leasing Company, Inc.
+  # Expand Alaska Pacific Leasing Company, Inc. client name
   - trigger: ";aplc"
+    name: Alaska Pacific Leasing Company Client Name
+    label: Alaska Pacific Leasing Company, Inc.
+    comment: "Outputs the full client name."
     replace: "Alaska Pacific Leasing Company, Inc.$|$"
 
-  # Alaska Rock Gym
+  # Expand Alaska Rock Gym client name
   - trigger: ";arg"
+    name: Alaska Rock Gym Client Name
+    label: Alaska Rock Gym
+    comment: "Outputs the full client name."
     replace: "Alaska Rock Gym$|$"
 
-  # Alaska SeaLife Center
+  # Expand Alaska SeaLife Center client name
   - trigger: ";aslc"
+    name: Alaska SeaLife Center Client Name
+    label: Alaska SeaLife Center
+    comment: "Outputs the full client name."
     replace: "Alaska SeaLife Center$|$"
 
-  # Aleutians East Borough
+  # Expand Aleutians East Borough client name
   - trigger: ";aeb"
+    name: Aleutians East Borough Client Name
+    label: Aleutians East Borough
+    comment: "Outputs the full client name."
     replace: "Aleutians East Borough$|$"
 
-  # Alutiiq Museum & Archaeological Repository
+  # Expand Alutiiq Museum & Archaeological Repository client name
   - trigger: ";amar"
+    name: Alutiiq Museum Client Name
+    label: Alutiiq Museum & Archaeological Repository
+    comment: "Outputs the full client name."
     replace: "Alutiiq Museum & Archaeological Repository$|$"
 
-  # Anchorage Neurosurgical Associates Inc.
+  # Expand Anchorage Neurosurgical Associates Inc. client name
   - trigger: ";anai"
+    name: Anchorage Neurosurgical Associates Client Name
+    label: Anchorage Neurosurgical Associates Inc.
+    comment: "Outputs the full client name."
     replace: "Anchorage Neurosurgical Associates Inc.$|$"
 
-  # Anchorage Opera
+  # Expand Anchorage Opera client name
   - trigger: ";ao"
+    name: Anchorage Opera Client Name
+    label: Anchorage Opera
+    comment: "Outputs the full client name."
     replace: "Anchorage Opera$|$"
 
-  # Arctic Oral Surgery
+  # Expand Arctic Oral Surgery client name
   - trigger: ";aos"
+    name: Arctic Oral Surgery Client Name
+    label: Arctic Oral Surgery
+    comment: "Outputs the full client name."
     replace: "Arctic Oral Surgery$|$"
 
-  # Bauer Construction
+  # Expand Bauer Construction client name
   - trigger: ";bc"
+    name: Bauer Construction Client Name
+    label: Bauer Construction
+    comment: "Outputs the full client name."
     replace: "Bauer Construction$|$"
 
-  # Bayshore Owners Association
+  # Expand Bayshore Owners Association client name
   - trigger: ";boa"
+    name: Bayshore Owners Association Client Name
+    label: Bayshore Owners Association
+    comment: "Outputs the full client name."
     replace: "Bayshore Owners Association$|$"
 
-  # Beacon Media + Marketing
+  # Expand Beacon Media + Marketing client name
   - trigger: ";bmm"
+    name: Beacon Media and Marketing Client Name
+    label: Beacon Media + Marketing
+    comment: "Outputs the full client name."
     replace: "Beacon Media + Marketing$|$"
 
-  # Bookkeeping Standards
+  # Expand Bookkeeping Standards client name
   - trigger: ";bs"
+    name: Bookkeeping Standards Client Name
+    label: Bookkeeping Standards
+    comment: "Outputs the full client name."
     replace: "Bookkeeping Standards$|$"
 
-  # Burg + Co.
+  # Expand Burg + Co. client name
   - trigger: ";burg"
+    name: Burg and Co Client Name
+    label: Burg + Co.
+    comment: "Outputs the full client name."
     replace: "Burg + Co.$|$"
 
-  # Camp Fire Alaska
+  # Expand Camp Fire Alaska client name
   - trigger: ";cfa"
+    name: Camp Fire Alaska Client Name
+    label: Camp Fire Alaska
+    comment: "Outputs the full client name."
     replace: "Camp Fire Alaska$|$"
 
-  # Cashion Gilmore
+  # Expand Cashion Gilmore client name
   - trigger: ";cg"
+    name: Cashion Gilmore Client Name
+    label: Cashion Gilmore
+    comment: "Outputs the full client name."
     replace: "Cashion Gilmore$|$"
 
-  # CCS Early Learning
+  # Expand CCS Early Learning client name
   - trigger: ";ccs"
+    name: CCS Early Learning Client Name
+    label: CCS Early Learning
+    comment: "Outputs the full client name."
     replace: "CCS Early Learning$|$"
 
-  # Commercial Contractors, Inc.
+  # Expand Commercial Contractors, Inc. client name
   - trigger: ";cci"
+    name: Commercial Contractors Client Name
+    label: Commercial Contractors, Inc.
+    comment: "Outputs the full client name."
     replace: "Commercial Contractors, Inc.$|$"
 
-  # Cross Road Medical Center
+  # Expand Cross Road Medical Center client name
   - trigger: ";crmc"
+    name: Cross Road Medical Center Client Name
+    label: Cross Road Medical Center
+    comment: "Outputs the full client name."
     replace: "Cross Road Medical Center$|$"
 
-  # Deeptree, Inc
+  # Expand Deeptree, Inc client name
   - trigger: ";dpt"
+    name: Deeptree Client Name
+    label: Deeptree, Inc
+    comment: "Outputs the full client name."
     replace: "Deeptree, Inc$|$"
 
-  # Denali Daniels + Associates
+  # Expand Denali Daniels + Associates client name
   - trigger: ";dda"
+    name: Denali Daniels and Associates Client Name
+    label: Denali Daniels + Associates
+    comment: "Outputs the full client name."
     replace: "Denali Daniels + Associates$|$"
 
-  # Dimond Center
+  # Expand Dimond Center client name
   - trigger: ";dc"
+    name: Dimond Center Client Name
+    label: Dimond Center
+    comment: "Outputs the full client name."
     replace: "Dimond Center$|$"
 
-  # Eagle Enterprises, Inc.
+  # Expand Eagle Enterprises, Inc. client name
   - trigger: ";ee"
+    name: Eagle Enterprises Client Name
+    label: Eagle Enterprises, Inc.
+    comment: "Outputs the full client name."
     replace: "Eagle Enterprises, Inc.$|$"
 
-  # Family Promise of Mat-Su
+  # Expand Family Promise of Mat-Su client name
   - trigger: ";fpms"
+    name: Family Promise of Mat-Su Client Name
+    label: Family Promise of Mat-Su
+    comment: "Outputs the full client name."
     replace: "Family Promise of Mat-Su$|$"
 
-  # Farm Loop Christian Center
+  # Expand Farm Loop Christian Center client name
   - trigger: ";flcc"
+    name: Farm Loop Christian Center Client Name
+    label: Farm Loop Christian Center
+    comment: "Outputs the full client name."
     replace: "Farm Loop Christian Center$|$"
 
-  # Fireside Books
+  # Expand Fireside Books client name
   - trigger: ";fb"
+    name: Fireside Books Client Name
+    label: Fireside Books
+    comment: "Outputs the full client name."
     replace: "Fireside Books$|$"
 
-  # Girl Scouts of Alaska
+  # Expand Girl Scouts of Alaska client name
   - trigger: ";gsak"
+    name: Girl Scouts of Alaska Client Name
+    label: Girl Scouts of Alaska
+    comment: "Outputs the full client name."
     replace: "Girl Scouts of Alaska$|$"
 
-  # Great Plains Tribal Leaders Health Board
+  # Expand Great Plains Tribal Leaders Health Board client name
   - trigger: ";gptlhb"
+    name: Great Plains Tribal Leaders Health Board Client Name
+    label: Great Plains Tribal Leaders Health Board
+    comment: "Outputs the full client name."
     replace: "Great Plains Tribal Leaders Health Board$|$"
 
-  # Junior Achievement of Alaska
+  # Expand Junior Achievement of Alaska client name
   - trigger: ";jaoa"
+    name: Junior Achievement of Alaska Client Name
+    label: Junior Achievement of Alaska
+    comment: "Outputs the full client name."
     replace: "Junior Achievement of Alaska$|$"
 
-  # Kijik Corporation
+  # Expand Kijik Corporation client name
   - trigger: ";kc"
+    name: Kijik Corporation Client Name
+    label: Kijik Corporation
+    comment: "Outputs the full client name."
     replace: "Kijik Corporation$|$"
 
-  # KLEBS Heating and Mechanical
+  # Expand KLEBS Heating and Mechanical client name
   - trigger: ";klebs"
+    name: KLEBS Client Name
+    label: KLEBS Heating and Mechanical
+    comment: "Outputs the full client name."
     replace: "KLEBS Heating and Mechanical$|$"
 
-  # Knom Radio Mission, Inc.
+  # Expand Knom Radio Mission, Inc. client name
   - trigger: ";knom"
+    name: Knom Radio Mission Client Name
+    label: Knom Radio Mission, Inc.
+    comment: "Outputs the full client name."
     replace: "Knom Radio Mission, Inc.$|$"
 
-  # Larson Chiropractic
+  # Expand Larson Chiropractic client name
   - trigger: ";lc"
+    name: Larson Chiropractic Client Name
+    label: Larson Chiropractic
+    comment: "Outputs the full client name."
     replace: "Larson Chiropractic$|$"
 
-  # North Wend Foods, Inc.
+  # Expand North Wend Foods, Inc. client name
   - trigger: ";nwf"
+    name: North Wend Foods Client Name
+    label: North Wend Foods, Inc.
+    comment: "Outputs the full client name."
     replace: "North Wend Foods, Inc.$|$"
 
-  # O'Banion Real Estate & Relocation Services
+  # Expand O'Banion Real Estate & Relocation Services client name
   - trigger: ";orers"
+    name: O'Banion Real Estate Client Name
+    label: O'Banion Real Estate & Relocation Services
+    comment: "Outputs the full client name."
     replace: "O'Banion Real Estate & Relocation Services$|$"
 
-  # Optimum Performance Chiropractic
+  # Expand Optimum Performance Chiropractic client name
   - trigger: ";opc"
+    name: Optimum Performance Chiropractic Client Name
+    label: Optimum Performance Chiropractic
+    comment: "Outputs the full client name."
     replace: "Optimum Performance Chiropractic$|$"
 
-  # Pango Technology
+  # Expand Pango Technology client name
   - trigger: ";pt"
+    name: Pango Technology Client Name
+    label: Pango Technology
+    comment: "Outputs the full client name."
     replace: "Pango Technology$|$"
 
-  # Pemberton & Young, LLC
+  # Expand Pemberton & Young, LLC client name
   - trigger: ";py"
+    name: Pemberton and Young Client Name
+    label: Pemberton & Young, LLC
+    comment: "Outputs the full client name."
     replace: "Pemberton & Young, LLC$|$"
 
-  # Pioneer Peak Orthopedic Surgery
+  # Expand Pioneer Peak Orthopedic Surgery client name
   - trigger: ";ppos"
+    name: Pioneer Peak Orthopedic Surgery Client Name
+    label: Pioneer Peak Orthopedic Surgery
+    comment: "Outputs the full client name."
     replace: "Pioneer Peak Orthopedic Surgery$|$"
 
-  # ProsserDagg Construction
+  # Expand ProsserDagg Construction client name
   - trigger: ";pdc"
+    name: ProsserDagg Construction Client Name
+    label: ProsserDagg Construction
+    comment: "Outputs the full client name."
     replace: "ProsserDagg Construction$|$"
 
-  # Samuel Simmonds Memorial Hospital
+  # Expand Samuel Simmonds Memorial Hospital client name
   - trigger: ";ssmh"
+    name: Samuel Simmonds Memorial Hospital Client Name
+    label: Samuel Simmonds Memorial Hospital
+    comment: "Outputs the full client name."
     replace: "Samuel Simmonds Memorial Hospital$|$"
 
-  # Specialty Imports, LLC
+  # Expand Specialty Imports, LLC client name
   - trigger: ";sillc"
+    name: Specialty Imports Client Name
+    label: Specialty Imports, LLC
+    comment: "Outputs the full client name."
     replace: "Specialty Imports, LLC$|$"
 
-  # Steve Fishback Architect
+  # Expand Steve Fishback Architect client name
   - trigger: ";sfa"
+    name: Steve Fishback Architect Client Name
+    label: Steve Fishback Architect
+    comment: "Outputs the full client name."
     replace: "Steve Fishback Architect$|$"
 
-  # Stinebaugh & Company
+  # Expand Stinebaugh & Company client name
   - trigger: ";sco"
+    name: Stinebaugh and Company Client Name
+    label: Stinebaugh & Company
+    comment: "Outputs the full client name."
     replace: "Stinebaugh & Company$|$"
 
-  # The American Legion - Department of Alaska
+  # Expand The American Legion - Department of Alaska client name
   - trigger: ";tal"
+    name: American Legion Department of Alaska Client Name
+    label: The American Legion - Department of Alaska
+    comment: "Outputs the full client name."
     replace: "The American Legion - Department of Alaska$|$"
 
-  # The Eureka Space
+  # Expand The Eureka Space client name
   - trigger: ";tes"
+    name: Eureka Space Client Name
+    label: The Eureka Space
+    comment: "Outputs the full client name."
     replace: "The Eureka Space$|$"
 
-  # Tyonek Tribal Conservation District
+  # Expand Tyonek Tribal Conservation District client name
   - trigger: ";ttcd"
+    name: Tyonek Tribal Conservation District Client Name
+    label: Tyonek Tribal Conservation District
+    comment: "Outputs the full client name."
     replace: "Tyonek Tribal Conservation District$|$"
 
-  # United Way of Mat-Su
+  # Expand United Way of Mat-Su client name
   - trigger: ";uwm"
+    name: United Way of Mat-Su Client Name
+    label: United Way of Mat-Su
+    comment: "Outputs the full client name."
     replace: "United Way of Mat-Su$|$"
 
-  # Victims for Justice
+  # Expand Victims for Justice client name
   - trigger: ";vfj"
+    name: Victims for Justice Client Name
+    label: Victims for Justice
+    comment: "Outputs the full client name."
     replace: "Victims for Justice$|$"
 
-  # Wasilla Area Seniors, Inc.
+  # Expand Wasilla Area Seniors, Inc. client name
   - trigger: ";wasi"
+    name: Wasilla Area Seniors Client Name
+    label: Wasilla Area Seniors, Inc.
+    comment: "Outputs the full client name."
     replace: "Wasilla Area Seniors, Inc.$|$"
 
-  # YWCA Alaska
+  # Expand YWCA Alaska client name
   - trigger: ";ywca"
+    name: YWCA Alaska Client Name
+    label: YWCA Alaska
+    comment: "Outputs the full client name."
     replace: "YWCA Alaska$|$"

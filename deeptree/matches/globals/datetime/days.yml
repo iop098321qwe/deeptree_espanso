@@ -2,8 +2,11 @@
 
 # Print the current date
 matches:
+  # Get the date for next Monday
   - trigger: ";mon"
     name: "Next Monday with date"
+    label: Next Monday with Date
+    comment: "Outputs the next Monday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -12,8 +15,11 @@ matches:
           cmd: |
             date -d "next Monday" '+Monday %Y-%m-%d'
 
+  # Get the date for next Tuesday
   - trigger: ";tues"
     name: "Next Tuesday with date"
+    label: Next Tuesday with Date
+    comment: "Outputs the next Tuesday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -22,8 +28,11 @@ matches:
           cmd: |
             date -d "next Tuesday" '+Tuesday %Y-%m-%d'
 
+  # Get the date for next Wednesday
   - trigger: ";wed"
     name: "Next Wednesday with date"
+    label: Next Wednesday with Date
+    comment: "Outputs the next Wednesday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -32,8 +41,11 @@ matches:
           cmd: |
             date -d "next Wednesday" '+Wednesday %Y-%m-%d'
 
+  # Get the date for next Thursday
   - trigger: ";thur"
     name: "Next Thursday with date"
+    label: Next Thursday with Date
+    comment: "Outputs the next Thursday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -42,8 +54,11 @@ matches:
           cmd: |
             date -d "next Thursday" '+Thursday %Y-%m-%d'
 
+  # Get the date for next Friday
   - trigger: ";fri"
     name: "Next Friday with date"
+    label: Next Friday with Date
+    comment: "Outputs the next Friday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -52,8 +67,11 @@ matches:
           cmd: |
             date -d "next Friday" '+Friday %Y-%m-%d'
 
+  # Get the date for next Saturday
   - trigger: ";sat"
     name: "Next Saturday with date"
+    label: Next Saturday with Date
+    comment: "Outputs the next Saturday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -62,8 +80,11 @@ matches:
           cmd: |
             date -d "next Saturday" '+Saturday %Y-%m-%d'
 
+  # Get the date for next Sunday
   - trigger: ";sun"
     name: "Next Sunday with date"
+    label: Next Sunday with Date
+    comment: "Outputs the next Sunday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -72,8 +93,11 @@ matches:
           cmd: |
             date -d "next Sunday" '+Sunday %Y-%m-%d'
 
+  # Get the date for last Monday
   - trigger: ";lstmon"
     name: "Previous Monday with date"
+    label: Previous Monday with Date
+    comment: "Outputs the previous Monday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -85,6 +109,8 @@ matches:
   # Get date for last Monday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lstmon"
     name: "Previous Monday minus N weeks"
+    label: Previous Monday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Monday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -93,8 +119,11 @@ matches:
           cmd: |
             date -d "last Monday - {{weeks}} weeks" '+Monday %Y-%m-%d'
 
+  # Get the date for last Tuesday
   - trigger: ";lsttues"
     name: "Previous Tuesday with date"
+    label: Previous Tuesday with Date
+    comment: "Outputs the previous Tuesday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -106,6 +135,8 @@ matches:
   # Get date for last Tuesday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lsttue"
     name: "Previous Tuesday minus N weeks"
+    label: Previous Tuesday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Tuesday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -114,8 +145,11 @@ matches:
           cmd: |
             date -d "last Tuesday - {{weeks}} weeks" '+Tuesday %Y-%m-%d'
 
+  # Get the date for last Wednesday
   - trigger: ";lstwed"
     name: "Previous Wednesday with date"
+    label: Previous Wednesday with Date
+    comment: "Outputs the previous Wednesday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -127,6 +161,8 @@ matches:
   # Get date for last Wednesday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lstwed"
     name: "Previous Wednesday minus N weeks"
+    label: Previous Wednesday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Wednesday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -135,8 +171,11 @@ matches:
           cmd: |
             date -d "last Wednesday - {{weeks}} weeks" '+Wednesday %Y-%m-%d'
 
+  # Get the date for last Thursday
   - trigger: ";lstthur"
     name: "Previous Thursday with date"
+    label: Previous Thursday with Date
+    comment: "Outputs the previous Thursday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -148,6 +187,8 @@ matches:
   # Get date for last Thursday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lstthu"
     name: "Previous Thursday minus N weeks"
+    label: Previous Thursday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Thursday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -156,8 +197,11 @@ matches:
           cmd: |
             date -d "last Thursday - {{weeks}} weeks" '+Thursday %Y-%m-%d'
 
+  # Get the date for last Friday
   - trigger: ";lstfri"
     name: "Previous Friday with date"
+    label: Previous Friday with Date
+    comment: "Outputs the previous Friday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -169,6 +213,8 @@ matches:
   # Get date for last Friday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lstfri"
     name: "Previous Friday minus N weeks"
+    label: Previous Friday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Friday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -177,8 +223,11 @@ matches:
           cmd: |
             date -d "last Friday - {{weeks}} weeks" '+Friday %Y-%m-%d'
 
+  # Get the date for last Saturday
   - trigger: ";lstsat"
     name: "Previous Saturday with date"
+    label: Previous Saturday with Date
+    comment: "Outputs the previous Saturday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -190,6 +239,8 @@ matches:
   # Get date for last Saturday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lstsat"
     name: "Previous Saturday minus N weeks"
+    label: Previous Saturday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Saturday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -198,8 +249,11 @@ matches:
           cmd: |
             date -d "last Saturday - {{weeks}} weeks" '+Saturday %Y-%m-%d'
 
+  # Get the date for last Sunday
   - trigger: ";lstsun"
     name: "Previous Sunday with date"
+    label: Previous Sunday with Date
+    comment: "Outputs the previous Sunday and its date."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -211,6 +265,8 @@ matches:
   # Get date for last Sunday minus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.lstsun"
     name: "Previous Sunday minus N weeks"
+    label: Previous Sunday minus N Weeks
+    comment: "Outputs the date N weeks before the previous Sunday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -219,8 +275,11 @@ matches:
           cmd: |
             date -d "last Sunday - {{weeks}} weeks" '+Sunday %Y-%m-%d'
 
+  # Get the date one week after next Monday
   - trigger: ";nxtmon"
-    name: "Next Monday with date"
+    name: "One week after next Monday with date"
+    label: One Week after Next Monday
+    comment: "Outputs the Monday one week after the next Monday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -232,6 +291,8 @@ matches:
   # Get date for next Monday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxtmon"
     name: "Next Monday plus N weeks"
+    label: Next Monday plus N Weeks
+    comment: "Outputs the date N weeks after the next Monday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -240,8 +301,11 @@ matches:
           cmd: |
             date -d "next Monday + {{weeks}} weeks" '+Monday %Y-%m-%d'
 
+  # Get the date one week after next Tuesday
   - trigger: ";nxttues"
-    name: "Next Tuesday with date"
+    name: "One week after next Tuesday with date"
+    label: One Week after Next Tuesday
+    comment: "Outputs the Tuesday one week after the next Tuesday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -253,6 +317,8 @@ matches:
   # Get date for next Tuesday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxttues"
     name: "Next Tuesday plus N weeks"
+    label: Next Tuesday plus N Weeks
+    comment: "Outputs the date N weeks after the next Tuesday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -261,8 +327,11 @@ matches:
           cmd: |
             date -d "next Tuesday + {{weeks}} weeks" '+Tuesday %Y-%m-%d'
 
+  # Get the date one week after next Wednesday
   - trigger: ";nxtwed"
-    name: "Next Wednesday with date"
+    name: "One week after next Wednesday with date"
+    label: One Week after Next Wednesday
+    comment: "Outputs the Wednesday one week after the next Wednesday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -274,6 +343,8 @@ matches:
   # Get date for next Wednesday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxtwed"
     name: "Next Wednesday plus N weeks"
+    label: Next Wednesday plus N Weeks
+    comment: "Outputs the date N weeks after the next Wednesday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -282,8 +353,11 @@ matches:
           cmd: |
             date -d "next Wednesday + {{weeks}} weeks" '+Wednesday %Y-%m-%d'
 
+  # Get the date one week after next Thursday
   - trigger: ";nxtthur"
-    name: "Next Thursday with date"
+    name: "One week after next Thursday with date"
+    label: One Week after Next Thursday
+    comment: "Outputs the Thursday one week after the next Thursday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -295,6 +369,8 @@ matches:
   # Get date for next Thursday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxtthur"
     name: "Next Thursday plus N weeks"
+    label: Next Thursday plus N Weeks
+    comment: "Outputs the date N weeks after the next Thursday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -303,8 +379,11 @@ matches:
           cmd: |
             date -d "next Thursday + {{weeks}} weeks" '+Thursday %Y-%m-%d'
 
+  # Get the date one week after next Friday
   - trigger: ";nxtfri"
-    name: "Next Friday with date"
+    name: "One week after next Friday with date"
+    label: One Week after Next Friday
+    comment: "Outputs the Friday one week after the next Friday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -316,6 +395,8 @@ matches:
   # Get date for next Friday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxtfri"
     name: "Next Friday plus N weeks"
+    label: Next Friday plus N Weeks
+    comment: "Outputs the date N weeks after the next Friday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -324,8 +405,11 @@ matches:
           cmd: |
             date -d "next Friday + {{weeks}} weeks" '+Friday %Y-%m-%d'
 
+  # Get the date one week after next Saturday
   - trigger: ";nxtsat"
-    name: "Next Saturday with date"
+    name: "One week after next Saturday with date"
+    label: One Week after Next Saturday
+    comment: "Outputs the Saturday one week after the next Saturday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -337,6 +421,8 @@ matches:
   # Get date for next Saturday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxtsat"
     name: "Next Saturday plus N weeks"
+    label: Next Saturday plus N Weeks
+    comment: "Outputs the date N weeks after the next Saturday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -345,8 +431,11 @@ matches:
           cmd: |
             date -d "next Saturday + {{weeks}} weeks" '+Saturday %Y-%m-%d'
 
+  # Get the date one week after next Sunday
   - trigger: ";nxtsun"
-    name: "Next Sunday with date"
+    name: "One week after next Sunday with date"
+    label: One Week after Next Sunday
+    comment: "Outputs the Sunday one week after the next Sunday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -358,6 +447,8 @@ matches:
   # Get date for next Sunday plus N weeks
   - regex: ";(?P<weeks>[0-9]+)\\.nxtsun"
     name: "Next Sunday plus N weeks"
+    label: Next Sunday plus N Weeks
+    comment: "Outputs the date N weeks after the next Sunday."
     replace: "{{output}} $|$"
     vars:
       - name: output
@@ -367,7 +458,10 @@ matches:
             date -d "next Sunday + {{weeks}} weeks" '+Sunday %Y-%m-%d'
 
   # Numeric form input is validated before interpolation into date commands.
+  # Get the date for last Monday minus N weeks using a form
   - trigger: ":lstmon"
+    name: Previous Monday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Monday's date."
     label: Previous Monday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -399,7 +493,10 @@ matches:
         params:
           cmd: "date -d 'last Monday - {{weeks}} weeks' '+Monday %Y-%m-%d'"
 
+  # Get the date for last Tuesday minus N weeks using a form
   - trigger: ":lsttues"
+    name: Previous Tuesday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Tuesday's date."
     label: Previous Tuesday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -411,7 +508,10 @@ matches:
         params:
           cmd: "date -d 'last Tuesday - {{weeks}} weeks' '+Tuesday %Y-%m-%d'"
 
+  # Get the date for last Wednesday minus N weeks using a form
   - trigger: ":lstwed"
+    name: Previous Wednesday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Wednesday's date."
     label: Previous Wednesday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -423,7 +523,10 @@ matches:
         params:
           cmd: "date -d 'last Wednesday - {{weeks}} weeks' '+Wednesday %Y-%m-%d'"
 
+  # Get the date for last Thursday minus N weeks using a form
   - trigger: ":lstthur"
+    name: Previous Thursday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Thursday's date."
     label: Previous Thursday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -435,7 +538,10 @@ matches:
         params:
           cmd: "date -d 'last Thursday - {{weeks}} weeks' '+Thursday %Y-%m-%d'"
 
+  # Get the date for last Friday minus N weeks using a form
   - trigger: ":lstfri"
+    name: Previous Friday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Friday's date."
     label: Previous Friday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -447,7 +553,10 @@ matches:
         params:
           cmd: "date -d 'last Friday - {{weeks}} weeks' '+Friday %Y-%m-%d'"
 
+  # Get the date for last Saturday minus N weeks using a form
   - trigger: ":lstsat"
+    name: Previous Saturday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Saturday's date."
     label: Previous Saturday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -459,7 +568,10 @@ matches:
         params:
           cmd: "date -d 'last Saturday - {{weeks}} weeks' '+Saturday %Y-%m-%d'"
 
+  # Get the date for last Sunday minus N weeks using a form
   - trigger: ":lstsun"
+    name: Previous Sunday minus N Weeks Form
+    comment: "Asks for weeks to subtract from the previous Sunday's date."
     label: Previous Sunday minus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -471,7 +583,10 @@ matches:
         params:
           cmd: "date -d 'last Sunday - {{weeks}} weeks' '+Sunday %Y-%m-%d'"
 
+  # Get the date for next Monday plus N weeks using a form
   - trigger: ":nxtmon"
+    name: Next Monday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Monday's date."
     label: Next Monday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -483,7 +598,10 @@ matches:
         params:
           cmd: "date -d 'next Monday + {{weeks}} weeks' '+Monday %Y-%m-%d'"
 
+  # Get the date for next Tuesday plus N weeks using a form
   - trigger: ":nxttues"
+    name: Next Tuesday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Tuesday's date."
     label: Next Tuesday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -495,7 +613,10 @@ matches:
         params:
           cmd: "date -d 'next Tuesday + {{weeks}} weeks' '+Tuesday %Y-%m-%d'"
 
+  # Get the date for next Wednesday plus N weeks using a form
   - trigger: ":nxtwed"
+    name: Next Wednesday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Wednesday's date."
     label: Next Wednesday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -507,7 +628,10 @@ matches:
         params:
           cmd: "date -d 'next Wednesday + {{weeks}} weeks' '+Wednesday %Y-%m-%d'"
 
+  # Get the date for next Thursday plus N weeks using a form
   - trigger: ":nxtthur"
+    name: Next Thursday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Thursday's date."
     label: Next Thursday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -519,7 +643,10 @@ matches:
         params:
           cmd: "date -d 'next Thursday + {{weeks}} weeks' '+Thursday %Y-%m-%d'"
 
+  # Get the date for next Friday plus N weeks using a form
   - trigger: ":nxtfri"
+    name: Next Friday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Friday's date."
     label: Next Friday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -531,7 +658,10 @@ matches:
         params:
           cmd: "date -d 'next Friday + {{weeks}} weeks' '+Friday %Y-%m-%d'"
 
+  # Get the date for next Saturday plus N weeks using a form
   - trigger: ":nxtsat"
+    name: Next Saturday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Saturday's date."
     label: Next Saturday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:
@@ -543,7 +673,10 @@ matches:
         params:
           cmd: "date -d 'next Saturday + {{weeks}} weeks' '+Saturday %Y-%m-%d'"
 
+  # Get the date for next Sunday plus N weeks using a form
   - trigger: ":nxtsun"
+    name: Next Sunday plus N Weeks Form
+    comment: "Asks for weeks to add to the next Sunday's date."
     label: Next Sunday plus N weeks (Form)
     replace: "{{output}} $|$"
     vars:

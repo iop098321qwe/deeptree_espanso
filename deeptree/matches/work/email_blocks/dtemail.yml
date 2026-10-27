@@ -1,3 +1,7 @@
 matches:
+  # Set up replacement for work email address
   - trigger: ";dtemail"
+    name: Deeptree Work Email
+    label: Deeptree Work Email
+    comment: "Outputs your configured Deeptree work email address."
     replace: "{{workemail}}"

@@ -2,7 +2,9 @@
 
 # One Time Use Link Explanation
 matches:
+  # Set up replacement for one-time-use link explanation
   - trigger: ";otu"
+    name: One Time Use Link Explanation
     label: One Time Use Link
     comment: "This is an expansion to explain how onetimesecret.com's one-time links work in an email."
     replace: |-

@@ -4,6 +4,9 @@
 matches:
   # Create a match for monthly notes: Print the current month with propagate case.
   - trigger: ";month"
+    name: Current Month
+    label: Current Month
+    comment: "Outputs the current month name."
     replace: "{{current_month}}"
     propagate_case: true
     vars:

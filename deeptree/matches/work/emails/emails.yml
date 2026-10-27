@@ -2,7 +2,10 @@
 
 # email
 matches:
+  # Set up replacement for normal Deeptree email
   - regex: ";emailnorm(?P<person>.*)\\."
+    name: Dynamic Deeptree Email
+    comment: "Creates a general email with a greeting and signature."
     label: Dynamic Deeptree Email
     force_mode: clipboard
     replace: |-
@@ -14,7 +17,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for response-requested email
   - regex: ";emailreq(?P<person>.*)\\."
+    name: Dynamic Request For Action Email
+    comment: "Creates an email asking the recipient to respond."
     label: Dynamic Request For Action Email
     force_mode: clipboard
     replace: |-
@@ -28,7 +34,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for disk space cleanup email
   - regex: ";emaildisk(?P<person>.*)\\."
+    name: Dynamic Disk Space Email
+    comment: "Creates an email asking the recipient to free disk space."
     label: Dynamic Request For Disk Space Email
     force_mode: clipboard
     replace: |-
@@ -48,7 +57,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for follow-up email
   - regex: ";emailfu(?P<person>.*)\\."
+    name: Dynamic Follow-Up Email
+    comment: "Creates a follow-up email asking for a response."
     label: Dynamic Follow-Up Email
     force_mode: clipboard
     replace: |-
@@ -64,7 +76,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for done-yet follow-up email
   - regex: ";emaildy(?P<person>.*)\\."
+    name: Dynamic Done Yet Email
+    comment: "Creates an email asking whether assistance is still needed."
     label: Dynamic Done Yet Follow-Up Email
     force_mode: clipboard
     replace: |-
@@ -78,7 +93,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for voicemail follow-up email
   - regex: ";emailvm(?P<person>.*)\\."
+    name: Dynamic Voicemail Email
+    comment: "Creates a follow-up email after leaving a voicemail."
     label: Dynamic Voicemail Follow-Up Email
     force_mode: clipboard
     replace: |-
@@ -94,7 +112,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for follow-up email when no voicemail was left
   - regex: ";emailnovm(?P<person>.*)\\."
+    name: Dynamic No Voicemail Email
+    comment: "Creates a follow-up email when a voicemail could not be left."
     label: Dynamic Unable to Leave a Voicemail Follow-Up Email
     force_mode: clipboard
     replace: |-
@@ -112,7 +133,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for missed appointment email with voicemail
   - regex: ";emailmissvm(?P<person>.*)\\."
+    name: Dynamic Missed Appointment Voicemail Email
+    comment: "Creates a missed-appointment email after leaving a message."
     label: Dynamic Missed Appointment w/ Voicemail or Message Email
     force_mode: clipboard
     replace: |-
@@ -128,7 +152,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for missed appointment email without voicemail
   - regex: ";emailmissnovm(?P<person>.*)\\."
+    name: Dynamic Missed Appointment No Voicemail Email
+    comment: "Creates a missed-appointment email when no voicemail was left."
     label: Dynamic Missed Appointment Email
     force_mode: clipboard
     replace: |-
@@ -144,7 +171,9 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for notification email
   - regex: ";emailnoti(?P<person>.*)\\."
+    name: Dynamic Notification Email
     label: Dynamic Notification Email
     comment: "This is a dynamically generated email to send notifications. It is useful for sending emails that do not require a response."
     force_mode: clipboard
@@ -159,7 +188,9 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for completion notification email
   - regex: ";emailcomp(?P<person>.*)\\."
+    name: Dynamic Completion Email
     label: Dynamic Completion Email
     comment: "This is a dynamically generated email to send completion notifications. It is useful for notifying the completion of work."
     force_mode: clipboard
@@ -177,7 +208,10 @@ matches:
       {{signature}}
 
   # Optional form versions of the dynamic email templates.
+  # Set up replacement for normal Deeptree email using a form
   - trigger: ":emailnorm"
+    name: Deeptree Email Form
+    comment: "Asks for a recipient and message to create a general email."
     label: Deeptree Email (Form)
     force_mode: clipboard
     replace: |-
@@ -200,7 +234,10 @@ matches:
             message:
               multiline: true
 
+  # Set up replacement for response-requested email using a form
   - trigger: ":emailreq"
+    name: Request For Action Email Form
+    comment: "Asks for a recipient and message to create a response request."
     label: Request For Action Email (Form)
     force_mode: clipboard
     replace: |-
@@ -215,7 +252,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for disk space cleanup email using a form
   - trigger: ":emaildisk"
+    name: Disk Space Email Form
+    comment: "Asks for email details to create a disk space cleanup request."
     label: Request For Disk Space Email (Form)
     force_mode: clipboard
     replace: |-
@@ -249,7 +289,10 @@ matches:
             message:
               multiline: true
 
+  # Set up replacement for follow-up email using a form
   - trigger: ":emailfu"
+    name: Follow-Up Email Form
+    comment: "Asks for a recipient and message to create a follow-up email."
     label: Follow-Up Email (Form)
     force_mode: clipboard
     replace: |-
@@ -266,7 +309,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for done-yet follow-up email using a form
   - trigger: ":emaildy"
+    name: Done Yet Email Form
+    comment: "Asks for details to check whether assistance is still needed."
     label: Done Yet Follow-Up Email (Form)
     force_mode: clipboard
     replace: |-
@@ -281,7 +327,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for voicemail follow-up email using a form
   - trigger: ":emailvm"
+    name: Voicemail Email Form
+    comment: "Asks for email details to follow up after leaving a voicemail."
     label: Voicemail Follow-Up Email (Form)
     force_mode: clipboard
     replace: |-
@@ -298,7 +347,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for follow-up email without voicemail using a form
   - trigger: ":emailnovm"
+    name: No Voicemail Email Form
+    comment: "Asks for email details to follow up when no voicemail was left."
     label: Unable to Leave a Voicemail Follow-Up Email (Form)
     force_mode: clipboard
     replace: |-
@@ -317,7 +369,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for missed appointment email with voicemail using a form
   - trigger: ":emailmissvm"
+    name: Missed Appointment Voicemail Email Form
+    comment: "Asks for email details after a missed appointment and message."
     label: Missed Appointment with Voicemail Email (Form)
     force_mode: clipboard
     replace: |-
@@ -336,7 +391,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for missed appointment email with no voicemail via form
   - trigger: ":emailmissnovm"
+    name: Missed Appointment No Voicemail Email Form
+    comment: "Asks for details after a missed appointment with no message."
     label: Missed Appointment Email (Form)
     force_mode: clipboard
     replace: |-
@@ -355,7 +413,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for notification email using a form
   - trigger: ":emailnoti"
+    name: Notification Email Form
+    comment: "Asks for details to send a no-response-required notification."
     label: Notification Email (Form)
     force_mode: clipboard
     replace: |-
@@ -370,7 +431,10 @@ matches:
       {{signature}}
     vars: *email_form
 
+  # Set up replacement for completion notification email using a form
   - trigger: ":emailcomp"
+    name: Completion Email Form
+    comment: "Asks for email details to send a work completion notification."
     label: Completion Email (Form)
     force_mode: clipboard
     replace: |-
