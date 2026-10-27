@@ -31,17 +31,13 @@ Keep personal matches and `work_information.yml` outside the installed
 package directory. Changes made inside the installed package are
 package-managed and may be replaced by an update.
 
-### Local Name Definitions
+### Package-Managed Name Definitions
 
-The package now imports `matches/variables/static/name.yml`, supplying `myname`
-and `mylegalname` from your local technician values. After updating to a version
-with that import, remove any unchanged `deeptree_names.yml` copied under the
-previous installation workaround. Review customized local definitions before
-removing them, preserving intentional customizations without duplicate global
-names. If you never created that local file, no name-file migration is needed.
-Keep your personalized `work_information.yml`; its values are still required.
-Older packages under Espanso's default `match` tree may already have loaded
-`name.yml` through recursive discovery, even without an explicit import.
+The package imports `matches/variables/static/name.yml`, supplying `myname`
+and `mylegalname` from your local technician values. Package updates manage
+these composed name definitions. Keep your personalized `work_information.yml`
+in your Espanso match directory outside the package; its values remain locally
+managed and are required by the composed names.
 
 Credential scripts now use `%PACKAGES%/deeptree/scripts/credential-generator.sh`
 so custom package directories are supported. No local script copy is needed.
