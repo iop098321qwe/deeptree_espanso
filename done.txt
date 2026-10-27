@@ -5,3 +5,4 @@ x 2026-10-08 2026-09-30 add form versions of expansions for optional use +forms 
 x 2026-10-08 2026-09-29 add all current clients to client specific expansions @feat +expansions
 x 2026-10-23 2026-10-23 include `;tp` match in package instead of user configs as it is required for other packages @feat +all
 x 2026-10-26 2026-10-23 add form version of ajeatt credentials expansion and update documentation to reflect the change +all @feat
+x 2026-10-26 2026-10-23 review package to ensure it is fully self-contained so that it doesn't rely on any external expansions and ensure all dependencies for expansions are included in installation documentation +all @docs
