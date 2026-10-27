@@ -20,6 +20,109 @@ Specific instructions I have put together can be found below.
 
 Please select from the tabs below:
 
+=== "Ubuntu"
+
+    ### Ubuntu
+
+    Use Espanso's official Debian packages on Ubuntu. The commands below use
+    the latest upstream release; choose the package for your current desktop
+    session rather than assuming it from your Ubuntu version. These steps also
+    apply to Ubuntu 24.04 and 26.04 LTS when the release package's dependencies
+    are available for your system.
+
+    #### Check Architecture and Desktop Session
+
+    Open Terminal in your logged-in desktop session and run:
+
+    ```sh
+    dpkg --print-architecture
+    printenv XDG_SESSION_TYPE
+    ```
+
+    The downloads below require `amd64` (64-bit Intel or AMD). For `arm64` or
+    another architecture, use the [upstream Linux installation guide][linux]
+    for source-build instructions instead of installing an `amd64` package.
+
+    The session command should print `wayland` or `x11`. Select the matching
+    tab below. If it prints nothing, check your desktop session type before
+    continuing; an SSH session does not identify the local desktop reliably.
+
+    #### Install Prerequisites
+
+    Install the download tool, Git, and Deeptree's shell runtime dependencies:
+
+    ```sh
+    sudo apt update
+    sudo apt install wget git bash coreutils sed gawk
+    ```
+
+    Git must be able to authenticate to the private Deeptree repository for
+    step 4. No Node.js or Python installation is needed to use the package.
+
+    #### Download and Install Espanso
+
+    Run the commands from a writable directory, such as your Downloads folder.
+    Install only the package matching your session. The `./` prefix tells
+    `apt` to install the downloaded file and resolve its runtime dependencies.
+
+    === "Wayland"
+
+        ```sh
+        sudo apt install libcap2-bin wl-clipboard
+        wget -O espanso-debian-wayland-amd64.deb https://github.com/espanso/espanso/releases/latest/download/espanso-debian-wayland-amd64.deb
+        sudo apt install ./espanso-debian-wayland-amd64.deb
+        sudo setcap 'cap_dac_override+p' "$(command -v espanso)"
+        getcap "$(command -v espanso)"
+        ```
+
+        `libcap2-bin` provides `setcap` and `getcap`; `wl-clipboard` supplies
+        Wayland clipboard tools. Espanso requires the capability above to
+        access the input devices used to detect triggers and insert text.
+        The final command should show `cap_dac_override=p` for the Espanso
+        executable. See [upstream Wayland setup][wayland] for details.
+
+        If an Espanso binary update removes this capability, apply the
+        `setcap` command again and restart Espanso with `espanso restart`.
+
+    === "X11"
+
+        ```sh
+        wget -O espanso-debian-x11-amd64.deb https://github.com/espanso/espanso/releases/latest/download/espanso-debian-x11-amd64.deb
+        sudo apt install ./espanso-debian-x11-amd64.deb
+        ```
+
+    If `apt` reports unavailable dependencies, consult the [upstream Linux
+    installation guide][linux] for a compatible installation method rather
+    than forcing the package installation.
+
+    Continue with step 2 to register and start Espanso as your desktop user.
+    Then complete steps 3 through 6 to install Deeptree, personalize the local
+    technician template using either Linux setup tab, and check expansions.
+
+    #### Wayland Keyboard Layout
+
+    After the first start creates the configuration, non-US layouts and some
+    US variants need an explicit layout in `config/default.yml` beneath the
+    `Config:` directory reported by `espanso path`. For example, for a UK
+    keyboard, add or update:
+
+    ```yaml
+    keyboard_layout:
+      layout: "gb"
+    ```
+
+    Use your actual layout code and preserve any existing configuration.
+    Restart Espanso after editing. On Ubuntu's GNOME desktop, inspect your
+    configured input sources with:
+
+    ```sh
+    gsettings get org.gnome.desktop.input-sources sources
+    ```
+
+    See [upstream Wayland setup][wayland] for layout variants and limitations.
+    If expansions fail, check `espanso service status` and `espanso log`, then
+    confirm that you installed the package matching your desktop session.
+
 === "Fedora"
 
     ### Fedora
@@ -96,12 +199,14 @@ Please select from the tabs below:
 
     ### Linux
 
-    After installation, you will need to start the Espanso service. You will
-    also need to enable it to start automatically on boot. You can do both of these
-    by running the following command:
+    After installation, register Espanso's user service once and start it from
+    your logged-in desktop session. Run these commands as your normal user,
+    without `sudo`, so Espanso uses your configuration and starts automatically
+    at login:
 
     ```sh
-    espanso service register; espanso start
+    espanso service register
+    espanso start
     ```
 
 === "Windows (WIP)"
@@ -189,6 +294,9 @@ On Linux, Espanso uses Bash by default for shell extensions. Ensure the tools
 are installed with your system package manager:
 
 ```sh
+# Ubuntu
+sudo apt install bash coreutils sed gawk git
+
 # Fedora
 sudo dnf install bash coreutils sed gawk git
 
@@ -473,4 +581,6 @@ requirements above, confirm script paths against the `Packages:` output of
 the local document rather than sending it as a real email or ticket.
 
 [install]: <https://espanso.org/install/>
+[linux]: <https://espanso.org/docs/install/linux/>
+[wayland]: <https://espanso.org/docs/install/linux/#deb-wayland>
 [repo]: <https://github.com/iop098321qwe/deeptree_espanso/blob/main/templates/work_information.yml>
