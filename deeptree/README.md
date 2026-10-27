@@ -40,8 +40,7 @@ The package imports `matches/variables/static/name.yml`, which defines
 `myname` and `mylegalname` from your local first, middle, and last name values.
 No separate local name-definition file or external expansion package is needed.
 Keep `work_information.yml` outside the installed package so updates preserve
-your technician values. If you copied `deeptree_names.yml` for an older version,
-remove that duplicate local file after updating to a version with this import.
+your technician values.
 
 ## Script Requirements
 
