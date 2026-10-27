@@ -387,10 +387,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#maintainer-release-versions" class="md-nav__link">
+  <a href="#update-deeptree" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Maintainer Release Versions
+        Update Deeptree
       </span>
     </span>
   </a>
@@ -398,10 +398,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-command" class="md-nav__link">
+  <a href="#keep-your-personal-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Update Command
+        Keep Your Personal Configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Check the Update
       </span>
     </span>
   </a>
@@ -483,10 +494,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#maintainer-release-versions" class="md-nav__link">
+  <a href="#update-deeptree" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Maintainer Release Versions
+        Update Deeptree
       </span>
     </span>
   </a>
@@ -494,10 +505,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-command" class="md-nav__link">
+  <a href="#keep-your-personal-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Update Command
+        Keep Your Personal Configuration
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Check the Update
       </span>
     </span>
   </a>
@@ -528,36 +550,36 @@
                   
 
 <h1 id="updating-the-package">Updating the Package<a class="headerlink" href="#updating-the-package" title="Permanent link">&para;</a></h1>
-<h2 id="maintainer-release-versions">Maintainer Release Versions<a class="headerlink" href="#maintainer-release-versions" title="Permanent link">&para;</a></h2>
-<p>The repository-local <code>.versionrc.json</code> configures <code>commit-and-tag-version</code>
-to update <code>package.json</code>, <code>package-lock.json</code>, and
-<code>deeptree/_manifest.yml</code> to the same release version. The shared <code>verg</code>
-shell function invokes this tool and uses this configuration when releasing
-from this repository; other repositories are unaffected.</p>
-<p>To preview the version updates without creating a release, run this directly
-from the repository root:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>commit-and-tag-version<span class="w"> </span>--dry-run
+<p>Updates are manual. When you receive a Deeptree package update notification,
+review its instructions for trigger changes or any required local setup changes.</p>
+<h2 id="update-deeptree">Update Deeptree<a class="headerlink" href="#update-deeptree" title="Permanent link">&para;</a></h2>
+<p>Git must be installed and able to authenticate to the private repository using
+your organization's configured Git credentials.</p>
+<p>Run this command in a terminal:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>update<span class="w"> </span>deeptree
 </span></code></pre></div>
-<h2 id="update-command">Update Command<a class="headerlink" href="#update-command" title="Permanent link">&para;</a></h2>
-<p>Update the shared Deeptree package with:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>update<span class="w"> </span>deeptree
+<p>This updates the installed <code>deeptree</code> package. It does not update Espanso itself
+or other installed packages.</p>
+<h2 id="keep-your-personal-configuration">Keep Your Personal Configuration<a class="headerlink" href="#keep-your-personal-configuration" title="Permanent link">&para;</a></h2>
+<p>Keep personal matches and <code>work_information.yml</code> outside the installed
+package directory. Changes made inside the installed package are
+package-managed and may be replaced by an update.</p>
+<p>Your local technician values remain yours to manage. Package updates supply the
+shared snippets, composed name definitions, and scripts without replacing your
+personal configuration outside the package. Make any local changes requested in
+the update notification using the <a href="../installation/">installation guide</a>.</p>
+<h2 id="check-the-update">Check the Update<a class="headerlink" href="#check-the-update" title="Permanent link">&para;</a></h2>
+<p>List your installed packages and confirm that Deeptree shows the expected
+version from the update notification:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>espanso<span class="w"> </span>package<span class="w"> </span>list
 </span></code></pre></div>
-<p>Updates are manual. Git must be installed and able to authenticate to the
-private repository. Before updating, review the release instructions for
-trigger changes and any required local setup changes.</p>
-<p>Keep personal matches, <code>work_information.yml</code>, and any local composed name
-definitions outside <code>match/packages/deeptree</code>. Changes made inside the installed
-package are package-managed and may be replaced by an update.</p>
-<div class="admonition info">
-<p class="admonition-title">Deeptree Package Update Notifications</p>
-<p>There will be a notification sent out to all employees when the package is
-updated. You will need to manually run the command above to update the package.
-This will only change the <code>deeptree</code> package and will leave your own
-configuration untouched. If you have made changes to the <code>work_information.yml</code>
-file, those changes will not be overwritten by the update.</p>
-<p>Update notifications will come with any additional information and instructions
-if <code>work_information.yml</code> has any local changes that need to be made.</p>
-</div>
+<p>Allow Espanso to reload, then test <code>;name</code>, <code>;signature</code>, and <code>;dtemail</code> in a
+blank local text document. Confirm they still use your configured technician
+values, and check any changed triggers described in the update notification.</p>
+<p>If the update command fails, check that Git can authenticate to the private
+repository and review the error shown in the terminal. If expansions fail after
+the update, run <code>espanso log</code> and check your local setup against the
+<a href="../installation/#6-check-expansion-dependencies">installation guide</a>.</p>
 
 
 

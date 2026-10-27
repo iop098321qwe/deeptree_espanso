@@ -1407,13 +1407,11 @@ content is not altered by wrapping.</p>
 <p>Both <code>greeting</code> and <code>addongreeting</code> have an empty option. In email templates,
 <code>{{greeting}}{{person}},{{addongreeting}}</code> retains the person's name and the
 template's comma even when either or both random selections are empty.</p>
-<p>Package globals are loaded through <code>deeptree/package.yml</code> imports.
-<strong><code>deeptree/matches/variables/static/name.yml</code> is not imported there.</strong>
-Its <code>myname</code> and <code>mylegalname</code> definitions exist in source but are not loaded
-through that entry point. Matches and <code>signature</code> reference these names, so
-they need definitions loaded separately to resolve. Follow the
-<a href="../installation/#load-the-composed-name-variables">installation workaround</a>
-to load them locally without editing the package imports.</p>
+<p>Package globals are loaded through <code>deeptree/package.yml</code> imports, including
+<code>deeptree/matches/variables/static/name.yml</code>. Its <code>myname</code> and <code>mylegalname</code>
+definitions compose the technician's local name values; no separate local
+name-definition file is required. See the
+<a href="../installation/#load-the-composed-name-variables">installation guide</a>.</p>
 <p>Technician globals are supplied by <code>templates/work_information.yml</code>, not
 the package. Copy that template into your Espanso match directory outside
 the package and customize its placeholder values. Package updates do not
@@ -1477,21 +1475,21 @@ technician template. They remain available for user-defined snippets.</p>
 <ul>
 <li>Type: <code>echo</code>.</li>
 <li>Exact content: <code>{{myfirst}} {{mylast}}</code>.</li>
-<li>Purpose: First and last name for <code>;name</code> and <code>signature</code>; template defaults
-  would produce <code>First Last</code> if this definition were loaded.</li>
+<li>Purpose: First and last name for <code>;name</code> and <code>signature</code>; the unmodified
+  technician template produces <code>First Last</code>.</li>
 <li>Dependencies: <code>myfirst</code>, <code>mylast</code>.</li>
 <li>Source: <code>deeptree/matches/variables/static/name.yml</code>.</li>
-<li>Loading: Missing from <code>deeptree/package.yml</code> imports.</li>
+<li>Loading: Imported by <code>deeptree/package.yml</code>.</li>
 </ul>
 <h3 id="mylegalname">mylegalname<a class="headerlink" href="#mylegalname" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Type: <code>echo</code>.</li>
 <li>Exact content: <code>{{myfirst}} {{mymiddle}} {{mylast}}</code>.</li>
-<li>Purpose: Full name for <code>;legalname</code> and <code>;fullname</code>; template defaults
-  would produce <code>First Middle Last</code> if this definition were loaded.</li>
+<li>Purpose: Full name for <code>;legalname</code> and <code>;fullname</code>; the unmodified
+  technician template produces <code>First Middle Last</code>.</li>
 <li>Dependencies: <code>myfirst</code>, <code>mymiddle</code>, <code>mylast</code>.</li>
 <li>Source: <code>deeptree/matches/variables/static/name.yml</code>.</li>
-<li>Loading: Missing from <code>deeptree/package.yml</code> imports.</li>
+<li>Loading: Imported by <code>deeptree/package.yml</code>.</li>
 </ul>
 <p>The composite inserts literal spaces around <code>mymiddle</code>; an empty middle
 name does not remove either space.</p>
@@ -1568,7 +1566,7 @@ name does not remove either space.</p>
 </span></code></pre></div>
 <p>The signature does <strong>not</strong> include any email address: neither <code>workemail</code>,
 <code>myemail</code>, nor <code>helpdesk_email</code> appears in its content. Its <code>myname</code>
-dependency is affected by the missing <code>static/name.yml</code> package import.</p>
+definition is package-managed; the first and last name values remain local.</p>
 <h2 id="random-variables">Random Variables<a class="headerlink" href="#random-variables" title="Permanent link">&para;</a></h2>
 <p>Each entry has type <code>random</code>, no fixed default, and the complete list of
 exact configured choices below.</p>
