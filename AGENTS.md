@@ -90,8 +90,8 @@ or release automation.
 - `docs/` is the Markdown source for the generated `site/` directory.
 - `docs/README.md` and `docs/CHANGELOG.md` are symlinks to root documents;
   README links must work both in the repository and on the generated site.
-- `deeptree/package.yml` currently omits `variables/static/name.yml`.
-  Installation docs explain loading composed name globals in a local file.
+- `deeptree/package.yml` imports `variables/static/name.yml` for composed names.
+  Only technician values need a local template copy.
 
 ## Commands
 
@@ -161,6 +161,9 @@ or release automation.
 
 - Espanso is the external runtime for package installation and expansion.
 - Git is required for installing the private package with `--git`.
+- Shell date helpers require a Bourne-compatible shell and GNU `date`.
+- Credential scripts require Bash, `sed`, `tr`, and `awk`; direct weekday
+  ranges also use `tr`. Script paths use Espanso's `%PACKAGES%` placeholder.
 - Node dependencies support commit-message validation.
 - Zensical generates the static documentation site.
 
@@ -169,8 +172,8 @@ or release automation.
 - If package installation fails, verify `_manifest.yml`, `package.yml`, and
   `README.md` exist under `deeptree/`.
 - If snippets using signatures fail, verify the user copied and configured
-  `templates/work_information.yml` in their Espanso match directory and loaded
-  the composed name globals as described in `docs/installation.md`.
+  `templates/work_information.yml` in their Espanso match directory. Check the
+  package name import and duplicate local globals as in `docs/installation.md`.
 - If docs are stale, report that `site/` needs a manual rebuild. Run
   `./.venv/bin/zensical build` only when explicitly requested by the user.
 - If generated or managed files change unexpectedly, verify which tool owns
