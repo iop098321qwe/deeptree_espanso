@@ -2,27 +2,34 @@
 
 # Matches for personal information
 matches:
-  # Matches for names
+  # Set up replacement for first name
   - trigger: ";first"
+    name: First Name
     label: First Name Match
     comment: "A match to output your first name."
     propagate_case: true
     replace: "{{myfirst}}"
 
+  # Set up replacement for last name
   - trigger: ";last"
+    name: Last Name
     label: Last Name Match
     comment: "A match to output your last name."
     propagate_case: true
     replace: "{{mylast}}"
 
+  # Set up replacement for full display name
   - trigger: ;name
+    name: Full Display Name
     label: Full Name Match
     comment: "A match to output your full name."
     propagate_case: true
     replace: "{{myname}}"
 
+  # Set up replacement for full legal name
   - triggers: [;legalname, ;fullname]
-    label: Full Name Match
-    comment: "A match to output your full name."
+    name: Full Legal Name
+    label: Full Legal Name Match
+    comment: "A match to output your full legal name."
     propagate_case: true
     replace: "{{mylegalname}}"

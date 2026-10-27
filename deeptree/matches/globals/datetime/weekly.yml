@@ -4,6 +4,9 @@
 matches:
   # Espanso expansion to display the week range from Monday to Sunday
   - trigger: ";wkly"
+    name: Current Weekly Filename Range
+    label: Current Weekly Filename Range
+    comment: "Outputs this week's Monday and Sunday dates joined by _-_."
     replace: "{{week_start}}_-_{{week_end}}"
     vars:
       # Compute the correct Monday for the current week.
@@ -30,6 +33,9 @@ matches:
 
   # Print the week range from Monday to Sunday for the NEXT week
   - trigger: ";nxtwkly"
+    name: Next Weekly Filename Range
+    label: Next Weekly Filename Range
+    comment: "Outputs next week's Monday and Sunday dates joined by _-_."
     replace: "{{week_start}}_-_{{week_end}}"
     vars:
       # Get the Monday of the next week.
@@ -47,6 +53,9 @@ matches:
 
   # Output the date range for the last week in the format "YYYY-MM-DD_-_YYYY-MM-DD"
   - trigger: ";lstwkly"
+    name: Last Weekly Filename Range
+    label: Last Weekly Filename Range
+    comment: "Outputs last week's Monday and Sunday dates joined by _-_."
     replace: "{{week_start}}_-_{{week_end}}"
     vars:
       # Compute the current week’s Monday as before.
@@ -74,6 +83,9 @@ matches:
 
   # Output the date range for N weeks ago in the format "YYYY-MM-DD_-_YYYY-MM-DD"
   - regex: ";(?P<weeks>[0-9]+)\\.lstwkly"
+    name: N Weeks Ago Weekly Filename Range
+    label: N Weeks Ago Weekly Filename Range
+    comment: "Outputs Monday and Sunday dates N weeks back from this week."
     replace: "{{week_start}}_-_{{week_end}}"
     vars:
       # Compute the current week’s Monday
@@ -102,6 +114,9 @@ matches:
 
   # Output the date range for N weeks ahead in the format "YYYY-MM-DD_-_YYYY-MM-DD"
   - regex: ";(?P<weeks>[0-9]+)\\.nxtwkly"
+    name: N Weeks Ahead Weekly Filename Range
+    label: N Weeks Ahead Weekly Filename Range
+    comment: "Outputs Monday and Sunday dates N weeks after next week."
     replace: "{{week_start}}_-_{{week_end}}"
     vars:
       # Compute the next week's Monday
@@ -123,7 +138,10 @@ matches:
           cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
           trim: true
 
+  # Print a weekly filename range N weeks ago using a form
   - trigger: ":lstwkly"
+    name: N Weeks Ago Weekly Filename Range Form
+    comment: "Asks for weeks back from this week and outputs a filename range."
     label: N weeks ago - weekly filename range (Form)
     replace: "{{week_start}}_-_{{week_end}}"
     vars:
@@ -172,7 +190,10 @@ matches:
           cmd: "date -d '{{week_start}} +6 days' '+%Y-%m-%d'"
           trim: true
 
+  # Print a weekly filename range N weeks after next week using a form
   - trigger: ":nxtwkly"
+    name: N Weeks Ahead Weekly Filename Range Form
+    comment: "Asks for weeks after next week and outputs a filename range."
     label: N weeks ahead - weekly filename range (Form)
     replace: "{{week_start}}_-_{{week_end}}"
     vars:

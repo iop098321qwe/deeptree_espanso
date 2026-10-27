@@ -5,6 +5,9 @@
 matches:
   # Get the same weekday from next week in ISO 8601 format
   - trigger: ";nxtweek"
+    name: Same Weekday Next Week
+    label: Same Weekday Next Week
+    comment: "Outputs the weekday and date one week from now."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -14,6 +17,9 @@ matches:
 
   # Get the same weekday from N weeks ahead in ISO 8601 format
   - regex: ";(?P<weeks>[0-9]+)\\.nxtweek"
+    name: Same Weekday N Weeks Ahead
+    label: Same Weekday N Weeks Ahead
+    comment: "Outputs the weekday and date N weeks from now."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -21,7 +27,10 @@ matches:
         params:
           cmd: "date -d '+{{weeks}} weeks' '+%A %Y-%m-%d'"
 
+  # Get the same weekday N weeks ahead using a form
   - trigger: ":nxtweek"
+    name: Same Weekday N Weeks Ahead Form
+    comment: "Asks for a week count and outputs that future weekday and date."
     label: N weeks ahead (Form)
     replace: "{{mydate}}"
     vars:

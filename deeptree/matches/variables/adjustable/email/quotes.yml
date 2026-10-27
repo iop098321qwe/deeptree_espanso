@@ -25,5 +25,9 @@ global_vars:
         - '"In IT, change is the only constant." - Common Industry Aphorism'
 
 matches:
+  # Set up replacement for random quotation
   - trigger: ;quote
+    name: Random Quotation
+    label: Random Quotation
+    comment: "Outputs a randomly selected quotation."
     replace: "{{quote}}"

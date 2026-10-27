@@ -142,6 +142,10 @@ or release automation.
 
 - Use small, correct changes that fit the existing project structure.
 - Keep Espanso package files split by topic unless consolidation is required.
+- Give every match a descriptive `name`, `comment`, and search `label`, plus
+  a short YAML comment above it explaining its purpose in the existing style.
+- Treat match-level `name` and `comment` as documentation metadata. Preserve
+  variable `name` values, which are functional references.
 - Keep technician-specific values out of the `deeptree` package.
 - Agents must never read, create, edit, delete, move, stage, commit, or
   otherwise touch `todo.txt`; only the user may modify it manually.

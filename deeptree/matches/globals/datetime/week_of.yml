@@ -4,8 +4,9 @@
 matches:
   # Print the week range from Monday to Sunday for the current week
   - trigger: ";wkof"
+    name: Current Week Range
     label: Current Week Of
-    comment: "CHANGEME"
+    comment: "Outputs the current Monday-to-Sunday date range."
     replace: "week of {{week_start}} to {{week_end}}"
     propagate_case: true
     vars:
@@ -38,7 +39,9 @@ matches:
             fi
           trim: true
 
+  # Print the work week range from Monday to Friday for the current week
   - trigger: ";wrkwkof"
+    name: Current Work Week Range
     label: Current Work Week Of
     comment: "Expands to Monday–Friday of the current work week"
     replace: "work week of {{week_start}} to {{week_end}}"
@@ -84,8 +87,9 @@ matches:
 
   # Print the week range from Monday to Sunday for the last week
   - trigger: ";lstwkof"
+    name: Last Week Range
     label: Last Week Of
-    comment: "CHANGEME"
+    comment: "Outputs last week's Monday-to-Sunday date range."
     replace: "week of {{previous_week_start}} to {{previous_week_end}}"
     propagate_case: true
     vars:
@@ -115,7 +119,9 @@ matches:
           cmd: "date -d '{{previous_week_start}} +6 days' '+%A %Y-%m-%d'"
           trim: true
 
+  # Print the work week range from Monday to Friday for last week
   - trigger: ";lstwrkwkof"
+    name: Last Work Week Range
     label: Last Work Week Of
     comment: "Expands to last Monday–Friday (work week only)"
     replace: "work week of {{previous_week_start}} to {{previous_week_end}}"
@@ -148,9 +154,11 @@ matches:
           cmd: "date -d '{{previous_week_start}} +4 days' '+%A %Y-%m-%d'"
           trim: true
 
+  # Print the week range from Monday to Sunday for next week
   - trigger: ";nxtwkof"
+    name: Next Week Range
     label: Next Week Of
-    comment: "CHANGEME"
+    comment: "Outputs next week's Monday-to-Sunday date range."
     replace: "week of {{next_week_start}} to {{next_week_end}}"
     propagate_case: true
     vars:
@@ -168,7 +176,9 @@ matches:
           cmd: "date -d '{{next_week_start}} +6 days' '+%A %Y-%m-%d'"
           trim: true
 
+  # Print the work week range from Monday to Friday for next week
   - trigger: ";nxtwrkwkof"
+    name: Next Work Week Range
     label: Next Work Week Of
     comment: "Expands to next Monday–Friday (work week only)"
     replace: "work week of {{next_week_start}} to {{next_week_end}}"
@@ -292,7 +302,10 @@ matches:
           cmd: "date -d '{{start}} +4 days' '+%A %Y-%m-%d'"
           trim: true
 
+  # Print the week range N weeks ago using a form
   - trigger: ":lstwkof"
+    name: N Weeks Ago Week Range Form
+    comment: "Asks for weeks back from this week and outputs Monday to Sunday."
     label: N weeks ago - week range (Form)
     replace: "week of {{start}} to {{end}}"
     propagate_case: true
@@ -344,7 +357,10 @@ matches:
           cmd: "date -d '{{start}} +6 days' '+%A %Y-%m-%d'"
           trim: true
 
+  # Print the work week range N weeks ago using a form
   - trigger: ":lstwrkwkof"
+    name: N Weeks Ago Work Week Range Form
+    comment: "Asks for weeks back from this week and outputs Monday to Friday."
     label: N weeks ago - work week range (Form)
     replace: "work week of {{start}} to {{end}}"
     propagate_case: true
@@ -361,7 +377,10 @@ matches:
           cmd: "date -d '{{start}} +4 days' '+%A %Y-%m-%d'"
           trim: true
 
+  # Print the week range N weeks after next week using a form
   - trigger: ":nxtwkof"
+    name: N Weeks Ahead Week Range Form
+    comment: "Asks for weeks after next week and outputs Monday to Sunday."
     label: N weeks ahead - week range (Form)
     replace: "week of {{start}} to {{end}}"
     propagate_case: true
@@ -377,7 +396,10 @@ matches:
           trim: true
       - *range_sunday
 
+  # Print the work week range N weeks after next week using a form
   - trigger: ":nxtwrkwkof"
+    name: N Weeks Ahead Work Week Range Form
+    comment: "Asks for weeks after next week and outputs Monday to Friday."
     label: N weeks ahead - work week range (Form)
     replace: "work week of {{start}} to {{end}}"
     propagate_case: true

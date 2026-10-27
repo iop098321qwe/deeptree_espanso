@@ -1,5 +1,8 @@
 matches:
+  # Set up replacement for dynamic Deeptree email signature
   - trigger: ";signature"
-    label: Dynamic Deeptree Email
+    name: Dynamic Deeptree Email Signature
+    label: Dynamic Deeptree Email Signature
+    comment: "Outputs your Deeptree signature with a random signoff and quote."
     force_mode: clipboard
     replace: "{{signature}}"

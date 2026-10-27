@@ -2,7 +2,9 @@
 
 # Ticket Template Matches
 matches:
+  # Set up replacement for request template
   - trigger: ";tmpreq"
+    name: Request Ticket Template
     label: Request Ticket Template
     comment: "This is the template for a request ticket body."
     replace: |-
@@ -18,6 +20,7 @@ matches:
 
   # Set up replacement for incident template
   - trigger: ";tmpinc"
+    name: Incident Ticket Template
     label: Incident Ticket Template
     comment: "This is the template for an incident ticket body."
     replace: |-
@@ -40,7 +43,10 @@ matches:
       -Provide documentation, recommendations or training as needed on how to resolve or prevent future recurrence of similar issues.
       -Update documentation if any system changes have been made.
 
+  # Set up replacement for request template using a form
   - trigger: ":tmpreq"
+    name: Request Ticket Template Form
+    comment: "Asks for request details, impact, and due date for a ticket."
     label: Request Ticket Template (Form)
     force_mode: clipboard
     replace: |-
@@ -70,7 +76,10 @@ matches:
             impact:
               multiline: true
 
+  # Set up replacement for incident template using a form
   - trigger: ":tmpinc"
+    name: Incident Ticket Template Form
+    comment: "Asks for issue details and troubleshooting to create a ticket."
     label: Incident Ticket Template (Form)
     force_mode: clipboard
     replace: |-
