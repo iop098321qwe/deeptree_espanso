@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.4](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.3...v0.2.4) (2026-10-27)
+
+### Features
+
+* **credentials:** add AJEATT form expansion ([48e3c07](https://github.com/iop098321qwe/deeptree_espanso/commit/48e3c07f312797c5d7dc530dd4c0835699b22ec5))
+
 ## [0.2.3](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.2...v0.2.3) (2026-10-23)
 
 ### Features
