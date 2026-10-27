@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.5](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.4...v0.2.5) (2026-10-27)
+
+### Bug Fixes
+
+* **credentials:** resolve scripts from the package directory ([5c4af39](https://github.com/iop098321qwe/deeptree_espanso/commit/5c4af394a63620a5e297a9150afc70d39c9ad936))
+* **package:** import composed names through the entry point ([0ccaa38](https://github.com/iop098321qwe/deeptree_espanso/commit/0ccaa38c9455dbbdc1ddfee4a8a69f89613b40b1))
+
 ## [0.2.4](https://github.com/iop098321qwe/deeptree_espanso/compare/v0.2.3...v0.2.4) (2026-10-27)
 
 ### Features
