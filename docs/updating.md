@@ -1,5 +1,20 @@
 # Updating the Package
 
+## Maintainer Release Versions
+
+The repository-local `.versionrc.json` configures `commit-and-tag-version`
+to update `package.json`, `package-lock.json`, and
+`deeptree/_manifest.yml` to the same release version. The shared `verg`
+shell function invokes this tool and uses this configuration when releasing
+from this repository; other repositories are unaffected.
+
+To preview the version updates without creating a release, run this directly
+from the repository root:
+
+```sh
+npx commit-and-tag-version --dry-run
+```
+
 ## Update Command
 
 Update the shared Deeptree package with:

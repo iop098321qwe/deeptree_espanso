@@ -52,6 +52,7 @@ or release automation.
   pushes.
 - `.gitignore`: Excludes local caches, Node dependencies, and the Python venv.
 - `.husky/commit-msg`: Runs Commitlint for commit messages.
+- `.versionrc.json`: Synchronizes Node and Espanso release versions.
 - `AGENTS.md`: AI coding agent instructions for this repository.
 - `CHANGELOG.md`: Generated changelog; do not edit manually.
 - `commitlint.config.cjs`: Conventional Commit lint configuration.
@@ -123,6 +124,11 @@ or release automation.
 
 - Use Conventional Commits for every commit. Prefer a scope when it adds
   clarity.
+- `commit-and-tag-version` reads `.versionrc.json` to bump `package.json`,
+  `package-lock.json`, and `deeptree/_manifest.yml` together. The shared
+  `verg` shell function invokes this tool from the repository root.
+- Preview version updates with `npx commit-and-tag-version --dry-run`
+  directly; `verg` also performs documentation builds and release pushes.
 - Site builds and `build(site):` commits are manual steps. Never perform
   either locally without an explicit user request.
 - `.github/workflows/docs.yml` builds with `zensical build --clean` and
