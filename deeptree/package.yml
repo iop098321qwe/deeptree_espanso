@@ -34,6 +34,7 @@ imports:
   - "./matches/variables/static/assornoass.yml"
   - "./matches/variables/static/company.yml"
   - "./matches/variables/static/date.yml"
+  - "./matches/variables/static/name.yml"
   - "./matches/variables/static/phone_numbers.yml"
   - "./matches/variables/static/signature.yml"
   - "./matches/work/client_specific/credentials.yml"

@@ -2,8 +2,11 @@
 
 # Print the current date
 matches:
-  # Print tomorrow's date in ISO 8861 format
+  # Print tomorrow's date in ISO 8601 format
   - trigger: ";tmr"
+    name: Tomorrow Date
+    label: Tomorrow Date
+    comment: "Outputs tomorrow's date as YYYY-MM-DD."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -13,6 +16,9 @@ matches:
 
   # Print N days from now date in ISO 8601 format
   - regex: ";(?P<days>[0-9]+)\\.tmr"
+    name: N Days Ahead Date
+    label: N Days Ahead Date
+    comment: "Outputs the date N days from now."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -20,8 +26,11 @@ matches:
         params:
           cmd: "date -d '+{{days}} days' +'%Y-%m-%d'"
 
-  # Print yesterday's date in ISO 8861 format
+  # Print yesterday's date in ISO 8601 format
   - trigger: ";yst"
+    name: Yesterday Date
+    label: Yesterday Date
+    comment: "Outputs yesterday's date as YYYY-MM-DD."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -31,6 +40,9 @@ matches:
 
   # Print N days ago date in ISO 8601 format
   - regex: ";(?P<days>[0-9]+)\\.yst"
+    name: N Days Ago Date
+    label: N Days Ago Date
+    comment: "Outputs the date N days ago."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -38,7 +50,10 @@ matches:
         params:
           cmd: "date -d '+{{days}} days ago' +'%Y-%m-%d'"
 
+  # Print the date N days from now using a form
   - trigger: ":tmr"
+    name: N Days Ahead Date Form
+    comment: "Asks for a day count and outputs the date that many days ahead."
     label: N days from now (Form)
     replace: "{{mydate}}"
     vars:
@@ -70,7 +85,10 @@ matches:
         params:
           cmd: "date -d '+{{days}} days' +'%Y-%m-%d'"
 
+  # Print the date N days ago using a form
   - trigger: ":yst"
+    name: N Days Ago Date Form
+    comment: "Asks for a day count and outputs the date that many days ago."
     label: N days ago (Form)
     replace: "{{mydate}}"
     vars:

@@ -8,16 +8,9 @@ instructions][installation].
 This is a private Espanso package for centrally managing the Deeptree snippets,
 global variables, and scripts for Espanso users.
 
-This package is designed to live alongside existing Espanso configuration. If a
-user already utilizes Espanso, they can install this package and still have
-their own personal snippets and scripts in their Espanso configuration
-separately managed. Whenever the package is updated, the shared snippets and
-scripts will be updated only for the Deeptree Espanso package. If a user does
-not already utilize Espanso, they can install this package and use it as their
-primary Espanso configuration.
-
-This package also outlines the process for installing Espanso for new users and
-configuring it to use the Deeptree Espanso package.
+Use it alongside your existing personal snippets or as your starting collection
+if you are new to Espanso. The installation guide covers installing Espanso and
+setting up this package.
 
 ## What Is [Espanso][espanso]?
 
@@ -35,10 +28,6 @@ with APIs.
 
 Between snippets and scripts, Espanso can be used to automate a wide range of
 tasks and improve productivity for a wide range of users.
-
-> [!INFO] WIP!
-There will be an instructional video added in the future to introduce and
-explain Espanso better.
 
 ## How to Use Espanso
 
@@ -113,25 +102,17 @@ the technician's work email address. It will also randomly select
 sentences, quotes, and partial sentences to randomize this email generation
 each time it is used to avoid sounding too automated or templated.
 
-With this package, I have made it so that each individual can use these
-expansion tools for themselves.
-
-The examples assume your local technician values and composed name globals
-are loaded. The package entry point currently omits `static/name.yml`; follow
-the [installation guide][installation] to load those name definitions locally.
+The examples assume your local technician values are loaded. The package loads
+the composed name definitions from `static/name.yml`; follow the
+[installation guide][installation] to configure your technician values and
+install the runtime dependencies for shell-based expansions.
 
 ## What Is the Deeptree Espanso Package?
 
-The repository contains templates for the technician-specific variables that
-are kept outside the package. These are used to customize the expansions to
-tailor for each individual technician's name, title, and work email address to
-automatically be filled in using the shared snippets and scripts.
-
-This package is designed to live alongside existing Espanso configuration. This
-means that a user can install this package and still have their own personal
-snippets and scripts in their Espanso configuration separately managed.
-Whenever the package is updated, the shared snippets and scripts will be
-updated only for the Deeptree Espanso package.
+Deeptree manages the shared snippets, global variables, and scripts centrally.
+You personalize them with the repository's `templates/work_information.yml`
+template, copied into your own Espanso configuration outside the package. Its
+local values supply your name, title, and work email to the shared expansions.
 
 New snippets and scripts can be shared centrally without requiring users to
 edit their own Espanso configuration. Users receive these changes by running

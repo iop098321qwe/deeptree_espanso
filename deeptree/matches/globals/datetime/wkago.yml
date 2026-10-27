@@ -5,6 +5,9 @@
 matches:
   # Get the same weekday from last week in ISO 8601 format
   - trigger: ";wkago"
+    name: One Week Ago Date
+    label: One Week Ago Date
+    comment: "Outputs the date one week ago."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -14,6 +17,9 @@ matches:
 
   # Get the same weekday from N weeks ago in ISO 8601 format
   - regex: ";(?P<weeks>[0-9]+)\\.wkago"
+    name: N Weeks Ago Date
+    label: N Weeks Ago Date
+    comment: "Outputs the date N weeks ago."
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -21,7 +27,10 @@ matches:
         params:
           cmd: "date -d '{{weeks}} weeks ago' +'%Y-%m-%d'"
 
+  # Get the date N weeks ago using a form
   - trigger: ":wkago"
+    name: N Weeks Ago Date Form
+    comment: "Asks for a week count and outputs the date that many weeks ago."
     label: N weeks ago (Form)
     replace: "{{mydate}}"
     vars:

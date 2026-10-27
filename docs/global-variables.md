@@ -36,13 +36,11 @@ Both `greeting` and `addongreeting` have an empty option. In email templates,
 `{{greeting}}{{person}},{{addongreeting}}` retains the person's name and the
 template's comma even when either or both random selections are empty.
 
-Package globals are loaded through `deeptree/package.yml` imports.
-**`deeptree/matches/variables/static/name.yml` is not imported there.**
-Its `myname` and `mylegalname` definitions exist in source but are not loaded
-through that entry point. Matches and `signature` reference these names, so
-they need definitions loaded separately to resolve. Follow the
-[installation workaround](installation.md#load-the-composed-name-variables)
-to load them locally without editing the package imports.
+Package globals are loaded through `deeptree/package.yml` imports, including
+`deeptree/matches/variables/static/name.yml`. Its `myname` and `mylegalname`
+definitions compose the technician's local name values; no separate local
+name-definition file is required. See the
+[installation guide](installation.md#load-the-composed-name-variables).
 
 Technician globals are supplied by `templates/work_information.yml`, not
 the package. Copy that template into your Espanso match directory outside
@@ -111,21 +109,21 @@ technician template. They remain available for user-defined snippets.
 
 - Type: `echo`.
 - Exact content: `{{myfirst}} {{mylast}}`.
-- Purpose: First and last name for `;name` and `signature`; template defaults
-  would produce `First Last` if this definition were loaded.
+- Purpose: First and last name for `;name` and `signature`; the unmodified
+  technician template produces `First Last`.
 - Dependencies: `myfirst`, `mylast`.
 - Source: `deeptree/matches/variables/static/name.yml`.
-- Loading: Missing from `deeptree/package.yml` imports.
+- Loading: Imported by `deeptree/package.yml`.
 
 ### mylegalname
 
 - Type: `echo`.
 - Exact content: `{{myfirst}} {{mymiddle}} {{mylast}}`.
-- Purpose: Full name for `;legalname` and `;fullname`; template defaults
-  would produce `First Middle Last` if this definition were loaded.
+- Purpose: Full name for `;legalname` and `;fullname`; the unmodified
+  technician template produces `First Middle Last`.
 - Dependencies: `myfirst`, `mymiddle`, `mylast`.
 - Source: `deeptree/matches/variables/static/name.yml`.
-- Loading: Missing from `deeptree/package.yml` imports.
+- Loading: Imported by `deeptree/package.yml`.
 
 The composite inserts literal spaces around `mymiddle`; an empty middle
 name does not remove either space.
@@ -209,7 +207,7 @@ Exact content (`|-` in YAML strips the final newline):
 
 The signature does **not** include any email address: neither `workemail`,
 `myemail`, nor `helpdesk_email` appears in its content. Its `myname`
-dependency is affected by the missing `static/name.yml` package import.
+definition is package-managed; the first and last name values remain local.
 
 ## Random Variables
 

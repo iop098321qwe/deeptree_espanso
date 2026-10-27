@@ -2,7 +2,9 @@
 
 # Dispatch Email Template Matches
 matches:
+  # Set up replacement for first response request with appointment
   - regex: ";resreqapp(?P<person>.*)\\."
+    name: Request with Appointment Response
     label: Request with Appointment Email Response Template
     comment: "This is an email response template for a request with an appointment."
     replace: |-
@@ -20,6 +22,7 @@ matches:
 
   # Set up replacement for first response request without appointment
   - regex: ";resreqnoapp(?P<person>.*)\\."
+    name: Request without Appointment Response
     label: Request without Appointment Email Response Template
     comment: "This is an email response template for a request without an appointment."
     replace: |-
@@ -35,6 +38,7 @@ matches:
 
   # Set up replacement for first response incident
   - regex: ";resinc(?P<person>.*)\\."
+    name: Incident Response
     label: Incident Email Response Template
     comment: "This is an email response template for an incident."
     replace: |-
@@ -50,6 +54,7 @@ matches:
 
   # Set up replacement for first response spam
   - regex: ";resspam(?P<person>.*)\\."
+    name: Spam Response
     label: Spam Email Response Template
     comment: "This is an email response template for spam."
     replace: |-
@@ -63,7 +68,10 @@ matches:
 
       {{signature}}
 
+  # Set up replacement for first response request with appointment using a form
   - trigger: ":resreqapp"
+    name: Request with Appointment Response Form
+    comment: "Asks for details to respond to a request with an appointment."
     label: Request with Appointment Response (Form)
     force_mode: clipboard
     replace: |-
@@ -90,7 +98,10 @@ matches:
             message:
               multiline: true
 
+  # Set up replacement for request response without appointment using a form
   - trigger: ":resreqnoapp"
+    name: Request without Appointment Response Form
+    comment: "Asks for details to respond to a request without scheduling."
     label: Request without Appointment Response (Form)
     force_mode: clipboard
     replace: |-
@@ -105,7 +116,10 @@ matches:
       {{signature}}
     vars: *response_form
 
+  # Set up replacement for first response incident using a form
   - trigger: ":resinc"
+    name: Incident Response Form
+    comment: "Asks for email details to respond to an incident with scheduling."
     label: Incident Response (Form)
     force_mode: clipboard
     replace: |-
@@ -120,7 +134,10 @@ matches:
       {{signature}}
     vars: *response_form
 
+  # Set up replacement for first response spam using a form
   - trigger: ":resspam"
+    name: Spam Response Form
+    comment: "Asks for email details to respond to a spam ticket."
     label: Spam Response (Form)
     force_mode: clipboard
     replace: |-
