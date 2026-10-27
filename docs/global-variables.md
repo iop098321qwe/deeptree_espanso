@@ -42,10 +42,6 @@ definitions compose the technician's local name values; no separate local
 name-definition file is required. See the
 [installation guide](installation.md#load-the-composed-name-variables).
 
-Espanso's default recursive discovery beneath `match` can also load the
-packaged name definitions in older versions without the explicit import.
-The import ensures entry-point-only configurations load them as well.
-
 Technician globals are supplied by `templates/work_information.yml`, not
 the package. Copy that template into your Espanso match directory outside
 the package and customize its placeholder values. Package updates do not
