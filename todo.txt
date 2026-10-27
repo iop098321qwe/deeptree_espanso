@@ -1,2 +1,2 @@
-(B) 2026-10-01 add comments and labels to all expansions for user readability/usage +all @docs
+(B) 2026-10-01 add a `name:`, `comment:` and `label:` section for every expansion and ensure that each expansion has a commented out comment for user readability and usabilty +all @docs
 (A) 2026-10-08 ensure that all documentation is up to date with current changes +all @docs

@@ -416,8 +416,6 @@ $|$
 
 Here `$|$` shows the cursor position, rather than literal output. Both direct
 credential triggers and credential forms append this same password block.
-If you previously configured `;tp` locally, remove the local definition after
-updating the package to avoid duplicate triggers.
 
 Type the client credential trigger, the first name, a comma, the last name, and
 the final period.
@@ -579,7 +577,7 @@ insert static names and cursor markers, with no local variables or captures.
 - `;ppos` expands to `Pioneer Peak Orthopedic Surgery`.
 - `;pdc` expands to `ProsserDagg Construction`.
 - `;ssmh` expands to `Samuel Simmonds Memorial Hospital`.
-- `;si` expands to `Specialty Imports, LLC`.
+- `;sillc` expands to `Specialty Imports, LLC`.
 - `;sfa` expands to `Steve Fishback Architect`.
 - `;sco` expands to `Stinebaugh & Company`.
 - `;tal` expands to `The American Legion - Department of Alaska`.

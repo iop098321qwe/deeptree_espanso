@@ -127,8 +127,14 @@ Please select from the tabs below:
 
     ### Fedora
 
-    To install Espanso on Fedora, you will first need to install the Terra third
-    party repository. You can do this by running the following command:
+    #### Wayland
+
+    These commands install Espanso for a Wayland desktop session. Check your
+    session with `printenv XDG_SESSION_TYPE`; it should print `wayland`.
+    For X11 or another session, see
+    [Other Desktop Sessions](#other-desktop-sessions).
+
+    To install Espanso on Fedora, first install the Terra third-party repository:
 
     ```sh
     sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release terra-gpg-keys
@@ -143,9 +149,15 @@ Please select from the tabs below:
 
 === "Arch Based"
 
-    ### AUR
+    ### Arch Linux and Derivatives
 
-    You can install Espanso on Arch Linux and derivatives of Arch Linux using the AUR package `espanso-wayland`.
+    #### Wayland (AUR)
+
+    These commands install Espanso for a Wayland desktop session using the AUR
+    package `espanso-wayland`. Check your session with
+    `printenv XDG_SESSION_TYPE`; it should print `wayland`.
+    For X11 or another session, see
+    [Other Desktop Sessions](#other-desktop-sessions).
 
     > [!TIP] Derivatives of Arch Linux
     This includes Omarchy and CachyOS!
@@ -192,6 +204,14 @@ Please select from the tabs below:
     **Currently under construction...**
 
     *(but like why are you using MacOS anyway? :P)*
+
+### Other Desktop Sessions
+
+X11 and other desktop-session setup on Fedora and Arch Linux are not fully
+documented in this documentation. For session-specific packages, dependencies,
+and setup instructions, use the [upstream Linux installation guide][linux] and
+[Espanso installation documentation][install]. Choose a method compatible with
+your distribution and desktop session before continuing with step 2.
 
 ## 2. Start and Enable Espanso Service
 
