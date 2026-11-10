@@ -30,10 +30,11 @@ or release automation.
 ## Environment
 
 - Git is required for day-to-day work in this repository.
+- Node.js 22 or newer is required by the pinned release tool.
 - Node dependencies are defined by `package.json` and `package-lock.json`.
 - Commit hooks use Husky and Commitlint.
 - Espanso `2.4.0` was verified locally during package conversion work.
-- Python virtual environment tooling exists under `.venv/` for Zensical.
+- Create the ignored `.venv/` per `docs/releasing.md` for local Zensical use.
 
 ## Repository Overview
 
@@ -42,9 +43,11 @@ or release automation.
 - `.venv/`: Local Python virtual environment used for Zensical commands.
 - `deeptree/`: Espanso external package source.
 - `docs/`: Markdown documentation sources for the generated site.
-- `node_modules/`: Installed Node dependencies for commit tooling.
+- `node_modules/`: Installed Node dependencies for commits and releases.
+- `scripts/`: Release lifecycle helpers.
 - `site/`: Generated static documentation output.
 - `templates/`: Local technician template files that are not package-managed.
+- `tests/`: Node unit and isolated release integration tests.
 
 ## Tracked Files Overview
 
@@ -52,7 +55,7 @@ or release automation.
   pushes.
 - `.gitignore`: Excludes local caches, Node dependencies, and the Python venv.
 - `.husky/commit-msg`: Runs Commitlint for commit messages.
-- `.versionrc.json`: Synchronizes Node and Espanso release versions.
+- `.versionrc.json`: Synchronizes versions and configures release hooks.
 - `AGENTS.md`: AI coding agent instructions for this repository.
 - `CHANGELOG.md`: Generated changelog; do not edit manually.
 - `commitlint.config.cjs`: Conventional Commit lint configuration.
@@ -65,6 +68,7 @@ or release automation.
 - `docs/README.md`: Symlink to the root README used as the site home page.
 - `docs/global-variables.md`: Global values, dependencies, and random options.
 - `docs/installation.md`: Installation guide source.
+- `docs/releasing.md`: Maintainer release setup, testing, and recovery guide.
 - `docs/usage.md`: User guide for package expansions and scripts.
 - `docs/updating.md`: Package update guide source.
 - `done.txt`: Root completed task list placeholder.
@@ -73,8 +77,11 @@ or release automation.
 - `package-lock.json`: Locked Node dependency graph.
 - `package.json`: Node package metadata and scripts.
 - `README.md`: Primary repository overview and setup notes.
+- `scripts/release.cjs`: Release checks, site generation, and draft publishing.
 - `site/`: Generated static documentation output; summarize as a directory.
 - `templates/work_information.yml`: Local technician variable template.
+- `tests/release.integration.test.cjs`: Temporary-repository lifecycle tests.
+- `tests/release.test.cjs`: Release guard, tag, and notes unit tests.
 - `todo.txt`: User-owned task list; agents must not touch it.
 - `zensical.toml`: Zensical static site configuration.
 
@@ -98,7 +105,13 @@ or release automation.
 - `git status --short --branch`: show the current branch and worktree state.
 - `git diff --stat`: review the size and spread of pending changes.
 - `git log --oneline --decorate -5`: inspect recent commit history.
-- `npm run test`: currently exits with `Error: no test specified`.
+- `npm ci`: install locked dependencies and initialize Husky.
+- `npm test`: run release unit and isolated integration tests.
+- `npm run release:check`: check release prerequisites without releasing.
+- `npm run release -- --dry-run`: preview without executing lifecycle hooks.
+- `npm run release`: build and format docs, then commit and tag locally.
+- `RELEASE_PUBLISH=1 npm run release`: also push and create a GitHub draft.
+- `npm run format:site`: format supported generated site files with Prettier.
 - `./.venv/bin/zensical build`: build the generated documentation site only
   when explicitly requested by the user.
 - `espanso install deeptree --git https://github.com/iop098321qwe/deeptree_espanso --external`:
@@ -107,9 +120,10 @@ or release automation.
 
 ## Testing
 
-- No automated test suite is currently defined.
-- `npm run test` is not a valid verification gate because it intentionally
-  exits with an error.
+- `npm test` uses Node's test runner with no external test framework.
+- Integration tests use temporary repositories and real Git, versioning, and
+  Prettier, with fake Zensical/GitHub CLI and a local bare remote.
+- Tests do not build this worktree's site or contact GitHub.
 - Validate YAML syntax for `deeptree/**/*.yml` and `templates/**/*.yml` when
   changing package files.
 - Run an Espanso install smoke test when package layout or metadata changes.
@@ -117,22 +131,32 @@ or release automation.
 ## Linting and Formatting
 
 - Commit messages are linted by Commitlint through `.husky/commit-msg`.
-- No YAML, Markdown, or shell formatter command is currently defined.
+- `npm run format:site` formats generated files with pinned Prettier and skips
+  unknown formats. Do not format generated files without explicit permission.
+- No source YAML, Markdown, or shell formatter command is defined.
 - Keep changes minimal and consistent with the existing file style.
 
 ## CI and Release
 
 - Use Conventional Commits for every commit. Prefer a scope when it adds
   clarity.
-- `commit-and-tag-version` reads `.versionrc.json` to bump `package.json`,
-  `package-lock.json`, and `deeptree/_manifest.yml` together. The shared
-  `verg` shell function invokes this tool from the repository root.
-- Preview version updates with `npx commit-and-tag-version --dry-run`
-  directly; `verg` also performs documentation builds and release pushes.
-- Site builds and `build(site):` commits are manual steps. Never perform
-  either locally without an explicit user request.
+- Use `npm run release` from the repository root, not the shared `verg`
+  wrapper, which duplicates builds and publishing outside these safeguards.
+- Pinned `commit-and-tag-version` reads `.versionrc.json` to bump
+  `package.json`, `package-lock.json`, and `deeptree/_manifest.yml` together.
+- `scripts/release.cjs` requires a clean worktree and defaults to branch
+  `main`. `RELEASE_BRANCH` explicitly permits a different exact branch.
+- `postchangelog` builds Zensical, formats `site/`, and stages only that
+  directory. `commitAll` includes it in the release commit, then tagging runs.
+- `posttag` publishes only with `RELEASE_PUBLISH=1`: atomically push the exact
+  branch/tag to `origin`, then create a GitHub draft using committed notes.
+- Default releases remain local. Neither releases, site builds, nor pushes
+  may be run by agents without an explicit user request.
+- Preview with `npm run release -- --dry-run`; hooks do not execute in previews.
+- Use `docs/releasing.md` for setup, experiment tags, and publishing recovery.
 - `.github/workflows/docs.yml` builds with `zensical build --clean` and
-  deploys GitHub Pages on pushes to `main` or `master`.
+  formats the output with Prettier before deploying GitHub Pages on pushes
+  to `main` or `master`.
 - Never create, edit, or update `CHANGELOG.md` manually.
 - `CHANGELOG.md` is generated and maintained by release tooling only.
 - If release automation adds or changes generated files, let the tooling own
@@ -168,8 +192,9 @@ or release automation.
 - Shell date helpers require a Bourne-compatible shell and GNU `date`.
 - Credential scripts require Bash, `sed`, `tr`, and `awk`; direct weekday
   ranges also use `tr`. Script paths use Espanso's `%PACKAGES%` placeholder.
-- Node dependencies support commit-message validation.
+- Node dependencies support commit validation, versioning, and Prettier.
 - Zensical generates the static documentation site.
+- GitHub CLI is required only for explicitly enabled draft publishing.
 
 ## Troubleshooting
 
@@ -180,6 +205,8 @@ or release automation.
   package name import and duplicate local globals as in `docs/installation.md`.
 - If docs are stale, report that `site/` needs a manual rebuild. Run
   `./.venv/bin/zensical build` only when explicitly requested by the user.
+- If publishing fails after tagging, retry only `release:publish` with the
+  existing tag as documented in `docs/releasing.md`; do not rerun versioning.
 - If generated or managed files change unexpectedly, verify which tool owns
   them before editing.
 
