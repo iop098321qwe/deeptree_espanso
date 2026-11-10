@@ -121,5 +121,13 @@ separately managed personal configuration intact.
 
 To read more about Espanso, visit the [Espanso website][espanso].
 
+## Maintainer Releases
+
+The repository includes a hook-driven `npm run release` workflow for versioning,
+building and formatting the documentation, and optionally creating a GitHub
+draft. See the [release guide][releasing] for setup, isolated testing, and
+publishing instructions. Publishing is disabled unless explicitly enabled.
+
 [espanso]: https://espanso.org/
 [installation]: https://iop098321qwe.github.io/deeptree_espanso/installation/
+[releasing]: https://iop098321qwe.github.io/deeptree_espanso/releasing/
