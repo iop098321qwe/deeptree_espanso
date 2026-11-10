@@ -3,5 +3,11 @@
     "package.json",
     "package-lock.json",
     "deeptree/_manifest.yml"
-  ]
+  ],
+  "commitAll": true,
+  "scripts": {
+    "prerelease": "node scripts/release.cjs check",
+    "postchangelog": "node scripts/release.cjs site",
+    "posttag": "node scripts/release.cjs publish"
+  }
 }
