@@ -17,6 +17,7 @@ nav = [
   { "Global Variables" = "global-variables/" },
   { "Updating" = "updating/" },
   { "Changelog" = "CHANGELOG/" },
+  { "Maintainer Releases" = "releasing/" },
 ]
 
 # nav = [
