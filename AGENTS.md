@@ -77,9 +77,11 @@ or release automation.
 - `package-lock.json`: Locked Node dependency graph.
 - `package.json`: Node package metadata and scripts.
 - `README.md`: Primary repository overview and setup notes.
+- `scripts/release-browser.cjs`: Delayed draft editor and browser selection.
 - `scripts/release.cjs`: Release checks, site generation, and draft publishing.
 - `site/`: Generated static documentation output; summarize as a directory.
 - `templates/work_information.yml`: Local technician variable template.
+- `tests/release-browser.test.cjs`: Mocked browser, window, and delay tests.
 - `tests/release.integration.test.cjs`: Temporary-repository lifecycle tests.
 - `tests/release.test.cjs`: Release guard, tag, and notes unit tests.
 - `todo.txt`: User-owned task list; agents must not touch it.
@@ -150,6 +152,10 @@ or release automation.
   directory. `commitAll` includes it in the release commit, then tagging runs.
 - `posttag` publishes only with `RELEASE_PUBLISH=1`: atomically push the exact
   branch/tag to `origin`, then create a GitHub draft using committed notes.
+- After draft creation, wait four seconds and open its editor using exact-class
+  Hyprland browser selection. `RELEASE_OPEN_BROWSER=0` skips waiting/opening.
+- Browser errors only warn and retain the draft URL; never retry versioning
+  because browser opening failed. Browser tests mock all desktop commands.
 - Default releases remain local. Neither releases, site builds, nor pushes
   may be run by agents without an explicit user request.
 - Preview with `npm run release -- --dry-run`; hooks do not execute in previews.
@@ -195,6 +201,8 @@ or release automation.
 - Node dependencies support commit validation, versioning, and Prettier.
 - Zensical generates the static documentation site.
 - GitHub CLI is required only for explicitly enabled draft publishing.
+- Automatic draft opening uses Hyprland, `hyprctl`, `sleep`, a supported browser,
+  and Omarchy default-browser detection or `xdg-settings`; no `jq` is needed.
 
 ## Troubleshooting
 
