@@ -32,6 +32,8 @@ function fixture(t) {
   mkdirSync(join(root, '.cache'));
   copyFileSync(join(source, 'scripts/release.cjs'),
     join(root, 'scripts/release.cjs'));
+  copyFileSync(join(source, 'scripts/release-browser.cjs'),
+    join(root, 'scripts/release-browser.cjs'));
   copyFileSync(join(source, '.versionrc.json'), join(root, '.versionrc.json'));
   symlinkSync(join(source, 'node_modules'), join(root, 'node_modules'));
   writeFileSync(join(root, '.gitignore'), 'node_modules\n.venv\n.cache\n');
@@ -122,6 +124,7 @@ test('opt-in pushes exact branch/tag locally and supplies verg notes to gh',
     assert.equal(execute('git', ['init', '--bare', remote]).status, 0);
     git('remote', 'add', 'origin', remote);
     env.RELEASE_PUBLISH = '1';
+    env.RELEASE_OPEN_BROWSER = '0';
     const result = release('--release-as', '0.2.6-test.0',
       '--tag-prefix', 'hooks-test-v');
     assert.equal(result.status, 0, result.stdout + result.stderr);

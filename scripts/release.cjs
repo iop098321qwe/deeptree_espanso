@@ -1,6 +1,7 @@
 const { spawnSync } = require('node:child_process');
 const { accessSync, constants, existsSync } = require('node:fs');
 const { resolve } = require('node:path');
+const { openDraft } = require('./release-browser.cjs');
 
 function run(command, args, { capture = false, input } = {}) {
   const result = spawnSync(command, args, {
@@ -111,7 +112,7 @@ function selectTag(tags, version, requested) {
   return matches[0];
 }
 
-function publish(requested) {
+async function publish(requested) {
   assertRoot();
   if (!publishingEnabled()) {
     console.log('Local release complete. No push or GitHub release attempted.');
@@ -130,28 +131,30 @@ function publish(requested) {
   run('git', ['-c', 'push.followTags=false', 'push', '--atomic', 'origin',
     `refs/heads/${branch}:refs/heads/${branch}`,
     `refs/tags/${tag}:refs/tags/${tag}`]);
-  run('gh', ['release', 'create', tag, '--verify-tag', '--draft',
+  const output = run('gh', ['release', 'create', tag, '--verify-tag', '--draft',
     ...(version.includes('-') ? ['--prerelease'] : []),
-    '--title', tag, '--notes-file', '-'], { input: notes });
+    '--title', tag, '--notes-file', '-'], { input: notes, capture: true });
   console.log(`Draft created for ${tag}; it has not been published.`);
+  if (output.trim()) console.log(output.trim());
+  await openDraft(output, { run });
 }
 
 if (require.main === module) {
-  try {
+  (async () => {
     const [action, tag, ...extra] = process.argv.slice(2);
     if (extra.length || (action !== 'publish' && tag)) {
       throw new Error('Unexpected release arguments.');
     }
     if (action === 'check') check();
     else if (action === 'site') site();
-    else if (action === 'publish') publish(tag);
+    else if (action === 'publish') await publish(tag);
     else throw new Error('Expected check, site, or publish.');
-  } catch (error) {
+  })().catch((error) => {
     console.error(`Release failed: ${error.message}`);
     console.error('Inspect local state before retrying. If a release tag ' +
       'already exists, retry publishing only; do not rerun versioning.');
     process.exitCode = 1;
-  }
+  });
 }
 
 module.exports = { assertBranch, extractNotes, publishingEnabled, selectTag };
