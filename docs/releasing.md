@@ -54,8 +54,35 @@ behavior of interpreting stdout as a replacement release commit message.
 Release notes use the same selection as `verg`: the changelog introduction,
 any leading `Unreleased` section, and the first release section, ending before
 the next level-two release heading. Notes come from the committed changelog,
-not GitHub's generated notes. Drafts are never published automatically, and no
-browser is opened.
+not GitHub's generated notes. Drafts are never published automatically.
+
+After draft creation, the helper prints its URL, waits four seconds, and opens
+the draft editor using `verg`'s browser selection behavior. It detects the
+default browser via `omarchy-cmd-default-browser`, falling back to
+`xdg-settings`. Supported desktop entries cover Brave, Chromium, Chrome, Edge,
+and Firefox. It ignores `$BROWSER` shell commands and web-app desktop entries.
+
+On Hyprland, it selects the most recently focused mapped window with the exact
+browser class, excluding titles identifying private/incognito/guest windows.
+It focuses that window using the Lua dispatcher with a `focuswindow` fallback,
+then requests a new tab; without a matching window it requests a new normal
+window. Title filtering is best-effort, not proof of privacy mode; native
+non-private browser URL handling remains the final boundary. JavaScript parses
+the window inventory, so unlike `verg` this helper does not require `jq`.
+
+Browser opening requires a Hyprland session, `hyprctl`, a supported browser,
+and `sleep`. If detection, waiting, focusing, or launching fails, it prints a
+warning and the editor URL without failing the already-created draft. Launch
+success confirms only that the browser process started, not that the page
+loaded. It never falls back to an arbitrary URL opener or web-app window.
+Set `RELEASE_OPEN_BROWSER=0` to skip both waiting and opening, for example:
+
+```sh
+RELEASE_OPEN_BROWSER=0 RELEASE_PUBLISH=1 npm run release
+```
+
+Local-only releases and dry runs never wait or open a browser. The opening step
+runs only after creating a new draft, not when inspecting an existing draft.
 
 The Pages workflow independently builds and formats the site on pushes to
 `main` or `master`. This keeps deployment formatting consistent, though builds
