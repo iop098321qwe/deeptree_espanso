@@ -130,7 +130,7 @@ The following clients have a form version asking for First name and Last name:
 - `:credbs`, `:credburg`, `:credfpms`, `:credpy`
 - `:credccs`, `:credcrmc`, `:credgsak`, `:credjaoa`
 - `:credkc`, `:credklebs`, `:credorers`, `:credppos`
-- `:credpdc`, `:credsi`, `:credwasi`
+- `:credpdc`, `:credsi`, `:credsco`, `:credwasi`
 
 These forms use the same client settings and credential generator as the
 direct triggers. They use the package's `;tp` match for the temporary password.
@@ -498,6 +498,9 @@ Supported credential triggers:
 - `;credppos<first>,<last>.` for Pioneer Peak Orthopedic Surgery.
 - `;credpdc<first>,<last>.` for ProsserDagg Construction.
 - `;credsi<first>,<last>.` for Specialty Imports, LLC.
+- `;credsco<first>,<last>.` for Stinebaugh & Company. Uses the first initial
+  and last name for the username and email local part, with the domain
+  `stinebaugh.com`.
 - `;credwasi<first>,<last>.` for Wasilla Area Seniors, Inc.
 
 ### AJEATT Example
